@@ -3081,25 +3081,28 @@ await finishreact()
 break
 
 case 'ytmp4': {
-if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`)
-const { youtube } = require ('btch-downloader')
-const data = await youtube(text)
-const ytc= `
-╭═══════════┈
-┃𒆜┌───┈
-┃𒆜│ *Tittle:* ${data.title}
-┃𒆜│ *Date:* ${data.uploaded_at}
-┃𒆜│ *Duration:* ${data.duration}
-┃𒆜│ *Quality:* 360p
-┃𒆜└───────────┈ 
-╰════════════──┈`
-
-await HBWABotMz.sendMessage(m.chat,{
-    video: {url:data.url},
-    caption: ytc, 
-},{quoted:m})
+  if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`);
+  await loadingreact()
+  const { youtube } = require('btch-downloader');
+  const data = await youtube(args[0]);
+  const ytc = `
+  ╭═══════════┈
+  ┃𒆜┌───┈
+  ┃𒆜│ *Title:* ${data.title}
+  ┃𒆜│ *Date:* ${data.uploaded_at}
+  ┃𒆜│ *Duration:* ${data.duration}
+  ┃𒆜│ *Quality:* 360p
+  ┃𒆜└───────────┈ 
+  ╰════════════──┈`;
+  await uploadreact()
+  await HBWABotMz.sendMessage(m.chat, {
+    video: { url: data.url },
+    caption: ytc,
+  }, { quoted: m });
+  await finishreact()
 }
-break
+break;
+
 
 case 'ytaudio':{
 //Credit by HBMods-OFC
@@ -3198,34 +3201,36 @@ HBWABotMz.sendMessage(m.chat, {document: {url: dl_url} ,mimetype: 'audio/mpeg', 
 await finishreact()
 }
 break
-case 'dvideo':  case 'dvid': {
-if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian type tur_\n*⟨Entirnan :* ${prefix + command} K hminga siar lalnu`)
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-await loadingreact()
-const { youtube } = require ('btch-downloader')
-let yts = require("youtube-yts") 
-        let search = await yts(text)
-        let kazawn = search.videos[0]
-const vid=await youtube(kazawn.url)
-const ytc=`
-╭═══════════┈
-┃𒆜┌───┈
-┃𒆜│ *Tittle:* ${vid.title}
-┃𒆜│ *Date:* ${vid.uploaded_at}
-┃𒆜│ *Duration:* ${vid.duration}
-┃𒆜│ *Quality:* 360
-┃𒆜└───────────┈ 
-╰════════════──┈`
-await uploadreact()
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-await HBWABotMz.sendMessage(m.chat,{
-    video: {url:vid.url},
+case 'dvideo':
+case 'dvid': {
+  if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian type tur_\n*⟨Entirnan :* ${prefix + command} K hminga siar lalnu`);
+  const limit1 = await eco.balance(limitneihtu, khawlbawm);
+  if (hmanzat > limit1.wallet) return await dailylimit();
+  await loadingreact();
+  const { youtube } = require('btch-downloader');
+  const yts = require("youtube-yts");
+  let search = await yts(text);
+  let kazawn = search.videos[0];
+  const vid = await youtube(kazawn.url);
+  const ytc = `
+  ╭═══════════┈
+  ┃𒆜┌───┈
+  ┃𒆜│ *Title:* ${vid.title}
+  ┃𒆜│ *Date:* ${vid.uploaded_at}
+  ┃𒆜│ *Duration:* ${vid.duration}
+  ┃𒆜│ *Quality:* 360
+  ┃𒆜└───────────┈ 
+  ╰════════════──┈`;
+  await uploadreact();
+  let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
+  await HBWABotMz.sendMessage(m.chat, {
+    video: { url: vid.url },
     caption: ytc
-},{quoted:m})
-await finishreact()
+  }, { quoted: m });
+  await finishreact();
 }
-break
+break;
+
 /*
 case 'dvideo':  case 'dvid': {
 if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian type tur_\n*⟨Entirnan :* ${prefix + command} K hminga siar lalnu`)
@@ -3372,6 +3377,14 @@ teks += `┃\n└────────────⭓\n\n*A vaiin : ${VoiceNo
 dodoi(teks)
 }
 break 
+case 'left': {
+if (!HerbertTheCreator | !HerbertTheCreator1) return
+if (text == 'rawh') {
+await dodoi ('Awle boss 🫡')
+await HBWABotMz.groupLeave(m.chat)
+}
+}
+break
 case '/group': case '#group': {
 if (!m.isGroup) return
 const limit1= await eco.balance(limitneihtu, khawlbawm)
