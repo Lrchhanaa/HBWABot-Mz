@@ -3098,7 +3098,9 @@ await HBWABotMz.sendMessage(m.chat,{
     video: {url:data.url},
     caption: ytc, 
 },{quoted:m})
+}
 break
+
 case 'ytaudio':{
 //Credit by HBMods-OFC
 if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`)
@@ -3114,7 +3116,7 @@ await uploadreact()
 HBWABotMz.sendMessage(m.chat, {audio: {url: dl_url} ,mimetype: 'audio/mpeg', fileName: title+`.mp3`},{quoted:m})
 await finishreact()
 }
-break 
+break /*
 case 'dsong3': {
 if (!text) return replyherbertstyle(`_🤖Kha tiang ringawt loh khan tiang hian type tur_\n*⟨Entirnan :* ${prefix + command} K hminga siar lalnu`)
 const limit1 = await eco.balance(limitneihtu, khawlbawm); 
@@ -3146,7 +3148,7 @@ const aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
     await finishreact();
 }
 break
-
+*/
 case 'dsong2': case 'song2': case 'play2': {
 //Credit by HBMods-OFC
 if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} K hminga siar lalnu`)
@@ -3196,29 +3198,6 @@ HBWABotMz.sendMessage(m.chat, {document: {url: dl_url} ,mimetype: 'audio/mpeg', 
 await finishreact()
 }
 break
-
-Sir, It's correct?? 
-
-case 'ytmp4': {
-if (args.length < 1 || !isUrl(text) || !herbertvideo.isYTUrl(text)) return dodoi(`Video link rawn dah rawh!!\n\n_🤖Kha tiang ringawt loh khan tiang hian type tur_\n*⟨Entirnan :* ${prefix + command} https://youtube.com/watch?v=DA9gCKwaefgs`)
-const { youtube } = require ('btch-downloader')
-const data = await youtube(text)
-const ytc= `
-╭═══════════┈
-┃𒆜┌───┈
-┃𒆜│ *Tittle:* ${data.title}
-┃𒆜│ *Date:* ${data.uploaded_at}
-┃𒆜│ *Duration:* ${data.duration}
-┃𒆜│ *Quality:* 360p
-┃𒆜└───────────┈ 
-╰════════════──┈`
-
-await HBWABotMz.sendMessage(m.chat,{
-    video: {url:data.url},
-    caption: ytc, 
-}
-{quoted:m})
-break
 case 'dvideo':  case 'dvid': {
 if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian type tur_\n*⟨Entirnan :* ${prefix + command} K hminga siar lalnu`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3233,7 +3212,7 @@ const ytc=`
 ╭═══════════┈
 ┃𒆜┌───┈
 ┃𒆜│ *Tittle:* ${vid.title}
-┃𒆜│ *Date:* ${vid.date}
+┃𒆜│ *Date:* ${vid.uploaded_at}
 ┃𒆜│ *Duration:* ${vid.duration}
 ┃𒆜│ *Quality:* 360
 ┃𒆜└───────────┈ 
