@@ -85,7 +85,6 @@ const body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype ==
 const budy = (typeof m.text == 'string' ? m.text : '')
 const prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
 const content = JSON.stringify(m.message)
-const ownernomer
 const isCmd = body.startsWith(prefix)
 const from = m.key.remoteJid
 const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
