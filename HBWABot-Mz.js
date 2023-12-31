@@ -42,7 +42,10 @@ const acr = new acrcloud({
   access_secret: "U0PEUg2y6yGVh6NwJra2fJkiE1R5sCfiT6COLXuk",
 });
 const prem1 = JSON.parse(fs.readFileSync('./asset/database/premium.json'))
-const prem = JSON.parse('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-v3/Premium.json');
+const const elnglo = 'https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-v3/Premium.json';
+const englo2 = await fetch(englo);
+const prem3 = await englo2.json();
+const prem = JSON.parse(prem3);
 const hbmods = JSON.parse(fs.readFileSync('./asset/Base/Developer.json'))
 const Englo = JSON.parse(fs.readFileSync('./asset/Base/Ka-hming.json'))
 const herbertverifieduser = JSON.parse(fs.readFileSync('./asset/database/user.json'))
