@@ -85,13 +85,14 @@ const body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype ==
 const budy = (typeof m.text == 'string' ? m.text : '')
 const prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
 const content = JSON.stringify(m.message)
+const ownernomer
 const isCmd = body.startsWith(prefix)
 const from = m.key.remoteJid
 const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
 const args = body.trim().split(/ +/).slice(1)
 const pushname = m.pushName || "No Name"
 const botNumber = await HBWABotMz.decodeJid(HBWABotMz.user.id)
-const HerbertTheCreator = [botNumber, ownernomer].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+const HerbertTheCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
 const HerbertTheCreator1 = m.sender === '918416093656@s.whatsapp.net';
 const HerbertTheDeveloper = m.sender == botNumber ? true : false
 const text = q = args.join(" ")
