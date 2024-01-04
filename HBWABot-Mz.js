@@ -2661,9 +2661,10 @@ case 'ai': {
     const source1 = 'auto'
     const target1 = 'en'
     const athu1 = `${text 
-        .replace(/HBWABot|HBWABot-Ai|HBWABot-ai/g, 'BetaBotz-Ai')
+        .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
         .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
-        .replace(/Lalngaihawma|lalngaihawma/g, 'ERLANRAHMAT')
+        .replace(/HBMods|HBMods-OFC|Hbmods|hbmods ofc|Hbmods Ofc|hbmods|HBMods OFC/g, 'ERLANRAHMAT')
+        .replace(/Lalngaihawma|Lalngaihawma/g, 'Erlan Rahmat')
         .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
     const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1)
     const heihi_ani = `${mizotranslation1}`
@@ -2671,9 +2672,9 @@ case 'ai': {
     const chutin = `${heihian.result
         .replace(/BetaBotz/g, 'HBWABot')
         .replace(/Lann/g, 'Herbert Suantak')
-        .replace(/ERLANRAHMAT/g, 'Lalngaihawma')
-        .replace(/Indonesia/g, 'Mizo')
-        .replace(/https:\/\/github\.com\/ERLANRAHMAT/g, ' https://github.com/HBMods-OFC ')}`;
+        .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
+        .replace(/ERLANRAHMAT/g, 'HBMods-OFC')
+        .replace(/Indonesia/g, 'Mizo')}`;
     const source = 'auto'
     const target = 'lus'
     const athu = `${chutin}`
@@ -2681,10 +2682,10 @@ case 'ai': {
     const siamthat = `${mizotranslation
     .replace(/ka siamtu|ka neitu/g, 'min siamtu')
     .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
-    .replace(/I tanpui turin ka rawn kal a ni|tanpui turin ka rawn kal a ni/g, 'tanpui tur chein ka awm e,')
+    .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
+    .replace(/ka rawn kal a ni/g, 'ka awm e')
     .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
-    .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh/g, 'Ka tihpalh')
-    .replace(/\/Lalngaihawma/g, '/HBMods-OFC')}`;
+    .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
     await HBWABotMz.sendMessage(from, { text: siamthat }, { quoted: m })
     let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
@@ -2701,8 +2702,10 @@ case 'ai2': case 'gpt': {
     const source1 = 'auto'
     const target1 = 'en'
     const athu1 = `${text 
-        .replace(/HBWABot|HBWABot-Ai|HBWABot-ai/g, 'BetaBotz-Ai')
-        .replace(/Herbert Suantak|Herbert suantak|Suantak|suantak|Herbert|Herbert-a|Herberta/g, 'Lann')
+        .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
+        .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
+        .replace(/HBMods|HBMods-OFC|Hbmods|hbmods ofc|Hbmods Ofc|hbmods|HBMods OFC/g, 'ERLANRAHMAT')
+        .replace(/Lalngaihawma|Lalngaihawma/g, 'Erlan Rahmat')
         .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
     const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1)
     const heihi_ani = `${mizotranslation1}`;
@@ -2710,8 +2713,9 @@ case 'ai2': case 'gpt': {
     const chutin = `${heihian.result
         .replace(/BetaBotz/g, 'HBWABot')
         .replace(/Lann/g, 'Herbert Suantak')
-        .replace(/Indonesia/g, 'Mizo')
-        .replace(/https:\/\/github\.com\/ERLANRAHMAT/g, ' https://github.com/HBMods-OFC ')}`;
+        .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
+        .replace(/ERLANRAHMAT/g, 'HBMods-OFC')
+        .replace(/Indonesia/g, 'Mizo')}`;
     const source = 'auto'
     const target = 'en'
     const athu = `${chutin}`
@@ -2733,8 +2737,8 @@ case 'openai': {
   const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
   const prompt = `Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
 *1. Blog:* https://herbert70.blogspot.com and 
-*2. Github:* https://github.com/HBMods-OFC 👍😊
-*3. Instagram:* https://instagram.com/herbert_suantak2`;
+*2. Github:* https://github.com/HBMods-OFC
+*3. Instagram:* https://instagram.com/herbert_suantak2 `;
   const apiUrl1 = `https://api.betabotz.org/api/search/openai-logic?text=${mizotranslation}&logic=${encodeURIComponent(prompt)}&apikey=SjWOkprk`;
   const apiUrl2 = `https://vihangayt.me/tools/chatgptv4?q=${mizotranslation}`;
   try {
