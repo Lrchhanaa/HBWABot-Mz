@@ -444,7 +444,7 @@ let audiobuffy = fs.readFileSync(`./asset/audio/${HBert}.mp3`)
 HBWABotMz.sendMessage(m.chat, { audio: audiobuffy, mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
 }
 }
-for (let BhosdikaHerbert of StickerHerbert){
+for (let HBert of StickerHerbert){
 if (budy === HBert){
 let stickerbuffy = fs.readFileSync(`./asset/sticker/${HBert}.webp`)
 HBWABotMz.sendMessage(m.chat, { sticker: stickerbuffy }, { quoted: m })
