@@ -2680,8 +2680,9 @@ case 'ai': {
         .replace(/BetaBotz/g, 'HBWABot')
         .replace(/Lann/g, 'Herbert Suantak')
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
+        .replace(/-OFC OFC/-OFC-OFC/g, '-OFC')
         .replace(/ERLANRAHMAT/g, 'HBMods-OFC')
-        .replace(/Indonesia/g, 'Mizo')}`;
+        .replace(/Indonesian/g, 'Mizo')}`;
     const source = 'auto'
     const target = 'lus'
     const athu = `${chutin}`
@@ -2728,8 +2729,9 @@ case 'ai2': case 'gpt': {
         .replace(/BetaBotz/g, 'HBWABot')
         .replace(/Lann/g, 'Herbert Suantak')
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
+        .replace(/-OFC OFC/-OFC-OFC/g, '-OFC')
         .replace(/ERLANRAHMAT/g, 'HBMods-OFC')
-        .replace(/Indonesia/g, 'Mizo')}`;
+        .replace(/Indonesian/g, 'Mizo')}`;
     const source = 'auto'
     const target = 'en'
     const athu = `${chutin}`
