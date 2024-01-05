@@ -2692,6 +2692,7 @@ case 'ai': {
     .replace(/ERLANRAHMAT/g, 'HBMods')
     .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
     .replace(/ka rawn kal a ni/g, 'ka awm e')
+    .replace(/Chibai! /g, `Hi ${pushname}! `)
     .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
     .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
     await HBWABotMz.sendMessage(from, { text: siamthat }, { quoted: m })
