@@ -2667,7 +2667,7 @@ case 'ai': {
         .replace(/ERLAN|RAHMAT/g, '')
         .replace(/Lalngaihawma|lalngaihawma/g, 'Erlan Rahmat')
         .replace(/HBMods/g, 'ERLANRAHMAT')
-        .replace(/HBMods OFC/g, 'ERLANRAHMAT'
+        .replace(/HBMods OFC/g, 'ERLANRAHMAT')
         .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`
     const athu1 = `${thlakna 
         .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
@@ -2715,7 +2715,7 @@ case 'ai2': case 'gpt': {
         .replace(/ERLAN|RAHMAT/g, '')
         .replace(/Lalngaihawma|lalngaihawma/g, 'Erlan Rahmat')
         .replace(/HBMods/g, 'ERLANRAHMAT')
-        .replace(/HBMods OFC/g, 'ERLANRAHMAT'
+        .replace(/HBMods OFC/g, 'ERLANRAHMAT')
         .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`
     const athu1 = `${thlakna 
         .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
