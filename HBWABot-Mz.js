@@ -2680,7 +2680,7 @@ case 'ai': {
         .replace(/BetaBotz/g, 'HBWABot')
         .replace(/Lann/g, 'Herbert Suantak')
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
-        .replace(/ERLANRAHMAT/g, 'HBMods-OFC')
+        .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')
         .replace(/Indonesian/g, 'Mizo')}`;
     const source = 'auto'
     const target = 'lus'
@@ -2689,8 +2689,8 @@ case 'ai': {
     const siamthat = `${mizotranslation
     .replace(/ka siamtu|ka neitu/g, 'min siamtu')
     .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
+    .replace(/ERLANRAHMAT/g, 'HBMods')
     .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
-    .replace(/-OFC|-OFC-OFC/g, ' OFC')
     .replace(/ka rawn kal a ni/g, 'ka awm e')
     .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
     .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
@@ -2729,12 +2729,12 @@ case 'ai2': case 'gpt': {
         .replace(/BetaBotz/g, 'HBWABot')
         .replace(/Lann/g, 'Herbert Suantak')
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
-        .replace(/-OFC OFC|-OFC-OFC/g, '-OFC')
-        .replace(/ERLANRAHMAT/g, 'HBMods-OFC')
+        .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')
         .replace(/Indonesian/g, 'Mizo')}`;
     const source = 'auto'
     const target = 'en'
-    const athu = `${chutin}`
+    const athu = `${chutin
+         .replace(/ERLANRAHMAT/g, 'HBMods')}`
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu)
     await HBWABotMz.sendMessage(from, { text: mizotranslation }, { quoted: m })
     let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
