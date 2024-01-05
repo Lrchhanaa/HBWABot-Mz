@@ -2656,15 +2656,20 @@ case 'ai': {
     if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
     const limit1= await eco.balance(limitneihtu, khawlbawm)
     if (hmanzat > limit1.wallet) return await dailylimit();
-    await robotreact()
+    await robotreact() 
     const { openai } = require('betabotz-tools') 
     const source1 = 'auto'
     const target1 = 'en'
-    const athu1 = `${text 
+    const thlakna = `${text
+        .replace(/BetaBotz|BetaBotz-Ai|Betabotz ai|BetaBotz Ai|BetaBotz ai/g, '')
+        .replace(/Lann/g, '')
+        .replace(/Erlan Rahmat|Erlanrahmat|Erlan rahmat|Erlan|erlan/g, '')
+        .replace(/ERLAN|RAHMAT/g, '')
+        .replace(/Lalngaihawma|Lalngaihawma/g, 'Erlan Rahmat')
+        .replace(/HBMods|HBMods-OFC|HBMods OFC/g, 'ERLANRAHMAT')}`
+    const athu1 = `${thlakna 
         .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
         .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
-        .replace(/HBMods|HBMods-OFC|Hbmods|hbmods ofc|Hbmods Ofc|hbmods|HBMods OFC/g, 'ERLANRAHMAT')
-        .replace(/Lalngaihawma|Lalngaihawma/g, 'Erlan Rahmat')
         .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
     const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1)
     const heihi_ani = `${mizotranslation1}`
@@ -2701,11 +2706,16 @@ case 'ai2': case 'gpt': {
     const { openai } = require('betabotz-tools') 
     const source1 = 'auto'
     const target1 = 'en'
-    const athu1 = `${text 
+    const thlakna = `${text
+        .replace(/BetaBotz|BetaBotz-Ai|Betabotz ai|BetaBotz Ai|BetaBotz ai/g, '')
+        .replace(/Lann/g, '')
+        .replace(/Erlan Rahmat|Erlanrahmat|Erlan rahmat|Erlan|erlan/g, '')
+        .replace(/ERLAN|RAHMAT/g, '')
+        .replace(/Lalngaihawma|Lalngaihawma/g, 'Erlan Rahmat')
+        .replace(/HBMods|HBMods-OFC|HBMods OFC/g, 'ERLANRAHMAT')}`
+    const athu1 = `${thlakna 
         .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
         .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
-        .replace(/HBMods|HBMods-OFC|Hbmods|hbmods ofc|Hbmods Ofc|hbmods|HBMods OFC/g, 'ERLANRAHMAT')
-        .replace(/Lalngaihawma|Lalngaihawma/g, 'Erlan Rahmat')
         .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
     const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1)
     const heihi_ani = `${mizotranslation1}`;
