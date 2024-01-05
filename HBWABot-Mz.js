@@ -2665,8 +2665,10 @@ case 'ai': {
         .replace(/Lann/g, '')
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan rahmat|Erlan|erlan/g, '')
         .replace(/ERLAN|RAHMAT/g, '')
-        .replace(/Lalngaihawma|Lalngaihawma/g, 'Erlan Rahmat')
-        .replace(/HBMods|HBMods-OFC|HBMods OFC/g, 'ERLANRAHMAT')}`
+        .replace(/Lalngaihawma|lalngaihawma/g, 'Erlan Rahmat')
+        .replace(/HBMods/g, 'ERLANRAHMAT')
+        .replace(/HBMods OFC/g, 'ERLANRAHMAT'
+        .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`
     const athu1 = `${thlakna 
         .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
         .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
@@ -2711,8 +2713,10 @@ case 'ai2': case 'gpt': {
         .replace(/Lann/g, '')
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan rahmat|Erlan|erlan/g, '')
         .replace(/ERLAN|RAHMAT/g, '')
-        .replace(/Lalngaihawma|Lalngaihawma/g, 'Erlan Rahmat')
-        .replace(/HBMods|HBMods-OFC|HBMods OFC/g, 'ERLANRAHMAT')}`
+        .replace(/Lalngaihawma|lalngaihawma/g, 'Erlan Rahmat')
+        .replace(/HBMods/g, 'ERLANRAHMAT')
+        .replace(/HBMods OFC/g, 'ERLANRAHMAT'
+        .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`
     const athu1 = `${thlakna 
         .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
         .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
