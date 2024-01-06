@@ -5325,19 +5325,27 @@ dodoi('Error: Link dang rawn ti rawh')
 }
 break
 case "xnxxdl": {
-if (!isPrem) return replyprem(mess.premium)
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
-if (!text) return dodoi(`Xnxx video link rawn dah tel rawh`)
-if (!text.includes('xnxx.com')) return dodoi(`xnxx link rawn dah rawh`)
-const fg = require('api-dylux')
-let xn = await fg.xnxxdl(text)
-HBWABotMz.sendMessage(m.chat, { caption: `≡*XNXX DL
-▢ *⌚Duration:* ${xn.result.duration}
-▢ *🎞️Quality:* ${xn.result.quality}`, video: {url: xn.result.files.high} }, { quoted: m })
-
+  if (!isPrem) return replyprem(mess.premium);
+  if (!m.isGroup) return m.reply(mess.group);
+  if (!AntiNsfw) return dodoi(mess.nsfw);
+  if (!text) return dodoi(`xnxx link rawn dah rawh`);
+  if (!text.includes('xnxx.com')) return dodoi(`xnxx link rawn dah rawh`);
+  const fg = `https://tools.betabotz.eu.org/tools/xnxxdl?url=${encodeURIComponent(text)}`;
+  const videoInfo = {
+    duration: fg.result.duration.trim(),
+    quality: fg.result.quality.trim(),
+  };
+  HBWABotMz.sendMessage(m.chat, {
+caption: `≡*XNXX DL*
+▢ *⌚Duration:* ${videoInfo.duration}
+▢ *🎞️Quality:* ${videoInfo.quality}`,
+video: { url: fg.result.url },
+},
+{ quoted: m }
+  );
 }
-break
+break;
+
 case 'xnxxsearch': {
 if (!isPrem) return replyprem(mess.premium)
 if (!m.isGroup) return m.reply(mess.group)
