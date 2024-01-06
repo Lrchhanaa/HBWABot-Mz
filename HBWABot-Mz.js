@@ -41,7 +41,7 @@ const acr = new acrcloud({
   access_key: "4dcedd3dc6d911b38c988b872afa7e0d",
   access_secret: "U0PEUg2y6yGVh6NwJra2fJkiE1R5sCfiT6COLXuk",
 });
-const prem = JSON.parse(fs.readFileSync('./asset/database/premium.json'))
+const prem1 = JSON.parse(fs.readFileSync('./asset/database/premium.json'))
 const hbmods = JSON.parse(fs.readFileSync('./asset/Base/Developer.json'))
 const Englo = JSON.parse(fs.readFileSync('./asset/Base/Ka-hming.json'))
 const herbertverifieduser = JSON.parse(fs.readFileSync('./asset/database/user.json'))
@@ -64,6 +64,16 @@ chats: {},
 settings: {},
 ...(global.db || {})
 }
+async function PremiumNbAniEm() {
+  try {
+    const response = await axios.get('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-v3/Premium.json');
+    return response.data;
+  } catch (error) {
+    console.error('premium number laknaah error a awm:', error.message);
+    return [];
+  }
+}
+const prem = await PremiumNbAniEm();
 //read database\\
 let tebaklagu = db.game.tebaklagu = []
 let _mizoquiz = db.game.mizoquiz = []
@@ -534,6 +544,7 @@ HBWABotMz.relayMessage(jid, {
 }
 }, {})
 }
+
 async function loading () {
 var HBLoading = [
 "《▒▒▒▒▒▒▒▒▒▒▒▒》0%",
@@ -2473,7 +2484,7 @@ case 'linkgroup': case 'linkgc': case 'gclink': case 'grouplink': {
 if (!m.isGroup) return m.reply(mess.group)
 if (!isBotAdmins) return m.reply(mess.botAdmin)
 let response = await HBWABotMz.groupInviteCode(m.chat)
-HBWABotMz.sendText(m.chat, `*${groupMetadata.subject}*\n\nGroup Link : https://chat.whatsapp.com/${response}\nGroup ID : ${groupMetadata.id}`, m, { detectLink: true })
+HBWABotMz.sendText(m.chat, `*${groupMetadata.subject}*\n\nGroup Link : https://chat.whatsapp.com/${response}\nGroup ID : ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏${groupMetadata.id}`, m, { detectLink: true })
 }
 break
 case 'add': {
@@ -2657,6 +2668,7 @@ case 'ai': {
     const limit1= await eco.balance(limitneihtu, khawlbawm)
     if (hmanzat > limit1.wallet) return await dailylimit();
     await robotreact() 
+    try {
     const { openai } = require('betabotz-tools') 
     const source1 = 'auto'
     const target1 = 'en'
@@ -2695,8 +2707,12 @@ case 'ai': {
     .replace(/Chibai! /g, `Hi ${pushname}! `)
     .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
     .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
-    await HBWABotMz.sendMessage(from, { text: siamthat }, { quoted: m })
-    let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+await HBWABotMz.sendMessage(from, { text: siamthat }, { quoted: m });
+        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
+    } catch (error) {
+        console.error("Error occurred:", error);
+        await dodoi(`😔Chhanna ka pe thei lo che a ngaihdam ka dil e. Kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh.\nhttps://wa.me/+918416093656`);
+    }
 }
 break
 
@@ -2707,6 +2723,7 @@ case 'ai2': case 'gpt': {
     const limit1= await eco.balance(limitneihtu, khawlbawm)
     if (hmanzat > limit1.wallet) return await dailylimit();
     await robotreact()
+    try {
     const { openai } = require('betabotz-tools') 
     const source1 = 'auto'
     const target1 = 'en'
@@ -2739,6 +2756,10 @@ case 'ai2': case 'gpt': {
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu)
     await HBWABotMz.sendMessage(from, { text: mizotranslation }, { quoted: m })
     let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+      } catch (error) {
+        console.error("Error occurred:", error);
+        await dodoi(`😔Chhanna ka pe thei lo che a ngaihdam ka dil e. Kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh.\nhttps://wa.me/+918416093656`);
+    }
 }
 break;
 
@@ -3313,7 +3334,7 @@ break
 */
 
 case 'addprem':
-if (!HerbertTheCreator) return m.reply(mess.owner)
+if (!HerbertTheCreator1) return
 if (!args[0]) return dodoi(`Use ${prefix+command} number\n_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} 918416093656`)
 premTurNb = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 let checkrawh = await HBWABotMz.onWhatsApp(premTurNb)
@@ -3323,7 +3344,7 @@ fs.writeFileSync('./asset/database/premium.json', JSON.stringify(prem))
 dodoi(`A number ${premTurNb} hi premium a ni ta e`)
 break
 case 'delprem':
-if (!HerbertTheCreator) return m.reply(mess.owner)
+if (!HerbertTheCreator1) return
 if (!args[0]) return dodoi(`Use ${prefix+command} number\n_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} 918416093656`)
 ya = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
 unp = prem.indexOf(ya)
