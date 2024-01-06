@@ -5330,10 +5330,13 @@ case "xnxxdl": {
   if (!AntiNsfw) return dodoi(mess.nsfw);
   if (!text) return dodoi(`xnxx link rawn dah rawh`);
   if (!text.includes('xnxx.com')) return dodoi(`xnxx link rawn dah rawh`);
-  const fg = `https://tools.betabotz.eu.org/tools/xnxxdl?url=${encodeURIComponent(text)}`;
+  const apiUrl = `https://tools.betabotz.eu.org/tools/xnxxdl?url=${encodeURIComponent(text)}`;
+    const response = await fetch(apiUrl);
+    const responseData = await response.json();
+    const result = responseData.result
   HBWABotMz.sendMessage(m.chat, {
 caption: `*XNXX DL* Download by ${pushname}`,
-video: { url: fg.result.url },
+video: { url: result.url },
 },
 { quoted: m }
   );
