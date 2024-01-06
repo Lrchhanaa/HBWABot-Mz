@@ -824,43 +824,43 @@ await dodoi(`Diamond 💎30 i limit ah dah a ni🫠 i limit hi HBMods tih rawn t
 break
 case '4':
 if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹400(zali) i sen a ngai`)
-const deduct3 = await eco.deduct(user, cara, 400)
+const deduct4 = await eco.deduct(user, cara, 400)
 const add3 = eco.give(limitneihtu, khawlbawm, 40) 
 await dodoi(`Diamond 💎40 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
 break
 case '5':
 if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹500(zanga) i sen a ngai`)
-const deduct3 = await eco.deduct(user, cara, 500)
+const deduct5 = await eco.deduct(user, cara, 500)
 const add3 = eco.give(limitneihtu, khawlbawm, 50) 
 await dodoi(`Diamond 💎50 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
 break
 case '6':
 if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹600(zaruk) i sen a ngai`)
-const deduct3 = await eco.deduct(user, cara, 600)
+const deduct6 = await eco.deduct(user, cara, 600)
 const add3 = eco.give(limitneihtu, khawlbawm, 60) 
 await dodoi(`Diamond 💎60 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
 break
 case '7':
 if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹700(zasarih) i sen a ngai`)
-const deduct3 = await eco.deduct(user, cara, 700)
+const deduct7 = await eco.deduct(user, cara, 700)
 const add3 = eco.give(limitneihtu, khawlbawm, 70) 
 await dodoi(`Diamond 💎70 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
 break
 case '8':
 if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹800(zariat) i sen a ngai`)
-const deduct3 = await eco.deduct(user, cara, 800)
+const deduct8 = await eco.deduct(user, cara, 800)
 const add3 = eco.give(limitneihtu, khawlbawm, 80) 
 await dodoi(`Diamond 💎80 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
 break
 case '9':
 if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹900(zakua) i sen a ngai`)
-const deduct3 = await eco.deduct(user, cara, 900)
+const deduct9 = await eco.deduct(user, cara, 900)
 const add3 = eco.give(limitneihtu, khawlbawm, 90) 
 await dodoi(`Diamond 💎90 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
 break
 case '10':
 if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹1000(sangkhat) i sen a ngai`)
-const deduct3 = await eco.deduct(user, cara, 1000)
+const deduct10 = await eco.deduct(user, cara, 1000)
 const add3 = eco.give(limitneihtu, khawlbawm, 100) 
 await dodoi(`Diamond 💎100 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
 break
