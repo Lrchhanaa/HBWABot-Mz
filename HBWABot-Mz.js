@@ -5330,16 +5330,19 @@ case "xnxxdl": {
   if (!AntiNsfw) return dodoi(mess.nsfw);
   if (!text) return dodoi(`xnxx link rawn dah rawh`);
   if (!text.includes('xnxx.com')) return dodoi(`xnxx link rawn dah rawh`);
+  await loadingreact()
   const apiUrl = `https://tools.betabotz.eu.org/tools/xnxxdl?url=${encodeURIComponent(text)}`;
     const response = await fetch(apiUrl);
     const responseData = await response.json();
     const result = responseData.result
+    await uploadreact()
   HBWABotMz.sendMessage(m.chat, {
 caption: `*XNXX DL* Download by ${pushname}`,
 video: { url: result.url },
 },
 { quoted: m }
-  );
+  )
+  await finishreact()
 }
 break;
 
@@ -5385,17 +5388,17 @@ let cookie = ntah.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
 let $ = cheerio.load(ntah.data)
 let $form = $("form");
-let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
+let url = new URL($form.attr("action"), "https://www.whatsapp.com/").href
 let form = new URLSearchParams()
 form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
-form.append("country_selector", "+")
-form.append("phone_number", `+${katarget}`,)
+form.append("country_selector", "+91")
+form.append("phone_number", `${katarget}`,)
 form.append("email", "hbmods05@outlook.com" )
 form.append("email_confirm", "hbmods05@outlook.com" )
 form.append("platform", "ANDROID")
-form.append("your_message", `I don't know why my number was suddenly banned from using WhatsApp. I was just replying to my customer's message. Please unban my WhatsApp account: [+${katarget}]
+form.append("your_message", `I don't know why my number was suddenly banned from using WhatsApp. I was just replying to my customer's message. Please unban my WhatsApp account: [+91${katarget}]
 Thank You`)
 form.append("__user", "0")
 form.append("__a", "1")
@@ -5464,13 +5467,13 @@ let form = new URLSearchParams()
 form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
-form.append("country_selector", "+")
-form.append("phone_number", `+${katarget}`,)
+form.append("country_selector", "+91")
+form.append("phone_number", `${katarget}`,)
 form.append("email", "hbmods05@outlook.com" )
 form.append("email_confirm", "hbmods05@outlook.com" )
 form.append("platform", "ANDROID")
 form.append("your_message", `Dear WhatsApp, we ask for your immediate assistance
-[${katarget}]
+[+91${katarget}]
 I have sent several emails and reports to WhatsApp to submit an appeal so that my number is quickly removed from the blocked list. I really need it for personal purposes to communicate with my family. If I have committed a previous violation then I will use my number more carefully and better than before and I have now complied with what WhatsApp suggested, and I really hope that now my number can be used again. Thank You`)
 form.append("__user", "0")
 form.append("__a", "1")
@@ -5538,13 +5541,13 @@ let form = new URLSearchParams()
 form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
-form.append("country_selector", "+")
-form.append("phone_number", `+${katarget}`,)
+form.append("country_selector", "+91")
+form.append("phone_number", `${katarget}`,)
 form.append("email", "hbmods05@outlook.com" )
 form.append("email_confirm", "hbmods05@outlook.com" )
 form.append("platform", "ANDROID")
 form.append("your_message", `Hello WhatsApp
-Nowadays, some people have many effective ways to block user numbers and report them without any reason, in fact, I know the terms of service well and I followed them, but some hackers made a false report to me and my number was blocked, unblock the number ${katarget}`)
+Nowadays, some people have many effective ways to block user numbers and report them without any reason, in fact, I know the terms of service well and I followed them, but some hackers made a false report to me and my number was blocked, unblock the number +91${katarget}`)
 form.append("__user", "0")
 form.append("__a", "1")
 form.append("__csr", "")
@@ -5612,12 +5615,12 @@ let form = new URLSearchParams()
 form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
-form.append("country_selector", "+")
-form.append("phone_number", `+${katarget}`,)
+form.append("country_selector", "+91")
+form.append("phone_number", `${katarget}`,)
 form.append("email", "hbmods05@outlook.com" )
 form.append("email_confirm", "hbmods05@outlook.com" )
 form.append("platform", "ANDROID")
-form.append("your_message", `Good day whatsApp team. My whatApp account has been burned permanently, please i plead with you unblock it, i cannot use another number again. I don’t know why it is burned but my friends re suggesting its because i use GB whatsApp, which i didn’t know it was wrong. My number is [ ${katarget} ]. Please whatsApp team, help me unblock my account. please i cannot use a new number as my current number is connected to slot of important things like vacancies.
+form.append("your_message", `Good day whatsApp team. My whatApp account has been burned permanently, please i plead with you unblock it, i cannot use another number again. I don’t know why it is burned but my friends re suggesting its because i use GB whatsApp, which i didn’t know it was wrong. My number is [ +91${katarget} ]. Please whatsApp team, help me unblock my account. please i cannot use a new number as my current number is connected to slot of important things like vacancies.
 Thank you`)
 form.append("__user", "0")
 form.append("__a", "1")
@@ -5686,12 +5689,12 @@ let form = new URLSearchParams()
 form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
-form.append("country_selector", "+")
-form.append("phone_number", `+${katarget}`,)
+form.append("country_selector", "+91")
+form.append("phone_number", `${katarget}`,)
 form.append("email", "hbmods05@outlook.com" )
 form.append("email_confirm", "hbmods05@outlook.com" )
 form.append("platform", "ANDROID")
-form.append("your_message", `Hello WhatsApp, my number has been stolen by a hacker, please unlock it [${katarget}]`)
+form.append("your_message", `Hello WhatsApp, my number has been stolen by a hacker, please unlock it [+91${katarget}]`)
 form.append("__user", "0")
 form.append("__a", "1")
 form.append("__csr", "")
