@@ -802,7 +802,7 @@ const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
 const cara = "cara"
 let value = text.trim()
 let k = parseInt(value)
-const balance = await eco.balance(limitneihtu, khawlbawm) 
+const balance = await eco.balance(user, cara) 
 switch (value) {
 case '1':
 if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹100(za) i sen a ngai`)
