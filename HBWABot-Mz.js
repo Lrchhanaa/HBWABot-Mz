@@ -744,9 +744,9 @@ await dodoi(`Sir i check hian diamond _💎${balance.wallet}_ hei zawng hi a nei
 break 
 
 case 'may15': {
-if (!HerbertTheCreator1) return dodoi(`Hei chu creator chauh hman thei tura siam a ni`)
+if (!HerbertTheCreator1) return
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
-const daily = await eco.daily(limitneihtu, khawlbawm, 99999999);
+const daily = await eco.give(limitneihtu, khawlbawm, 99999999);
     if (daily.cd) return dodoi(`i claim tawh, chu vangin ${daily.cdL} a ral hunah i claim leh thei chauh ang`)
     dodoi(`Bot hman theihna tur 💎${daily.amount} i la chhuak e`)
 }
@@ -793,15 +793,78 @@ if (text == 'rules') return dodoi(`*Mlimit hi kan 💎 Diamond-te mi dang kan pe
 }
 break;
 
-case 'diamond': {
-if (!isPrem) return replyprem(mess.premium);
+case 'buydm': {
+HBWABotMz.sendMessage(from, { react: { text: "💲" , key: m.key }})
+if (!text) return dodoi(`💎Diamond Store💎\n\n1. ₹100 = 💎10\n\n2. ₹200 = 💎20\n\n3. ₹300 = 💎30\n\n4. ₹400 = 💎40\n\n5. ₹500 = 💎50\n\n6. ₹600 = 💎60\n\n7. ₹700 = 💎70\n\n8. ₹800 = 💎80\n\n9. ₹900 = 💎90\n\n10. ₹1000 = 💎10\n\n*Tiang hian hman tur a ni 
+*Entirnan:* ${prefix}buydm 5\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\nHriattur: command zoah khan diamond store a number ka pek zat khi hman zel tur a ni`)
+if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
 const cara = "cara"
-const k = 100
-const balance1= await eco.balance(limitneihtu, cara)
-if (k > balance1.wallet) return dodoi(`I wallet ah ₹500 tal i neih a ngai\nI bank a tangin ₹500 aia tlemlo withdraw ang che`);
-const give = await eco.give(limitneihtu, khawlbawm, 99);
-const deduct1 = await eco.deduct(limitneihtu, cara, 500);
-    dodoi(`₹500 in  💎99 zel i lei thei ang 😇`)
+let value = text.trim()
+let k = parseInt(value)
+const balance= await eco.give(limitneihtu, khawlbawm,) 
+switch (value) {
+case '1':
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹100(za) i sen a ngai`)
+const deduct1 = await eco.deduct(user, cara, 100)
+const add1 = eco.give(limitneihtu, khawlbawm, 10) 
+await dodoi(`Diamond 💎10 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+break
+case '2':
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹200(zahnih) i sen a ngai`)
+const deduct2 = await eco.deduct(user, cara, 200)
+const add2 = eco.give(limitneihtu, khawlbawm, 20) 
+await dodoi(`Diamond 💎20 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+break
+case '3':
+if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹300(zathum) i sen a ngai`)
+const deduct3 = await eco.deduct(user, cara, 300)
+const add3 = eco.give(limitneihtu, khawlbawm, 30) 
+await dodoi(`Diamond 💎30 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+break
+case '4':
+if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹400(zali) i sen a ngai`)
+const deduct3 = await eco.deduct(user, cara, 400)
+const add3 = eco.give(limitneihtu, khawlbawm, 40) 
+await dodoi(`Diamond 💎40 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+break
+case '5':
+if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹500(zanga) i sen a ngai`)
+const deduct3 = await eco.deduct(user, cara, 500)
+const add3 = eco.give(limitneihtu, khawlbawm, 50) 
+await dodoi(`Diamond 💎50 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+break
+case '6':
+if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹600(zaruk) i sen a ngai`)
+const deduct3 = await eco.deduct(user, cara, 600)
+const add3 = eco.give(limitneihtu, khawlbawm, 60) 
+await dodoi(`Diamond 💎60 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+break
+case '7':
+if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹700(zasarih) i sen a ngai`)
+const deduct3 = await eco.deduct(user, cara, 700)
+const add3 = eco.give(limitneihtu, khawlbawm, 70) 
+await dodoi(`Diamond 💎70 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+break
+case '8':
+if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹800(zariat) i sen a ngai`)
+const deduct3 = await eco.deduct(user, cara, 800)
+const add3 = eco.give(limitneihtu, khawlbawm, 80) 
+await dodoi(`Diamond 💎80 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+break
+case '9':
+if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹900(zakua) i sen a ngai`)
+const deduct3 = await eco.deduct(user, cara, 900)
+const add3 = eco.give(limitneihtu, khawlbawm, 90) 
+await dodoi(`Diamond 💎90 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+break
+case '10':
+if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹1000(sangkhat) i sen a ngai`)
+const deduct3 = await eco.deduct(user, cara, 1000)
+const add3 = eco.give(limitneihtu, khawlbawm, 100) 
+await dodoi(`Diamond 💎100 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+break
+}
 }
 break
 case 'owner': {
