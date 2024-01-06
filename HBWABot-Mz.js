@@ -64,16 +64,6 @@ chats: {},
 settings: {},
 ...(global.db || {})
 }
-async function PremiumNbAniEm() {
-  try {
-    const response = await axios.get('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-v3/Premium.json');
-    return response.data;
-  } catch (error) {
-    console.error('premium number laknaah error a awm:', error.message);
-    return [];
-  }
-}
-const prem = await PremiumNbAniEm();
 //read database\\
 let tebaklagu = db.game.tebaklagu = []
 let _mizoquiz = db.game.mizoquiz = []
@@ -123,7 +113,6 @@ const groupMembers = m.isGroup ? groupMetadata.participants : ''
 const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
 const isGroupAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
 const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
-const isPrem = prem.includes(m.sender)
 const isUser = herbertverifieduser.includes(sender)
 const banUser = await HBWABotMz.fetchBlocklist()
 const isBanned = banUser ? banUser.includes(m.sender) : false
@@ -622,6 +611,17 @@ result: Result,
 async function replyprem(teks) {
 m.reply(`He features hi premium member-te tan chauha siam a ni, premium Member nih i duh ve chuan a hnuaia number ka dah hian va dil rawh.\nhttps://wa.me/+918416093656`)
 }
+async function PremiumNbAniEm() {
+  try {
+    const response = await axios.get('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-v3/Premium.json');
+    return response.data;
+  } catch (error) {
+    console.error('premium number laknaah error a awm:', error.message);
+    return [];
+  }
+}
+const prem = await PremiumNbAniEm();
+const isPrem = prem.includes(m.sender)
 const limitneihtu = m.sender
 const khawlbawm = "diamond";
 const dailylimit = () => {
