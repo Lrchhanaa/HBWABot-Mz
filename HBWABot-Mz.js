@@ -613,7 +613,7 @@ m.reply(`He features hi premium member-te tan chauha siam a ni, premium Member n
 }
 async function PremiumNbAniEm() {
   try {
-    const response = await axios.get('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-v3/Premium.json');
+    const response = await axios.get('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/Premium.json');
     return response.data;
   } catch (error) {
     console.error('premium number laknaah error a awm:', error.message);
@@ -789,6 +789,17 @@ if (text == 'rules') return dodoi(`*Mlimit hi kan 💎 Diamond-te mi dang kan pe
 }
 break;
 
+case : 'diamond': {
+if (!isPrem) return replyprem(mess.premium);
+const cara = "cara"
+const k = 100
+const balance1= await eco.balance(limitneihtu, cara)
+if (k > balance1.wallet) return dodoi(`I wallet ah ₹500 tal i neih a ngai\nI bank a tangin ₹500 aia tlemlo withdraw ang che`);
+const give = await eco.give(limitneihtu, khawlbawm, 99);
+const deduct1 = await eco.deduct(limitneihtu, cara, 500);
+    dodoi(`₹500 in  💎99 zel i lei thei ang 😇`)
+}
+break
 case 'owner': {
 const mawla = await HBWABotMz.sendMessage(from, { 
 contacts: { 
@@ -3333,37 +3344,7 @@ await finishreact()
 break
 */
 
-case 'addprem':
-if (!HerbertTheCreator1) return
-if (!args[0]) return dodoi(`Use ${prefix+command} number\n_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} 918416093656`)
-premTurNb = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
-let checkrawh = await HBWABotMz.onWhatsApp(premTurNb)
-if (checkrawh.length == 0) return dodoi(`WhatsApp khawih te number chiah rawn dah rawh!!!`)
-prem.push(premTurNb)
-fs.writeFileSync('./asset/database/premium.json', JSON.stringify(prem))
-dodoi(`A number ${premTurNb} hi premium a ni ta e`)
-break
-case 'delprem':
-if (!HerbertTheCreator1) return
-if (!args[0]) return dodoi(`Use ${prefix+command} number\n_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} 918416093656`)
-ya = q.split("|")[0].replace(/[^0-9]/g, '')+`@s.whatsapp.net`
-unp = prem.indexOf(ya)
-prem.splice(unp, 1)
-fs.writeFileSync('./asset/database/premium.json', JSON.stringify(prem))
-dodoi(`A number ${ya} hi premium member a tang remove a ni!.`)
-break
-case 'addsticker':{
-if (!HerbertTheCreator) return m.reply(mess.owner)
-if (args.length < 1) return dodoi('Whats the sticker name?')
-if (StickerHerbert.includes(q)) return dodoi("A hming a awm tawh")
-let delb = await HBWABotMz.downloadAndSaveMediaMessage(quoted)
-StickerHerbert.push(q)
-await fsx.copy(delb, `./asset/sticker/${q}.webp`)
-fs.writeFileSync('./asset/database/herbertsticker.json', JSON.stringify(StickerHerbert))
-fs.unlinkSync(delb)
-dodoi(`Add a ni ta\nCheck i check duh chuan tiang hian type rawh ${prefix}liststicker`)
-}
-break
+
 case 'delsticker':{
 if (!HerbertTheCreator) return m.reply(mess.owner)
 if (args.length < 1) return dodoi('A sticker hming rawn dah rawh')
@@ -5328,8 +5309,8 @@ case "xnxxdl": {
   if (!isPrem) return replyprem(mess.premium);
   if (!m.isGroup) return m.reply(mess.group);
   if (!AntiNsfw) return dodoi(mess.nsfw);
-  if (!text) return dodoi(`xnxx link rawn dah rawh`);
-  if (!text.includes('xnxx.com')) return dodoi(`xnxx link rawn dah rawh`);
+  if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a xnxx video link nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`);
+  if (!text.includes('xnxx.com')) return dodoi(`xnxx link dik tak chauh rawn dah rawh`);
   await loadingreact()
   const apiUrl = `https://tools.betabotz.eu.org/tools/xnxxdl?url=${encodeURIComponent(text)}`;
     const response = await fetch(apiUrl);
