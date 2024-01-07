@@ -1360,7 +1360,6 @@ if (m.quoted?.sender && !m.mentionedJid.includes(m.quoted.sender)) m.mentionedJi
 while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
 const cara = "cara"
 const hmela = target
-const cara = "cara"
 const withdraw = await eco.withdraw(user, cara, value[0])
 if(withdraw.noten) return dodoi('Chutiang zat zat a bank ah pawisa a nei lo')
 const paihsakna = await eco.deduct(hmela, cara, value[0])
