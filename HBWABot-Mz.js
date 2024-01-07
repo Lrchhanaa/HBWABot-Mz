@@ -692,13 +692,15 @@ return isSurender || room.bodaih[index] ? `(${index + 1}) ${chhanna} ${room.boda
 }
 
 if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
-            kuis = true
-            achhanna = thlalakquiz[m.sender.split('@')[0]]
-            if (budy.toLowerCase() == achhanna) {
-                await HBWABotMz.sendMessage(m.chat, { text : `I chhak dik a ni!!👏🥳`}, {quoted: m})
-                delete thlalakquiz[m.sender.split('@')[0]]
-            } else dodoi('*A dik lo🧐!*')
-        }
+    kuis = true;
+    achhanna = thlalakquiz[m.sender.split('@')[0]];
+    if (budy.toLowerCase() == achhanna) {
+        await HBWABotMz.sendMessage(m.chat, { text: `I chhak dik a ni!!👏🥳` }, { quoted: m });
+        delete thlalakquiz[m.sender.split('@')[0]];
+    } else {
+        dodoi('*A dik lo🧐!*');
+    }
+}
 
 switch (command) {
 case 'mizoquiz': {
@@ -734,20 +736,23 @@ case 'mizoquiz': {
 }
 break;
 
+
 case 'picquiz': {
-if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0])) return dodoi(`Zawhna ila chhang zo lo 🤌`)
-let picquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Media/main/Zawhna/thlalakquiz.json')
-let result = picquiz[Math.floor(Math.random() * picquiz.length)]
-let englolo = await HBWABotMz.sendMessage(m.chat, {image: { url: `${result.url}`}, caption: `${result.zawhna}\n\n_🕑Minute 1 hun i nei_` }, {quoted: m})then(() => {
-thlalakquiz[m.sender.split('@')[0]] = result.achhanna.toLowerCase()
-})
-await sleep(60000)
-if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0])) {
-HBWABotMz.sendMessage(m.chat, { text : `Hun a tawp...\nA chhanna chu: *${thlalakquiz[m.sender.split('@')[0]]}* a ni\n\n`}, {quoted: englolo})
-delete thlalakquiz[m.sender.split('@')[0]]
+    if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0])) {
+        return dodoi(`Zawhna ila chhang zo lo 🤌`);
+    }
+    let picquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Media/main/Zawhna/thlalakquiz.json');
+    let result = picquiz[Math.floor(Math.random() * picquiz.length)];
+    let englolo = await HBWABotMz.sendMessage(m.chat, { image: { url: `${result.url}` }, caption: `${result.zawhna}\n\n_🕑Minute 1 hun i nei_` }, { quoted: m });
+    thlalakquiz[m.sender.split('@')[0]] = result.achhanna.toLowerCase();
+    await sleep(60000);
+    if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0])) {
+        HBWABotMz.sendMessage(m.chat, { text: `Hun a tawp...\nA chhanna chu: *${thlalakquiz[m.sender.split('@')[0]]}* a ni\n\n` }, { quoted: englolo });
+        delete thlalakquiz[m.sender.split('@')[0]];
+    }
 }
-}
-break
+break;
+
 
 case 'cdm': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
@@ -1873,6 +1878,7 @@ var HBLoadingmenu = [
 ┃𒆜│mizoquiz
 ┃𒆜│picquiz
 ┃𒆜│checkme
+┃𒆜│buydm
 ┃𒆜│spin
 ┃𒆜│transfer
 ┃𒆜│daily
@@ -2439,6 +2445,7 @@ var HBLoadingmenu = [
 ┃𒆜┌───┈
 ┃𒆜│mizoquiz
 ┃𒆜│picquiz
+┃𒆜│buydm
 ┃𒆜│checkme
 ┃𒆜│spin
 ┃𒆜│transfer
