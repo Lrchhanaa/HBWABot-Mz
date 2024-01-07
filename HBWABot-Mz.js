@@ -68,7 +68,7 @@ settings: {},
 let tebaklagu = db.game.tebaklagu = []
 let _mizoquiz = db.game.mizoquiz = []
 let _gkmizo = db.game.gkmizo = []
-let tebakgambar = db.game.tebakgambar = []
+let thlalakquiz = db.game.thlalakquiz = []
 let tebakkata = db.game.tebakkata = []
 let caklontong = db.game.lontong = []
 let caklontong_desk = db.game.lontong_desk = []
@@ -166,7 +166,7 @@ if (text.endsWith('--sync')) {
 evaled = await eval(
 `(async () => { ${text.trim.replace('--sync', '')} })`
 )
-m.reply(evaled)
+dodoi(evaled)
 }
 evaled = await eval(text)
 if (typeof evaled !== 'string') evaled = inspect(evaled)
@@ -308,13 +308,13 @@ let reg = /^(scissors|rock|paper)/i
 if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
 roof.pilih = reg.exec(m.text.toLowerCase())[0]
 roof.text = m.text
-m.reply(` ${m.text} i thlang e✓ ${!roof.pilih2 ? `\n\nI tumpui la nghak lawk ang` : ''}`)
+dodoi(` ${m.text} i thlang e✓ ${!roof.pilih2 ? `\n\nI tumpui la nghak lawk ang` : ''}`)
 if (!roof.pilih2) HBWABotMz.sendText(roof.p2, '_Lehlamin a thlang tawh a_\nTunah nang i thlan hun', 0)
 }
 if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
 roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
 roof.text2 = m.text
-m.reply(`${m.text} i thlang e✓ ${!roof.pilih ? `\n\nI tumpui la nghak lawk ang` : ''}`)
+dodoi(`${m.text} i thlang e✓ ${!roof.pilih ? `\n\nI tumpui la nghak lawk ang` : ''}`)
 if (!roof.pilih) HBWABotMz.sendText(roof.p, '_Lehlamin a thlang tawh a_\nTunah nang i thlan hun', 0)
 }
 let stage = roof.pilih
@@ -608,8 +608,8 @@ result: Result,
 });
 });
 }
-async function replyprem(teks) {
-m.reply(`He features hi premium member-te tan chauha siam a ni, premium Member nih i duh ve chuan a hnuaia number ka dah hian va dil rawh.\nhttps://wa.me/+918416093656`)
+async function replyprem() {
+dodoi(`He features hi premium member-te tan chauha siam a ni, premium Member nih i duh ve chuan a hnuaia number ka dah hian va dil rawh.\nhttps://wa.me/+918416093656`)
 }
 async function PremiumNbAniEm() {
   try {
@@ -691,6 +691,15 @@ return isSurender || room.bodaih[index] ? `(${index + 1}) ${chhanna} ${room.boda
     }
 }
 
+if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+            kuis = true
+            achhanna = thlalakquiz[m.sender.split('@')[0]]
+            if (budy.toLowerCase() == achhanna) {
+                await HBWABotMz.sendMessage(m.chat, { text : `I chhak dik a ni!!👏🥳`}, {quoted: m})
+                delete thlalakquiz[m.sender.split('@')[0]]
+            } else dodoi('*A dik lo🧐!*')
+        }
+
 switch (command) {
 case 'mizoquiz': {
     const userKey = m.sender.split('@')[0];
@@ -725,6 +734,20 @@ case 'mizoquiz': {
 }
 break;
 
+case 'picquiz': {
+if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0])) return dodoi(`Zawhna ila chhang zo lo 🤌`)
+let picquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Media/main/Zawhna/thlalakquiz.json')
+let result = picquiz[Math.floor(Math.random() * picquiz.length)]
+let englolo = await HBWABotMz.sendMessage(m.chat, {image: { url: `${result.url}`}, caption: `${result.zawhna}\n\n_🕑Minute 1 hun i nei_` }, {quoted: m})then(() => {
+thlalakquiz[m.sender.split('@')[0]] = result.achhanna.toLowerCase()
+})
+await sleep(60000)
+if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0])) {
+HBWABotMz.sendMessage(m.chat, { text : `Hun a tawp...\nA chhanna chu: *${thlalakquiz[m.sender.split('@')[0]]}* a ni\n\n`}, {quoted: englolo})
+delete thlalakquiz[m.sender.split('@')[0]]
+}
+}
+break
 
 case 'cdm': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
@@ -921,9 +944,9 @@ HBWABotMz.sendMessage(m.chat, { audio: audiobuffy, mimetype: 'audio/mp4', ptt: t
 }
 break 
 case 'nsfw': {
-if (!m.isGroup) return m.reply(mess.group)
-if (!isBotAdmins) return m.reply(mess.botAdmin)
-if (!isAdmins && !HerbertTheCreator) return m.reply(mess.admin)
+if (!m.isGroup) return dodoi(mess.group)
+if (!isBotAdmins) return dodoi(mess.botAdmin)
+if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
 if (args[0] === "on") {
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -953,7 +976,7 @@ break
 
 //game
 case 'suitpvp':case 'rps': case 'rockpaperscissors': case 'suit': {
-if (!m.isGroup) return m.reply(mess.group);
+if (!m.isGroup) return dodoi(mess.group);
 this.suit = this.suit ? this.suit : {}
 let poin = 10
 let poin_lose = 10
@@ -983,7 +1006,7 @@ delete this.suit[id]
 break 
 
 case 'ttc': case 'ttt': case 'tictactoe': {
-if (!m.isGroup) return m.reply(mess.group);
+if (!m.isGroup) return dodoi(mess.group);
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
             if (Object.values(this.game).find(room13 => room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender))) return dodoi(`game-ah i la awm reng a ni!!`)
@@ -1303,6 +1326,7 @@ dodoi(`📠 Transaction a ni e✓`)
 break 
 case 'cut':{
 if (!HerbertTheCreator1) return
+HBWABotMz.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 let value = text.trim().split(" ")
 if (value[0] === "") return
 const target =
@@ -1315,11 +1339,33 @@ const cara = "cara"
 const hmela = target
 const paihsakna = await eco.deduct(hmela, cara, value[0])
 const balance = await eco.balance(hmela, cara);
-await dodoi(`Sir a wallet-ah _₹${balance.wallet}_ hei zawng hi a la awm📄`);
+await dodoi(`🫡Sir, hei zawng hi a la bang : _₹${balance.wallet}_\nI la cut leh dawn em sir ?🙋‍♂️`);
 }
 break
-case 'wtc': {
+case 'cut2': {
+if (!HerbertTheCreator1) return
+HBWABotMz.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+let value = text.trim().split(" ")
+if (value[0] === "") return
+const target =
+m.quoted && m.mentionedJid.length === 0
+? m.quoted.sender
+: m.mentionedJid[0] || null;
+if (m.quoted?.sender && !m.mentionedJid.includes(m.quoted.sender)) m.mentionedJid.push(m.quoted.sender)
+while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
+const cara = "cara"
+const hmela = target
+const cara = "cara"
+const withdraw = await eco.withdraw(user, cara, value[0])
+if(withdraw.noten) return dodoi('Chutiang zat zat a bank ah pawisa a nei lo')
+const paihsakna = await eco.deduct(hmela, cara, value[0])
+const balance = await eco.balance(hmela, cara);
+await dodoi(`🫡Sir, hei zawng hi a la bang : _₹${balance.bank}_\nI la cut leh dawn em sir?🙋‍♂️`);
+}
+break
+case 'cwt': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+HBWABotMz.sendMessage(from, { react: { text: "🫡" , key: m.key }})
 if (!HerbertTheCreator1) return
 let value = text.trim().split(" ")
 if (value[0] === "") return
@@ -1332,13 +1378,31 @@ while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
 const hmeli = target
 const cara = "cara"
 const balance = await eco.balance(hmeli, cara);
-await dodoi(`Sir a wallet-ah _₹${balance.wallet}_ hei zawng hi a awm🤔`);
+await dodoi(`🫡Sir a wallet-ah hei zat hi a awm : _₹${balance.wallet}_ 🤔`);
+}
+break 
+case 'cb': {
+if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+HBWABotMz.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+if (!HerbertTheCreator1) return
+let value = text.trim().split(" ")
+if (value[0] === "") return
+const target =
+m.quoted && m.mentionedJid.length === 0
+? m.quoted.sender
+: m.mentionedJid[0] || null;
+if (m.quoted?.sender && !m.mentionedJid.includes(m.quoted.sender)) m.mentionedJid.push(m.quoted.sender)
+while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
+const hmeli = target
+const cara = "cara"
+const balance = await eco.balance(hmeli, cara);
+await dodoi(`🫡Sir a bank-ah hei zat hi a awm:  _₹${balance.bank}_ 🤔`);
 }
 break 
 case 'gamble':case 'lottery': { 
 HBWABotMz.sendMessage(from, { react: { text: "🤪" , key: m.key }})
 var texts = text.trim().split(" ")
-var opp = texts[1];// your value
+var opp = texts[1];
 var value = texts[0].toLowerCase()
 var gg = parseInt(value)
 const user = m.sender
@@ -1370,7 +1434,7 @@ dodoi(`*₹${texts[0]} i chan(loss) a ni*`)
 }
 }
 break
-case 'hmelchhe': case 'damrei': case 'dawih': case 'mawl': case 'a': case 'fing': case 'hrisel': case 'upa': case 'naupang': case 'hmeltha': case 'lulian': case 'zaktheilo': case 'zakzum': case 'nawi': case 'tawngthei': case 'mifel': case 'chawheh': case 'bumhmang': case 'lerh': case 'luck': case 'zei': {
+case 'hmelchhe': case 'damrei': case 'dawih': case 'mawl': case 'a': case 'fing': case 'hrisel': case 'upa': case 'naupang': case 'hmeltha': case 'lulian': case 'zaktheilo': case 'zakzum': case 'nawi': case 'tawngthei': case 'mifel': case 'chawheh': case 'bumhmang': case 'lerh': case 'luck': case 'zei': case 'hur': case 'dum': case 'ngo': case 'sual': case 'misual': {
 if (!m.isGroup) return
 const lonuirawh = await getBuffer(`https://i.imgur.com/VffnuHq.jpg`)
 let member = participants.map(u => u.id)
@@ -1429,13 +1493,13 @@ const buff = await getBuffer(userPfp)
 HBWABotMz.sendMessage(from, { image: buff, caption: profile, mentions: [bet]},{quoted:m})
 break
 case 'ping': case 'p': {
-var ping = ['84','68','74','99','129','130','150','280','320','380','380','163','163','84','64','74','999','827','266','979','768','562','626',',737','166']
+var ping = ['84','68','74','99','129','130','150','280','320','380','380','163','163','84','64','74','999','827','266','979','768','562','626','737','166']
 var pong = ping[Math.floor(Math.random() * ping.length)]
 HBWABotMz.sendMessage(from, {text: `_*Pong*_ ${pong} _*ms...*_`},{quoted:m})
 }
 break
 case 'check': {
-if (!m.isGroup) return m.reply(mess.group);
+if (!m.isGroup) return dodoi(mess.group);
 if (!m.mentionedJid[0]) return dodoi(`_Tu nge check i duh, I check duh chu tag rawh.._\nTiang hian : ${prefix}check @${owner}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
 neme = args.join(" ")
 const lonuirawh = await getBuffer(`https://i.imgur.com/VffnuHq.jpg`)
@@ -1490,7 +1554,7 @@ text: `*Bot InFo*
 *✑ Vawiin :* ${vawiinni2}
 *✑ Date :* ${kumtin}
 *✑ Dar :* ${darkarr}
-*✑ Version :* 5.0.0
+*✑ Version :* 5.0.1
 *✑ User :* ${ownernumber}
 *✑ Limit :* ${balance.wallet} 💎
 *✑ Runtime :* ${runtime(process.uptime())}
@@ -1665,6 +1729,8 @@ var HBLoadingmenu = [
 
 *╭═══❏ Group Menu ❏*
 ┃𒆜┌───┈
+┃𒆜│/group open
+┃𒆜│/group clos
 ┃𒆜│grouplink 
 ┃𒆜│add 
 ┃𒆜│kick 
@@ -1804,6 +1870,8 @@ var HBLoadingmenu = [
 
 *╭═══❏ Other Menu ❏*
 ┃𒆜┌───┈
+┃𒆜│mizoquiz
+┃𒆜│picquiz
 ┃𒆜│checkme
 ┃𒆜│spin
 ┃𒆜│transfer
@@ -1836,10 +1904,13 @@ var HBLoadingmenu = [
 ┃𒆜│sticker 
 ┃𒆜│ebinary 
 ┃𒆜│dbinary  
+┃𒆜│translate
 ┃𒆜│ping
 ┃𒆜│setdpbot
 ┃𒆜│setdpbot2
-┃𒆜│runtime 
+┃𒆜│runtime
+┃𒆜│swm
+┃𒆜│sc
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
@@ -1930,6 +2001,8 @@ var HBLoadingmenu = [
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
 *╭═══❏ Group Menu ❏*
 ┃𒆜┌───┈
+┃𒆜│/group close 
+┃𒆜│/group open
 ┃𒆜│grouplink 
 ┃𒆜│add 
 ┃𒆜│kick 
@@ -2364,6 +2437,8 @@ var HBLoadingmenu = [
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
 *╭═══❏ Other Menu ❏*
 ┃𒆜┌───┈
+┃𒆜│mizoquiz
+┃𒆜│picquiz
 ┃𒆜│checkme
 ┃𒆜│spin
 ┃𒆜│transfer
@@ -2397,9 +2472,12 @@ var HBLoadingmenu = [
 ┃𒆜│ebinary 
 ┃𒆜│dbinary
 ┃𒆜│ping
+┃𒆜│translate
 ┃𒆜│setdpbot
 ┃𒆜│setdpbot2
-┃𒆜│runtime 
+┃𒆜│runtime
+┃𒆜│swm
+┃𒆜│sc
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
@@ -2521,7 +2599,7 @@ sourceUrl: `https://herbert70.blogspot.com/search/label/FouadMods?m=1`
 }
 break
 case 'join': {
-if (!HerbertTheCreator && !HerbertTheCreator1) return m.reply(mess.owner);
+if (!HerbertTheCreator && !HerbertTheCreator1) return dodoi(mess.owner);
 if (!text) return dodoi(`Tiang hian tih tur: ${prefix+command} linkgc`)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return dodoi('Link a dik lo!')
 let result = args[0].split('https://chat.whatsapp.com/')[1]
@@ -2530,14 +2608,14 @@ await dodoi(`Ka join tawh e....✓`)
 }
 break
 case 'block': case 'ban': {
-if (!HerbertTheCreator) return m.reply(mess.owner)
+if (!HerbertTheCreator && !HerbertTheCreator1) return dodoi(mess.owner)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await HBWABotMz.updateBlockStatus(users, 'block')
 await dodoi(`Block a ni e....✓`)
 }
 break
 case 'unblock': {
-if (!HerbertTheCreator && !HerbertTheCreator1) return m.reply(mess.owner);
+if (!HerbertTheCreator && !HerbertTheCreator1) return dodoi(mess.owner);
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await HBWABotMz.updateBlockStatus(users, 'unblock')
 await dodoi(`Zove....✓`)
@@ -2558,15 +2636,15 @@ let { chat, fromMe, id, isBaileys } = m.quoted
 }
 break
 case 'linkgroup': case 'linkgc': case 'gclink': case 'grouplink': {
-if (!m.isGroup) return m.reply(mess.group)
-if (!isBotAdmins) return m.reply(mess.botAdmin)
+if (!m.isGroup) return dodoi(mess.group)
+if (!isBotAdmins) return dodoi(mess.botAdmin)
 let response = await HBWABotMz.groupInviteCode(m.chat)
 HBWABotMz.sendText(m.chat, `*${groupMetadata.subject}*\n\nGroup Link : https://chat.whatsapp.com/${response}\nGroup ID : ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏${groupMetadata.id}`, m, { detectLink: true })
 }
 break
 case 'add': {
-if (!m.isGroup) return m.reply(mess.group)
-if (!isBotAdmins) return m.reply(mess.botAdmin)
+if (!m.isGroup) return dodoi(mess.group)
+if (!isBotAdmins) return dodoi(mess.botAdmin)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -2576,18 +2654,18 @@ await dodoi(`Done`)
 }
 break
 case 'kick': {
-if (!m.isGroup) return m.reply(mess.group)
-if (!isAdmins) return m.reply(mess.admin)
-if (!isBotAdmins) return m.reply(mess.botAdmin)
+if (!m.isGroup) return dodoi(mess.group)
+if (!isAdmins) return dodoi(mess.admin)
+if (!isBotAdmins) return dodoi(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await HBWABotMz.groupParticipantsUpdate(m.chat, [users], 'remove')
 await dodoi(`He group a tang hian remove a ni....✓`)
 }
 break
 case 'promote': {
-if (!m.isGroup) return m.reply(mess.group)
-if (!isBotAdmins) return m.reply(mess.botAdmin)
-if (!isAdmins && !HerbertTheCreator) return m.reply(mess.admin)
+if (!m.isGroup) return dodoi(mess.group)
+if (!isBotAdmins) return dodoi(mess.botAdmin)
+if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -2597,19 +2675,19 @@ await dodoi(`Zove....✓`)
 }
 break
 case 'demote': {
-if (!m.isGroup) return m.reply(mess.group)
-if (!isBotAdmins) return m.reply(mess.botAdmin)
-if (!isAdmins && !HerbertTheCreator) return m.reply(mess.admin)
-if (!isBotAdmins) return m.reply(mess.botAdmin)
+if (!m.isGroup) return dodoi(mess.group)
+if (!isBotAdmins) return dodoi(mess.botAdmin)
+if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
+if (!isBotAdmins) return dodoi(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await HBWABotMz.groupParticipantsUpdate(m.chat, [users], 'demote')
 await dodoi(`Zove....✓`)
 }
 break
 case 'hidetag': {
-if (!m.isGroup) return m.reply(mess.group)
-if (!isAdmins && !HerbertTheCreator) return m.reply(mess.admin)
-if (!isBotAdmins) return m.reply(mess.botAdmin)
+if (!m.isGroup) return dodoi(mess.group)
+if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
+if (!isBotAdmins) return dodoi(mess.botAdmin)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -2963,7 +3041,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 break
 /*
 case 'yts': case 'hla':{
-if (!text) return m.reply(`\n*Entirnan* : ${prefix + command} Hringnun Vanlalsailova`)
+if (!text) return dodoi(`\n*Entirnan* : ${prefix + command} Hringnun Vanlalsailova`)
 let ytslagu = require("youtube-yts")
 let lagusearch = await ytslagu(text)
 listSerch = []
@@ -3412,7 +3490,7 @@ break
 
 
 case 'delsticker':{
-if (!HerbertTheCreator) return m.reply(mess.owner)
+if (!HerbertTheCreator && !HerbertTheCreator1) return dodoi(mess.owner)
 if (args.length < 1) return dodoi('A sticker hming rawn dah rawh')
 if (!StickerHerbert.includes(q)) return dodoi("Tiang hming hi database ah a awm lo tlat")
 let wanu = StickerHerbert.indexOf(q)
@@ -3432,7 +3510,7 @@ dodoi(teks)
 }
 break
 case 'addvn':{
-if (!HerbertTheCreator) return m.reply(mess.owner)
+if (!HerbertTheCreator && !HerbertTheCreator1) return dodoi(mess.owner)
 if (args.length < 1) return dodoi('Audio hming rawn dah rawh')
 if (VoiceNoteHerbert.includes(q)) return dodoi("a hming a awm tawh!..")
 let delb = await HBWABotMz.downloadAndSaveMediaMessage(quoted)
@@ -3444,7 +3522,7 @@ dodoi(`Audio ah dah a ni e\nTiang hian type la i en thei ang ${prefix}listvn`)
 }
 break
 case 'delvn':{
-if (!HerbertTheCreator) return m.reply(mess.owner)
+if (!HerbertTheCreator && !HerbertTheCreator1) return dodoi(mess.owner)
 if (args.length < 1) return dodoi('Enter the vn name')
 if (!VoiceNoteHerbert.includes(q)) return dodoi("Database ah chu tiang hming chu a awm lo")
 let wanu = VoiceNoteHerbert.indexOf(q)
@@ -3475,8 +3553,8 @@ case '/group': case '#group': {
 if (!m.isGroup) return
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
-if (!isAdmins && !HerbertTheCreator) return m.reply(mess.admin)
-if (!isBotAdmins) return m.reply(mess.BotAdmin)
+if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
+if (!isBotAdmins) return dodoi(mess.BotAdmin)
 if (!q) return dodoi(`Group info i edit duh chuan option ang khuan ti ang che\n\n*Options : close & open*\nclose chu admin te chauh tawng theia dah na\nopen chu partisipants te tawng ve theia dahna \nEntirnan tiang hian i ti ang : ${command} close`)
 if (args[0] == 'close') {
 HBWABotMz.groupSettingUpdate(from, 'announcement')
@@ -3693,7 +3771,7 @@ await finishreact()
 }
 break
 case 'togif': {
-if (!quoted) return dodoi('Reply video')
+if (!quoted) return dodoi('Sticker che thei reply rawh')
 if (!/webp/.test(mime)) return dodoi(`Sticker reply rawh tiang hian: *${prefix + command}*`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -3751,7 +3829,7 @@ await HBWABotMz.sendMessage(from, { image: medi, caption:"\n*©HBWABot*"}, { quo
 }
 break
 case 'dare': { 
-if (!m.isGroup) return m.reply(mess.group)
+if (!m.isGroup) return dodoi(mess.group)
 var truthordare = await getBuffer(`https://i.imgur.com/hnH7qf0.jpeg`)
 const dare = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Media/main/Games/dare.json')
 const herbertdare = dare[Math.floor(Math.random() * dare.length)]
@@ -3774,7 +3852,7 @@ sourceUrl: `https://www.youtube.com/@HBMods_Channel`
 break
 
 case 'truth': { 
-if (!m.isGroup) return m.reply(mess.group)
+if (!m.isGroup) return dodoi(mess.group)
 var truthordare = await getBuffer(`https://i.imgur.com/hnH7qf0.jpeg`)
 const truth = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Media/main/Games/truth.json')
 const herberttruth = truth[Math.floor(Math.random() * truth.length)]
@@ -3820,7 +3898,7 @@ await loadingreact()
 }
 break 
 case 'swm': case 'steal': case 'stickerwm': case 'take':{
-if (!isPrem) return replyprem(mess.premium)
+if (!isPrem) return await replyprem
 if (!args.join(" ")) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a i duh duh word nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -4471,8 +4549,8 @@ await finishreact()
 }
 break
 case 'description' : case 'gpdesc': case 'desc': {
-if (!m.isGroup) return m.reply(mess.group)
-if (!isBotAdmins) return m.reply(mess.botAdmin)
+if (!m.isGroup) return dodoi(mess.group)
+if (!isBotAdmins) return dodoi(mess.botAdmin)
 let metadata = await HBWABotMz.groupMetadata(m.chat)
 HBWABotMz.sendMessage(from, { text : `*${metadata.subject}*\n\n*Group Description :*\n${metadata.desc}`},{ quoted: m})
 }
@@ -4491,10 +4569,9 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
 case 'hentaivid2': {
-if (!m.isGroup) return m.reply(mess.group)
-
-if (!AntiNsfw) return replygherbert(mess.nsfw)
- 
+if (!m.isGroup) return dodoi(mess.group)
+if (!isPrem) return await replyprem
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo') 
 sbe = await hentaivid()
 cejd = sbe[Math.floor(Math.random(), sbe.length)]
 HBWABotMz.sendMessage(m.chat, { video: { url: cejd.video_1 }, 
@@ -4509,9 +4586,9 @@ caption: `⭔ Title : ${cejd.title}
 }
 break
 case 'hentaivid': case 'hentaivideo': {
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
- 
+if (!m.isGroup) return dodoi(mess.group)
+if (!isPrem) return await replyprem
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const { hentai } = require('./lib/scraper.js')
 anu = await hentai()
 result912 = anu[Math.floor(Math.random(), anu.length)]
@@ -4520,46 +4597,46 @@ HBWABotMz.sendMessage(m.chat, { video: { url: result912.video_1 }, caption: `㋛
 }
 break
 case 'trap' :
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  waifudd = await axios.get(`https://waifu.pics/api/nsfw/${command}`) 
 HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url:waifudd.data.url } }, { quoted: m })
 break
 case 'hentai-neko' :
 case 'hneko' :
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 waifudd = await axios.get(`https://waifu.pics/api/nsfw/neko`)
 HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url:waifudd.data.url } }, { quoted: m })
 break
 case 'hentai-waifu' :
 case 'nwaifu' :
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`) 
 HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url:waifudd.data.url } }, { quoted: m })
 
 break
 case 'gasm':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
  waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
 HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url:waifudd.data.url } }, { quoted: m })
 
 break
 case 'animespank':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
  waifudd = await axios.get(`https://nekos.life/api/v2/img/spank`) 
 await HBWABotMz.sendMessage(m.chat, { caption:"\n*©HBWABot*", image: {url:waifudd.data.url} },{ quoted:m })
 
 break
 case 'ahegao':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/ahegao.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4567,8 +4644,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'ass':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/ass.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4576,8 +4653,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'bdsm':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/bdsm.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4585,8 +4662,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'blowjob':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/blowjob.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4594,8 +4671,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'cuckold':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/cuckold.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4603,8 +4680,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'cum':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/cum.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4612,8 +4689,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'eba':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/eba.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4621,8 +4698,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'ero':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/ero.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4630,8 +4707,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'femdom':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/femdom.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4639,8 +4716,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'foot':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/foot.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4648,8 +4725,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'gangbang':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/gangbang.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4657,8 +4734,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'glasses':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/glasses.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4666,8 +4743,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'hentai':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/hentai.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4675,8 +4752,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'jahy':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/jahy.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4684,8 +4761,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'manga':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/manga.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4693,8 +4770,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'masturbation':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/masturbation.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4702,8 +4779,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'neko-hentai':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/neko.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4711,8 +4788,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'neko-hentai2':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/neko2.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4720,8 +4797,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'nsfwloli':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/nsfwloli.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4729,8 +4806,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'orgy':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/orgy.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4738,8 +4815,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'panties':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/panties.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4747,8 +4824,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'pussy':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/pussy.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4756,8 +4833,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'tentacles':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/tentacles.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4765,8 +4842,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'thighs':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/thighs.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4774,8 +4851,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'yuri':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/yuri.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4783,8 +4860,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'zettai':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/zettai.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
@@ -4792,8 +4869,8 @@ HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herberty
 
 break
 case 'gifblowjob':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 let assss = await axios.get ("https://api.waifu.pics/nsfw/blowjob")
 var bobuff = await fetchBuffer(assss.data.url)
 var bogif = await buffergif(bobuff)
@@ -4801,8 +4878,8 @@ await HBWABotMz.sendMessage(m.chat,{video:bogif, gifPlayback:true },{quoted:m}).
 })
 break
 case 'gifhentai':
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/gifs.json'))
 var herbertyresultx = pickRandom(ahegaonsfw)
 await HBWABotMz.sendMessage(m.chat,{video:herbertyresultx, gifPlayback:true },{quoted:m}).catch(err => {
@@ -4835,7 +4912,7 @@ dodoi(e)
 }
  break
 case 'git': case 'gitclone':{
-if (!args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix}${command} https://github.com/Hello/asset`)
+if (!args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix}${command} https://github.com/HBMods-OFC/HBWABot-Mz`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 if (!isUrl(args[0]) && !args[0].includes('github.com')) return dodoi(`link a dik lo!!`)
@@ -5100,9 +5177,9 @@ await finishreact()
 }
 break 
 case 'setgrdp': {
-  if (!m.isGroup) return m.reply(mess.group);
-  if (!isAdmins) return m.reply(mess.admin);
-  if (!isBotAdmins) return m.reply(mess.botAdmin);
+  if (!m.isGroup) return dodoi(mess.group);
+  if (!isAdmins) return dodoi(mess.admin);
+  if (!isBotAdmins) return dodoi(mess.botAdmin);
   if (!quoted) return dodoi(`Send emaw reply in a caption ah tiang hian rawn dah rawh: ${prefix + command}`);
   if (!/image/.test(mime)) return dodoi(`Send emaw reply in a caption ah tiang hian rawn dah rawh : ${prefix + command}`);
   if (/webp/.test(mime)) return dodoi(`Send emaw reply in a caption sh tiang hian rawn dah rawh : ${prefix + command}`);
@@ -5163,7 +5240,7 @@ await HBWABotMz.query({
 break;
 
 case 'setdpbot': case 'setbotdp': {
-if (!HerbertTheCreator) return m.reply(mess.owner)
+if (!HerbertTheCreator) return dodoi(mess.owner)
 if (!quoted) return dodoi(`Send emaw reply in a caption ah tiang hian rawn dah rawh: ${prefix + command}`)
 if (!/image/.test(mime)) return dodoi(`Send emaw reply in a caption ah tiang hian rawn dah rawh : ${prefix + command}`)
 if (/webp/.test(mime)) return dodoi(`Send emaw reply in a caption sh tiang hian rawn dah rawh : ${prefix + command}`)
@@ -5337,8 +5414,8 @@ Welsh = cy `
 )
 } break
 case 'myip': {
-if (!HerbertTheCreator) return m.reply(mess.owner)
-if (m.isGroup) return m.reply(mess.private)
+if (!HerbertTheCreator) return dodoi(mess.owner)
+if (m.isGroup) return dodoi(mess.private)
 var http = require('http')
 http.get({
 'host': 'api.ipify.org',
@@ -5372,9 +5449,9 @@ dodoi('Error: Link dang rawn ti rawh')
 }
 break
 case "xnxxdl": {
-  if (!isPrem) return replyprem(mess.premium);
-  if (!m.isGroup) return m.reply(mess.group);
-  if (!AntiNsfw) return dodoi(mess.nsfw);
+  if (!isPrem) return await replyprem;
+  if (!m.isGroup) return dodoi(mess.group);
+  if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo');
   if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a xnxx video link nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`);
   if (!text.includes('xnxx.com')) return dodoi(`xnxx link dik tak chauh rawn dah rawh`);
   await loadingreact()
@@ -5394,9 +5471,9 @@ video: { url: result.url },
 break;
 
 case 'xnxxsearch': {
-if (!isPrem) return replyprem(mess.premium)
-if (!m.isGroup) return m.reply(mess.group)
-if (!AntiNsfw) return dodoi(mess.nsfw)
+if (!isPrem) return await replyprem
+if (!m.isGroup) return dodoi(mess.group)
+if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 if (!text) return dodoi(`A title rawn dah rawh!..`)
@@ -5419,7 +5496,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
  case 'unbanned': {
-if (!isPrem) return replyprem(mess.premium)
+if (!isPrem) return await replyprem
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5493,7 +5570,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv2': {
-if (!isPrem) return replyprem(mess.premium)
+if (!isPrem) return await replyprem
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5568,7 +5645,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv3': {
-if (!isPrem) return replyprem(mess.premium)
+if (!isPrem) return await replyprem
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5641,7 +5718,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv4': {
-if (!isPrem) return replyprem(mess.premium)
+if (!isPrem) return await replyprem
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5715,7 +5792,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv5': {
-if (!isPrem) return replyprem(mess.premium)
+if (!isPrem) return await replyprem
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5791,32 +5868,32 @@ break
 default:
 
 if (budy.startsWith('<')) {
-if (!HerbertTheCreator) return
+if (!HerbertTheCreator && !HerbertTheCreator1) return
 try {
-return m.reply(JSON.stringify(eval(`${args.join(' ')}`),null,'\t'))
+return dodoi(JSON.stringify(eval(`${args.join(' ')}`),null,'\t'))
 } catch (e) {
-m.reply(e)
+dodoi(e)
 }
 }
 
 if (budy.startsWith('vv')) {
-if (!HerbertTheCreator) return
+if (!HerbertTheCreator && !HerbertTheCreator1) return
 try {
 let evaled = await eval(budy.slice(2))
 if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
-await m.reply(evaled)
+await dodoi(evaled)
 } catch (err) {
-m.reply(String(err))
+dodoi(String(err))
 }
 }
 
 if (budy.startsWith('uu')){
-if (!HerbertTheCreator) return
+if (!HerbertTheCreator && !HerbertTheCreator1) return
 qur = budy.slice(2)
 exec(qur, (err, stdout) => {
-if (err) return m.reply(`${err}`)
+if (err) return dodoi(`${err}`)
 if (stdout) {
-m.reply(stdout)
+dodoi(stdout)
 }
 })
 }
