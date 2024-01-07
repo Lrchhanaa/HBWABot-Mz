@@ -5356,7 +5356,7 @@ const source1 = 'auto';
 const target1 = `${code}`
 const athu1 = `${word}`;
 const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1);
-  await HBWABotMz.SendMedia(from, { text: mizotranslation1 }, { quoted: m });
+  await HBWABotMz.sendMessage(from, { text: mizotranslation1 }, { quoted: m });
 }
 break
 case '/codelang': {
