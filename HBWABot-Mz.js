@@ -219,50 +219,6 @@ fs.writeFileSync('./asset/database/user.json', JSON.stringify(herbertverifieduse
 }
 
 HBWABotMz.sendPresenceUpdate('available', from)
-//zawhna
-this.quiz = this.quiz || {};
-let zawhna = Object.values(this.quiz).find(z => z.id && z.status && z.p === m.sender);
-
-if (zawhna) {
-  if (m.isGroup && zawhna.status == 'wait') {
-    const questionMessage = `*\n${selectedQuestion.question}*\n\n` +
-      `A. ${selectedQuestion.options[0]}\n` +
-      `B. ${selectedQuestion.options[1]}\n` +
-      `C. ${selectedQuestion.options[2]}\n` +
-      `D. ${selectedQuestion.options[3]}\n\n` +
-      "Heng option-te hi (A, B, C, or D) thlang rawh rawh";
-
-    if (!zawhna.maktak) HBWABotMz.sendText(m.chat, questionMessage, m);
-    setTimeout(() => {
-      const userAnswer = answer.toUpperCase();
-      if (["A", "B", "C", "D"].includes(userAnswer)) {
-        const correctAnswer = selectedQuestion.answer.toUpperCase();
-
-        zawhna.waktu_milih = setTimeout(() => {
-          if (!zawhna.maktak) dodoi(`Second 15 chhunga i thlan hman loh avangin tih tawp a ni`);
-          delete this.quiz[zawhna.id];
-          return !0;
-        }, zawhna.timeout);
-      }
-
-      let jwb = m.sender == zawhna.p;
-      let reg = /^(A|B|C|D)/i;
-
-      if (jwb && reg.test(m.text)) {
-        zawhna.maktak = reg.exec(m.text.toUpperCase())[0];
-        zawhna.text = m.text;
-        dodoi(` ${m.text} i thlang e✓`);
-      }
-
-      if (zawhna.maktak) {
-        clearTimeout(zawhna.waktu_milih);
-        HBWABotMz.sendText(m.chat, `_*RPS Results*_ @${zawhna.p.split`@`[0]} (${zawhna.text})`);
-        delete this.quiz[zawhna.id];
-      }
-    });
-  }
-} 
-//a tawp
 
  //Suit RPS
 this.suit = this.suit ? this.suit : {}
@@ -684,7 +640,8 @@ return isSurender || room.bodaih[index] ? `(${index + 1}) ${chhanna} ${room.boda
     if (isWin) {
         dodoi(`🤩Zawhna i chhan thei vek a vangin Diamond ${room.chhanna.length}0 💎 i dawng e💎🥳`);
     } else if (isSurender) {
-        dodoi('Tinge le aw ka ti🤔 tiang mai mai han hriat loh');
+        dodoi('I in surrender avangin 💎50 cut a ni, tinge le aw ka ti🤔 tiang mai mai han hriat loh');
+        await eco.deduct(limitneihtu, khawlbawm, 50)
     }
     if (isWin || isSurender) {
         delete _mizoquiz[m.sender.split('@')[0]];
@@ -2615,6 +2572,7 @@ await dodoi(`Ka join tawh e....✓`)
 }
 break
 case 'block': case 'ban': {
+if (!m.isGroup) return dodoi(mess.group)
 if (!HerbertTheCreator && !HerbertTheCreator1) return dodoi(mess.owner)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await HBWABotMz.updateBlockStatus(users, 'block')
@@ -2622,6 +2580,7 @@ await dodoi(`Block a ni e....✓`)
 }
 break
 case 'unblock': {
+if (!m.isGroup) return dodoi(mess.group)
 if (!HerbertTheCreator && !HerbertTheCreator1) return dodoi(mess.owner);
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await HBWABotMz.updateBlockStatus(users, 'unblock')
@@ -2672,7 +2631,7 @@ break
 case 'promote': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
-if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
+if (!isAdmins && !HerbertTheCreator1) return dodoi(mess.admin)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -2684,7 +2643,7 @@ break
 case 'demote': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
-if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
+if (!isAdmins && !HerbertTheCreator1) return dodoi(mess.admin)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
 let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 await HBWABotMz.groupParticipantsUpdate(m.chat, [users], 'demote')
@@ -2693,7 +2652,7 @@ await dodoi(`Zove....✓`)
 break
 case 'hidetag': {
 if (!m.isGroup) return dodoi(mess.group)
-if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
+if (!isAdmins && !HerbertTheCreator1) return dodoi(mess.admin)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -2935,11 +2894,12 @@ case 'openai': {
   const target = 'en';
   const athu = `${q}`;
   const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
-  const prompt = `Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
+  const prompt = `[ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
 *1. Blog:* https://herbert70.blogspot.com and 
 *2. Github:* https://github.com/HBMods-OFC
-*3. Instagram:* https://instagram.com/herbert_suantak2 `;
-  const apiUrl1 = `https://api.betabotz.org/api/search/openai-logic?text=${mizotranslation}&logic=${encodeURIComponent(prompt)}&apikey=SjWOkprk`;
+*3. Instagram:* https://instagram.com/herbert_suantak2 ] 
+[ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. You can use /sticker to create stickers, /image to generate images, and /ytmp3 and /ytmp4 to download youtube videos ] `;
+  const apiUrl1 = `https://api.betabotz.eu.org/api/search/openai-logic?text=${mizotranslation}&logic=${encodeURIComponent(prompt)}&apikey=YybHI6GZ`;
   const apiUrl2 = `https://vihangayt.me/tools/chatgptv4?q=${mizotranslation}`;
   try {
     const response1 = await fetch(apiUrl1);
@@ -5043,7 +5003,7 @@ const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
 const kanfa = args[0] //Hei hi kan fa tur kha a nia 🌚
-const nunui2 = await fetchJson(`https://tools.betabotz.org/tools/tiktokdl?url=${encodeURIComponent(kanfa)}`) //chuan hei hi a tawpa a sen vet vet hi, kan fa i pai tihna
+const nunui2 = await fetchJson(`https://tools.betabotz.eu.org/tools/tiktokdl?url=${encodeURIComponent(kanfa)}`) //chuan hei hi a tawpa a sen vet vet hi, kan fa i pai tihna
 const herbert2 = nunui2.result // chuan he tah hian kei mah a tang i rai taa
 const englo2 = herbert2.data // kei ma a tanga ka fa kha an zei tawh dawn che ni, ti chuan ka fa chu
 await uploadreact()
@@ -5082,7 +5042,7 @@ case 'pinterestvid': {
 if (hmanzat > limit1.wallet) return await dailylimit()
   await loadingreact();
   const kanfa = args[0];
-  const nunui2 = await fetchJson(`https://tools.betabotz.org/tools/pinterestdl?url=${encodeURIComponent(kanfa)}`);
+  const nunui2 = await fetchJson(`https://tools.betabotz.eu.org/tools/pinterestdl?url=${encodeURIComponent(kanfa)}`);
   const herbert2 = nunui2.result;
   const mp4Url = herbert2.medias.find(media => media.extension === 'mp4')?.url;
   if (mp4Url) {
@@ -5106,7 +5066,7 @@ case 'threadsvid': {
 if (hmanzat > limit1.wallet) return await dailylimit()
   await loadingreact();
   const kanfa = args[0];
-  const nunui2 = await fetchJson(`https://tools.betabotz.org/tools/threadsdl?url=${encodeURIComponent(kanfa)}`);
+  const nunui2 = await fetchJson(`https://tools.betabotz.eu.org/tools/threadsdl?url=${encodeURIComponent(kanfa)}`);
   const herbert2 = nunui2.result;
   const videoUrls = herbert2.video_urls;
   const downloadUrl = videoUrls && videoUrls.length > 0 ? videoUrls[0].download_url : null;
@@ -5131,7 +5091,7 @@ case 'twittervid': {
 if (hmanzat > limit1.wallet) return await dailylimit()
   await loadingreact();
   const kanfa = args[0];
-  const nunui2 = await fetchJson(`https://tools.betabotz.org/tools/twitterdl?url=${encodeURIComponent(kanfa)}`);
+  const nunui2 = await fetchJson(`https://tools.betabotz.eu.org/tools/twitterdl?url=${encodeURIComponent(kanfa)}`);
   const herbert2 = nunui2.result;
   const videoUrls = herbert2.mediaURLs;  
   if (videoUrls && videoUrls.length > 0) {
@@ -5346,7 +5306,7 @@ break
 
 case 'translate': {
 if (!q || !q.includes("|")) {
-return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} en | Vawiin enge i tih dawn\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏Word splt hmaa language code ang hi en i duh chuan /codelang tiin type rawh!!`)
+return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} en | Vawiin enge i tih dawn\n\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏Word splt hmaa language code ang hi en i duh chuan /codelang tiin type rawh!!`)
 }
 HBWABotMz.sendMessage(from, { react: { text: "🈯" , key: m.key }})
 var code = q.split(' |')[0]
