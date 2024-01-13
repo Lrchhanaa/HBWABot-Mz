@@ -2837,8 +2837,66 @@ await HBWABotMz.sendMessage(from, { text: siamthat }, { quoted: m });
 }
 break
 
-
 //betabotz ChatBot
+case 'ai2': case 'gpt': {
+    if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
+    const limit1= await eco.balance(limitneihtu, khawlbawm)
+    if (hmanzat > limit1.wallet) return await dailylimit();
+    await robotreact() 
+    try {
+    const { openai } = require('betabotz-tools') 
+    const source1 = 'auto'
+    const target1 = 'en'
+    const thlakna = `${text
+        .replace(/BetaBotz|BetaBotz-Ai|Betabotz ai|BetaBotz Ai|BetaBotz ai/g, '')
+        .replace(/Lann/g, '')
+        .replace(/Erlan Rahmat|Erlanrahmat|Erlan rahmat|Erlan|erlan/g, '')
+        .replace(/ERLAN|RAHMAT/g, '')
+        .replace(/Lalngaihawma|lalngaihawma/g, 'Erlan Rahmat')
+        .replace(/HBMods/g, 'ERLANRAHMAT')
+        .replace(/HBMods OFC/g, 'ERLANRAHMAT')
+        .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`
+    const athu1 = `${thlakna 
+        .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
+        .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
+        .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
+    const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1)
+    const heihi_ani = `${mizotranslation1}`
+    const heihian = await openai(`${heihi_ani}`)
+    const chutin = `${heihian.result
+        .replace(/BetaBotz/g, 'HBWABot')
+        .replace(/Lann/g, 'Herbert Suantak')
+        .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
+        .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')
+        .replace(/Indonesian/g, 'Mizo')}`;
+    const detect1 = `https://vihangayt.me/tools/langdetect?q=${text}`
+    const detect2 = await fetch(detect1);
+    const detect3 = await detect2.json();
+    const detect4 = detect3.data
+    const detect5 = detect4.lang
+    const source = `${detect5}`
+    const target = 'lus'
+    const athu = `${chutin}`
+    const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu)
+    const siamthat = `${mizotranslation
+    .replace(/ka siamtu|ka neitu/g, 'min siamtu')
+    .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
+    .replace(/ERLANRAHMAT/g, 'HBMods')
+    .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
+    .replace(/ka rawn kal a ni/g, 'ka awm e')
+    .replace(/Chibai! /g, `Hi ${pushname}! `)
+    .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
+    .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
+await HBWABotMz.sendMessage(from, { text: siamthat }, { quoted: m });
+        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
+    } catch (error) {
+        console.error("Error occurred:", error);
+        await dodoi(`😔Chhanna ka pe thei lo che a ngaihdam ka dil e. Kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh.\nhttps://wa.me/+918416093656`);
+    }
+}
+break
+
+/* betabotz ChatBot
 case 'ai2': case 'gpt': {
     if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`)
     const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -2888,7 +2946,7 @@ case 'ai2': case 'gpt': {
     }
 }
 break;
-
+*/
 
 case 'openai': {
   if (!q) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
