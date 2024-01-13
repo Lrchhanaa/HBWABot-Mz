@@ -2844,8 +2844,13 @@ case 'ai2': case 'gpt': {
     if (hmanzat > limit1.wallet) return await dailylimit();
     await robotreact() 
     try {
+    const detect1 = `https://vihangayt.me/tools/langdetect?q=${text}`
+    const detect2 = await fetch(detect1);
+    const detect3 = await detect2.json();
+    const detect4 = detect3.data
+    const detect5 = detect4.lang
     const { openai } = require('betabotz-tools') 
-    const source1 = 'auto'
+    const source1 = `${detect5}`
     const target1 = 'en'
     const thlakna = `${text
         .replace(/BetaBotz|BetaBotz-Ai|Betabotz ai|BetaBotz Ai|BetaBotz ai/g, '')
@@ -2874,8 +2879,8 @@ case 'ai2': case 'gpt': {
     const detect3 = await detect2.json();
     const detect4 = detect3.data
     const detect5 = detect4.lang
-    const source = `${detect5}`
-    const target = 'lus'
+    const source = `auto`
+    const target = `${detect5}`
     const athu = `${chutin}`
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu)
     const siamthat = `${mizotranslation
