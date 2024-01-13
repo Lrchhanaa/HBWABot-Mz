@@ -2874,11 +2874,6 @@ case 'ai2': case 'gpt': {
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
         .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')
         .replace(/Indonesian/g, 'Mizo')}`;
-    const detect1 = `https://vihangayt.me/tools/langdetect?q=${text}`
-    const detect2 = await fetch(detect1);
-    const detect3 = await detect2.json();
-    const detect4 = detect3.data
-    const detect5 = detect4.lang
     const source = `auto`
     const target = `${detect5}`
     const athu = `${chutin}`
