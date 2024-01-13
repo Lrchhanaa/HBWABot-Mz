@@ -2870,8 +2870,13 @@ case 'ai2': case 'gpt': {
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
         .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')
         .replace(/Indonesian/g, 'Mizo')}`;
+    const detect1 = `https://vihangayt.me/tools/langdetect?q=${text}`
+    const detect2 = await fetch(detect1);
+    const detect3 = await detect2.json();
+    const detect4 = detect3.data
+    const detect5 = detect4.lang
     const source = 'auto'
-    const target = 'en'
+    const target = `${detect5}`
     const athu = `${chutin
          .replace(/ERLANRAHMAT/g, 'HBMods')}`
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu)
@@ -2912,22 +2917,7 @@ case 'openai': {
       const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1);
       const me = m.sender;
       await HBWABotMz.sendMessage(m.chat, { text: mizotranslation1, mentions: [me] }, { quoted: m });
-    } else {
-      const response2 = await fetch(apiUrl2);
-      const responseData2 = await response2.json();
-      if (response2.status === 200 && responseData2 && responseData2.status === true && responseData2.data) {
-        const message2 = responseData2.data;
-        const source2 = 'auto';
-        const target2 = 'lus';
-        const athu2 = `${message2}`;
-        const mizotranslation2 = await mizo_tawnga_translate_na.translate(source2, target2, athu2);
-        const me2 = m.sender;
-        await HBWABotMz.sendMessage(m.chat, { text: mizotranslation2, mentions: [me2] }, { quoted: m });
-        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-      } else {
-        dodoi("😔Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656");
-      }
-    }
+    } 
   } catch (error) {
     console.error(error);
     dodoi("😔Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656");
