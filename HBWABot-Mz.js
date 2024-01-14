@@ -2623,7 +2623,7 @@ break
 case 'gpid':{
 if (!m.isGroup) return dodoi(mess.group)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
-await HBWABotMz.sendText(from, `*${groupMetadata.subject}*\n\n*Group ID:* ${groupMetadata.id}`
+await HBWABotMz.sendText(from, `*${groupMetadata.subject}*\n\n*Group ID:* ${groupMetadata.id}`, m, { detectLink: true })
 }
 break
 case 'add': {
