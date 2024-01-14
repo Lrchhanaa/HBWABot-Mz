@@ -588,7 +588,7 @@ async function PremiumGcAniEm() {
 const prem = await PremiumNbAniEm();
 const isPrem = prem.includes(m.sender)
 const gpprem = await PremiumGcAniEm();
-const isBanChat = m.isGroup ? gpprem.includes(from) : false
+const isBanChat = m.isGroup ? gpprem.includes(from)
 const Dmdftc = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/Diamond.json')
 let Dmdftc2 = await fetch(Dmdftc);
 let Dmdresult = await Dmdftc2.json();
