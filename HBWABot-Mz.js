@@ -869,7 +869,7 @@ const mawla = await HBWABotMz.sendMessage(from, {
 contacts: { 
 displayName: `${list.length} Contact`, 
 contacts: list }, mentions: [sender] }, { quoted: m })
-HBWABotMz.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Hei aw ka owner hmelthapa chu😇`, mentions: [sender]}, { quoted: mawla })
+HBWABotMz.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Hei hei ka owner leh min siamtu number a ni😇`, mentions: [sender]}, { quoted: mawla })
 }
 break
 case 'hi': case 'hii': case 'hiii': case 'helo': case 'hello': case 'hlo': case 'sir': case 'kapu': case 'hy': case 'hey': { 
@@ -921,6 +921,7 @@ break
 case 'nsfw': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
+if (!HerbertTheCreator && !isPrem) return await replyprem
 if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
 if (args[0] === "on") {
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -1527,7 +1528,6 @@ HBWABotMz.sendMessage(from, {
 text: `*Bot InFo*
 *✑ Vawiin :* ${vawiinni2}
 *✑ Date :* ${kumtin}
-*✑ Dar :* ${darkarr}
 *✑ Version :* 5.0.1
 *✑ User :* ${ownernumber}
 *✑ Limit :* ${balance.wallet} 💎
@@ -1599,6 +1599,19 @@ var HBLoadingmenu = [
 ┃𒆜│ai2 [English Language]
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛
+
+*╭═══❏ Owner Menu ❏*
+┃𒆜┌───┈
+┃𒆜│setdpbot
+┃𒆜│setdpbot2
+┃𒆜│addvn
+┃𒆜│statusaudio
+┃𒆜│statusvideo
+┃𒆜│statusimage
+┃𒆜│statustext
+┃𒆜└───────────┈ 
+╰══════════════𖡛
+
 *╭═══❏ Download Menu ❏*
 ┃𒆜┌───┈
 ┃𒆜│play 
@@ -1881,8 +1894,6 @@ var HBLoadingmenu = [
 ┃𒆜│dbinary  
 ┃𒆜│translate
 ┃𒆜│ping
-┃𒆜│setdpbot
-┃𒆜│setdpbot2
 ┃𒆜│runtime
 ┃𒆜│swm
 ┃𒆜│sc
@@ -2449,8 +2460,6 @@ var HBLoadingmenu = [
 ┃𒆜│dbinary
 ┃𒆜│ping
 ┃𒆜│translate
-┃𒆜│setdpbot
-┃𒆜│setdpbot2
 ┃𒆜│runtime
 ┃𒆜│swm
 ┃𒆜│sc
@@ -2474,6 +2483,113 @@ await HBWABotMz.relayMessage(m.chat, {
 }
 break
 
+case 'ownermenu': { 
+const balance = await eco.balance(limitneihtu, khawlbawm);
+var HBLoadingmenu = [
+`《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
+`《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
+`《█████▒▒▒▒▒▒▒▒▒▒》30%`,
+`《████████▒▒▒▒▒▒▒》50%`,
+`《███████████▒▒▒▒》80%`,
+`《███████████████》100%`,
+`
+╭══════════════
+┃ *Owner Menu*
+┃ *✑ limit :* ${balance.wallet} 💎
+╰══════════════
+͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
+*╭═══❏ Owner Menu ❏*
+┃𒆜┌───┈
+┃𒆜│setdpbot
+┃𒆜│setdpbot2
+┃𒆜│addvn
+┃𒆜│statusaudio
+┃𒆜│statusvideo
+┃𒆜│statusimage
+┃𒆜│statustext
+┃𒆜└───────────┈ 
+╰══════════════𖡛`]
+const { key } = await HBWABotMz.sendMessage(m.chat, {
+      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
+    }, {quoted: m})
+for (let i = 0; i < HBLoadingmenu.length; i++) {
+await HBWABotMz.relayMessage(m.chat, {
+        protocolMessage: {
+          key,
+          type: 14,
+          editedMessage: {
+           imageMessage: { caption: HBLoadingmenu[i] }
+          }
+        }
+      }, {})
+ }
+}
+break
+
+case 'statustext': 
+case 'upswtext': {
+if (!HerbertTheCreator) return dodoi(mess.owner);
+if (!q) return dodoi('Words rawn dah tel tawh')
+await HBWABotMz.sendMessage('status@broadcast', { text: q }, { backgroundColor: '#000000', font: 3, statusJidList: Object.keys(global.db.users) })
+dodoi(`A in upload zo a✓... i check thei ang`)
+}
+break
+case 'statusvideo':
+case 'upswvideo': {
+if (!HerbertTheCreator) return dodoi(mess.owner);
+if (/video/.test(mime)) {
+var StatusVid = await HBWABotMz.downloadAndSaveMediaMessage(quoted)
+await HBWABotMz.sendMessage('status@broadcast', {
+   video: {
+url: StatusVid
+   },
+   caption: q ? q : ''
+}, { statusJidList: Object.keys(global.db.users) })
+await dodoi(`A in upload zo a✓... i check thei ang`)
+} else {
+dodoi('Video reply rawh')
+}
+}
+break
+case 'statusimage':
+case 'upswimage': {
+ if (!HerbertTheCreator) return dodoi(mess.owner);
+if (/image/.test(mime)) {
+var StatusImg = await HBWABotMz.downloadAndSaveMediaMessage(quoted)
+await HBWABotMz.sendMessage('status@broadcast', {
+   image: {
+url: StatusImg
+   },
+   caption: q ? q : ''
+}, { statusJidList: Object.keys(global.db.users)})
+await dodoi(`A in upload zo a✓... i check thei ang`)
+} else {
+dodoi('Thlalak reply rawh')
+}
+}
+break
+case 'statusaudio':
+case 'upswaudio': {
+  if (!HerbertTheCreator) return dodoi(mess.owner);
+if (/audio/.test(mime)) {
+var StatusAud = await HBWABotMz.downloadAndSaveMediaMessage(quoted)
+await HBWABotMz.sendMessage('status@broadcast', {
+   audio: {
+url: StatusAud
+   },
+   mimetype: 'audio/mp4',
+   ptt: true
+}, {
+   backgroundColor: '#000000',
+   statusJidList: Object.keys(global.db.users)
+})
+await dodoi(`A in upload zo a✓... i check thei ang`)
+ } else {
+dodoi('Audio reply rawh!')
+ }
+}
+break
 case 'gb': case 'gbwhatsapp': {
 var hbmodspng = await getBuffer(`https://i.imgur.com/i5s0rnL.png`)
 HBWABotMz.sendMessage(from, { 
@@ -2724,6 +2840,7 @@ for (let i = 0; i < dbinaryloading.length; i++) {await HBWABotMz.sendMessage(fro
 }
 break
 case 'remini': {
+if (!HerbertTheCreator && !isPrem) return await replyprem
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -2739,6 +2856,7 @@ await finishreact()
 }
 break
 case 'toanime': case 'tocartoon': {
+if (!HerbertTheCreator && !isPrem) return await replyprem
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -2755,11 +2873,11 @@ await finishreact()
 }
 break
 case 'removebg': case 'bgremove': {
+if (!HerbertTheCreator && !isPrem) return await replyprem
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit();
-
 await loadingreact()
 const { removebg } = require('betabotz-tools')
 let downloadrawh = await quoted.download()
@@ -2771,6 +2889,7 @@ await finishreact()
 }
 break
 case 'remini2': case 'hd': {
+if (!HerbertTheCreator && !isPrem) return await replyprem
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -2787,6 +2906,7 @@ await finishreact()
 break
 
 case 'tozombie': {
+if (!HerbertTheCreator && !isPrem) return await replyprem
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3007,10 +3127,10 @@ case 'gimage': {
                 await loadingreact()
                 let gis = require('g-i-s')
                 gis(text, async (error, result) => {
-                    n = result
-                    images = n[Math.floor(Math.random() * n.length)].url
-                    HBWABotMz.sendMessage(m.chat, { image: { url: images}, caption: `*-------「 GIMAGE SEARCH 」-------*\n🤠 *Query* : ${text}\n🔗 *Media Url* : ${images}`}, { quoted: m })
-                    
+  n = result
+  images = n[Math.floor(Math.random() * n.length)].url
+  HBWABotMz.sendMessage(m.chat, { image: { url: images}, caption: `*-------「 GIMAGE SEARCH 」-------*\n🤠 *Query* : ${text}\n🔗 *Media Url* : ${images}`}, { quoted: m })
+  
                 })
             }
             case 'gimage': {
@@ -3522,26 +3642,6 @@ break
 */
 
 
-case 'delsticker':{
-if (!HerbertTheCreator && !HerbertTheCreator1) return dodoi(mess.owner)
-if (args.length < 1) return dodoi('A sticker hming rawn dah rawh')
-if (!StickerHerbert.includes(q)) return dodoi("Tiang hming hi database ah a awm lo tlat")
-let wanu = StickerHerbert.indexOf(q)
-StickerHerbert.splice(wanu, 1)
-fs.writeFileSync('./asset/database/herbertsticker.json', JSON.stringify(StickerHerbert))
-fs.unlinkSync(`./asset/sticker/${q}.webp`)
-dodoi(`Delete a ni tawh e ${q}`)
-}
-break
-case 'liststicker':{
-let teks = '┌──⭓「 *Sticker List* 」\n┃\n'
-for (let x of StickerHerbert) {
-teks += `┃⭔ ${x}\n`
-}
-teks += `┃\n└────────────⭓\n\n*A vaiin : ${StickerHerbert.length}*`
-dodoi(teks)
-}
-break
 case 'addvn':{
 if (!HerbertTheCreator && !HerbertTheCreator1) return dodoi(mess.owner)
 if (args.length < 1) return dodoi('Audio hming rawn dah rawh')
@@ -3575,7 +3675,7 @@ dodoi(teks)
 }
 break 
 case 'left': {
-if (!HerbertTheCreator|!HerbertTheCreator1) return
+if (!HerbertTheCreator && !HerbertTheCreator1) return
 if (text == 'rawh') {
 await dodoi ('Awle boss 🫡')
 await HBWABotMz.groupLeave(m.chat)
@@ -3673,6 +3773,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, 60)
 }
 
 case 'shazam2': {
+if (!HerbertTheCreator && !isPrem) return await replyprem
 let q = m.quoted ? m.quoted : m;
 if (!q) {return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, a hla/music hming ka rawn zawn sak ang che....`);
   }
@@ -3714,6 +3815,7 @@ contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply":
   break;
 }
 case 'shazam3': {
+if (!HerbertTheCreator && !isPrem) return await replyprem
 let q = m.quoted ? m.quoted : m;
 if (!q) {return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, a hla/music hming ka rawn zawn sak ang che....`);
   }
@@ -3931,7 +4033,7 @@ await loadingreact()
 }
 break 
 case 'swm': case 'steal': case 'stickerwm': case 'take':{
-if (!isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem
 if (!args.join(" ")) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a i duh duh word nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -4603,7 +4705,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 break
 case 'hentaivid2': {
 if (!m.isGroup) return dodoi(mess.group)
-if (!isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo') 
 sbe = await hentaivid()
 cejd = sbe[Math.floor(Math.random(), sbe.length)]
@@ -4620,7 +4722,7 @@ caption: `⭔ Title : ${cejd.title}
 break
 case 'hentaivid': case 'hentaivideo': {
 if (!m.isGroup) return dodoi(mess.group)
-if (!isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const { hentai } = require('./lib/scraper.js')
 anu = await hentai()
@@ -5481,7 +5583,7 @@ dodoi('Error: Link dang rawn ti rawh')
 }
 break
 case "xnxxdl": {
-  if (!isPrem) return await replyprem;
+  if (!HerbertTheCreator && !isPrem) return await replyprem;
   if (!m.isGroup) return dodoi(mess.group);
   if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo');
   if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a xnxx video link nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`);
@@ -5503,7 +5605,7 @@ video: { url: result.url },
 break;
 
 case 'xnxxsearch': {
-if (!isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem
 if (!m.isGroup) return dodoi(mess.group)
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -5528,7 +5630,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
  case 'unbanned': {
-if (!isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5602,7 +5704,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv2': {
-if (!isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5677,7 +5779,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv3': {
-if (!isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5750,7 +5852,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv4': {
-if (!isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5824,7 +5926,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv5': {
-if (!isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
