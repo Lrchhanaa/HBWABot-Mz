@@ -3122,6 +3122,12 @@ break;
 
 case 'bincc': {
 if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!q) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} 440344xxxxxxxx`);
+const BinCC = `${text}`;
+    if (BinCC.length !== 16) {
+        return dodoi(`I number rawn dah hi digit 16 chiah chiah a ni tur a ni a, digit 16 a tlin loh chuan x hmangin tlin tir rawh, 
+*⟨Entirnan:* ${prefix + command} 440344xxxxxxxx `);
+    }
 const namso = require('namso-cc-gen');
 const genarate = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/BinCC.json')
 let genarate2 = await fetch(genarate);
@@ -3129,11 +3135,11 @@ let genarate3 = await genarate2.json();
 const generatebin = genarate3.genbin
 const bincard = namso.gen({
  ShowCCV: true,
- CCV: "Rnd",
+ CCV: "",
  ShowExpDate: true,
  ShowBank: false,
- Month: "Rnd",
- Year: "Rnd",
+ Month: "",
+ Year: "",
  Quantity: "10",
  Bin: `${text}`,
  Format: "PIPE"
