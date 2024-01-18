@@ -3122,21 +3122,27 @@ break;
 
 case 'bincc': {
 if (!HerbertTheCreator && !isPrem) return await replyprem
+const namso = require('namso-cc-gen');
 const genarate = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/BinCC.json')
 let genarate2 = await fetch(genarate);
 let genarate3 = await genarate2.json();
 const generatebin = genarate3.genbin
-const gen = `https://vihangayt.me/tools/bingen?query=${generatebin}`
-const gen2 = await fetch(gen);
-const gen3 = await gen2.json();
-const gen4 = gen3.data
-const genbin = gen4[Math.floor(Math.random() * gen4.length)]
+const bincard = namso.gen({
+ ShowCCV: true,
+ CCV: "Rnd",
+ ShowExpDate: true,
+ ShowBank: false,
+ Month: "Rnd",
+ Year: "Rnd",
+ Quantity: "10",
+ Bin: `${text}`,
+ Format: "PIPE"
+})
 HBWABotMz.sendMessage(from, { image: {url: `https://telegra.ph/file/b4449174062301e751133.jpg`}, caption:`
 *#Heroku Bin CC#${genarate3.bininfo}*
 
-*Card :* ${genbin.CVV}
-*Exp :* ${genbin.ExpirationDate}
-*CVV :* ${genbin.CardNumber}
+*Card :* 
+${bincard}
 
 *First Name :* Herbert
 *Last Name :* Suantak
