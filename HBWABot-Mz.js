@@ -752,8 +752,7 @@ const daily = await eco.give(limitneihtu, khawlbawm, 99999999);
 break
 
 case 'Incontrol05': {
-if (!HerbertTheCreator1 && !DuhSakBik) return 
-if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+if (!DuhSakBik) return 
 const daily = await eco.give(limitneihtu, khawlbawm, dawnzat3);
     if (daily.cd) return dodoi(`i claim tawh, chu vangin ${daily.cdL} a ral hunah i claim leh thei chauh ang`)
     dodoi(`Bot hman theihna tur 💎${daily.amount} i la chhuak e`)
