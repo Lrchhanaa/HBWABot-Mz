@@ -576,9 +576,9 @@ async function PremiumNbAniEm() {
     return [];
   }
 }
-async function PremiumGcAniEm() {
+async function DuhSak() {
   try {
-    const response = await axios.get('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/PremiumGc.json');
+    const response = await axios.get('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/DuhSakBik.json');
     return response.data;
   } catch (error) {
     console.error('premium number laknaah error a awm:', error.message);
@@ -587,14 +587,15 @@ async function PremiumGcAniEm() {
 }
 const prem = await PremiumNbAniEm();
 const isPrem = prem.includes(m.sender)
-const gpprem = await PremiumGcAniEm();
-const isBanChat = gpprem.includes(m.sender);
+const duhsak1 = await DuhSak();
+const DuhSakBik = duhsak1.includes(m.sender);
 const Dmdftc = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/Diamond.json')
 let Dmdftc2 = await fetch(Dmdftc);
 let Dmdresult = await Dmdftc2.json();
 const hmanzat = Dmdresult.hmanzat
 const dawnzat = Dmdresult.dawnzat
 const dawnzat2 = Dmdresult.dawnzat2
+const dawnzat3 = Dmdresult.lulian
 const limitneihtu = m.sender
 const khawlbawm = "diamond";
 const dailylimit = () => {
@@ -745,6 +746,15 @@ case 'may15': {
 if (!HerbertTheCreator1) return
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 const daily = await eco.give(limitneihtu, khawlbawm, 99999999);
+    if (daily.cd) return dodoi(`i claim tawh, chu vangin ${daily.cdL} a ral hunah i claim leh thei chauh ang`)
+    dodoi(`Bot hman theihna tur 💎${daily.amount} i la chhuak e`)
+}
+break
+
+case 'Incontrol05': {
+if (!HerbertTheCreator1 && !DuhSakBik) return 
+if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
+const daily = await eco.give(limitneihtu, khawlbawm, dawnzat3);
     if (daily.cd) return dodoi(`i claim tawh, chu vangin ${daily.cdL} a ral hunah i claim leh thei chauh ang`)
     dodoi(`Bot hman theihna tur 💎${daily.amount} i la chhuak e`)
 }
@@ -3119,15 +3129,14 @@ case 'openai': {
   }
 }
 break;
-
-case 'bincc': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
-if (!q) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} 440344xxxxxxxx`);
+/*if (!q) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} 440344xxxxxxxx`);
 const BinCC = `${text}`;
     if (BinCC.length !== 16) {
         return dodoi(`I number rawn dah hi digit 16 chiah chiah a ni tur a ni a, digit 16 a tlin loh chuan x hmangin tlin tir rawh, 
 *⟨Entirnan:* ${prefix + command} 440344xxxxxxxx `);
-    }
+    }*/
+case 'bincc': {
+if (!HerbertTheCreator && !isPrem) return await replyprem
 const namso = require('namso-cc-gen');
 const genarate = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/BinCC.json')
 let genarate2 = await fetch(genarate);
@@ -3135,10 +3144,13 @@ let genarate3 = await genarate2.json();
 const generatebin = genarate3.genbin
 const bincard = namso.gen({
  ShowCCV: true,
+ CCV: `rnd`,
  ShowExpDate: true,
  ShowBank: false,
+ Month: `rnd`,
+ Year: `rnd`,
  Quantity: "10",
- Bin: `${text}`,
+ Bin: `${generatebin}`,
  Format: "PIPE"
 })
 HBWABotMz.sendMessage(from, { image: {url: `https://telegra.ph/file/b4449174062301e751133.jpg`}, caption:`
