@@ -564,9 +564,9 @@ result: Result,
 });
 });
 }
-async function replyprem() {
-dodoi(`He features hi premium member-te tan chauha siam a ni, premium Member nih i duh ve chuan a hnuaia number ka dah hian va dil rawh.\nhttps://wa.me/+918416093656`)
-}
+const replyprem = () => {
+ HBWABotMz.sendText(from, "He features hi premium member-te tan chauha siam a ni, premium Member nih i duh ve chuan a hnuaia number ka dah hian va dil rawh.\nhttps://wa.me/+918416093656", m)
+ }
 async function PremiumNbAniEm() {
   try {
     const response = await axios.get('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/Premium.json');
@@ -3135,11 +3135,8 @@ let genarate3 = await genarate2.json();
 const generatebin = genarate3.genbin
 const bincard = namso.gen({
  ShowCCV: true,
- CCV: "",
  ShowExpDate: true,
  ShowBank: false,
- Month: "",
- Year: "",
  Quantity: "10",
  Bin: `${text}`,
  Format: "PIPE"
