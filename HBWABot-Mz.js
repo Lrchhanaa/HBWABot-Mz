@@ -753,7 +753,7 @@ const daily = await eco.give(limitneihtu, khawlbawm, 99999999);
 break
 
 case 'incontrol05': {
-if (!DuhSakBik) return
+if (!DuhSakBik) return await HBWABotMz.sendMessage(from, { react: { text: "🤭" , key: m.key }})
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 const daily = await eco.daily(limitneihtu, khawlbawm, dawnzat3);
     if (daily.cd) return dodoi(`i claim tawh, chu vangin ${daily.cdL} a ral hunah i claim leh thei chauh ang`)
@@ -3130,12 +3130,7 @@ case 'openai': {
   }
 }
 break;
-/*if (!q) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} 440344xxxxxxxx`);
-const BinCC = `${text}`;
-    if (BinCC.length !== 16) {
-        return dodoi(`I number rawn dah hi digit 16 chiah chiah a ni tur a ni a, digit 16 a tlin loh chuan x hmangin tlin tir rawh, 
-*⟨Entirnan:* ${prefix + command} 440344xxxxxxxx `);
-    }*/
+
 case 'bincc': {
 if (!HerbertTheCreator && !isPrem) return await replyprem()
 const namso = require('namso-cc-gen');
@@ -3154,7 +3149,7 @@ const bincard = namso.gen({
  Bin: `${generatebin}`,
  Format: "PIPE"
 })
-HBWABotMz.sendMessage(from, { image: {url: `https://telegra.ph/file/b4449174062301e751133.jpg`}, caption:`
+HBWABotMz.sendMessage(from, { image: {url: `${genarate3.url}`}, caption:`
 *#Heroku Bin CC#${genarate3.bininfo}*
 
 *Card :* 
@@ -3169,11 +3164,56 @@ ${bincard}
 *City :* ${genarate3.city}
 *Zip/ Postal Code:* ${genarate3.zip}
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
-*Note: Card hi a decline chuan CVV Number hi 000 a tanga 009 thlengin thlak rawh.*
+*Note: Card hi a decline chuan CVV Number hi ${genarate3.tuccv} a tanga ${tuccv2} thlengin thlak rawh.*
 chu ta a la pawm loh chuan *bincc* tih rawn type leh la i try leh zel mai dawn nia!!
 `}, { quoted: m })
 }
 break
+
+case 'gen': {
+if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!q) return dodoi(`_🤖Credit Card Bin, Generate tur chuan number ka mamawh, kha tiang ringawt loh khan tiang hian_\n*⟨Entirnan:* ${prefix + command} 440344xxxxxxxx`);
+    const BinCC = `${text}`;
+        if (BinCC.length !== 16) {
+            return dodoi(`I number rawn dah hi digit 16 chiah chiah a ni tur a ni a, digit 16 a tlin loh chuan x hmangin tlin tir rawh, 
+    *⟨Entirnan:* ${prefix + command} 440344xxxxxxxx `);
+        }
+const namso = require('namso-cc-gen');
+const genarate = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/BinCC.json')
+let genarate2 = await fetch(genarate);
+let genarate3 = await genarate2.json();
+const generatebin = genarate3.genbin
+const bincard = namso.gen({
+ ShowCCV: true,
+ CCV: `rnd`,
+ ShowExpDate: true,
+ ShowBank: false,
+ Month: `rnd`,
+ Year: `rnd`,
+ Quantity: "10",
+ Bin: `${BinCC}`,
+ Format: "PIPE"
+})
+HBWABotMz.sendMessage(from, { text:`
+*#Heroku Bin CC#*
+
+*Card :* 
+${bincard}
+
+*First Name :* Herbert
+*Last Name :* Suantak
+
+*Country :* 😵
+*Billing Address:* HBMods OFC
+*Street:* 😵
+*City :* 😵
+*Zip/ Postal Code:* 😵
+
+😵 = I source a mi in dah khat tel ang che🫠
+`}, { quoted: m })
+}
+break
+
 case 'gimage': {
                 if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Mizoram`)
                 await loadingreact()
