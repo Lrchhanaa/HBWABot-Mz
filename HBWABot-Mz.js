@@ -932,7 +932,7 @@ break
 case 'nsfw': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
 if (args[0] === "on") {
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -2851,7 +2851,7 @@ for (let i = 0; i < dbinaryloading.length; i++) {await HBWABotMz.sendMessage(fro
 }
 break
 case 'remini': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -2867,7 +2867,7 @@ await finishreact()
 }
 break
 case 'toanime': case 'tocartoon': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -2884,7 +2884,7 @@ await finishreact()
 }
 break
 case 'removebg': case 'bgremove': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -2900,7 +2900,7 @@ await finishreact()
 }
 break
 case 'remini2': case 'hd': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -2917,7 +2917,7 @@ await finishreact()
 break
 
 case 'tozombie': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3137,7 +3137,7 @@ const BinCC = `${text}`;
 *⟨Entirnan:* ${prefix + command} 440344xxxxxxxx `);
     }*/
 case 'bincc': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 const namso = require('namso-cc-gen');
 const genarate = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/BinCC.json')
 let genarate2 = await fetch(genarate);
@@ -3825,7 +3825,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, 60)
 }
 
 case 'shazam2': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 let q = m.quoted ? m.quoted : m;
 if (!q) {return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, a hla/music hming ka rawn zawn sak ang che....`);
   }
@@ -3867,7 +3867,7 @@ contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply":
   break;
 }
 case 'shazam3': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 let q = m.quoted ? m.quoted : m;
 if (!q) {return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, a hla/music hming ka rawn zawn sak ang che....`);
   }
@@ -4085,7 +4085,7 @@ await loadingreact()
 }
 break 
 case 'swm': case 'steal': case 'stickerwm': case 'take':{
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 if (!args.join(" ")) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a i duh duh word nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -4757,7 +4757,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 break
 case 'hentaivid2': {
 if (!m.isGroup) return dodoi(mess.group)
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo') 
 sbe = await hentaivid()
 cejd = sbe[Math.floor(Math.random(), sbe.length)]
@@ -4774,7 +4774,7 @@ caption: `⭔ Title : ${cejd.title}
 break
 case 'hentaivid': case 'hentaivideo': {
 if (!m.isGroup) return dodoi(mess.group)
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const { hentai } = require('./lib/scraper.js')
 anu = await hentai()
@@ -5635,7 +5635,7 @@ dodoi('Error: Link dang rawn ti rawh')
 }
 break
 case "xnxxdl": {
-  if (!HerbertTheCreator && !isPrem) return await replyprem;
+  if (!HerbertTheCreator && !isPrem) return await replyprem();
   if (!m.isGroup) return dodoi(mess.group);
   if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo');
   if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a xnxx video link nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`);
@@ -5657,7 +5657,7 @@ video: { url: result.url },
 break;
 
 case 'xnxxsearch': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 if (!m.isGroup) return dodoi(mess.group)
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -5682,7 +5682,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
  case 'unbanned': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5756,7 +5756,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv2': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5831,7 +5831,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv3': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5904,7 +5904,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv4': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5978,7 +5978,7 @@ Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni th
 }
 break
 case 'unbannedv5': {
-if (!HerbertTheCreator && !isPrem) return await replyprem
+if (!HerbertTheCreator && !isPrem) return await replyprem()
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
