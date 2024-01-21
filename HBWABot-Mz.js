@@ -1577,7 +1577,7 @@ showAdAttribution: true,
 containsAutoReply: true,
 renderLargerThumbnail: true,
 title: `HBWABot Mizo`,
-thumbnail : {url : loadingimg3},
+thumbnailUrl : loadingimg3,
 mediaType: 1,
 mediaUrl: ``,
 sourceUrl: ``
