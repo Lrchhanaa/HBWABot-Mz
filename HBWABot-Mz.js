@@ -1540,6 +1540,7 @@ break
 case 'alive': case 'menu': case 'help':{ 
 const balance = await eco.balance(limitneihtu, khawlbawm);
 const vawiinni2 = await mizo_tawnga_translate_na.translate(asource1, atarget1, athulo1)
+var menuthla = await getBuffer(`${loadingimg3}`)
 HBWABotMz.sendMessage(from, { 
 text: `*Bot InFo*
 *✑ Vawiin :* ${vawiinni2}
@@ -1577,7 +1578,7 @@ showAdAttribution: true,
 containsAutoReply: true,
 renderLargerThumbnail: true,
 title: `HBWABot Mizo`,
-thumbnailUrl : loadingimg3,
+thumbnail : menuthla,
 mediaType: 1,
 mediaUrl: ``,
 sourceUrl: ``
