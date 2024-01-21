@@ -602,6 +602,11 @@ const dailylimit = () => {
  const replyprem = () => {
  HBWABotMz.sendMessage(from, {text: "He features hi premium member-te tan chauha siam a ni, premium Member nih i duh ve chuan a hnuaia number ka dah hian va dil rawh.\nhttps://wa.me/+918416093656"}, {quoted: m})
  }
+ 
+const loadingimg = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/LoadingImg.json')
+const loadingimg1 = await fetch(loadingimg);
+const loadingimg2 = await loadingimg1.json();
+const loadingimg3 = loadingimg2.url;
 const timestamp = speed()
 const latensi = speed() - timestamp
 const mark = "0@s.whatsapp.net"
@@ -1572,7 +1577,7 @@ showAdAttribution: true,
 containsAutoReply: true,
 renderLargerThumbnail: true,
 title: `HBWABot Mizo`,
-thumbnail : fs.readFileSync("./asset/theme/hbwabot.png"),
+thumbnail : {url : loadingimg3},
 mediaType: 1,
 mediaUrl: ``,
 sourceUrl: ``
@@ -1911,7 +1916,7 @@ var HBLoadingmenu = [
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      image: { url: loadingimg3 },
       caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
     }, {quoted: m})
 for (let i = 0; i < HBLoadingmenu.length; i++) {
@@ -1965,7 +1970,7 @@ var HBLoadingmenu = [
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      image: { url: loadingimg3 },
       caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
     }, {quoted: m})
 for (let i = 0; i < HBLoadingmenu.length; i++) {
@@ -2033,7 +2038,7 @@ var HBLoadingmenu = [
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      image: { url: loadingimg3 },
       caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
     }, {quoted: m})
 for (let i = 0; i < HBLoadingmenu.length; i++) {
@@ -2071,7 +2076,7 @@ var HBLoadingmenu = [
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      image: { url: loadingimg3 },
       caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
     }, {quoted: m})
 for (let i = 0; i < HBLoadingmenu.length; i++) {
@@ -2117,7 +2122,7 @@ var HBLoadingmenu = [
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      image: { url: loadingimg3 },
       caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
     }, {quoted: m})
 for (let i = 0; i < HBLoadingmenu.length; i++) {
@@ -2229,7 +2234,7 @@ var HBLoadingmenu = [
 ┃𒆜└───────────
 ╰══════════════⌫`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      image: { url: loadingimg3 },
       caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
     }, {quoted: m})
 for (let i = 0; i < HBLoadingmenu.length; i++) {
@@ -2295,7 +2300,7 @@ var HBLoadingmenu = [
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      image: { url: loadingimg3 },
       caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
     }, {quoted: m})
 for (let i = 0; i < HBLoadingmenu.length; i++) {
@@ -2338,7 +2343,7 @@ var HBLoadingmenu = [
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      image: { url: loadingimg3 },
       caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
     }, {quoted: m})
 for (let i = 0; i < HBLoadingmenu.length; i++) {
@@ -2401,7 +2406,7 @@ var HBLoadingmenu = [
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      image: { url: loadingimg3 },
       caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
     }, {quoted: m})
 for (let i = 0; i < HBLoadingmenu.length; i++) {
@@ -2477,7 +2482,7 @@ var HBLoadingmenu = [
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      image: { url: loadingimg3 },
       caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
     }, {quoted: m})
 for (let i = 0; i < HBLoadingmenu.length; i++) {
@@ -2521,7 +2526,7 @@ var HBLoadingmenu = [
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
-      image: { url: 'https://telegra.ph/file/976f686fc9c24b4ee1b2a.jpg' },
+      image: { url: loadingimg3 },
       caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
     }, {quoted: m})
 for (let i = 0; i < HBLoadingmenu.length; i++) {
@@ -3171,7 +3176,6 @@ chu ta a la pawm loh chuan *bincc* tih rawn type leh la i try leh zel mai dawn n
 break
 
 case 'gen': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
 if (!q) return dodoi(`_🤖Credit Card Bin, Generate tur chuan number ka mamawh, kha tiang ringawt loh khan tiang hian_\n*⟨Entirnan:* ${prefix + command} 440344xxxxxxxx`);
     const BinCC = `${text}`;
         if (BinCC.length !== 16) {
