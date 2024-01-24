@@ -5507,6 +5507,37 @@ case 'igstalk': {
 if (!args[0]) return dodoi(`Instagram Username rawn dah rawh\n\nTiang hian: ${prefix + command} herbert_suantak2`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
+const igstalkk = (`https://tools.betabotz.eu.org/tools/stalk-ig?q=${encodeURIComponent(text)}`)
+let igstfetch = await fetch(igstalkk);
+let resig = await igstfetch.json();
+let resig2 = await resig.result
+let res = await resig2.user_info
+await loadingreact()
+try {
+let te = `
+┌──「 *STALKING* 
+▢ *🔖Name:* ${res.full_name} 
+▢ *🔖Username:* ${res.username}
+▢ *👥Follower:* ${res.followers}
+▢ *🫂Following:* ${res.following}
+▢ *📌Bio:* ${res.biography}
+▢ *🏝️Posts:* ${res.posts}
+▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
+╰════════════`
+ await HBWABotMz.sendMessage(m.chat, {image: { url: res.profile_pic_url }, caption: te }, {quoted: m})
+ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+ await finishreact()
+}
+
+catch {
+dodoi(`A username a dik lo!. a username dik tak rawn dah rawh`)
+}
+}
+break
+case 'igstalk2': {
+if (!args[0]) return dodoi(`Instagram Username rawn dah rawh\n\nTiang hian: ${prefix + command} herbert_suantak2`)
+const limit1= await eco.balance(limitneihtu, khawlbawm)
+if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
 const fg = require('api-dylux')
 try {
