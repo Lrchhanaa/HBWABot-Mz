@@ -911,9 +911,17 @@ if (m.isGroup) return await HBWABotMz.sendMessage(from, { react: { text: "👋�
 const herbert = await HBWABotMz.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Kei hi bot ka ni-a zawh duh i nei chuan owner hi va zawt rawh`, mentions: [sender]}, { quoted: m })
 HBWABotMz.sendMessage(from, { contacts: { 
 displayName: `${list.length} Contact`, 
-contacts: list }, mentions: [sender] }, { quoted: herbert })
+contacts: list }, }, { quoted: herbert })
 }
 break
+case 'leaderboard': {
+  let teks = "「 *PREMIUM LEADERBOARD* 」\n\n";
+  for (let i of prem) {
+    teks += `🪬 @${i.split("@")[0]}\n`;
+await HBWABotMz.sendMessage(from, { text: teks, mentions: [i]  }, { quoted: m });
+  }
+  break;
+}
 
 case 'repo': case 'sc': case 'script': {
 await HBWABotMz.sendMessage(from, { text : `
@@ -5600,14 +5608,6 @@ quoted: m,
 })
 }
 break 
-case 'leadeboard': {
-  let teks = "「 *PREMIUM LEADERBOARD* 」\n\n";
-  for (let i of prem) {
-    teks += `🪬 @${i.split("@")[0]}\n\n`;
-  }
-  await HBWABotMz.sendMessage(from, { text: teks }, { quoted: m });
-  break;
-}
 
 /*case 'say2': {
 if (!text) return dodoi(`Kha tiang ringawt loh khan, tiang hian word nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
