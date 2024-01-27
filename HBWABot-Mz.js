@@ -918,7 +918,7 @@ case 'leaderboard': {
   let teks = "「 *PREMIUM LEADERBOARD* 」\n\n";
   for (let i of prem) {
     teks += `🪬 @${i.split("@")[0]}\n`;
-await HBWABotMz.sendMessage(from, { text: teks, mentions: [i]  }, { quoted: m });
+await HBWABotMz.sendMessage(from, { text: teks, mentions: prem.map(a => a.i)}, { quoted: m });
   }
   break;
 }
