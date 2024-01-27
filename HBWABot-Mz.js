@@ -919,7 +919,7 @@ case 'leaderboard': {
   for (let i of prem) {
     teks += `🪬 @${i.split("@")[0]}\n`;
   }
-  await HBWABotMz.sendMessage(from, {text:teks, mentions: await HBWABotMz.parseMention(i)}, { quoted: m });
+  await HBWABotMz.sendMessage(from, {text:teks, mentions: await HBWABotMz.parseMention(teks)}, { quoted: m });
   break;
 }
 
