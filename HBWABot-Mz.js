@@ -748,6 +748,24 @@ await dodoi(`Sir, a limit neihzat chu:  💎${balance.wallet} 🤔`);
 }
 break 
 
+case 'cutdm':{
+if (!HerbertTheCreator1) return
+HBWABotMz.sendMessage(from, { react: { text: "🫡" , key: m.key }})
+let value = text.trim().split(" ")
+if (value[0] === "") return
+const target =
+m.quoted && m.mentionedJid.length === 0
+? m.quoted.sender
+: m.mentionedJid[0] || null;
+if (m.quoted?.sender && !m.mentionedJid.includes(m.quoted.sender)) m.mentionedJid.push(m.quoted.sender)
+while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
+const hmela = target
+const paihsakna = await eco.deduct(hmela, khawlbawm, value[0])
+const balance = await eco.balance(hmela, khawlbawm);
+await dodoi(`🫡Sir, hei zawng hi a la bang : _${balance.wallet}💎_\nI la cut leh dawn em sir ?🙋‍♂️`);
+}
+break
+
 case 'may15': {
 if (!HerbertTheCreator1) return
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
@@ -1347,7 +1365,7 @@ if (m.quoted?.sender && !m.mentionedJid.includes(m.quoted.sender)) m.mentionedJi
 while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
 const cara = "cara"
 const hmela = target
-const withdraw = await eco.withdraw(user, cara, value[0])
+const withdraw = await eco.withdraw(hmela, cara, value[0])
 if(withdraw.noten) return dodoi('Chutiang zat zat a bank ah pawisa a nei lo')
 const paihsakna = await eco.deduct(hmela, cara, value[0])
 const balance = await eco.balance(hmela, cara);
@@ -5582,6 +5600,15 @@ quoted: m,
 })
 }
 break 
+case 'leadeboard': {
+  let teks = "「 *PREMIUM LEADERBOARD* 」\n\n";
+  for (let i of prem) {
+    teks += `🪬 @${i.split("@")[0]}\n\n`;
+  }
+  await HBWABotMz.sendMessage(from, { text: teks }, { quoted: m });
+  break;
+}
+
 /*case 'say2': {
 if (!text) return dodoi(`Kha tiang ringawt loh khan, tiang hian word nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const { VoiceMaker, VoiceMakerRequest } = require('voicemaker')
