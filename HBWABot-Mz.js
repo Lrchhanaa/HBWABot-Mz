@@ -1126,7 +1126,7 @@ case '/mlyrics': {
 break;
 
 
-case '/cfhla': {
+case '/cfhlahlbu': {
   if (!text) return dodoi(`General Conference Hla Bu number zat rawn dah tel rawh\nTiang hian hman tur: ${prefix + command} 5`)
   try {
     var gchb = await getBuffer(`https://telegra.ph/file/ff13c5411ab4e5979bb69.png`);
@@ -1135,7 +1135,7 @@ case '/cfhla': {
     let hlabu3 = await hlabu2.json();    
     const selectedSong = hlabu3[`${text}`];   
     if (selectedSong) {
-    if (text == 'bu') return await HBWABotMz.sendMessage(from, {
+    await HBWABotMz.sendMessage(from, {
         text: `${selectedSong.title}\n${selectedSong.lyrics}`,
         contextInfo: {
           externalAdReply: {
