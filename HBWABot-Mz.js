@@ -1130,7 +1130,7 @@ case '/cfhb': {
   if (!text) return dodoi(`KTP General Conference Hla Bu number zat rawn dah tel rawh\nTiang hian hman tur: ${prefix + command} 5`)
   try {
     var gchb = await getBuffer(`https://telegra.ph/file/23ab1484bd96462dfac85.jpg`);
-    const hlabu1 = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/main/hla/chb.json');
+    const hlabu1 = 'https://raw.githubusercontent.com/HBMods-OFC/Base/main/hla/chb.json'
     let hlabu2 = await fetch(hlabu1);
     let hlabu3 = await hlabu2.json();    
     const hlabu4 = hlabu3.hlabu
