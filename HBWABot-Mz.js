@@ -1126,16 +1126,17 @@ case '/mlyrics': {
 break;
 
 
-case '/cfhlahlbu': {
+case '/cfhlabu': {
   if (!text) return dodoi(`General Conference Hla Bu number zat rawn dah tel rawh\nTiang hian hman tur: ${prefix + command} 5`)
   try {
-    var gchb = await getBuffer(`https://telegra.ph/file/ff13c5411ab4e5979bb69.png`);
-    const hlabu = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/main/hla/chb.js');
-    let hlabu2 = await fetch(hlabu);
+    var gchb = await getBuffer(`https://telegra.ph/file/23ab1484bd96462dfac85.jpg`);
+    const hlabu1 = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/main/hla/chb.json');
+    let hlabu2 = await fetch(hlabu1);
     let hlabu3 = await hlabu2.json();    
-    const selectedSong = hlabu3[`${text}`];   
+    const hlabu4 = hlabu3.hlabu
+    const selectedSong = hlabu4[text];
     if (selectedSong) {
-    await HBWABotMz.sendMessage(from, {
+      await HBWABotMz.sendMessage(from, {
         text: `${selectedSong.title}\n${selectedSong.lyrics}`,
         contextInfo: {
           externalAdReply: {
@@ -3053,6 +3054,7 @@ await HBWABotMz.sendMessage(from, { text: siamthat }, { quoted: m });
 break
 //betabotz ChatBot
 case '/ai2': case '/gpt': {
+if (!HerbertTheCreator && !isPrem) return await replyprem()
     if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
     const limit1= await eco.balance(limitneihtu, khawlbawm)
     if (hmanzat > limit1.wallet) return await dailylimit();
@@ -3076,7 +3078,7 @@ case '/ai2': case '/gpt': {
         .replace(/HBMods OFC/g, 'ERLANRAHMAT')
         .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`
     const athu1 = `${thlakna 
-        .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
+    .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
         .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
         .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
     const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1)
