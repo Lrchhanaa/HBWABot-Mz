@@ -1126,8 +1126,8 @@ case '/mlyrics': {
 break;
 
 
-case '/cfhlabu': {
-  if (!text) return dodoi(`General Conference Hla Bu number zat rawn dah tel rawh\nTiang hian hman tur: ${prefix + command} 5`)
+case '/cfhb': {
+  if (!text) return dodoi(`KTP General Conference Hla Bu number zat rawn dah tel rawh\nTiang hian hman tur: ${prefix + command} 5`)
   try {
     var gchb = await getBuffer(`https://telegra.ph/file/23ab1484bd96462dfac85.jpg`);
     const hlabu1 = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/main/hla/chb.json');
@@ -1142,8 +1142,8 @@ case '/cfhlabu': {
           externalAdReply: {
             showAdAttribution: true,
             containsAutoReply: true,
-            title: `Conferences Hla Bu`,
-            body: `No : ${text}`,
+            title: `KTP General Conferences 2024`,
+            body: `Hla Bu : ${text}`,
             thumbnail: gchb,
             mediaType: 1,
             mediaUrl: `https://www.youtube.com/@HBMods_Channel`,
