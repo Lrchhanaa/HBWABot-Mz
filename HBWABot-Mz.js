@@ -1123,6 +1123,7 @@ break;
 
 case '/cfhb': {
   if (!text) return dodoi(`KTP General Conference Hla Bu number zat rawn dah tel rawh\nTiang hian hman tur: ${prefix + command} 5`)
+  HBWABotMz.sendMessage(from, { react: { text: "📖" , key: m.key }}) 
   const siamthatna = `${text.replace(' ', '')}`
   var gchb = await getBuffer(`https://telegra.ph/file/23ab1484bd96462dfac85.jpg`);
   const apiUrl = `https://raw.githubusercontent.com/HBMods-OFC/Base/main/hla/KTP/${siamthatna}.json`;
@@ -1132,7 +1133,7 @@ case '/cfhb': {
   const hlahming = hlabu.title;
   const hlathu = hlabu.lyrics;
   await HBWABotMz.sendMessage(from, {
-          text: `*${hlahming}*\n${hlathu}`,
+          text: `Hla hming : *${hlahming}*\n\n${hlathu}`,
           contextInfo: {
             externalAdReply: {
               showAdAttribution: true,
@@ -1155,6 +1156,7 @@ break;
 
 case '/cfhb2': {
   if (!text) return dodoi(`KTP General Conference Hla Bu number zat rawn dah tel rawh\nTiang hian hman tur: ${prefix + command} 5`)
+HBWABotMz.sendMessage(from, { react: { text: "🎶" , key: m.key }}) 
   const siamthatna = `${text.replace(' ', '')}`
   var gchb = await getBuffer(`https://telegra.ph/file/23ab1484bd96462dfac85.jpg`);
   const apiUrl = `https://raw.githubusercontent.com/HBMods-OFC/Base/main/hla/KTP/${siamthatna}.json`;
@@ -1170,9 +1172,17 @@ case '/cfhb2': {
   let v = vid.url
   let yt = await youtubedl(v).catch(async () => await youtubedlv2(v))
   let dl_url = await (isVideo ? yt.video[q].download() : yt.audio[q].download())
-  const Vawk = await HBWABotMz.sendMessage(m.chat, {audio: {url: dl_url} , mimetype: 'audio/mpeg', ptt: true, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `2024 KTP General Conferences`} ,"body": `Hla Bu : ${siamthatna}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": `${gchb}`,"sourceUrl": ``}},{quoted:m})
+  const Vawk = await HBWABotMz.sendMessage(m.chat, {audio: {url: dl_url} , mimetype: 'audio/mpeg', ptt: true, contextInfo:{
+  externalAdReply: {
+  showAdAttribution: true, 
+  containsAutoReply: true, 
+  title: `${hlahming}`},
+  body: `2024 KTP General Conferences`, 
+  thumbnail: gchb,
+  mediaType: 1,
+  sourceUrl: ``}},{quoted:m})
   await HBWABotMz.sendMessage(from, {
-          text: `*${hlahming}*\n${hlathu}`}, { quoted: m });
+          text: `No : ${siamthatna}\n\n${hlathu}`}, { quoted: m });
   } catch (error) {
     console.error(error);
     dodoi("KTP General Conference Hla Bu 2024 ah hian Hla 1 - 56 a awma, khawngaihin a number dik tak chauh rawn dah rawh!...");
@@ -3083,13 +3093,8 @@ if (!HerbertTheCreator && !isPrem) return await replyprem()
     if (hmanzat > limit1.wallet) return await dailylimit();
     await robotreact() 
     try {
-    const detect1 = `https://vihangayt.me/tools/langdetect?q=${text}`
-    const detect2 = await fetch(detect1);
-    const detect3 = await detect2.json();
-    const detect4 = detect3.data
-    const detect5 = detect4.lang
     const { openai } = require('betabotz-tools') 
-    const source1 = `${detect5}`
+    const source1 = `auto`
     const target1 = 'en'
     const thlakna = `${text
         .replace(/BetaBotz|BetaBotz-Ai|Betabotz ai|BetaBotz Ai|BetaBotz ai/g, '')
