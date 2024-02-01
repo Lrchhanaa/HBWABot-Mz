@@ -907,11 +907,7 @@ HBWABotMz.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Hei hei ka ow
 }
 break
 case '/hi': case '/hii': case '/hiii': case '/helo': case '/hello': case '/hlo': case '/sir': case '/kapu': case '/hy': case '/hey': { 
-if (m.isGroup) return await HBWABotMz.sendMessage(from, { react: { text: "👋️" , key: m.key }})
-const herbert = await HBWABotMz.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Kei hi bot ka ni-a zawh duh i nei chuan owner hi va zawt rawh`, mentions: [sender]}, { quoted: m })
-HBWABotMz.sendMessage(from, { contacts: { 
-displayName: `${list.length} Contact`, 
-contacts: list }, }, { quoted: herbert })
+HBWABotMz.sendMessage(from, { react: { text: "🤖" , key: m.key }})
 }
 break
 case '/leaderboard': {
@@ -1141,7 +1137,7 @@ case '/cfhb': {
             externalAdReply: {
               showAdAttribution: true,
               containsAutoReply: true,
-              title: `KTP General Conferences 2024`,
+              title: `2024 KTP General Conferences`,
               body: `Hla Bu : ${siamthatna}`,
               thumbnail: gchb,
               mediaType: 1,
@@ -1152,7 +1148,34 @@ case '/cfhb': {
         }, { quoted: m });
   } catch (error) {
     console.error(error);
-    dodoi("KTP General Conference Hla Bu 2024 ah hian Hla 1 - 56 a awma, khawngaihin a number dik tak chauh min rawn pe rawh!...");
+    dodoi("KTP General Conference Hla Bu 2024 ah hian Hla 1 - 56 a awma, khawngaihin a number dik tak chauh rawn dah rawh!...");
+  }
+}
+break;
+
+case '/cfhb2': {
+  if (!text) return dodoi(`KTP General Conference Hla Bu number zat rawn dah tel rawh\nTiang hian hman tur: ${prefix + command} 5`)
+  const siamthatna = `${text.replace(' ', '')}`
+  var gchb = await getBuffer(`https://telegra.ph/file/23ab1484bd96462dfac85.jpg`);
+  const apiUrl = `https://raw.githubusercontent.com/HBMods-OFC/Base/main/hla/KTP/${siamthatna}.json`;
+  try {
+  const hlabuftc = await fetch(apiUrl);
+  const hlabu = await hlabuftc.json();
+  const hlahming = hlabu.title;
+  const hlathu = hlabu.lyrics;
+  const sazu = (`${hlahming} Karaoke`)
+  let res = await yts2(sazu)
+  let vid = res.videos[0]
+  let q = isVideo ? '360p' : '128kbps'
+  let v = vid.url
+  let yt = await youtubedl(v).catch(async () => await youtubedlv2(v))
+  let dl_url = await (isVideo ? yt.video[q].download() : yt.audio[q].download())
+  const Vawk = await HBWABotMz.sendMessage(m.chat, {audio: {url: dl_url} , mimetype: 'audio/mpeg', ptt: true, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `2024 KTP General Conferences`} ,"body": `Hla Bu : ${siamthatna}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": `${gchb}`,"sourceUrl": ``}},{quoted:m})
+  await HBWABotMz.sendMessage(from, {
+          text: `*${hlahming}*\n${hlathu}`}, { quoted: m });
+  } catch (error) {
+    console.error(error);
+    dodoi("KTP General Conference Hla Bu 2024 ah hian Hla 1 - 56 a awma, khawngaihin a number dik tak chauh rawn dah rawh!...");
   }
 }
 break;
@@ -1929,6 +1952,8 @@ var HBLoadingmenu = [
 
 *╭═══❏ Other Menu ❏*
 ┃𒆜┌───┈
+┃𒆜│cfhb 
+┃𒆜│cfhb2 [Karaoke nen]
 ┃𒆜│mizoquiz
 ┃𒆜│picquiz
 ┃𒆜│checkme
@@ -2496,6 +2521,8 @@ var HBLoadingmenu = [
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
 *╭═══❏ Other Menu ❏*
 ┃𒆜┌───┈
+┃𒆜│cfhb 
+┃𒆜│cfhb2 [Karaoke nen]
 ┃𒆜│mizoquiz
 ┃𒆜│picquiz
 ┃𒆜│buydm
@@ -3084,22 +3111,8 @@ if (!HerbertTheCreator && !isPrem) return await replyprem()
         .replace(/BetaBotz/g, 'HBWABot')
         .replace(/Lann/g, 'Herbert Suantak')
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
-        .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')
-        .replace(/Indonesian/g, 'Mizo')}`;
-    const source = `auto`
-    const target = `${detect5}`
-    const athu = `${chutin}`
-    const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu)
-    const siamthat = `${mizotranslation
-    .replace(/ka siamtu|ka neitu/g, 'min siamtu')
-    .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
-    .replace(/ERLANRAHMAT/g, 'HBMods')
-    .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
-    .replace(/ka rawn kal a ni/g, 'ka awm e')
-    .replace(/Chibai! /g, `Hi ${pushname}! `)
-    .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
-    .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
-await HBWABotMz.sendMessage(from, { text: siamthat }, { quoted: m });
+        .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')}`;
+await HBWABotMz.sendMessage(from, { text: chutin }, { quoted: m });
         let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
     } catch (error) {
         console.error("Error occurred:", error);
