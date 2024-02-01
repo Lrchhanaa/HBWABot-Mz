@@ -1133,13 +1133,13 @@ case '/cfhb': {
   const hlahming = hlabu.title;
   const hlathu = hlabu.lyrics;
   await HBWABotMz.sendMessage(from, {
-          text: `Hla hming : *${hlahming}*\n\n${hlathu}`,
+          text: `Hla Bu : *${siamthatna}*\n\n${hlathu}`,
           contextInfo: {
             externalAdReply: {
               showAdAttribution: true,
               containsAutoReply: true,
-              title: `2024 KTP General Conferences`,
-              body: `Hla Bu : ${siamthatna}`,
+              title: `${hlahming}`,
+              body: `2024 KTP General Conferences`,
               thumbnail: gchb,
               mediaType: 1,
               mediaUrl: `https://www.youtube.com/@HBMods_Channel`,
@@ -1172,17 +1172,22 @@ HBWABotMz.sendMessage(from, { react: { text: "🎶" , key: m.key }})
   let v = vid.url
   let yt = await youtubedl(v).catch(async () => await youtubedlv2(v))
   let dl_url = await (isVideo ? yt.video[q].download() : yt.audio[q].download())
-  const Vawk = await HBWABotMz.sendMessage(m.chat, {audio: {url: dl_url} , mimetype: 'audio/mpeg', ptt: true, contextInfo:{
-  externalAdReply: {
-  showAdAttribution: true, 
-  containsAutoReply: true, 
-  title: `${hlahming}`,
-  body: `2024 KTP General Conferences`, 
-  thumbnail: gchb,
-  mediaType: 1,
-  sourceUrl: ``}},{quoted:m})
+  const Vawk = await HBWABotMz.sendMessage(m.chat, {audio: {url: dl_url} , mimetype: 'audio/mpeg', ptt: true, 
+  contextInfo: {
+            externalAdReply: {
+              showAdAttribution: true,
+              containsAutoReply: true,
+              title: `${hlahming}`,
+              body: `2024 KTP General Conferences`,
+              thumbnail: gchb,
+              mediaType: 1,
+              mediaUrl: ``,
+              sourceUrl: ``
+            }
+          }
+        }, { quoted: m });
   await HBWABotMz.sendMessage(from, {
-          text: `No : ${siamthatna}\n\n${hlathu}`}, { quoted: Vawk });
+          text: `Hla Bu : ${siamthatna}\n\n${hlathu}`}, { quoted: Vawk });
   } catch (error) {
     console.error(error);
     dodoi("KTP General Conference Hla Bu 2024 ah hian Hla 1 - 56 a awma, khawngaihin a number dik tak chauh rawn dah rawh!...");
