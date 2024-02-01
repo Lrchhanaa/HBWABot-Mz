@@ -1125,24 +1125,24 @@ case '/mlyrics': {
 }
 break;
 
-
 case '/cfhb': {
   if (!text) return dodoi(`KTP General Conference Hla Bu number zat rawn dah tel rawh\nTiang hian hman tur: ${prefix + command} 5`)
+  const siamthatna = `${text.replace(' ', '')}`
+  var gchb = await getBuffer(`https://telegra.ph/file/23ab1484bd96462dfac85.jpg`);
+  const apiUrl = `https://raw.githubusercontent.com/HBMods-OFC/Base/main/hla/KTP/${siamthatna}.json`;
   try {
-    var gchb = await getBuffer(`https://telegra.ph/file/23ab1484bd96462dfac85.jpg`);
-    const hlabu1 = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/main/hla/chb.json');
-    const hlabu2 = hlabu1.hlabu;
-    if (hlabu2) {
-      const selectedSong = hlabu2(`${text}`)
-      if (selectedSong) {
-        await HBWABotMz.sendMessage(from, {
-          text: `*${selectedSong.title}*\n${selectedSong.lyrics}`,
+  const hlabuftc = await fetch(apiUrl);
+  const hlabu = await hlabuftc.json();
+  const hlahming = hlabu.title;
+  const hlathu = hlabu.lyrics;
+  await HBWABotMz.sendMessage(from, {
+          text: `*${hlahming}*\n${hlathu}`,
           contextInfo: {
             externalAdReply: {
               showAdAttribution: true,
               containsAutoReply: true,
               title: `KTP General Conferences 2024`,
-              body: `Hla Bu : ${text}`,
+              body: `Hla Bu : ${siamthatna}`,
               thumbnail: gchb,
               mediaType: 1,
               mediaUrl: `https://www.youtube.com/@HBMods_Channel`,
@@ -1150,14 +1150,9 @@ case '/cfhb': {
             }
           }
         }, { quoted: m });
-      } else {
-        dodoi("Hla hi number 1 a tanga 56 thleng ka neia a a bak chu ka nei lo!...");
-      }
-    } else {
-      dodoi("Error: Unable to fetch Hla Bu data.");
-    }
   } catch (error) {
     console.error(error);
+    dodoi("KTP General Conference Hla Bu 2024 ah hian Hla 1 - 56 a awma, khawngaihin a number dik tak chauh min rawn pe rawh!...");
   }
 }
 break;
