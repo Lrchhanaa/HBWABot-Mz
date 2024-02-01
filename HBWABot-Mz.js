@@ -1176,13 +1176,13 @@ HBWABotMz.sendMessage(from, { react: { text: "🎶" , key: m.key }})
   externalAdReply: {
   showAdAttribution: true, 
   containsAutoReply: true, 
-  title: `${hlahming}`},
+  title: `${hlahming}`,
   body: `2024 KTP General Conferences`, 
   thumbnail: gchb,
   mediaType: 1,
   sourceUrl: ``}},{quoted:m})
   await HBWABotMz.sendMessage(from, {
-          text: `No : ${siamthatna}\n\n${hlathu}`}, { quoted: m });
+          text: `No : ${siamthatna}\n\n${hlathu}`}, { quoted: Vawk });
   } catch (error) {
     console.error(error);
     dodoi("KTP General Conference Hla Bu 2024 ah hian Hla 1 - 56 a awma, khawngaihin a number dik tak chauh rawn dah rawh!...");
