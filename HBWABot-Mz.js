@@ -436,14 +436,14 @@ let list = []
 for (let i of hbmods) {
 list.push({displayName: await HBWABotMz.getName(i),
 vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await HBWABotMz.getName(ownernumber + "@s.whatsapp.net"
-)}\nFN:${global.ownername}\nitem1.TEL;waid=${ownernumber}:${ownernumber}\nitem1.X-ABLabel:Bot hmangtu\nitem2.EMAIL;type=INTERNET:
+)}\nFN:${global.ownername}\nitem1.TEL;waid=${ownernumber}:${ownernumber}\nitem1.X-ABLabel: Owner\nitem2.EMAIL;type=INTERNET:
  HBMods OFC\nitem2.X-ABLabel:YouTube\nitem3.URL:https://herbert70.blogspot.com\nitem3.X-ABLabel:IG\nitem4.ADR:;;${location} ;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 })
 }
 
 let div = []
 for (let h of hbmods) {
-list.push({displayName: await HBWABotMz.getName(h),vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await HBWABotMz.getName("918416093656@s.whatsapp.net")}\nFN:Herbert Suantak\nitem1.TEL;waid=918416093656:918416093656\nitem1.X-ABLabel:Bot Siamtu No.\nitem2.EMAIL;type=INTERNET:
+list.push({displayName: await HBWABotMz.getName(h),vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await HBWABotMz.getName("918416093656@s.whatsapp.net")}\nFN:Herbert Suantak\nitem1.TEL;waid=918416093656:918416093656\nitem1.X-ABLabel: Creator\nitem2.EMAIL;type=INTERNET:
  HBMods OFC\nitem2.X-ABLabel:YouTube\nitem3.URL:herbert70.blogspot.com\nitem3.X-ABLabel:IG\nitem4.ADR:;;India;Mizoram Aizawl ;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 })
 }
@@ -719,18 +719,20 @@ case '/picquiz': {
     }
     let picquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Media/main/Zawhna/thlalakquiz.json');
     let result = picquiz[Math.floor(Math.random() * picquiz.length)];
-    let englolo = await HBWABotMz.sendMessage(m.chat, { image: { url: `${result.url}` }, caption: `${result.zawhna}\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\n_🕑Minute 1 hun i nei_` }, { quoted: m });
+    let englolo = await HBWABotMz.sendMessage(m.chat, { image: { url: `${result.url}` }, caption: `${result.zawhna}\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
+\n_🕑Minute 1 hun i nei_` }, { quoted: m });
     thlalakquiz[m.sender.split('@')[0]] = result.achhanna.toLowerCase();
     await sleep(60000);
     if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0])) {
-        HBWABotMz.sendMessage(m.chat, { text: `🕑Hun a tawp...\nA chhanna dik chu: ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏ *${thlalakquiz[m.sender.split('@')[0]]}* a ni` }, { quoted: englolo });
+        HBWABotMz.sendMessage(m.chat, { text: `🕑Hun a tawp...\nA chhanna dik chu: ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏ 
+*${thlalakquiz[m.sender.split('@')[0]]}* a ni` }, { quoted: englolo });
         delete thlalakquiz[m.sender.split('@')[0]];
     }
 }
 break;
 
 
-case '/cdm': {
+case '/c1': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 if (!HerbertTheCreator1) return
 HBWABotMz.sendMessage(from, { react: { text: "🫡" , key: m.key }})
@@ -766,43 +768,63 @@ await dodoi(`🫡Sir, hei zawng hi a la bang : _${balance.wallet}💎_\nI la cut
 }
 break
 
-case '/may15': {
-if (!HerbertTheCreator1) return
+case '/limit': case '/dawntur': case '/claim': case '/daily': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
-const daily = await eco.give(limitneihtu, khawlbawm, 99999999);
-    if (daily.cd) return dodoi(`i claim tawh, chu vangin ${daily.cdL} a ral hunah i claim leh thei chauh ang`)
-    dodoi(`Bot hman theihna tur 💎${daily.amount} i la chhuak e`)
+let user = m.sender
+const cara = "cara" 
+const blockp = `${isPrem.replace(/918416093656@s.whatsapp.net/g, '918416000000@s.whatsapp.net')}`
+if (!HerbertTheCreator && !blockp) return {
+HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
+const daily2 = await eco.daily(user, cara, dawnzat2);
+const daily3 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
+if (daily2.cd && daily3.cd) return dodoi(`I claim tawh, ${daily.cdL} a ral hunah i claim leh thei chauh ang`);
+dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!!
+*Diamond* :  💎 ${dawnzat} ✓
+*Pawisa* : ₹ ${dawnzat2} ✓
+͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
+\n\nPremium members te chuan Diamond 💎 1500 leh Pawisa ₹ 2000 an dawng thei a ni!!..\n\nI limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
+} else if (!HerbertTheCreator1) return {
+HBWABotMz.sendMessage(from, { react: { text: "👑" , key: m.key }})
+const daily = await eco.daily(user, cara, 2000);
+const daily1 = await eco.daily(limitneihtu, khawlbawm, 1500);
+if (daily1.cd && daily.cd) return dodoi(`I claim tawh, ${daily.cdL} a ral hunah i claim leh thei chauh ang`);
+dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!!
+*Diamond* :  💎 1500 ✓
+*Pawisa* : ₹ 2000 ✓
+͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
+\n\nI limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
+} else 
+let value = text.trim()
+switch (value) {
+case '/p':
+if (!text) return dodoi ('Sir i lak chhuah duh zat rawn sawi tel rawh!!')
+const thlakp = `${text.replace(/p|P/g,'')}`
+const daily4 = await eco.daily(user, cara, thlakp);
+await dodoi(`Pawisa ₹${thlakp} i wallet ah dah a ni🫠 myinfo tih rawn thawn la i pawisa neih zat i en thei ang`)
+break
+case '/d':
+if (!text) return dodoi ('Sir i lak chhuah duh zat rawn sawi tel rawh!!')
+const thlakd = `${text.replace(/d|D/g,'')}`
+const daily5 = await eco.give(limitneihtu, khawlbawm, thlakd);
+await dodoi(`Diamond 💎${thlakd} i info ah dah a ni🫠 myinfo tih rawn thawn la  i diamond zat i en thei ang`)}
 }
 break
 
-case '/incontrol05': {
-if (!DuhSakBik) return await HBWABotMz.sendMessage(from, { react: { text: "🤭" , key: m.key }})
+case '/myinfo': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
-const daily = await eco.daily(limitneihtu, khawlbawm, dawnzat3);
-    if (daily.cd) return dodoi(`i claim tawh, chu vangin ${daily.cdL} a ral hunah i claim leh thei chauh ang`)
-    dodoi(`Bot hman theihna tur 💎${daily.amount} i la chhuak e`)
+const user = m.sender
+const cara = "cara"
+const balance = await eco.balance(user, cara);
+const balance2 = await eco.balance(limitneihtu, khawlbawm);
+if (!isPrem) return dodoi(`*INFO By ${pushname}*\n\n*Limit :* 💎${balance2.wallet}\n*Pawisa :* ₹ ${balance.wallet}\n*Premium :* i ni lo`);
+await dodoi(`*INFO By ${pushname}*\n*Limit :* 💎${balance2.wallet}\n*Pawisa :* ₹ ${balance.wallet}\n*Premium :* i ni ✓`);
 }
 break
 
-case '/limit': {
-if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
-let hmangtu = m.sender
-const khawlbawm = "diamond"
-const daily= await eco.daily(hmangtu, khawlbawm, dawnzat);
-if (daily.cd) return dodoi(`I claim tawh, ${daily.cdL} a ral hunah i claim leh thei chauh ang`);
-dodoi(`Bot hman theihna tur 💎${daily.amount} i dawng e diamond 20 in Bot features pakhat zel i hmang thei ang.͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\ni Iimit neih zat hriat i duh chuan HBMods tiin rawn type rawh\n\nHe tiang limit hi darkar 24 danah zel i claim thei ang`);
-}
-break
-case '/hbmods': {
-if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
-const balance = await eco.balance(limitneihtu, khawlbawm);
-await dodoi(`_Hi ${pushname} Bot hman theihna tur i diamond neihzat_ :\n💎${balance.wallet}\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏ Diamond 💎20 in features pakhat zel i hmang thei thei ang\n`);
-}
-break
-case '/mlimit': {
+case '/mlimit': case '/glimit': case '/limitg': {
     let commandParams = text.trim().split(" ");
-    if (commandParams[0] === "") return dodoi(`i limit hi midang sem ve i duh chuan, tag rawh. Tiang hian hman tur a ni\n*Entirnan* : ${prefix}limit 100 @user`);
-if (text == 'rules') return dodoi(`*Mlimit hi kan 💎 Diamond-te mi dang kan pek theihna tura siam a ni a, hetah hian dan kan nei ve a ni!! chung kan dante chu\n\n*1:* ${prefix}mlimit tih hi i hmang anga chuan i pek duh zat, i rawn dah tel anga tichuan i pek duh chu i tag tel leh ang!...\n*Entirnan:* Mlimit 100 @user\n\n*2:* I diamond hi midang i pe a nih chuan i diamond neih zat a tangin 10 cut tel zel a ni ang\n\n*3:* Entirnan Diamond 1 midang i pe a nih pawn 10 cut tel zel a ni anga, chutiang bawkin 100 i pe a nih pawhin diamond 10 tho a in cut ang\n😇😇`)
+    if (commandParams[0] === "") return dodoi(`i limit hi midang sem ve i duh chuan, tag rawh. Tiang hian hman tur a ni\n*Entirnan* : ${prefix + command} 100 @user`);
+if (text == 'rules') return dodoi(`*${command} hi kan 💎 Diamond-te mi dang kan pek theihna tura siam a ni a, hetah hian dan kan nei ve a ni!! chung kan dante chu\n\n*1:* ${prefix + command} tih hi i hmang anga chuan i pek duh zat, i rawn dah tel anga tichuan i pek duh chu i tag tel leh ang!...\n*Entirnan:* ${prefix + command} 100 @user\n\n*2:* I diamond hi midang i pe a nih chuan i diamond neih zat a tangin 10 cut tel zel a ni ang\n\n*3:* Entirnan Diamond 1 midang i pe a nih pawn 10 cut tel zel a ni anga, chutiang bawkin 100 i pe a nih pawhin diamond 10 tho a in cut ang\n😇😇`)
     const target =
         m.quoted && m.mentionedJid.length === 0
             ? m.quoted.sender
@@ -821,13 +843,14 @@ if (text == 'rules') return dodoi(`*Mlimit hi kan 💎 Diamond-te mi dang kan pe
     const deduct = await eco.deduct(limitneihtu, khawlbawm, requestedAmount);
     const adminDeduct = await eco.deduct(limitneihtu, khawlbawm, 10);
     const give = await eco.give(recipient, khawlbawm, requestedAmount);
-    dodoi(`💎Diamond ${requestedAmount} chu pek fel a ni ta ✓,\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏ I diamond hi midang i pek a vangin, 💎10 ka cut tel sak che a ni!!😇 rules i en duh chuan *mlimit rules* tih rawn type rawh`);
+    dodoi(`💎Diamond ${requestedAmount} chu pek fel a ni ta ✓,\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏ 
+I diamond hi midang i pek a vangin, 💎10 ka cut tel sak che a ni!!😇 rules i en duh chuan *${prefix + command} rules* tih rawn type rawh`);
 }
 break;
 
 case '/buydm': {
 HBWABotMz.sendMessage(from, { react: { text: "💲" , key: m.key }})
-if (!text) return dodoi(`💎Diamond Store💎\n1. ₹100 = 💎10\n2. ₹200 = 💎20\n3. ₹300 = 💎30\n4. ₹400 = 💎40\n5. ₹500 = 💎50\n6. ₹600 = 💎60\n7. ₹700 = 💎70\n8. ₹800 = 💎80\n9. ₹900 = 💎90\n10. ₹1000 = 💎100\n\n_Tiang hian hman tur a ni_
+if (!text) return dodoi(`💎Diamond Store💎\n1. ₹100 = 💎10\n2. ₹200 = 💎20\n3. ₹300 = 💎30\n4. ₹400 = 💎40\n5. ₹500 = 💎50\n6. ₹600 = 💎60\n7. ₹700 = 💎70\n8. ₹800 = 💎80\n9. ₹900 = 💎90\n10. ₹1000 = 💎100\n100. ₹10000 = 💎1000\n200. ₹20000 = 💎2000\n\n_Tiang hian hman tur a ni_
 *Entirnan:* ${prefix}buydm 5\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\nHriattur: command zoah khan diamond store a number ka pek zat khi hman zel tur a ni`)
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
@@ -840,62 +863,73 @@ case '/1':
 if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹100(za) i sen a ngai`)
 const deduct1 = await eco.deduct(user, cara, 100)
 const add1 = eco.give(limitneihtu, khawlbawm, 10) 
-await dodoi(`Diamond 💎10 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+await dodoi(`Diamond 💎10 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/2':
 if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹200(zahnih) i sen a ngai`)
 const deduct2 = await eco.deduct(user, cara, 200)
 const add2 = eco.give(limitneihtu, khawlbawm, 20) 
-await dodoi(`Diamond 💎20 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+await dodoi(`Diamond 💎20 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/3':
-if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹300(zathum) i sen a ngai`)
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹300(zathum) i sen a ngai`)
 const deduct3 = await eco.deduct(user, cara, 300)
 const add3 = eco.give(limitneihtu, khawlbawm, 30) 
-await dodoi(`Diamond 💎30 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+await dodoi(`Diamond 💎30 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/4':
-if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹400(zali) i sen a ngai`)
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹400(zali) i sen a ngai`)
 const deduct4 = await eco.deduct(user, cara, 400)
 const add4 = eco.give(limitneihtu, khawlbawm, 40) 
-await dodoi(`Diamond 💎40 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+await dodoi(`Diamond 💎40 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/5':
-if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹500(zanga) i sen a ngai`)
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹500(zanga) i sen a ngai`)
 const deduct5 = await eco.deduct(user, cara, 500)
 const add5 = eco.give(limitneihtu, khawlbawm, 50) 
-await dodoi(`Diamond 💎50 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+await dodoi(`Diamond 💎50 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/6':
-if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹600(zaruk) i sen a ngai`)
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹600(zaruk) i sen a ngai`)
 const deduct6 = await eco.deduct(user, cara, 600)
 const add6 = eco.give(limitneihtu, khawlbawm, 60) 
-await dodoi(`Diamond 💎60 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+await dodoi(`Diamond 💎60 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/7':
-if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹700(zasarih) i sen a ngai`)
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹700(zasarih) i sen a ngai`)
 const deduct7 = await eco.deduct(user, cara, 700)
 const add7 = eco.give(limitneihtu, khawlbawm, 70) 
-await dodoi(`Diamond 💎70 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+await dodoi(`Diamond 💎70 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/8':
-if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹800(zariat) i sen a ngai`)
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹800(zariat) i sen a ngai`)
 const deduct8 = await eco.deduct(user, cara, 800)
 const add8 = eco.give(limitneihtu, khawlbawm, 80) 
-await dodoi(`Diamond 💎80 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+await dodoi(`Diamond 💎80 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/9':
-if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹900(zakua) i sen a ngai`)
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹900(zakua) i sen a ngai`)
 const deduct9 = await eco.deduct(user, cara, 900)
 const add9 = eco.give(limitneihtu, khawlbawm, 90) 
-await dodoi(`Diamond 💎90 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
+await dodoi(`Diamond 💎90 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/10':
-if (k > balance.wallet ) dodoi(`💎Diamond i lei duh a nih chuan ₹1000(sangkhat) i sen a ngai`)
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹1000(sangkhat) i sen a ngai`)
 const deduct10 = await eco.deduct(user, cara, 1000)
 const add10 = eco.give(limitneihtu, khawlbawm, 100) 
-await dodoi(`Diamond 💎100 i limit ah dah a ni🫠 i limit hi HBMods tih rawn thawn la i en thei ang`)
-}
+await dodoi(`Diamond 💎100 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+break
+case '/100':
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹10000(singkhat) i sen a ngai`)
+const deduct100 = await eco.deduct(user, cara, 10000)
+const add100 = eco.give(limitneihtu, khawlbawm, 1000) 
+await dodoi(`Diamond 💎1000 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+break
+case '/200':
+if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹20000(singhnih) i sen a ngai`)
+const deduct100 = await eco.deduct(user, cara, 20000)
+const add100 = eco.give(limitneihtu, khawlbawm, 2000) 
+await dodoi(`Diamond 💎2000 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`) }
 }
 break
 case '/owner': {
@@ -913,7 +947,7 @@ break
 case '/leaderboard': {
   let teks = "「 *PREMIUM LEADERBOARD* 」\n\n";
   for (let i of prem) {
-    teks += `👑 @${i.split("@")[0]} 👑\n`;
+    teks += `👑 @${i.split("@")[0]}\n`;
   }
   await HBWABotMz.sendMessage(from, {text:teks, mentions: await HBWABotMz.parseMention(teks)}, { quoted: m });
   break;
@@ -1229,17 +1263,6 @@ console.error('Dik lo a awm tlat:', error)
 }
 break
  
-case '/dawntur': case '/claim': case '/daily': {
-if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
-HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
-let user = m.sender
-const cara = "cara"
-const daily= await eco.daily(user, cara, dawnzat2);
-if (daily.cd) return dodoi(`I claim tawh, ${daily.cdL} a ral hunah i claim leh thei chauh ang`);
-dodoi(`Vawiin a tan ₹${daily.amount} i claim e, darkar 24 ral hunah i claim leh thei ang!!!`);
-}
-break
- 
 case '/wallet': {
 HBWABotMz.sendMessage(from, { react: { text: "💳" , key: m.key }})
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
@@ -1447,7 +1470,7 @@ const balance = await eco.balance(hmela, cara);
 await dodoi(`🫡Sir, hei zawng hi a la bang : _₹${balance.bank}_\nI la cut leh dawn em sir?🙋‍♂️`);
 }
 break
-case '/cwt': {
+case '/c2': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 if (!HerbertTheCreator1) return
 HBWABotMz.sendMessage(from, { react: { text: "🫡" , key: m.key }})
@@ -1465,7 +1488,7 @@ const balance = await eco.balance(hmeli, cara);
 await dodoi(`🫡Sir a wallet-ah hei zat hi a awm : _₹${balance.wallet}_ 🤔`);
 }
 break 
-case '/cb': {
+case '/c3': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 if (!HerbertTheCreator1) return
 HBWABotMz.sendMessage(from, { react: { text: "🫡" , key: m.key }})
@@ -1654,6 +1677,8 @@ text: `*Bot InFo*
 ╭═══════════┈
 ┃𒆜┌───┈
 ┃𒆜│allmenu
+┃𒆜│aimenu
+┃𒆜│mizomenu
 ┃𒆜│downloadmenu
 ┃𒆜│groupmenu
 ┃𒆜│ownermenu
@@ -1662,6 +1687,7 @@ text: `*Bot InFo*
 ┃𒆜│ephoto360menu
 ┃𒆜│stickermenu
 ┃𒆜│stalkermenu
+┃𒆜│unbanmenu
 ┃𒆜│othermenu
 ┃𒆜└───────────┈ 
 ╰════════════──┈ `,
@@ -1670,7 +1696,7 @@ externalAdReply:{
 showAdAttribution: true,
 containsAutoReply: true,
 renderLargerThumbnail: true,
-title: `HBWABot Mizo`,
+title: `${global.botname}`,
 thumbnail : menuthla,
 mediaType: 1,
 mediaUrl: ``,
@@ -1691,18 +1717,18 @@ var HBLoadingmenu = [
 `《███████████████》100%`,
 `
 ╭══════════════
-┃ *HBWABot Allmenu*
+┃ *${global.botname} Allmenu*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ╰══════════════
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
 *╭═══❏ AI Menu ❏*
 ┃𒆜┌───┈
-┃𒆜│remini 
-┃𒆜│toanime 
-┃𒆜│tozombie
+*┃𒆜│remini* 
+*┃𒆜│toanime* 
+*┃𒆜│tozombie*
 ┃𒆜│shazam
-┃𒆜│shazam2
-┃𒆜│shazam3
+*┃𒆜│shazam2*
+*┃𒆜│shazam3*
 ┃𒆜│openai [Mizo Language]
 ┃𒆜│gpt [English Language]
 ┃𒆜│ai [Mizo Language]
@@ -1743,6 +1769,17 @@ var HBLoadingmenu = [
 ┃𒆜│ringtone 
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛
+
+*╭═══❏ Unbanned Menu ❏*
+┃𒆜┌───┈
+┃𒆜│unbanv1 
+┃𒆜│unbanv2
+┃𒆜│unbanv3
+┃𒆜│unbanv4
+┃𒆜│unbanv5
+┃𒆜└───────────┈ 
+╰══════════════𖡛
+
 *╭═══❏ Textpro Maker ❏*
 ┃𒆜┌───┈
 ┃𒆜│candy
@@ -2189,6 +2226,120 @@ await HBWABotMz.relayMessage(m.chat, {
  }
 }
 break
+case '/unbanmenu': { 
+const balance = await eco.balance(limitneihtu, khawlbawm);
+var HBLoadingmenu = [
+`《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
+`《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
+`《█████▒▒▒▒▒▒▒▒▒▒》30%`,
+`《████████▒▒▒▒▒▒▒》50%`,
+`《███████████▒▒▒▒》80%`,
+`《███████████████》100%`,
+`
+╭══════════════
+┃ *Unbanned Menu*
+┃ *✑ limit :* ${balance.wallet} 💎
+╰══════════════
+͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
+*╭═══❏ Unbanned Menu ❏*
+┃𒆜┌───┈
+┃𒆜│unbanv1 
+┃𒆜│unbanv2
+┃𒆜│unbanv3
+┃𒆜│unbanv4
+┃𒆜│unbanv5
+┃𒆜└───────────┈ 
+╰══════════════𖡛`]
+const { key } = await HBWABotMz.sendMessage(m.chat, {
+      image: { url: loadingimg3 },
+      caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
+    }, {quoted: m})
+for (let i = 0; i < HBLoadingmenu.length; i++) {
+await HBWABotMz.relayMessage(m.chat, {
+        protocolMessage: {
+          key,
+          type: 14,
+          editedMessage: {
+           imageMessage: { caption: HBLoadingmenu[i] }
+          }
+        }
+      }, {})
+ }
+}
+break
+case '/mizomenu': { 
+const balance = await eco.balance(limitneihtu, khawlbawm);
+var HBLoadingmenu = [
+`《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
+`《███▒▒▒▒▒▒▒▒▒▒▒▒》10%`,
+`《█████▒▒▒▒▒▒▒▒▒▒》30%`,
+`《████████▒▒▒▒▒▒▒》50%`,
+`《███████████▒▒▒▒》80%`,
+`《███████████████》100%`,
+`
+╭══════════════
+┃ *Mizo Tawng*
+┃ *✑ limit :* ${balance.wallet} 💎
+╰══════════════
+͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
+*╭═══❏ Mizo Tawng ❏*
+┃𒆜┌───┈
+┃𒆜│mizoquiz
+┃𒆜│picquiz
+┃𒆜│mlyrics
+┃𒆜│mzly
+┃𒆜│cfhb
+┃𒆜│cfhb2
+┃𒆜│bible
+┃𒆜│bq
+┃𒆜│mlstalk
+┃𒆜│igstalk
+┃𒆜│truth
+┃𒆜│dare
+┃𒆜│checkme
+┃𒆜│check
+┃𒆜│mawl ber
+┃𒆜│sual ber
+┃𒆜│fing ber
+┃𒆜│a ber
+┃𒆜│tawngthei ber
+┃𒆜│hmelchhe ber
+┃𒆜│damrei ber
+┃𒆜│dawih ber
+┃𒆜│hrisel ber
+┃𒆜│upa ber
+┃𒆜│naupang ber
+┃𒆜│hmeltha ber
+┃𒆜│lulian ber
+┃𒆜│zaktheilo ber
+┃𒆜│zakzum ber
+┃𒆜│nawi ber
+┃𒆜│tawngthei ber
+┃𒆜│mifel ber
+┃𒆜│chawheh ber
+┃𒆜│bumhmang ber
+┃𒆜│lerh ber
+┃𒆜│luck ber
+┃𒆜│zei ber
+┃𒆜└───────────┈ 
+╰══════════════𖡛`]
+const { key } = await HBWABotMz.sendMessage(m.chat, {
+      image: { url: loadingimg3 },
+      caption: '《▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'
+    }, {quoted: m})
+for (let i = 0; i < HBLoadingmenu.length; i++) {
+await HBWABotMz.relayMessage(m.chat, {
+        protocolMessage: {
+          key,
+          type: 14,
+          editedMessage: {
+           imageMessage: { caption: HBLoadingmenu[i] }
+          }
+        }
+      }, {})
+ }
+}
+break
 case '/aimenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm);
 var HBLoadingmenu = [
@@ -2206,12 +2357,12 @@ var HBLoadingmenu = [
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
 *╭═══❏ AI Menu ❏*
 ┃𒆜┌───┈
-┃𒆜│remini 
-┃𒆜│toanime 
-┃𒆜│tozombie
+*┃𒆜│remini* 
+*┃𒆜│toanime* 
+*┃𒆜│tozombie*
 ┃𒆜│shazam
-┃𒆜│shazam2
-┃𒆜│shazam3
+*┃𒆜│shazam2*
+*┃𒆜│shazam3*
 ┃𒆜│openai [Mizo Language]
 ┃𒆜│gpt [English Language]
 ┃𒆜│ai [Mizo Language]
@@ -2709,7 +2860,7 @@ break
 case '/gb': case '/gbwhatsapp': {
 var hbmodspng = await getBuffer(`https://i.imgur.com/i5s0rnL.png`)
 HBWABotMz.sendMessage(from, { 
-text: ` *GBWhatsApp Latest Version*\nhttps://herbert70.blogspot.com/2022/04/download-gbwhatsapp-last-version-update.html\nDeveloped by HBMods Apk Store`,
+text: ` *GBWhatsApp Latest Version*\nhttps://herbert70.blogspot.com/2022/04/download-gbwhatsapp-last-version-update.html\n©HBMods Apk Store`,
 contextInfo:{
 externalAdReply:{
 showAdAttribution: true,
@@ -2729,7 +2880,7 @@ break
 case '/fm': case '/fmwhatsapp': { 
 var hbmodspng = await getBuffer(`https://i.imgur.com/3RAYRjk.png`)
 HBWABotMz.sendMessage(from, { 
-text: ` *FMWhatsApp Latest Version*\nhttps://herbert70.blogspot.com/search/label/FMWhatsApp\nDeveloped by HBMods Apk Store`,
+text: ` *FMWhatsApp Latest Version*\nhttps://herbert70.blogspot.com/search/label/FMWhatsApp\n©HBMods Apk Store`,
 contextInfo:{
 externalAdReply:{ 
 showAdAttribution: true,
@@ -2749,7 +2900,7 @@ break
 case '/yo': case '/yowhatsapp': {
 var hbmodspng = await getBuffer(`https://i.imgur.com/Y21MLL1.png `)
 HBWABotMz.sendMessage(from, { 
-text: ` *YOWhatsApp Latest Version*\nhttps://herbert70.blogspot.com/2022/10/yowhatsapp.html\nDeveloped by HBMods Apk Store`,
+text: ` *YOWhatsApp Latest Version*\nhttps://herbert70.blogspot.com/2022/10/yowhatsapp.html\n©HBMods Apk Store`,
 contextInfo:{
 externalAdReply:{ 
 showAdAttribution: true,
@@ -2769,7 +2920,7 @@ break
 case '/mb': case '/mbwhatsapp': { 
 var hbmodspng = await getBuffer(`https://i.imgur.com/Uz0c4Dd.png `)
 HBWABotMz.sendMessage(from, { 
-text: ` *MBWhatsApp Latest Version*\nhttps://herbert70.blogspot.com/search/label/MBWhatsApp?m=1\nDeveloped by HBMods Apk Store`,
+text: ` *MBWhatsApp Latest Version*\nhttps://herbert70.blogspot.com/search/label/MBWhatsApp?m=1\n©HBMods Apk Store`,
 contextInfo:{
 externalAdReply:{
 showAdAttribution: true,
@@ -2789,7 +2940,7 @@ break
 case '/hbmods': case '/fouad': case '/mod': case '/mods': { 
 var hbmodspng = await getBuffer(`https://i.imgur.com/SfP3f4M.png `)
 HBWABotMz.sendMessage(from, { 
-text: ` *WhatsApp Fouad Mod Latest Version*\nhttps://herbert70.blogspot.com/search/label/FouadMods?m=1\nDeveloped by HBMods Apk Store`,
+text: ` *WhatsApp Fouad Mod Latest Version*\nhttps://herbert70.blogspot.com/search/label/FouadMods?m=1\n©HBMods Apk Store`,
 contextInfo:{
 externalAdReply:{ 
 showAdAttribution: true,
@@ -2910,12 +3061,21 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 HBWABotMz.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
 }
 break
-case '/postgrp': {
-if (!q) return
-if (!HerbertTheCreator1) return
-HBWABotMz.sendMessage(`120363021176504117@g.us`, { text : q ? q : '' , mentions: participants.map(a => a.id)})
+case '/bcgc': case '/bcgroup': {
+if (!HerbertTheCreator && !HerbertTheCreator1) return
+if (!text) return
+let getGroups = await HBWABotMz.groupFetchAllParticipating()
+let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
+let anu = groups.map(v => v.id)
+dodoi(`Broadcast message chu ${anu.length * 1.5} seconds chhungin Group Chat ${anu.length} ah thawn mek anni`)
+for (let i of anu) {
+    await sleep(1500)
+    let a = `Broadcast by ${pushname} \n\nMessage: ${text}\n` 
+    HBWABotMz.sendMessage(i, {text: a })
 }
-break
+dodoi(`Broadcast message chu group ${anu.length} ah thawn fel a ni tawh e`)
+    }
+    break
 
 case '/ebinary': {
 if (!q) return dodoi(`Message reply in emaw command zoah rawn dah la Binary code ah a lo chang ang tiang hian hman tur: ${prefix + command} hello world`)
@@ -2966,7 +3126,7 @@ await loadingreact()
 const { remini } = require('./lib/remini')
 let media = await quoted.download()
 let proses = await remini(media, "enhance")
-HBWABotMz.sendMessage(m.chat, { image: proses, caption: "\n*©HBWABot*"}, { quoted: m})
+HBWABotMz.sendMessage(m.chat, { image: proses, caption: `\n*©${global.botname}*`}, { quoted: m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -2983,7 +3143,7 @@ const { toanime } = require('betabotz-tools')
 let downloadrawh = await quoted.download()
 let results = await toanime(downloadrawh)
 console.log(results) //json
-HBWABotMz.sendMessage(m.chat, { image: {url: results.image_data}, caption: "\n*©HBWABot*"}, { quoted: m})
+HBWABotMz.sendMessage(m.chat, { image: {url: results.image_data}, caption: `\n*©${global.botname}*`}, { quoted: m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -2999,7 +3159,7 @@ const { removebg } = require('betabotz-tools')
 let downloadrawh = await quoted.download()
 let results = await removebg(downloadrawh)
 console.log(results) //json
-HBWABotMz.sendMessage(m.chat, { image: {url: results.image_data}, caption: "\n*©HBWABot*"}, { quoted: m})
+HBWABotMz.sendMessage(m.chat, { image: {url: results.image_data}, caption: `\n*©${global.botname}*`}, { quoted: m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -3015,7 +3175,7 @@ const { remini } = require('betabotz-tools')
 let downloadrawh = await quoted.download()
 let results = await remini(downloadrawh)
 console.log(results) //json
-HBWABotMz.sendMessage(m.chat, { image: {url: results.image_data}, caption: "\n*©HBWABot*"}, { quoted: m})
+HBWABotMz.sendMessage(m.chat, { image: {url: results.image_data}, caption: `\n*©${global.botname}*`}, { quoted: m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -3033,7 +3193,7 @@ const { tozombie } = require('betabotz-tools')
 let downloadrawh = await quoted.download()
 let results = await tozombie(downloadrawh)
 console.log(results) //json
-HBWABotMz.sendMessage(m.chat, { image: {url: results.image_data}, caption: "\n*©HBWABot*"}, { quoted: m})
+HBWABotMz.sendMessage(m.chat, { image: {url: results.image_data}, caption: `\n*©${global.botname}*`}, { quoted: m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -3055,16 +3215,17 @@ case '/ai': {
         .replace(/Lalngaihawma|lalngaihawma/g, 'Erlan Rahmat')
         .replace(/HBMods/g, 'ERLANRAHMAT')
         .replace(/HBMods OFC/g, 'ERLANRAHMAT')
+        .replace(/tunge siam che|tuin nge siam che|tu siam nge i nih/g, `who created you `)
         .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`
     const athu1 = `${thlakna 
-        .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
+    .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot|`${global.botname}`/g, 'BetaBotz-Ai')
         .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
         .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
     const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1)
     const heihi_ani = `${mizotranslation1}`
     const heihian = await openai(`${heihi_ani}`)
     const chutin = `${heihian.result
-        .replace(/BetaBotz/g, 'HBWABot')
+        .replace(/BetaBotz/g, `${global.botname}`)
         .replace(/Lann/g, 'Herbert Suantak')
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
         .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')
@@ -3079,7 +3240,8 @@ case '/ai': {
     .replace(/ERLANRAHMAT/g, 'HBMods')
     .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
     .replace(/ka rawn kal a ni/g, 'ka awm e')
-    .replace(/Chibai! /g, `Hi ${pushname}! `)
+    .replace(/Chibai! /g, `Hello ${pushname}, `)
+    .replace(/Indonesia tawng/g, `Mizo tawng`)  
     .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
     .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
 await HBWABotMz.sendMessage(from, { text: siamthat }, { quoted: m });
@@ -3092,7 +3254,6 @@ await HBWABotMz.sendMessage(from, { text: siamthat }, { quoted: m });
 break
 //betabotz ChatBot
 case '/ai2': case '/gpt': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
     if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
     const limit1= await eco.balance(limitneihtu, khawlbawm)
     if (hmanzat > limit1.wallet) return await dailylimit();
@@ -3111,14 +3272,14 @@ if (!HerbertTheCreator && !isPrem) return await replyprem()
         .replace(/HBMods OFC/g, 'ERLANRAHMAT')
         .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`
     const athu1 = `${thlakna 
-    .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot/g, 'BetaBotz-Ai')
+    .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot|`${global.botname}`/g, 'BetaBotz-Ai')
         .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
         .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
     const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1)
     const heihi_ani = `${mizotranslation1}`
     const heihian = await openai(`${heihi_ani}`)
     const chutin = `${heihian.result
-        .replace(/BetaBotz/g, 'HBWABot')
+        .replace(/BetaBotz/g, `${global.botname}`)
         .replace(/Lann/g, 'Herbert Suantak')
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
         .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')}`;
@@ -3158,7 +3319,7 @@ case '/ai2': case '/gpt': {
     const heihi_ani = `${mizotranslation1}`;
     const heihian = await openai(`${heihi_ani}`);
     const chutin = `${heihian.result
-        .replace(/BetaBotz/g, 'HBWABot')
+        .replace(/BetaBotz/g, `${global.botname}`)
         .replace(/Lann/g, 'Herbert Suantak')
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
         .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')
@@ -3258,12 +3419,13 @@ chu ta a la pawm loh chuan *bincc* tih rawn type leh la i try leh zel mai dawn n
 break
 
 case '/gen': {
-if (!q) return dodoi(`_🤖Credit Card Bin, Generate tur chuan number ka mamawh, kha tiang ringawt loh khan tiang hian_\n*⟨Entirnan:* ${prefix + command} 440344xxxxxxxx`);
-    const BinCC = `${text}`;
-        if (BinCC.length !== 16) {
-            return dodoi(`I number rawn dah hi digit 16 chiah chiah a ni tur a ni a, digit 16 a tlin loh chuan x hmangin tlin tir rawh, 
-    *⟨Entirnan:* ${prefix + command} 440344xxxxxxxx `);
-        }
+if (!q) return dodoi(`_🤖Credit Card Bin, Generate tur chuan number ka mamawh, kha tiang ringawt loh khan tiang hian_\n*⟨Entirnan:* ${prefix + command} 440344`);
+const BinCC1 = `${text}`;
+if (BinCC1.length !== 6) {
+return dodoi(`I number rawn dah hi digit 6 chiah chiah a ni tur a ni a,\n*⟨Entirnan:* ${prefix + command} 440344`);
+}
+const addxx = [`xxxxxxxxxx`]
+const BinCC = `${text}${addxx}`
 const namso = require('namso-cc-gen');
 const genarate = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/BinCC.json')
 let genarate2 = await fetch(genarate);
@@ -3289,13 +3451,13 @@ ${bincard}
 *First Name :* Herbert
 *Last Name :* Suantak
 
-*Country :* 😵
+*Country :* ??
 *Billing Address:* HBMods OFC
-*Street:* 😵
-*City :* 😵
-*Zip/ Postal Code:* 😵
+*Street:* ??
+*City :* ??
+*Zip/ Postal Code:* ??
 
-😵 = I source a mi in dah khat tel ang che🫠
+?? = I source a mi in dah khat rawh🫠
 `}, { quoted: m })
 }
 break
@@ -3455,7 +3617,7 @@ const ytcp=`*${title}*
 ╭═══════════
 *⚙️Quality :* ${q}
 *⚙️Size :* ${size}
-*⚙️By HBWABot Mizo*
+*⚙️By ${global.botname}*
 ╰════════════`
 await uploadreact()
 HBWABotMz.sendMessage(m.chat, {document: {url: dl_url} ,mimetype: 'audio/mpeg', fileName: title+`.mp3`, caption: ytcp},{quoted:m})
@@ -3546,7 +3708,7 @@ const ytc=`*${title}*
 *⚙️File type :* mp4
 *⚙️Quality :* ${q}
 *⚙️Size :* ${size}
-*⚙️By HBWABot Mizo*
+*⚙️By ${global.botname}*
 ╰════════════`
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await uploadreact()
@@ -3599,7 +3761,7 @@ const ytcp=`*${title}*
 ╭═══════════
 *⚙️Quality :* ${q}
 *⚙️Size :* ${size}
-*⚙️By HBWABot Mizo*
+*⚙️By ${global.botname}*
 ╰════════════`
 await uploadreact()
 HBWABotMz.sendMessage(m.chat, {document: {url: dl_url} ,mimetype: 'audio/mpeg', fileName: title+`.mp3`, caption: ytcp},{quoted:m})
@@ -3807,7 +3969,7 @@ const ytc=`*${title}*
 *⚙️File type :* mp4
 *⚙️Quality :* ${q}
 *⚙️Size :* ${size}
-*⚙️By HBWABot Mizo*
+*⚙️By ${global.botname}*
 ╰════════════`
 await uploadreact()
 await HBWABotMz.sendMessage(m.chat,{
@@ -3958,9 +4120,7 @@ if (!q) {return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + c
 let mime = (q.msg || q).mimetype || '';
 if (!/video/.test(mime) && !/audio/.test(mime)) { return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, a hla/music hming ka rawn zawn sak ang che....`);
   }
-if ((q.msg || q).seconds > 45) { return dodoi('Khawngihin, second 45 aia tam rawn thawn suh ka access thei lo');
-  }
-const limit1 = await eco.balance(limitneihtu, khawlbawm);
+  const limit1 = await eco.balance(limitneihtu, khawlbawm);
 if (100 > limit1.wallet) { return dodoi('He featurs hi hman i duh chuan 💎100 i neih a ngai!!.\n\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏Bot rawn hmang thar tur i nih chuan Limit tiin type rawh, ti chuan bot hman theihna tur 💎500 i dawng ang, emaw i thiante in thawn tir rawh');
   }
 var zamzam = await getBuffer(`https://i.imgur.com/hYFjOKu.png`);
@@ -4136,7 +4296,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
  let buff = getRandom('.jpg')
  await fs.writeFileSync('./'+buff, data)
  let medi = fs.readFileSync('./' + buff)
-await HBWABotMz.sendMessage(from, { image: medi, caption:"\n*©HBWABot*"}, { quoted: m })
+await HBWABotMz.sendMessage(from, { image: medi, caption:`\n*©${global.botname}*`}, { quoted: m })
  setTimeout(() => { fs.unlinkSync(buff) }, 10000)
  let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
@@ -4459,7 +4619,7 @@ if (/glue/.test(command)) link = 'https://textpro.me/create-3d-glue-text-effect-
 if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-online-980.html'
 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
 let anu = await mumaker.textpro(link, q)
-HBWABotMz.sendMessage(m.chat, { image: {url: anu.image}, caption: `\n*©HBWABot*` }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { image: {url: anu.image}, caption: `\n*©${global.botname}*` }, { quoted: m })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4501,7 +4661,7 @@ if (/freecreate/.test(command)) link = 'https://en.ephoto360.com/free-create-a-3
 if (/galaxystyle/.test(command)) link = 'https://en.ephoto360.com/create-galaxy-style-free-name-logo-438.html'
 if (/lighteffects/.test(command)) link = 'https://en.ephoto360.com/create-light-effects-green-neon-online-429.html'
 let haldwhd = await mumaker.ephoto(link, q)
-HBWABotMz.sendMessage(m.chat, { image: { url: haldwhd.image }, caption: `\n*©HBWABot*` }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { image: { url: haldwhd.image }, caption: `\n*©${global.botname}*` }, { quoted: m })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4540,7 +4700,7 @@ if (/metalliceffect/.test(command)) link = 'https://photooxy.com/logo-and-text-e
 if (/embroiderytext/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/create-embroidery-text-online-191.html'
 if (/flamingtext/.test(command)) link = 'https://photooxy.com/logo-and-text-effects/realistic-flaming-text-effect-online-197.html'
 let dehe = await mumaker.photooxy(link, q)
-HBWABotMz.sendMessage(m.chat, { image: { url: dehe.image }, caption: `\n*©HBWABot*` }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { image: { url: dehe.image }, caption: `\n*©${global.botname}*` }, { quoted: m })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4558,7 +4718,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
 let anuphub = await mumaker.textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [`${logo4}`,`${logo9}`])
 console.log(anuphub)
-HBWABotMz.sendMessage(from,{image:{url:anuphub.image}, caption:"\n*©HBWABot*"},{quoted:m})
+HBWABotMz.sendMessage(from,{image:{url:anuphub.image}, caption:`\n*©${global.botname}*`},{quoted:m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4576,7 +4736,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
 let anutro2 = await mumaker.textpro("https://textpro.me/create-3d-retro-text-effect-online-free-1065.html", [`${logo4}`,`${logo9}`])
 console.log(anutro2)
-HBWABotMz.sendMessage(from,{image:{url:anutro2.image}, caption:"\n*©HBWABot*"},{quoted:m})
+HBWABotMz.sendMessage(from,{image:{url:anutro2.image}, caption:`\n*©${global.botname}*`},{quoted:m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4594,7 +4754,7 @@ inilogo9 = args.join(" ")
 var logo9 = inilogo9.split('|')[1]
 let anubit8 = await mumaker.textpro("https://textpro.me/video-game-classic-8-bit-text-effect-1037.html", [`${logo4}`,`${logo9}`])
 console.log(anubit8)
-HBWABotMz.sendMessage(from,{image:{url:anubit8.image}, caption:"\n*©HBWABot*"},{quoted:m})
+HBWABotMz.sendMessage(from,{image:{url:anubit8.image}, caption:`\n*©${global.botname}*`},{quoted:m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4606,7 +4766,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
 maker.textpro("https://textpro.me/make-a-batman-logo-online-free-1066.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 .catch((err) => console.log(err))
@@ -4618,7 +4778,7 @@ if (hmanzat > limit2.wallet) return await dailylimit()
 await makerreact()
 maker.textpro("https://textpro.me/3d-box-text-effect-online-880.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4630,7 +4790,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
 mumaker.ephoto("https://en.ephoto360.com/flame-lettering-effect-372.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4646,7 +4806,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
  mumaker.textpro("https://textpro.me/create-lion-logo-mascot-online-938.html", [
 `${teks1}`,`${teks2}`])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4662,7 +4822,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
  mumaker.textpro("https://textpro.me/create-3d-avengers-logo-online-974.html", [
 `${teks1}`,`${teks2}`])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4674,7 +4834,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
  mumaker.textpro("https://textpro.me/write-text-on-foggy-window-online-free-1015.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4690,7 +4850,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
  mumaker.textpro("https://textpro.me/create-space-3d-text-effect-online-985.html", [
 `${teks1}`,`${teks2}`])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4702,7 +4862,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
  mumaker.textpro("https://textpro.me/bokeh-text-effect-876.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 .catch((err) => console.log(err));
@@ -4715,7 +4875,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
  mumaker.textpro("https://textpro.me/holographic-3d-text-effect-975.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4727,7 +4887,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
  mumaker.textpro("https://textpro.me/break-wall-text-effect-871.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4739,7 +4899,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
  mumaker.textpro("https://textpro.me/carbon-text-effect-833.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4751,7 +4911,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
  mumaker.textpro("https://textpro.me/online-black-and-white-bear-mascot-logo-creation-1012.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4763,7 +4923,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
  mumaker.textpro("https://textpro.me/create-a-metallic-text-effect-free-online-1041.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4775,7 +4935,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
  mumaker.textpro("https://textpro.me/steel-text-effect-online-921.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4787,7 +4947,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
  mumaker.textpro("https://textpro.me/fabric-text-effect-online-964.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4799,7 +4959,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
  mumaker.textpro("https://textpro.me/3d-golden-ancient-text-effect-online-free-1060.html", [
 `${q}`,])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4815,7 +4975,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
  mumaker.textpro("https://textpro.me/create-logo-style-marvel-studios-online-971.html", [
 `${teks1}`,`${teks2}`])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4831,7 +4991,7 @@ teks1 = q.split("|")[0]
 teks2 = q.split("|")[1]
  mumaker.textpro("https://textpro.me/create-logo-style-marvel-studios-ver-metal-972.html", [
 `${teks1}`,`${teks2}`])
-.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©HBWABot*` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { image: {url: data.image},caption: `\n*©${global.botname}*` }, { quoted: m }))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4913,14 +5073,14 @@ case '/trap' :
 if (!m.isGroup) return dodoi(mess.group)
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  waifudd = await axios.get(`https://waifu.pics/api/nsfw/${command}`) 
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url:waifudd.data.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url:waifudd.data.url } }, { quoted: m })
 break
 case '/hentai-neko' :
 case '/hneko' :
 if (!m.isGroup) return dodoi(mess.group)
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 waifudd = await axios.get(`https://waifu.pics/api/nsfw/neko`)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url:waifudd.data.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url:waifudd.data.url } }, { quoted: m })
 break
 case '/hentai-waifu' :
 case '/nwaifu' :
@@ -4928,7 +5088,7 @@ if (!m.isGroup) return dodoi(mess.group)
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
 waifudd = await axios.get(`https://waifu.pics/api/nsfw/waifu`) 
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url:waifudd.data.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url:waifudd.data.url } }, { quoted: m })
 
 break
 case '/gasm':
@@ -4936,7 +5096,7 @@ if (!m.isGroup) return dodoi(mess.group)
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
  waifudd = await axios.get(`https://nekos.life/api/v2/img/${command}`)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url:waifudd.data.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url:waifudd.data.url } }, { quoted: m })
 
 break
 case '/animespank':
@@ -4944,7 +5104,7 @@ if (!m.isGroup) return dodoi(mess.group)
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
  
  waifudd = await axios.get(`https://nekos.life/api/v2/img/spank`) 
-await HBWABotMz.sendMessage(m.chat, { caption:"\n*©HBWABot*", image: {url:waifudd.data.url} },{ quoted:m })
+await HBWABotMz.sendMessage(m.chat, { caption:`\n*©${global.botname}*`, image: {url:waifudd.data.url} },{ quoted:m })
 
 break
 case '/ahegao':
@@ -4953,7 +5113,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/ahegao.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/ass':
@@ -4962,7 +5122,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/ass.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/bdsm':
@@ -4971,7 +5131,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/bdsm.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/blowjob':
@@ -4980,7 +5140,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/blowjob.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/cuckold':
@@ -4989,7 +5149,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/cuckold.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/cum':
@@ -4998,7 +5158,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/cum.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/eba':
@@ -5007,7 +5167,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/eba.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/ero':
@@ -5016,7 +5176,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/ero.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/femdom':
@@ -5025,7 +5185,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/femdom.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/foot':
@@ -5034,7 +5194,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/foot.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/gangbang':
@@ -5043,7 +5203,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/gangbang.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/glasses':
@@ -5052,7 +5212,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/glasses.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/hentai':
@@ -5061,7 +5221,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/hentai.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/jahy':
@@ -5070,7 +5230,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/jahy.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/manga':
@@ -5079,7 +5239,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/manga.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/masturbation':
@@ -5088,7 +5248,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/masturbation.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/neko-hentai':
@@ -5097,7 +5257,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/neko.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/neko-hentai2':
@@ -5106,7 +5266,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/neko2.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/nsfwloli':
@@ -5115,7 +5275,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/nsfwloli.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/orgy':
@@ -5124,7 +5284,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/orgy.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/panties':
@@ -5133,7 +5293,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/panties.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/pussy':
@@ -5142,7 +5302,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/pussy.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/tentacles':
@@ -5151,7 +5311,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/tentacles.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/thighs':
@@ -5160,7 +5320,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/thighs.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/yuri':
@@ -5169,7 +5329,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/yuri.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/zettai':
@@ -5178,7 +5338,7 @@ if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo
  
 var ahegaonsfw = JSON.parse(fs.readFileSync('./asset/nsfw/zettai.json'))
 var herbertyresult = pickRandom(ahegaonsfw)
-HBWABotMz.sendMessage(m.chat, { caption: "\n*©HBWABot*", image: { url: herbertyresult.url } }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { caption: `\n*©${global.botname}*`, image: { url: herbertyresult.url } }, { quoted: m })
 
 break
 case '/gifblowjob':
@@ -5202,7 +5362,7 @@ case '/animeavatar': {
  waifudd = await axios.get(`https://nekos.life/api/v2/img/avatar`) 
  const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
-await HBWABotMz.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: "\n*©HBWABot*"},{ quoted:m })
+await HBWABotMz.sendMessage(m.chat, {image: {url:waifudd.data.url}, caption: `\n*©${global.botname}*`},{ quoted:m })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat).catch(err => {
 return('Error!')
 })
@@ -5839,373 +5999,224 @@ HBWABotMz.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.t
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
- case '/unbanned': {
+case '/unbanv1': {
 if (!HerbertTheCreator && !isPrem) return await replyprem()
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-if (m.quoted || q) {
-var tosend = m.quoted ? m.quoted.sender : q.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-var katarget = tosend.split('@')[0]
-
-try {
-var axioss = require('axios')
-let ntah = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
+let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let wanbck = await HBWABotMz.onWhatsApp(wanb)
+if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
+let axioss = require("axios")  
+let hbertxos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = ntah.headers["set-cookie"].join("; ")
+let cookie = hbertxos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(ntah.data)
-let $form = $("form");
-let url = new URL($form.attr("action"), "https://www.whatsapp.com/").href
-let form = new URLSearchParams()
-form.append("jazoest", $form.find("input[name=jazoest]").val())
-form.append("lsd", $form.find("input[name=lsd]").val())
-form.append("step", "submit")
-form.append("country_selector", "+91")
-form.append("phone_number", `${katarget}`,)
-form.append("email", "hbmods05@outlook.com" )
-form.append("email_confirm", "hbmods05@outlook.com" )
-form.append("platform", "ANDROID")
-form.append("your_message", `I don't know why my number was suddenly banned from using WhatsApp. I was just replying to my customer's message. Please unban my WhatsApp account: [+91${katarget}]
-Thank You`)
-form.append("__user", "0")
-form.append("__a", "1")
-form.append("__csr", "")
-form.append("__req", "8")
-form.append("__hs", "19572.BP:whatsapp_www_pkg.2.0.0.0.0")
-form.append("dpr", "1")
-form.append("__ccg", "UNKNOWN")
-form.append("__rev", "1007965968")
-form.append("__comment_req", "0")
-
-let res = await axioss({
-url,
-method: "POST",
-data: form,
-headers: {
-cookie
-}
-
-})
-dodoi(`Bot atanga unbanned process chu darkar 1-24 nghak la,HBMods🥺🙏 atanga email reply i hmuh theih nan seconds 30 nghak rawh`)
-await makerreact(90000)
-let payload = String(res.data)
-if (payload.includes(`"payload":true`)) {
-dodoi(`##- WhatsApp Support -##
-
-Chibai,
-
-Min rawn biak avangin kan lawm e.
-
-Kan system hian i account activity chu kan Terms of Service bawhchhiatna a ni tih thuah a flag a, i phone number a block bawk. User i nih angin a pawi kan ti hle a ni. Hemi avanga buaina leh harsatna a awm chuan ngaihdam kan dil e.
-
-I account activity kan enfiah hnuah block chu kan paih chhuak ta a ni. Tunah tang chuan WhatsApp i hmang leh thei tawh tur a ni.
-
-Access i neih theih nan, WhatsApp-ah i phone number register leh rawh. Kan website ah ami emaw Play Store ah hian lut la!..
-
-WhatsApp emaw WhatsApp Business application emaw download theih a ni.`)
-} else if (payload.includes(`"payload":false`)) {
-dodoi(`##- WhatsApp Support -##
-
-Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni thum chhung pawh i nghah a ngai mai thei...`)
-} else dodoi(util.format(res.data))
-} catch (err) {dodoi(`${err}`)}
-} else dodoi('I unban duh number rawn dah rawh!')
-}
-break
-case '/unbannedv2': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-if (m.quoted || q) {
-var tosend = m.quoted ? m.quoted.sender : q.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-var katarget = tosend.split('@')[0]
-
-try {
-var axioss = require('axios')
-let ntah = await axioss.get("https://www.whatsapp.com/contact/noclient/")
-let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = ntah.headers["set-cookie"].join("; ")
-const cheerio = require('cheerio');
-let $ = cheerio.load(ntah.data)
+let $ = cheerio.load(hbertxos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
 form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
-form.append("country_selector", "+91")
-form.append("phone_number", `${katarget}`,)
-form.append("email", "hbmods05@outlook.com" )
-form.append("email_confirm", "hbmods05@outlook.com" )
+form.append("country_selector", "INDIA")
+form.append("phone_number", wanb)
+form.append("email", email.data[0])
+form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
-form.append("your_message", `Dear WhatsApp, we ask for your immediate assistance
-[+91${katarget}]
-I have sent several emails and reports to WhatsApp to submit an appeal so that my number is quickly removed from the blocked list. I really need it for personal purposes to communicate with my family. If I have committed a previous violation then I will use my number more carefully and better than before and I have now complied with what WhatsApp suggested, and I really hope that now my number can be used again. Thank You`)
+form.append("your_message", "Hello WhatsApp team, recently my WhatsApp number was suddenly blocked and I couldnt log into my account, in my account there is an important group like a school group and I have to read it but the account My WhatsApp is suddenly blocked, please restore my numbers")
 form.append("__user", "0")
 form.append("__a", "1")
 form.append("__csr", "")
 form.append("__req", "8")
-form.append("__hs", "19572.BP:whatsapp_www_pkg.2.0.0.0.0")
+form.append("__hs", "19316.BP:whatsapp_www_pkg.2.0.0.0.0")
 form.append("dpr", "1")
 form.append("__ccg", "UNKNOWN")
-form.append("__rev", "1007965968")
+form.append("__rev", "1006630858")
 form.append("__comment_req", "0")
-
 let res = await axioss({
-url,
-method: "POST",
-data: form,
-headers: {
-cookie
+  url,
+  method: "POST",
+  data: form,
+  headers: {
+  cookie
 }
-
 })
-dodoi(`Bot atanga unbanned process chu darkar 1-24 nghak la,HBMods🥺🙏 atanga email reply i hmuh theih nan seconds 30 nghak rawh`)
-await makerreact(90000)
-let payload = String(res.data)
-if (payload.includes(`"payload":true`)) {
-dodoi(`##- WhatsApp Support -##
-
-Chibai,
-
-Min rawn biak avangin kan lawm e.
-
-Kan system hian i account activity chu kan Terms of Service bawhchhiatna a ni tih thuah a flag a, i phone number a block bawk. User i nih angin a pawi kan ti hle a ni. Hemi avanga buaina leh harsatna a awm chuan ngaihdam kan dil e.
-
-I account activity kan enfiah hnuah block chu kan paih chhuak ta a ni. Tuna tang chuan WhatsApp i hmang leh thei tawh tur a ni.
-
-Access tha i neih theih nan, WhatsApp-ah i phone number register leh rawh. Kan website ah ami emaw Play Store ah hian lut la!..
-
-WhatsApp emaw WhatsApp Business application emaw download theih a ni.`)
-} else if (payload.includes(`"payload":false`)) {
-dodoi(`##- WhatsApp Support -##
-
-Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni thum chhung pawh i nghah a ngai mai thei...`)
-} else dodoi(util.format(res.data))
-} catch (err) {dodoi(`${err}`)}
-} else dodoi('I unban duh number rawn dah rawh!')
+HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
-case '/unbannedv3': {
+case '/unbanv2': {
 if (!HerbertTheCreator && !isPrem) return await replyprem()
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-if (m.quoted || q) {
-var tosend = m.quoted ? m.quoted.sender : q.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-var katarget = tosend.split('@')[0]
-try {
-var axioss = require('axios')
-let ntah = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
+let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let wanbck = await HBWABotMz.onWhatsApp(wanb)
+if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
+let axioss = require("axios")  
+let hbertxos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = ntah.headers["set-cookie"].join("; ")
+let cookie = hbertxos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(ntah.data)
+let $ = cheerio.load(hbertxos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
 form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
-form.append("country_selector", "+91")
-form.append("phone_number", `${katarget}`,)
-form.append("email", "hbmods05@outlook.com" )
-form.append("email_confirm", "hbmods05@outlook.com" )
+form.append("country_selector", "INDIA")
+form.append("phone_number", wanb)
+form.append("email", email.data[0])
+form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
-form.append("your_message", `Hello WhatsApp
-Nowadays, some people have many effective ways to block user numbers and report them without any reason, in fact, I know the terms of service well and I followed them, but some hackers made a false report to me and my number was blocked, unblock the number +91${katarget}`)
+form.append("your_message", "Equipe, o sistema de vocês baniram meu número por engano. Peço que vocês reativem meu número pois tenho família em outro país e preciso me comunicar com eles")
 form.append("__user", "0")
 form.append("__a", "1")
 form.append("__csr", "")
 form.append("__req", "8")
-form.append("__hs", "19572.BP:whatsapp_www_pkg.2.0.0.0.0")
+form.append("__hs", "19316.BP:whatsapp_www_pkg.2.0.0.0.0")
 form.append("dpr", "1")
 form.append("__ccg", "UNKNOWN")
-form.append("__rev", "1007965968")
+form.append("__rev", "1006630858")
 form.append("__comment_req", "0")
-
 let res = await axioss({
-url,
-method: "POST",
-data: form,
-headers: {
-cookie
+  url,
+  method: "POST",
+  data: form,
+  headers: {
+  cookie
 }
-
 })
-dodoi(`Bot atanga unbanned process chu darkar 1-24 nghak la,HBMods🥺🙏 atanga email reply i hmuh theih nan seconds 30 nghak rawh`)
-await makerreact(90000)
-let payload = String(res.data)
-if (payload.includes(`"payload":true`)) {
-dodoi(`##- WhatsApp Support -##
-
-Chibai,
-
-Min rawn biak avangin kan lawm e.
-
-Kan system hian i account activity chu kan Terms of Service bawhchhiatna a ni tih thuah a flag a, i phone number a block bawk. User i nih angin a pawi kan ti hle a ni. Hemi avanga buaina leh harsatna a awm chuan ngaihdam kan dil e.
-
-I account activity kan enfiah hnuah block chu kan paih chhuak ta a ni. Tunah tang chuan WhatsApp i hmang leh thei tawh tur a ni.
-
-Access i neih theih nan, WhatsApp-ah i phone number register leh rawh. Kan website ah ami emaw Play Store ah hian lut la!..
-
-WhatsApp emaw WhatsApp Business application emaw download theih a ni.`)
-} else if (payload.includes(`"payload":false`)) {
-dodoi(`##- WhatsApp Support -##
-
-Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni thum chhung pawh i nghah a ngai mai thei...`)
-} else dodoi(util.format(res.data))
-} catch (err) {dodoi(`${err}`)}
-} else dodoi('I unban duh number rawn dah rawh!')
+HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
-case '/unbannedv4': {
+case '/unbanv3': {
 if (!HerbertTheCreator && !isPrem) return await replyprem()
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-if (m.quoted || q) {
-var tosend = m.quoted ? m.quoted.sender : q.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-var katarget = tosend.split('@')[0]
-
-try {
-var axioss = require('axios')
-let ntah = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
+let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let wanbck = await HBWABotMz.onWhatsApp(wanb)
+if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
+let axioss = require("axios")  
+let hbertxos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = ntah.headers["set-cookie"].join("; ")
+let cookie = hbertxos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(ntah.data)
+let $ = cheerio.load(hbertxos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
 form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
-form.append("country_selector", "+91")
-form.append("phone_number", `${katarget}`,)
-form.append("email", "hbmods05@outlook.com" )
-form.append("email_confirm", "hbmods05@outlook.com" )
+form.append("country_selector", "INDIA")
+form.append("phone_number", wanb)
+form.append("email", email.data[0])
+form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
-form.append("your_message", `Good day whatsApp team. My whatApp account has been burned permanently, please i plead with you unblock it, i cannot use another number again. I don’t know why it is burned but my friends re suggesting its because i use GB whatsApp, which i didn’t know it was wrong. My number is [ +91${katarget} ]. Please whatsApp team, help me unblock my account. please i cannot use a new number as my current number is connected to slot of important things like vacancies.
-Thank you`)
+form.append("your_message", "Kepada pihak WhatsApp yang bijak Sana kenapa akun WhatsApp saya terblokir padahal aktifitas WhatsApp messenger saya normal normal saja mohon dibukakan kembali akun WhatsApp saya dengan ini saya cantumkan kode nomor akun WhatsApp messenger saya sekian banyak Terimakasih")
 form.append("__user", "0")
 form.append("__a", "1")
 form.append("__csr", "")
 form.append("__req", "8")
-form.append("__hs", "19572.BP:whatsapp_www_pkg.2.0.0.0.0")
+form.append("__hs", "19316.BP:whatsapp_www_pkg.2.0.0.0.0")
 form.append("dpr", "1")
 form.append("__ccg", "UNKNOWN")
-form.append("__rev", "1007965968")
+form.append("__rev", "1006630858")
 form.append("__comment_req", "0")
-
 let res = await axioss({
-url,
-method: "POST",
-data: form,
-headers: {
-cookie
+  url,
+  method: "POST",
+  data: form,
+  headers: {
+  cookie
 }
-
 })
-dodoi(`Bot atanga unbanned process chu darkar 1-24 nghak la,HBMods🥺🙏 atanga email reply i hmuh theih nan seconds 30 nghak rawh`)
-await makerreact(90000)
-let payload = String(res.data)
-if (payload.includes(`"payload":true`)) {
-dodoi(`##- WhatsApp Support -##
-
-Chibai,
-
-Min rawn biak avangin kan lawm e.
-
-Kan system hian i account activity chu kan Terms of Service bawhchhiatna a ni tih thuah a flag a, i phone number a block bawk. User i nih angin a pawi kan ti hle a ni. Hemi avanga buaina leh harsatna a awm chuan ngaihdam kan dil e.
-
-I account activity kan enfiah hnuah block chu kan paih chhuak ta a ni. Tunah tang chuan WhatsApp i hmang leh thei tawh tur a ni.
-
-Access i neih theih nan, WhatsApp-ah i phone number register leh rawh. Kan website ah ami emaw Play Store ah hian lut la!..
-
-WhatsApp emaw WhatsApp Business application emaw download theih a ni.`)
-} else if (payload.includes(`"payload":false`)) {
-dodoi(`##- WhatsApp Support -##
-
-Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni thum chhung pawh i nghah a ngai mai thei...`)
-} else dodoi(util.format(res.data))
-} catch (err) {dodoi(`${err}`)}
-} else dodoi('I unban duh number rawn dah rawh!')
+HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
-case '/unbannedv5': {
+case '/unbanv4': {
 if (!HerbertTheCreator && !isPrem) return await replyprem()
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-if (m.quoted || q) {
-var tosend = m.quoted ? m.quoted.sender : q.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-var katarget = tosend.split('@')[0]
-
-try {
-var axioss = require('axios')
-let ntah = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
+let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let wanbck = await HBWABotMz.onWhatsApp(wanb)
+if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
+let axioss = require("axios")  
+let hbertxos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
 let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
-let cookie = ntah.headers["set-cookie"].join("; ")
+let cookie = hbertxos.headers["set-cookie"].join("; ")
 const cheerio = require('cheerio');
-let $ = cheerio.load(ntah.data)
+let $ = cheerio.load(hbertxos.data)
 let $form = $("form");
 let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
 let form = new URLSearchParams()
 form.append("jazoest", $form.find("input[name=jazoest]").val())
 form.append("lsd", $form.find("input[name=lsd]").val())
 form.append("step", "submit")
-form.append("country_selector", "+91")
-form.append("phone_number", `${katarget}`,)
-form.append("email", "hbmods05@outlook.com" )
-form.append("email_confirm", "hbmods05@outlook.com" )
+form.append("country_selector", "INDIA")
+form.append("phone_number", wanb)
+form.append("email", email.data[0])
+form.append("email_confirm", email.data[0])
 form.append("platform", "ANDROID")
-form.append("your_message", `Hello WhatsApp, my number has been stolen by a hacker, please unlock it [+91${katarget}]`)
+form.append("your_message", "مرحبًا whatsapp ، تم حظر حسابي بشكل دائم أو مؤقت ، يرجى إلغاء حظر حسابي\nالرقم")
 form.append("__user", "0")
 form.append("__a", "1")
 form.append("__csr", "")
 form.append("__req", "8")
-form.append("__hs", "19572.BP:whatsapp_www_pkg.2.0.0.0.0")
+form.append("__hs", "19316.BP:whatsapp_www_pkg.2.0.0.0.0")
 form.append("dpr", "1")
 form.append("__ccg", "UNKNOWN")
-form.append("__rev", "1007965968")
+form.append("__rev", "1006630858")
 form.append("__comment_req", "0")
-
 let res = await axioss({
-url,
-method: "POST",
-data: form,
-headers: {
-cookie
+  url,
+  method: "POST",
+  data: form,
+  headers: {
+  cookie
 }
-
 })
-dodoi(`Bot atanga unbanned process chu darkar 1-24 nghak la,HBMods🥺🙏 atanga email reply i hmuh theih nan seconds 30 nghak rawh`)
-await makerreact(90000)
-let payload = String(res.data)
-if (payload.includes(`"payload":true`)) {
-dodoi(`##- WhatsApp Support -##
-
-Chibai,
-
-Min rawn biak avangin kan lawm e.
-
-Kan system hian i account activity chu kan Terms of Service bawhchhiatna a ni tih thuah a flag a, i phone number a block bawk. User i nih angin a pawi kan ti hle a ni. Hemi avanga buaina leh harsatna a awm chuan ngaihdam kan dil e.
-
-I account activity kan enfiah hnuah block chu kan paih chhuak ta a ni. Tunah tang chuan WhatsApp i hmang leh thei tawh tur a ni.
-
-Access i neih theih nan, WhatsApp-ah i phone number register leh rawh. Kan website ah ami emaw Play Store ah hian lut la!..
-
-WhatsApp emaw WhatsApp Business application emaw download theih a ni.`)
-} else if (payload.includes(`"payload":false`)) {
-dodoi(`##- WhatsApp Support -##
-
-Min rawn biak avangin kan lawm e. Email hmangin kan rawn be leh ang che a, ni thum chhung pawh i nghah a ngai mai thei...`)
-} else dodoi(util.format(res.data))
-} catch (err) {dodoi(`${err}`)}
-} else dodoi('I unban duh number rawn dah rawh!')
+HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
+}
+break
+case '/unbanv5': {
+if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
+let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+let wanbck = await HBWABotMz.onWhatsApp(wanb)
+if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
+let axioss = require("axios")  
+let hbertxos = await axioss.get("https://www.whatsapp.com/contact/noclient/")
+let email = await axioss.get("https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1")
+let cookie = hbertxos.headers["set-cookie"].join("; ")
+const cheerio = require('cheerio');
+let $ = cheerio.load(hbertxos.data)
+let $form = $("form");
+let url = new URL($form.attr("action"), "https://www.whatsapp.com").href
+let form = new URLSearchParams()
+form.append("jazoest", $form.find("input[name=jazoest]").val())
+form.append("lsd", $form.find("input[name=lsd]").val())
+form.append("step", "submit")
+form.append("country_selector", "INDIA")
+form.append("phone_number", wanb)
+form.append("email", email.data[0])
+form.append("email_confirm", email.data[0])
+form.append("platform", "ANDROID")
+form.append("your_message", "Halo pak, Akun Whatsapp Saya diblokir Saya Maaf Saya Telah Menginstal Aplikasi Pihak Ketiga Secara Tidak Sengaja. Harap Buka Blokir Akun Saya Sesegera Mungkin. Terimakasih")
+form.append("__user", "0")
+form.append("__a", "1")
+form.append("__csr", "")
+form.append("__req", "8")
+form.append("__hs", "19316.BP:whatsapp_www_pkg.2.0.0.0.0")
+form.append("dpr", "1")
+form.append("__ccg", "UNKNOWN")
+form.append("__rev", "1006630858")
+form.append("__comment_req", "0")
+let res = await axioss({
+  url,
+  method: "POST",
+  data: form,
+  headers: {
+  cookie
+}
+})
+HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 
