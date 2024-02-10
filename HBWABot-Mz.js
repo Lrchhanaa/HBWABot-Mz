@@ -930,9 +930,10 @@ await dodoi(`Diamond 💎1000 i limit ah dah a ni🫠 i limit hi myinfo tih rawn
 break
 case '/200':
 if (k > balance.wallet ) return dodoi(`💎Diamond i lei duh a nih chuan ₹20000(singhnih) i sen a ngai`)
-const deduct100 = await eco.deduct(user, cara, 20000)
-const add100 = eco.give(limitneihtu, khawlbawm, 2000) 
-await dodoi(`Diamond 💎2000 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`) }
+const deduct200 = await eco.deduct(user, cara, 20000)
+const add200 = eco.give(limitneihtu, khawlbawm, 2000) 
+await dodoi(`Diamond 💎2000 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`) 
+}
 }
 break
 case '/owner': {
