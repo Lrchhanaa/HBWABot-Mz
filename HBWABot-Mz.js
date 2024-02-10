@@ -773,8 +773,8 @@ if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 let user = m.sender
 const cara = "cara" 
 const blockp = `${isPrem.replace(/918416093656@s.whatsapp.net/g, '918416000000@s.whatsapp.net')}`
-if (!HerbertTheCreator && !blockp) return {
 HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
+if (!HerbertTheCreator && !blockp) return {
 const daily2 = await eco.daily(user, cara, dawnzat2);
 const daily3 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
 if (daily2.cd && daily3.cd) return dodoi(`I claim tawh, ${daily.cdL} a ral hunah i claim leh thei chauh ang`);
