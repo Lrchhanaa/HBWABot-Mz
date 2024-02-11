@@ -802,7 +802,7 @@ const cara = "cara"
 if (args[0] == 'p') {
 const thlakp = `${text.replace(/p |P /g, '')}`;
 const daily4 = await eco.daily(user, cara, thlakp);
- await dodoi(`Pawisa ₹${thlakp} i wallet ah dah a ni🫠 myinfo tih rawn thawn la i pawisa neih zat i en thei ang`
+ await dodoi(`Pawisa ₹${thlakp} i wallet ah dah a ni🫠 myinfo tih rawn thawn la i pawisa neih zat i en thei ang`)
 } else if (args[0] == 'd') {
 const thlakd = `${text.replace(/d |D /g, '')}`;
 const daily5 = await eco.give(limitneihtu, khawlbawm, thlakd);
