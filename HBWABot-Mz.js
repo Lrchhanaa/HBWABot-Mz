@@ -22,7 +22,7 @@ const { fetchBuffer, buffergif } = require("./lib/myfunc2")
 const { TelegraPh } = require('./lib/uploader')
 const { msgFilter } = require('./lib/antispam')
 const eco = require('discord-mongoose-economy')
-const ty = eco.connect("mongodb+srv://HBMods-Api:h34b34t@hbmods.0fjkaql.mongodb.net/?retryWrites=true&w=majority") 
+const ty = eco.connect("mongodb+srv://HBWABot-Mz:hbwabotmz@hbwabot-mz.njzuajm.mongodb.net/?retryWrites=true&w=majority") 
 const mizo_tawnga_translate_na = require("@kreisler/js-google-translate-free")
 const asource1 = 'en'
 const atarget1 = 'lus'
