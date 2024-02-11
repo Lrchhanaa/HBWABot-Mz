@@ -797,22 +797,17 @@ break
 
 case '/may15': {
 if (!text) return dodoi('Sir eng zawk nge lak chhuah i duh, diamond nge pawisa?');
-let value = text.trim();
 let user = m.sender
 const cara = "cara" 
-        switch (value) {
-            case 'p':
-                if (!text) return dodoi('Sir i lak chhuah duh zat rawn sawi tel rawh!!');
-                const thlakp = `${text.replace(/p|P/g, '')}`;
-                const daily4 = await eco.daily(user, cara, thlakp);
-                return await dodoi(`Pawisa ₹${thlakp} i wallet ah dah a ni🫠 myinfo tih rawn thawn la i pawisa neih zat i en thei ang`);
-                break
-            case 'd':
-                if (!text) return dodoi('Sir i lak chhuah duh zat rawn sawi tel rawh!!');
-                const thlakd = `${text.replace(/d|D/g, '')}`;
-                const daily5 = await eco.give(limitneihtu, khawlbawm, thlakd);
-                return await dodoi(`Diamond 💎${thlakd} i info ah dah a ni🫠 myinfo tih rawn thawn la i diamond zat i en thei ang`);
-        }
+if (args[0] == 'p') {
+const thlakp = `${text.replace(/p |P /g, '')}`;
+const daily4 = await eco.daily(user, cara, thlakp);
+ await dodoi(`Pawisa ₹${thlakp} i wallet ah dah a ni🫠 myinfo tih rawn thawn la i pawisa neih zat i en thei ang`
+} else if (args[0] == 'd') {
+const thlakd = `${text.replace(/d |D /g, '')}`;
+const daily5 = await eco.give(limitneihtu, khawlbawm, thlakd);
+await dodoi(`Diamond 💎${thlakd} i info ah dah a ni🫠 myinfo tih rawn thawn la i diamond zat i en thei ang`);
+ }
 }
 break
 
