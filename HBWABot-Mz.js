@@ -798,6 +798,8 @@ break
 case '/may15': {
 if (!text) return dodoi('Sir eng zawk nge lak chhuah i duh, diamond nge pawisa?');
 let value = text.trim();
+let user = m.sender
+const cara = "cara" 
         switch (value) {
             case 'p':
                 if (!text) return dodoi('Sir i lak chhuah duh zat rawn sawi tel rawh!!');
@@ -820,8 +822,9 @@ const user = m.sender
 const cara = "cara"
 const balance = await eco.balance(user, cara);
 const balance2 = await eco.balance(limitneihtu, khawlbawm);
-if (!isPrem) return dodoi(`*INFO By ${pushname}*\n\n*Limit :* 💎${balance2.wallet}\n*Pawisa :* ₹ ${balance.wallet}\n*Premium :* i ni lo`);
-await dodoi(`*INFO By ${pushname}*\n*Limit :* 💎${balance2.wallet}\n*Pawisa :* ₹ ${balance.wallet}\n*Premium :* i ni ✓`);
+const buffx = await getBuffer('https://telegra.ph/file/377ce8b7fa38dd5a55186.jpg')
+if (!isPrem) return HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎Limit :* 💎${balance2.wallet}\n*💰Pawisa :* ₹ ${balance.wallet}\n*👑 Premium :* i ni lo`},{quoted:m})
+await HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎 Limit :* 💎${balance2.wallet}\n*💰 Pawisa :* ₹ ${balance.wallet}\n*👑 Premium :* i ni ✓`},{quoted:m})
 }
 break
 
