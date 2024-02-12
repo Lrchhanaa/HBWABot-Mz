@@ -441,13 +441,6 @@ vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await HBWABotMz.getName(ownernumber + "@s.
 })
 }
 
-let div = []
-for (let h of hbmods) {
-list.push({displayName: await HBWABotMz.getName(h),vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await HBWABotMz.getName("918416093656@s.whatsapp.net")}\nFN:Herbert Suantak\nitem1.TEL;waid=918416093656:918416093656\nitem1.X-ABLabel: Creator\nitem2.EMAIL;type=INTERNET:
- HBMods OFC\nitem2.X-ABLabel:YouTube\nitem3.URL:herbert70.blogspot.com\nitem3.X-ABLabel:IG\nitem4.ADR:;;India;Mizoram Aizawl ;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
-})
-}
-
 if (global.autoTyping) {
 if (command) {
 HBWABotMz.sendPresenceUpdate('composing', from)
@@ -781,7 +774,7 @@ dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!
 *Diamond* :  💎 ${dawnzat} ✓
 *Pawisa* : ₹ ${dawnzat2} ✓
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
-\n\nPremium members te chuan Diamond 💎 1500 leh Pawisa ₹ 2000 an dawng thei a ni!!..\n\nI limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
+Premium members te chuan Diamond 💎 1500 leh Pawisa ₹ 2000 an dawng thei a ni!!..\n\nI limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
 return }
 HBWABotMz.sendMessage(from, { react: { text: "👑" , key: m.key }})
 const daily = await eco.daily(user, cara, 2000);
@@ -791,11 +784,12 @@ dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!
 *Diamond* :  💎 1500 ✓
 *Pawisa* : ₹ 2000 ✓
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
-\n\nI limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
+I limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
 }
 break
 
 case '/may15': {
+if (!HerbertTheCreator1) return 
 if (!text) return dodoi('Sir eng zawk nge lak chhuah i duh, diamond nge pawisa?');
 let user = m.sender
 const cara = "cara" 
@@ -936,11 +930,24 @@ await dodoi(`Diamond 💎2000 i limit ah dah a ni🫠 i limit hi myinfo tih rawn
 }
 break
 case '/owner': {
-const mawla = await HBWABotMz.sendMessage(from, { 
+await HBWABotMz.sendMessage(from, { 
 contacts: { 
 displayName: `${list.length} Contact`, 
 contacts: list }, mentions: [sender] }, { quoted: m })
-HBWABotMz.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Hei hei ka owner leh min siamtu number a ni😇`, mentions: [sender]}, { quoted: mawla })
+}
+break
+case '/dev': case '/creator': {
+let luz = []
+let khm = "918416093656@s.whatsapp.net"
+luz.push({displayName: await HBWABotMz.getName(khm),
+vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await HBWABotMz.getName(918416093656 + "@s.whatsapp.net"
+)}\nFN:Herbert Suantak\nitem1.TEL;waid=918416093656:918416093656\nitem1.X-ABLabel: Owner\nitem2.EMAIL;type=INTERNET:
+ HBMods OFC\nitem2.X-ABLabel:YouTube\nitem3.URL:https://herbert70.blogspot.com\nitem3.X-ABLabel:IG\nitem4.ADR:;;Inda;Mizoram Aizawl;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+})
+await HBWABotMz.sendMessage(from, {
+contacts: { 
+displayName: `${luz.length} Contact`, 
+contacts: luz }, mentions: [sender] }, { quoted: m })
 }
 break
 case '/hi': case '/hii': case '/hiii': case '/helo': case '/hello': case '/hlo': case '/sir': case '/kapu': case '/hy': case '/hey': { 
@@ -1664,7 +1671,7 @@ HBWABotMz.sendMessage(from, {
 text: `*Bot InFo*
 *✑ Vawiin :* ${vawiinni2}
 *✑ Date :* ${kumtin}
-*✑ Version :* 5.0.1
+*✑ Version :* 5.2.0
 *✑ User :* ${ownernumber}
 *✑ Limit :* ${balance.wallet} 💎
 *✑ Runtime :* ${runtime(process.uptime())}
@@ -5474,7 +5481,7 @@ await uploadreact();
 for (let i of results.result) {
 await HBWABotMz.sendMessage(m.chat, {
 video: { url: i._url },
-caption: "Instagram download by HBWABot"
+caption: "Instagram download by "+ `${global.botname}`
 }, { quoted: m });
 }
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5487,7 +5494,7 @@ const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
  mumaker.instagram(`${args[0]}`)
-.then((data) => HBWABotMz.sendMessage(m.chat, { video: { url: data }, caption: `Instagram Videos download by HBWABot` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { video: { url: data }, caption: `Instagram Videos download by ${global.botname}` }, { quoted: m }))
 .catch((err) => console.log(err))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
@@ -5500,7 +5507,7 @@ const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
  mumaker.tiktok(`${args[0]}`)
-.then((data) => HBWABotMz.sendMessage(m.chat, { video: { url: data.media }, caption: `Tiktok Videos download by HBWABot` }, { quoted: m }))
+.then((data) => HBWABotMz.sendMessage(m.chat, { video: { url: data.media }, caption: `Tiktok Videos download by ${global.botname}` }, { quoted: m }))
 .catch((err) => console.log(err))
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
@@ -5517,7 +5524,7 @@ const herbert2 = nunui2.result // chuan he tah hian kei mah a tang i rai taa
 const englo2 = herbert2.data // kei ma a tanga ka fa kha an zei tawh dawn che ni, ti chuan ka fa chu
 await uploadreact()
 HBWABotMz.sendMessage(m.chat, 
-{ video: { url: `${englo2.play}` }, mimetype: 'video/mp4', caption: `*Tiktok video download by HBWABot*` }, // englo2 hian a rawn la chhuak anga ti chuan tiktok video chu a rawn la chhuak dawn🤣🤣
+{ video: { url: `${englo2.play}` }, mimetype: 'video/mp4', caption: `*Tiktok video download by ${global.botname}` }, // englo2 hian a rawn la chhuak anga ti chuan tiktok video chu a rawn la chhuak dawn🤣🤣
 { quoted: m })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
@@ -5535,7 +5542,7 @@ console.log(data)
 await uploadreact()
 await HBWABotMz.sendMessage(m.chat,{
 video: {url: data.video},
-caption: "Tiktok Videos download by HBWABot"
+caption: "Tiktok Videos download by "+ `${global.botname}`
 }, {quoted:m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
@@ -5557,7 +5564,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
   if (mp4Url) {
     await uploadreact();
     HBWABotMz.sendMessage(m.chat,
-      { video: { url: mp4Url }, mimetype: 'video/mp4', caption: `*Pinterest video download by HBWABot*` },
+      { video: { url: mp4Url }, mimetype: 'video/mp4', caption: `*Pinterest video download by ${global.botname}` },
       { quoted: m }
     );
     let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5582,7 +5589,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
   if (downloadUrl) {
     await uploadreact();
     HBWABotMz.sendMessage(m.chat,
-      { video: { url: downloadUrl }, mimetype: 'video/mp4', caption: `*Threads video download by HBWABot*` },
+      { video: { url: downloadUrl }, mimetype: 'video/mp4', caption: `*Threads video download by ${global.botname}` },
       { quoted: m }
     );
     let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5607,7 +5614,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
     const videoUrl = videoUrls[0];
     await uploadreact();
     HBWABotMz.sendMessage(m.chat,
-      { video: { url: videoUrl }, mimetype: 'video/mp4', caption: `*Twitter video download by HBWABot*` },
+      { video: { url: videoUrl }, mimetype: 'video/mp4', caption: `*Twitter video download by ${global.botname}` },
       { quoted: m }
     );
     let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -5628,7 +5635,7 @@ console.log(data)
 await uploadreact()
 await HBWABotMz.sendMessage(m.chat,{
 video: {url: data.Normal_video},
-caption: "Facebook Videos download by HBWABot"
+caption: "Facebook Videos download by "+ `${global.botname}`
 }, {quoted:m})
 await finishreact()
 
@@ -5646,7 +5653,7 @@ console.log(results) // JSON
 await uploadreact()
 await HBWABotMz.sendMessage(m.chat,{
 video: {url: results.result.sd_q},
-caption: "Facebook Video download by HBWABot"
+caption: "Facebook Video download by "+ `${global.botname}`
 }, {quoted:m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
