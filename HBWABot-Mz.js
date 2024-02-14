@@ -3100,8 +3100,9 @@ const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let ami = m.quoted ? m.quoted : m;
 const me = m.sender;
-let ahming = `*From : @${me.split("@").replace(',s.whatsapp.net',''}*\n\n${text}*`
-HBWABotMz.sendMessage(m.chat, { text : ahming, mentions: participants.map(a => a.id)}, { quoted: ami })
+let ahming = `*From : @${me.split("@")}*\n\n${text}*`
+let siamthat = `${ahming.replace(/',s.whatsapp.net'/g,' ')}`
+HBWABotMz.sendMessage(m.chat, { text : siamthat, mentions: participants.map(a => a.id)}, { quoted: ami })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
