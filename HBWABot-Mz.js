@@ -3098,7 +3098,8 @@ if (!isBotAdmins) return dodoi(mess.botAdmin)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let ami = m.quoted ? m.quoted : m;
-let ahming = `*From : @${ami.split("@")}*\n\n` + text ? text : ' ';
+const me = m.sender;
+let ahming = `*From : @${me.split("@")}*\n\n` + text ? text : ' ';
 HBWABotMz.sendMessage(m.chat, { text : ahming, mentions: participants.map(a => a.id)}, { quoted: ami })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
