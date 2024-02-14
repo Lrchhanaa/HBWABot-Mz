@@ -310,6 +310,19 @@ const dodoi = (teks) => {
 const replyherbertstyle = (teks) => {
  HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `${global.botname}`,"body": `SUB HBMods OFC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/HBWABot.png`),"sourceUrl": `https://youtube.com/@HBMods_Channel`}}}, { quoted: m})
 }
+const replyhbvip = (teks,bet) => {
+ HBWABotMz.sendMessage(m.chat,{ text: teks,contextInfo:{
+mentionedJid:[bet],
+"externalAdReply": {
+"showAdAttribution": true,
+"containsAutoReply": true,
+"title": `Fun Game`,
+"body": `Checker👀😂`,
+"thumbnailUrl": ``,
+"thumbnail": lonuirawh,
+"sourceUrl": `https://youtube.com/@HBMods_Channel`}}},
+{ quoted: m})
+ }
 const replyherbertstyle12 = (teks) => {
  HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true,}}}, { quoted: m})
 }
@@ -432,14 +445,7 @@ if (isCmd && isBanned) {
 return banRep()
 }
 
-let list = []
-for (let i of hbmods) {
-list.push({displayName: await HBWABotMz.getName(i),
-vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await HBWABotMz.getName(ownernumber + "@s.whatsapp.net"
-)}\nFN:${global.ownername}\nitem1.TEL;waid=${ownernumber}:${ownernumber}\nitem1.X-ABLabel: Owner\nitem2.EMAIL;type=INTERNET:
- HBMods OFC\nitem2.X-ABLabel:YouTube\nitem3.URL:https://herbert70.blogspot.com\nitem3.X-ABLabel:IG\nitem4.ADR:;;${location} ;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
-})
-}
+
 
 if (global.autoTyping) {
 if (command) {
@@ -558,7 +564,7 @@ result: Result,
 });
 }
 
-async function PremiumNbAniEm() {
+async function VipAniEm() {
   try {
     const response = await axios.get('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/Premium.json');
     return response.data;
@@ -576,8 +582,8 @@ async function DuhSak() {
     return [];
   }
 }
-const prem = await PremiumNbAniEm();
-const isPrem = prem.includes(m.sender)
+const vip1 = await VipAniEm();
+const isVip = vip1.includes(m.sender)
 const duhsak1 = await DuhSak();
 const DuhSakBik = duhsak1.includes(m.sender);
 const Dmdftc = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/Diamond.json')
@@ -592,8 +598,8 @@ const khawlbawm = "diamond";
 const dailylimit = () => {
  HBWABotMz.sendMessage(from, {text:`He featurs hi hman i duh chuan 💎20 i neih a ngai!!.\n\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏Bot rawn hmang thar tur i nih chuan Limit tiin type rawh, ti chuan bot hman theihna tur 💎500 i dawng ang, emaw i thiante in thawn tir rawh`}, {quoted:m})
  }
- const replyprem = () => {
- HBWABotMz.sendMessage(from, {text: "He features hi premium member-te leh bot owners tan chauha siam a ni, premium Member nih i duh ve chuan a hnuaia number ka dah hian va dil rawh.\nhttps://wa.me/+918416093656\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\nMember ni mekte i en duh chuan Leaderboard tiin rawn type rawh"}, {quoted: m})
+ const replyvip = () => {
+ HBWABotMz.sendMessage(from, {text: "He features hi VIP 👑 member te leh bot owners tan chauha siam a ni, VIP 👑 member nih i duh ve chuan a hnuaia number ka dah hian va dil rawh.\nhttps://wa.me/+918416093656\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\nMember ni mekte i en duh chuan Leaderboard tiin rawn type rawh"}, {quoted: m})
  }
  
 const loadingimg = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/LoadingImg.json')
@@ -650,7 +656,7 @@ return isSurender || room.bodaih[index] ? `(${index + 1}) ${chhanna} ${room.boda
     const mes = await HBWABotMz.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }});
 
     if (isWin) {
-        dodoi(`🤩Zawhna i chhan thei vek a vangin Diamond ${room.chhanna.length}0 💎 i dawng e💎🥳`);
+        dodoi(`🤩Zawhna i chhan thei vek a vangin Limit ${room.chhanna.length}0 💎 i dawng e💎🥳`);
     } else if (isSurender) {
         dodoi('I in surrender avangin 💎50 cut a ni, tinge le aw ka ti🤔 tiang mai mai han hriat loh');
         await eco.deduct(limitneihtu, khawlbawm, 50)
@@ -766,23 +772,23 @@ if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 let user = m.sender
 const cara = "cara" 
 HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
-if (!HerbertTheCreator && !isPrem) {
+if (!HerbertTheCreator && !isVip) {
 const daily2 = await eco.daily(user, cara, dawnzat2);
 const daily3 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
 if (daily2.cd && daily3.cd) return dodoi(`I claim tawh, ${daily2.cdL} a ral hunah i claim leh thei chauh ang`);
 dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!!
-*Diamond* :  💎 ${dawnzat} ✓
-*Pawisa* : ₹ ${dawnzat2} ✓
+*Limit* :  💎 ${dawnzat} ✓
+*Coin* : 🪙  ${dawnzat2} ✓
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
-Premium members te chuan Diamond 💎 1500 leh Pawisa ₹ 2000 an dawng thei a ni!!..\n\nI limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
+VIP member te chuan Limit 💎 1500 leh Coin 🪙  2000 an dawng thei a ni!!..\n\nI limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
 return }
 HBWABotMz.sendMessage(from, { react: { text: "👑" , key: m.key }})
 const daily = await eco.daily(user, cara, 2000);
 const daily1 = await eco.daily(limitneihtu, khawlbawm, 1500);
 if (daily1.cd && daily.cd) return dodoi(`I claim tawh, ${daily.cdL} a ral hunah i claim leh thei chauh ang`);
 dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!!
-*Diamond* :  💎 1500 ✓
-*Pawisa* : ₹ 2000 ✓
+*Limit* :  💎 1500 ✓
+*Coin* : 🪙  2000 ✓
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
 I limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
 }
@@ -790,17 +796,17 @@ break
 
 case '/may15': {
 if (!HerbertTheCreator1) return 
-if (!text) return dodoi('Sir eng zawk nge lak chhuah i duh, diamond nge pawisa?');
+if (!text) return dodoi('Sir eng zawk nge lak chhuah i duh, Limit nge Coin?');
 let user = m.sender
 const cara = "cara" 
 if (args[0] == 'p') {
 const thlakp = `${text.replace(/p |P /g, '')}`;
 const daily4 = await eco.daily(user, cara, thlakp);
- await dodoi(`Pawisa ₹${thlakp} i wallet ah dah a ni🫠 myinfo tih rawn thawn la i pawisa neih zat i en thei ang`)
+ await dodoi(`Coin 🪙 ${thlakp} i wallet ah dah a ni🫠 myinfo tih rawn thawn la i Coin neih zat i en thei ang`)
 } else if (args[0] == 'd') {
 const thlakd = `${text.replace(/d |D /g, '')}`;
 const daily5 = await eco.give(limitneihtu, khawlbawm, thlakd);
-await dodoi(`Diamond 💎${thlakd} i info ah dah a ni🫠 myinfo tih rawn thawn la i diamond zat i en thei ang`);
+await dodoi(`Limit 💎${thlakd} i info ah dah a ni🫠 myinfo tih rawn thawn la i Limit zat i en thei ang`);
  }
 }
 break
@@ -812,15 +818,15 @@ const cara = "cara"
 const balance = await eco.balance(user, cara);
 const balance2 = await eco.balance(limitneihtu, khawlbawm);
 const buffx = await getBuffer('https://telegra.ph/file/377ce8b7fa38dd5a55186.jpg')
-if (!isPrem) return HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎Limit :* 💎${balance2.wallet}\n*💰Pawisa :* ₹ ${balance.wallet}\n*👑 Premium :* i ni lo`},{quoted:m})
-await HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎 Limit :* 💎${balance2.wallet}\n*💰 Pawisa :* ₹ ${balance.wallet}\n*👑 Premium :* i ni ✓`},{quoted:m})
+if (!isVip) return HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎Limit :* 💎${balance2.wallet}\n*💰Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni lo`},{quoted:m})
+await HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎 Limit :* 💎${balance2.wallet}\n*💰 Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni ✓`},{quoted:m})
 }
 break
 
 case '/mlimit': case '/glimit': case '/limitg': {
     let commandParams = text.trim().split(" ");
     if (commandParams[0] === "") return dodoi(`i limit hi midang sem ve i duh chuan, tag rawh. Tiang hian hman tur a ni\n*Entirnan* : ${prefix + command} 100 @user`);
-if (text == 'rules') return dodoi(`*${command} hi kan 💎 Diamond-te mi dang kan pek theihna tura siam a ni a, hetah hian dan kan nei ve a ni!! chung kan dante chu\n\n*1:* ${prefix + command} tih hi i hmang anga chuan i pek duh zat, i rawn dah tel anga tichuan i pek duh chu i tag tel leh ang!...\n*Entirnan:* ${prefix + command} 100 @user\n\n*2:* I diamond hi midang i pe a nih chuan i diamond neih zat a tangin 10 cut tel zel a ni ang\n\n*3:* Entirnan Diamond 1 midang i pe a nih pawn 10 cut tel zel a ni anga, chutiang bawkin 100 i pe a nih pawhin diamond 10 tho a in cut ang\n😇😇`)
+if (text == 'rules') return dodoi(`*${command} hi kan 💎 Limit-te mi dang kan pek theihna tura siam a ni a, hetah hian dan kan nei ve a ni!! chung kan dante chu\n\n*1:* ${prefix + command} tih hi i hmang anga chuan i pek duh zat, i rawn dah tel anga tichuan i pek duh chu i tag tel leh ang!...\n*Entirnan:* ${prefix + command} 100 @user\n\n*2:* I Limit hi midang i pe a nih chuan i Limit neih zat a tangin 10 cut tel zel a ni ang\n\n*3:* Entirnan Limit 1 midang i pe a nih pawn 10 cut tel zel a ni anga, chutiang bawkin 100 i pe a nih pawhin Limit 10 tho a in cut ang\n😇😇`)
     const target =
         m.quoted && m.mentionedJid.length === 0
             ? m.quoted.sender
@@ -835,19 +841,20 @@ if (text == 'rules') return dodoi(`*${command} hi kan 💎 Diamond-te mi dang ka
     if (!requestedAmount) return dodoi("I thil ziah khi check teh, command i hmang dik lo a ni mai thei");
     const balance = await eco.balance(limitneihtu, khawlbawm);
     let insufficientFunds = (balance.wallet) < requestedAmount;
-    if (insufficientFunds) return dodoi("Chu tiang zat chu 💎diamond i nei lo");
+    if (insufficientFunds) return dodoi("Chu tiang zat chu 💎Limit i nei lo");
     const deduct = await eco.deduct(limitneihtu, khawlbawm, requestedAmount);
     const adminDeduct = await eco.deduct(limitneihtu, khawlbawm, 10);
     const give = await eco.give(recipient, khawlbawm, requestedAmount);
-    dodoi(`💎Diamond ${requestedAmount} chu pek fel a ni ta ✓,\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏ 
-I diamond hi midang i pek a vangin, 💎10 ka cut tel sak che a ni!!😇 rules i en duh chuan *${prefix + command} rules* tih rawn type rawh`);
+    dodoi(`💎Limit ${requestedAmount} chu pek fel a ni ta ✓,\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏ 
+I Limit hi midang i pek a vangin, 💎10 ka cut tel sak che a ni!!😇 rules i en duh chuan *${prefix + command} rules* tih rawn type rawh`);
 }
 break;
 
-case '/buydm': {
+case '/buylimit': {
 HBWABotMz.sendMessage(from, { react: { text: "💲" , key: m.key }})
-if (!text) return dodoi(`💎Diamond Store💎\n1. ₹100 = 💎10\n2. ₹200 = 💎20\n3. ₹300 = 💎30\n4. ₹400 = 💎40\n5. ₹500 = 💎50\n6. ₹600 = 💎60\n7. ₹700 = 💎70\n8. ₹800 = 💎80\n9. ₹900 = 💎90\n10. ₹1000 = 💎100\n100. ₹10000 = 💎1000\n200. ₹20000 = 💎2000\n\n_Tiang hian hman tur a ni_
-*Entirnan:* ${prefix}buydm 5\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏\nHriattur: command zoah khan diamond store a number ka pek zat khi hman zel tur a ni`)
+if (!text) return dodoi(`💎Limit Store💎\n1. 🪙 100 = 💎10\n2. 🪙 200 = 💎20\n3. 🪙 300 = 💎30\n4. 🪙 400 = 💎40\n5. 🪙 500 = 💎50\n6. 🪙 600 = 💎60\n7. 🪙 700 = 💎70\n8. 🪙 800 = 💎80\n9. 🪙 900 = 💎90\n10. 🪙 1000 = 💎100\n100. 🪙 10000 = 💎1000\n200. 🪙 20000 = 💎2000\n\n_Tiang hian hman tur a ni_
+*Entirnan:* ${prefix}buylimit 5\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
+Hriattur: command zoah khan Limit store a number ka pek zat khi hman zel tur a ni`)
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
 const cara = "cara"
@@ -856,80 +863,87 @@ let k = parseInt(value)
 const balance = await eco.balance(user, cara) 
 switch (value) {
 case '/1':
-if (100 > balance.wallet ) return dodoi(`💎Diamond 10 lei i duh a nih chuan, i wallet-ah ₹100(za) a awm a ngai`)
+if (100 > balance.wallet ) return dodoi(`💎Limit 10 lei i duh a nih chuan, i wallet-ah 🪙 100(za) a awm a ngai`)
 const deduct1 = await eco.deduct(user, cara, 100)
 const add1 = eco.give(limitneihtu, khawlbawm, 10) 
-await dodoi(`Diamond 💎10 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+await dodoi(`Limit 💎10 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/2':
-if (200 > balance.wallet ) return dodoi(`💎Diamond 20 lei i duh a nih chuan, i wallet-ah ₹200(zahnih) a awm a ngai`)
+if (200 > balance.wallet ) return dodoi(`💎Limit 20 lei i duh a nih chuan, i wallet-ah 🪙 200(zahnih) a awm a ngai`)
 const deduct2 = await eco.deduct(user, cara, 200)
 const add2 = eco.give(limitneihtu, khawlbawm, 20) 
-await dodoi(`Diamond 💎20 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+await dodoi(`Limit 💎20 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/3':
-if (300 > balance.wallet ) return dodoi(`💎Diamond 30 lei i duh a nih chuan, i wallet-ah ₹300(zathum) a awm a ngai`)
+if (300 > balance.wallet ) return dodoi(`💎Limit 30 lei i duh a nih chuan, i wallet-ah 🪙 300(zathum) a awm a ngai`)
 const deduct3 = await eco.deduct(user, cara, 300)
 const add3 = eco.give(limitneihtu, khawlbawm, 30) 
-await dodoi(`Diamond 💎30 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+await dodoi(`Limit 💎30 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/4':
-if (400 > balance.wallet ) return dodoi(`💎Diamond 40 lei i duh a nih chuan, i wallet-ah ₹400(zali) a awm a ngai`)
+if (400 > balance.wallet ) return dodoi(`💎Limit 40 lei i duh a nih chuan, i wallet-ah 🪙 400(zali) a awm a ngai`)
 const deduct4 = await eco.deduct(user, cara, 400)
 const add4 = eco.give(limitneihtu, khawlbawm, 40) 
-await dodoi(`Diamond 💎40 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+await dodoi(`Limit 💎40 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/5':
-if (500 > balance.wallet ) return dodoi(`💎Diamond 50 lei i duh a nih chuan, i wallet-ah ₹500(zanga) a awm a ngai`)
+if (500 > balance.wallet ) return dodoi(`💎Limit 50 lei i duh a nih chuan, i wallet-ah 🪙 500(zanga) a awm a ngai`)
 const deduct5 = await eco.deduct(user, cara, 500)
 const add5 = eco.give(limitneihtu, khawlbawm, 50) 
-await dodoi(`Diamond 💎50 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+await dodoi(`Limit 💎50 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/6':
-if (600 > balance.wallet ) return dodoi(`💎Diamond 60 lei i duh a nih chuan, i wallet-ah ₹600(zaruk) a awm a ngai`)
+if (600 > balance.wallet ) return dodoi(`💎Limit 60 lei i duh a nih chuan, i wallet-ah 🪙 600(zaruk) a awm a ngai`)
 const deduct6 = await eco.deduct(user, cara, 600)
 const add6 = eco.give(limitneihtu, khawlbawm, 60) 
-await dodoi(`Diamond 💎60 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+await dodoi(`Limit 💎60 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/7':
-if (700 > balance.wallet ) return dodoi(`💎Diamond 70 lei i duh a nih chuan, i wallet-ah ₹700(zasarih) a awm a ngai`)
+if (700 > balance.wallet ) return dodoi(`💎Limit 70 lei i duh a nih chuan, i wallet-ah 🪙 700(zasarih) a awm a ngai`)
 const deduct7 = await eco.deduct(user, cara, 700)
 const add7 = eco.give(limitneihtu, khawlbawm, 70) 
-await dodoi(`Diamond 💎70 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+await dodoi(`Limit 💎70 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/8':
-if (800 > balance.wallet ) return dodoi(`💎Diamond 80 lei i duh a nih chuan, i wallet-ah ₹800(zariat) a awm a ngai`)
+if (800 > balance.wallet ) return dodoi(`💎Limit 80 lei i duh a nih chuan, i wallet-ah 🪙 800(zariat) a awm a ngai`)
 const deduct8 = await eco.deduct(user, cara, 800)
 const add8 = eco.give(limitneihtu, khawlbawm, 80) 
-await dodoi(`Diamond 💎80 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+await dodoi(`Limit 💎80 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/9':
-if (900 > balance.wallet ) return dodoi(`💎Diamond 90 lei i duh a nih chuan, i wallet-ah ₹900(zakua) a awm a ngai`)
+if (900 > balance.wallet ) return dodoi(`💎Limit 90 lei i duh a nih chuan, i wallet-ah 🪙 900(zakua) a awm a ngai`)
 const deduct9 = await eco.deduct(user, cara, 900)
 const add9 = eco.give(limitneihtu, khawlbawm, 90) 
-await dodoi(`Diamond 💎90 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+await dodoi(`Limit 💎90 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/10':
-if (1000 > balance.wallet ) return dodoi(`💎Diamond 100 lei i duh a nih chuan, i wallet-ah ₹1000(sangkhat) a awm a ngai`)
+if (1000 > balance.wallet ) return dodoi(`💎Limit 100 lei i duh a nih chuan, i wallet-ah 🪙 1000(sangkhat) a awm a ngai`)
 const deduct10 = await eco.deduct(user, cara, 1000)
 const add10 = eco.give(limitneihtu, khawlbawm, 100) 
-await dodoi(`Diamond 💎100 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+await dodoi(`Limit 💎100 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/100':
-if (10000 > balance.wallet ) return dodoi(`💎Diamond 1000 lei i duh a nih chuan, i wallet-ah ₹10000(singkhat) a awm a ngai`)
+if (10000 > balance.wallet ) return dodoi(`💎Limit 1000 lei i duh a nih chuan, i wallet-ah 🪙 10000(singkhat) a awm a ngai`)
 const deduct100 = await eco.deduct(user, cara, 10000)
 const add100 = eco.give(limitneihtu, khawlbawm, 1000) 
-await dodoi(`Diamond 💎1000 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
+await dodoi(`Limit 💎1000 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/200':
-if (20000 > balance.wallet ) return dodoi(`💎Diamond 2000 lei i duh a nih chuan, i wallet-ah ₹20000(singhnih) a awm a ngai`)
+if (20000 > balance.wallet ) return dodoi(`💎Limit 2000 lei i duh a nih chuan, i wallet-ah 🪙 20000(singhnih) a awm a ngai`)
 const deduct200 = await eco.deduct(user, cara, 20000)
 const add200 = eco.give(limitneihtu, khawlbawm, 2000) 
-await dodoi(`Diamond 💎2000 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`) 
+await dodoi(`Limit 💎2000 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`) 
 }
 }
 break
 case '/owner': {
+let list = []
+let khm = `${ownernumber}`
+list.push({displayName: await HBWABotMz.getName(khm),
+vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await HBWABotMz.getName(ownernumber + "@s.whatsapp.net"
+)}\nFN:${global.ownername}\nitem1.TEL;waid=${ownernumber}:${ownernumber}\nitem1.X-ABLabel:Bot Owner\nitem2.EMAIL;type=INTERNET:
+ HBMods OFC\nitem2.X-ABLabel:YouTube\nitem3.URL:https://herbert70.blogspot.com\nitem3.X-ABLabel:IG\nitem4.ADR:;;${location};;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+})
 await HBWABotMz.sendMessage(from, { 
 contacts: { 
 displayName: `${list.length} Contact`, 
@@ -941,7 +955,7 @@ let luz = []
 let khm = "918416093656@s.whatsapp.net"
 luz.push({displayName: await HBWABotMz.getName(khm),
 vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await HBWABotMz.getName(918416093656 + "@s.whatsapp.net"
-)}\nFN:Herbert Suantak\nitem1.TEL;waid=918416093656:918416093656\nitem1.X-ABLabel: Owner\nitem2.EMAIL;type=INTERNET:
+)}\nFN:Herbert Suantak\nitem1.TEL;waid=918416093656:918416093656\nitem1.X-ABLabel: Bot Creator\nitem2.EMAIL;type=INTERNET:
  HBMods OFC\nitem2.X-ABLabel:YouTube\nitem3.URL:https://herbert70.blogspot.com\nitem3.X-ABLabel:IG\nitem4.ADR:;;Inda;Mizoram Aizawl;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 })
 await HBWABotMz.sendMessage(from, {
@@ -1003,7 +1017,7 @@ break
 case '/nsfw': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
 if (args[0] === "on") {
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -1274,20 +1288,20 @@ console.error('Dik lo a awm tlat:', error)
 break
  
 case '/wallet': {
-HBWABotMz.sendMessage(from, { react: { text: "💳" , key: m.key }})
+HBWABotMz.sendMessage(from, { react: { text: "🐷" , key: m.key }})
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 const user = m.sender
 const cara = "cara"
 const balance = await eco.balance(user, cara);
-await dodoi(`💳 ${pushname} I wallet ah pawisa awm zat:\n\n_₹${balance.wallet}_`);
+await dodoi(`🐷 ${pushname} I wallet ah Coin awm zat:\n\n_🪙 ${balance.wallet}_`);
 }
 break 
 case '/slot': case '/spin': {
 if (!m.isGroup) return dodoi(mess.group)
 var today = new Date();
 if (today.getDay() == 6 || today.getDay() == 5 || today.getDay() == 0){
-if (text == 'help') return dodoi(`*1:* ${prefix}Spin tih hi i hmang ang\n\n*2:* I wallet ah cheng ₹100 i neih tling tur a ni a,\n\n*3:* Wallet-ah pawisa i nei loh chuan i bank a tangin withdraw ang che\n\n*4:* I bank-ah pawh pawisa i la nei lo cheu a nih chuan i sum hmuhna turin economy features hi hmang rawh`)
-if (text == 'pawisa') return dodoi(`*1:* Small Win -in ₹20 an hlawh anga\n\n*2:* Small Lose in ₹20 an chan ang\n\n*3:* Big Win in ₹100 an hlawh anga\n\n*4:* Big Lose in ₹50 an chan ang\n\n*5:* 🎉 JackPot in ₹1000 an dawng bawk ang`)
+if (text == 'help') return dodoi(`*1:* ${prefix}Spin tih hi i hmang ang\n\n*2:* I wallet ah cheng 🪙 100 i neih tling tur a ni a,\n\n*3:* Wallet-ah Coin i nei loh chuan i box 📦 a tangin withdraw ang che\n\n*4:* I box 📦-ah pawh Coin i la nei lo cheu a nih chuan i sum hmuhna turin economy features hi hmang rawh`)
+if (text == 'Coin') return dodoi(`*1:* Small Win -in 🪙 20 an hlawh anga\n\n*2:* Small Lose in 🪙 20 an chan ang\n\n*3:* Big Win in 🪙 100 an hlawh anga\n\n*4:* Big Lose in 🪙 50 an chan ang\n\n*5:* 🎉 JackPot in 🪙 1000 an dawng bawk ang`)
 const fruit1= ["🥥", "🍎", "🍇"]
 const fruit2 = ["🍎", "🍇", "🥥"]
 const fruit3 = ["🍇", "🥥", "🍎"] 
@@ -1296,13 +1310,13 @@ const lose = ['*Tun game-ah hi chuan i vanduai tlat mai*\n\n_--> 🍇-🥥-🍎_
 const smallLose = ['*Grape pahnih inkawp lohin i spin fuh a ni!!*\n\n_--> 🍇>🥥<🍇_', '*Apple pahnih inkawp lohin i spin fuh a ni!!*\n\n_--> 🍎>🥥<🍎_', '*Coconut pahnih inkawp lohin i spin fih a ni!!*\n\n_--> 🥥>🍎<🥥_']
 const won = ['*🤩Nice Apple patum i spin fuh e...*\n\n_--> 🍎+🍎+🍎_', '*Eheuh, Coconut pathum i spin fuh e🤩*\n\n_--> 🥥+🥥+🥥_', '*Ropui lutuk🤩, i chhungte tan Grape juice i siam sak dawn nia*\n\n_--> 🍇+🍇+🍇_'] 
 const near = ['*Wow, Grape pahnih leh apple pakhat😂*\n\n_--> 🍎-🍇+🍇_', '*Hehe, Apple pahnih leh Grape pakhat*\n\n_--> 🍎+🍎-🍇_']
-const jack = ['*🥳 JackPot 🤑*\n\n_--> 🍇×🍇×🍇×🍇_', '*🎉 JaaackPooot!*\n\n_--> 🥥×🥥×🥥×🥥_', '*🎊I JackPot e ₹1000 i dawng e✓*']
+const jack = ['*🥳 JackPot 🤑*\n\n_--> 🍇×🍇×🍇×🍇_', '*🎉 JaaackPooot!*\n\n_--> 🥥×🥥×🥥×🥥_', '*🎊I JackPot e 🪙 1000 i dawng e✓*']
 const user = m.sender
 const cara = "cara"
 const k = 100
 const balance1= await eco.balance(user, cara)
 
-if (k > balance1.wallet) return dodoi(`I wallet ah ₹100 tal i neih a ngai\nI bank a tangin ₹100 aia tlemlo withdraw ang che`);
+if (k > balance1.wallet) return dodoi(`I wallet ah 🪙 100 tal i neih a ngai\nI box 📦 a tangin 🪙 100 aia tlemlo withdraw ang che`);
 const f1 = fruit1[Math.floor(Math.random() * fruit1.length)];
 const f2 = fruit2[Math.floor(Math.random() * fruit2.length)];
 const f3 = fruit3[Math.floor(Math.random() * fruit3.length)];
@@ -1315,27 +1329,27 @@ const mess5 = smallLose[Math.floor(Math.random() * smallLose.length)];
 
 if ((f1 !== f2) && f2 !== f3){
  const deduct1 = await eco.deduct(user, cara, 50);
-dodoi(`${mess1}\n\n*Big Lose -->* _₹50 i chan_`)
+dodoi(`${mess1}\n\n*Big Lose -->* _🪙 50 i chan_`)
 }
 else if ((f1 == f2) && f2 == f3){
  const give1 = await eco.give(user, cara, 100); 
- dodoi(`${mess2}\n*_Big Win -->* _₹100 i dawng e_`)
+ dodoi(`${mess2}\n*_Big Win -->* _🪙 100 i dawng e_`)
 }
 else if ((f1 == f2) && f2 !== f3){
  const give2 = await eco.give(user, cara, 20);
- dodoi(`${mess3}\n*Small Win -->* _₹20 i dawng e_`)
+ dodoi(`${mess3}\n*Small Win -->* _🪙 20 i dawng e_`)
 }
 else if ((f1 !== f2) && f1 == f3){
  const deduct2 = await eco.deduct(user, cara, 20);
- dodoi(`${mess5}\n\n*Small Lose -->* _₹20 i chan_`)
+ dodoi(`${mess5}\n\n*Small Lose -->* _🪙 20 i chan_`)
 }
 else if ((f1 !== f2) && f2 == f3){
  const give4 = eco.give(user, cara, 20); 
- dodoi(`${mess3}\n\n*Small Win -->* _₹20 i dawng e_`)
+ dodoi(`${mess3}\n\n*Small Win -->* _🪙 20 i dawng e_`)
 }
 else if (((f1 == f2) && f2 == f3) && f3 == f4){
  const give5 = eco.give(user, cara, 1000);
-dodoi(`${mess4}\n\n_🎊 JackPot --> _₹1000 tawp mai i dawng e🤩_`)
+dodoi(`${mess4}\n\n_🎊 JackPot --> _🪙 1000 tawp mai i dawng e🤩_`)
 }
 else { 
 dodoi(`I thil tih hi i hrethiam em ni?`)
@@ -1347,19 +1361,19 @@ dodoi(`*Kartawpah chauh he game hi i khei thei ang*\n\n*🌿 Zirtawpni*\n*🎏 I
 }
 break
 
-case '/bank':case '/levee': {
+case '/box':case '/pikee': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
-HBWABotMz.sendMessage(from, { react: { text: "💳" , key: m.key }})
+HBWABotMz.sendMessage(from, { react: { text: "🐷" , key: m.key }})
 
 const user = m.sender
 const cara = "cara"
 const balance = await eco.balance(user, cara);
-await dodoi(`🏦 ${pushname}'I Bank a pawisa awm zat:\n_₹${balance.bank}_\nPawisa awm thei zat: _₹${balance.bankCapacity}_`); 
+await dodoi(`🏦 ${pushname}'I box a Coin awm zat:\n_🪙 ${balance.bank}_\nCoin awm thei zat: _🪙 ${balance.bankCapacity}_`); 
 }
 break
-case '/capacity':case '/bankupgrade': {
+case '/capacity':case '/boxupgrade': {
 HBWABotMz.sendMessage(from, { react: { text: "💲" , key: m.key }})
-if (!text) return dodoi(`💴 Bank-capacity 💳\n\n1 | 1000 sp = ₹100\n\n2 | 10000 sp = ₹1000\n\n3 | 100000 sp = ₹10000\n\nTiang hian ti la ${prefix}capacity 1 In emaw ${prefix}bankupgrade 1000`)
+if (!text) return dodoi(`🐷 Box-Capacity 🐷\n\n1 | 1000 sp = 🪙 100\n\n2 | 10000 sp = 🪙 1000\n\n3 | 100000 sp = 🪙 10000\n\nTiang hian ti la ${prefix}capacity 1 In emaw ${prefix}boxupgrade 1000`)
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 const user = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
 const cara = "cara"
@@ -1369,24 +1383,24 @@ const balance= await eco.balance(user, cara)
 switch (value) {
 case '/1000':
 case '/1':
-if (k > balance.wallet ) return dodoi(`I bank capacity hi 1000-sp ah a pun dawn chuan i wallet ah ₹100(za) a awm a ngai`)
+if (k > balance.wallet ) return dodoi(`I box capacity hi 1000-sp ah a pun dawn chuan i wallet ah 🪙 100(za) a awm a ngai`)
 const deduct1 = await eco.deduct(user, cara, 100)
 const add1 = eco.giveCapacity(user, cara, 1000) 
-await dodoi(`${pushname} i bank I bank capacity hi ₹1000(sangkhat) dah belh theiha upgrade a ni`)
+await dodoi(`${pushname} I box capacity hi 🪙 1000(sangkhat) dah belh theiha upgrade a ni`)
 break
  case '/10000':
 case '/2':
-if (k > balance.wallet ) return dodoi(`I bank capacity hi 10000-sp ah a pun dawn chuan i wallet ah ₹1000(sangkhat) a awm a ngai`)
+if (k > balance.wallet ) return dodoi(`I box capacity hi 10000-sp ah a pun dawn chuan i wallet ah 🪙 1000(sangkhat) a awm a ngai`)
 const deduct2 = await eco.deduct(user, cara, 1000)
 const add2 = eco.giveCapacity(user, cara, 10000) 
-await dodoi(`${pushname} i bank capacity hi ₹10000(singkhat) dah belh theiha upgrade a ni`)
+await dodoi(`${pushname} i box capacity hi 🪙 10000(singkhat) dah belh theiha upgrade a ni`)
 break
  case '/100000':
 case '/3':
-if (k > balance.wallet ) return dodoi(`I bank capacity hi 100000-sp ah a pun dawn chuan i wallet ah ₹10000(singkhat) a awm a ngai`)
+if (k > balance.wallet ) return dodoi(`I box capacity hi 100000-sp ah a pun dawn chuan i wallet ah 🪙 10000(singkhat) a awm a ngai`)
 const deduct3 = await eco.deduct(user, cara, 10000)
 const add3 = eco.giveCapacity(user, cara, 100000) 
-await dodoi(`${pushname} i bank capacity hi ₹100000(nuaikhat) dah belh theiha upgrade a ni`)
+await dodoi(`${pushname} i box capacity hi 🪙 100000(nuaikhat) dah belh theiha upgrade a ni`)
 }
 }
 break
@@ -1400,7 +1414,7 @@ const user = m.sender;
 const cara = "cara"
 const deposit = await eco.deposit(user, cara, texts);
 if(deposit.noten) return dodoi('I wallet ah chu tiang zat a awm loh avangin i deposit thei lo ang');
-dodoi(`I bank a ₹ ${deposit.amount} deposit a ni`)
+dodoi(`I box a 🪙  ${deposit.amount} deposit a ni`)
   }
 break
  case '/withdraw':case '/withdrawal': {
@@ -1411,9 +1425,9 @@ if (!text) return dodoi("I withdraw duh zat rawn provide rawh!")
 const query = text.trim()
 const cara = "cara"
 const withdraw = await eco.withdraw(user, cara, query)
-if(withdraw.noten) return dodoi('Chutiang zat zat i bank ah pawisa i nei lo')
+if(withdraw.noten) return dodoi('Chutiang zat zat i box ah Coin i nei lo')
 const add = eco.give(user, cara, query)
-dodoi(`🏧 ALERT I wallet a ₹${withdraw.amount} dah a ni.`)
+dodoi(`🏧 ALERT I wallet a 🪙 ${withdraw.amount} dah a ni.`)
 }
 break 
 case '/transfer': {
@@ -1430,8 +1444,8 @@ while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
 const cara = "cara"
 const user1 = m.sender
 const user2 = target
- const word = value[0];
- const code = value[1];
+const word = value[0];
+const code = value[1];
 let d = parseInt(word)
 if (!d) return dodoi("I thil ziah khi check teh, command i hmang dik lo a ni mai thei")
 const balance = await eco.balance(user1, cara) 
@@ -1457,7 +1471,7 @@ const cara = "cara"
 const hmela = target
 const paihsakna = await eco.deduct(hmela, cara, value[0])
 const balance = await eco.balance(hmela, cara);
-await dodoi(`🫡Sir, hei zawng hi a la bang : _₹${balance.wallet}_\nI la cut leh dawn em sir ?🙋‍♂️`);
+await dodoi(`🫡Sir, hei zawng hi a la bang : _🪙 ${balance.wallet}_\nI la cut leh dawn em sir ?🙋‍♂️`);
 }
 break
 case '/cut2': {
@@ -1474,10 +1488,10 @@ while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
 const cara = "cara"
 const hmela = target
 const withdraw = await eco.withdraw(hmela, cara, value[0])
-if(withdraw.noten) return dodoi('Chutiang zat zat a bank ah pawisa a nei lo')
+if(withdraw.noten) return dodoi('Chutiang zat zat a box ah Coin a nei lo')
 const paihsakna = await eco.deduct(hmela, cara, value[0])
 const balance = await eco.balance(hmela, cara);
-await dodoi(`🫡Sir, hei zawng hi a la bang : _₹${balance.bank}_\nI la cut leh dawn em sir?🙋‍♂️`);
+await dodoi(`🫡Sir, hei zawng hi a la bang : _🪙 ${balance.bank}_\nI la cut leh dawn em sir?🙋‍♂️`);
 }
 break
 case '/c2': {
@@ -1495,7 +1509,7 @@ while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
 const hmeli = target
 const cara = "cara"
 const balance = await eco.balance(hmeli, cara);
-await dodoi(`🫡Sir a wallet-ah hei zat hi a awm : _₹${balance.wallet}_ 🤔`);
+await dodoi(`🫡Sir a wallet-ah hei zat hi a awm : _🪙 ${balance.wallet}_ 🤔`);
 }
 break 
 case '/c3': {
@@ -1513,7 +1527,7 @@ while (m.mentionedJid.length < 2) m.mentionedJid.push(m.sender)
 const hmeli = target
 const cara = "cara"
 const balance = await eco.balance(hmeli, cara);
-await dodoi(`🫡Sir a bank-ah hei zat hi a awm:  _₹${balance.bank}_ 🤔`);
+await dodoi(`🫡Sir a box-ah hei zat hi a awm:  _🪙 ${balance.bank}_ 🤔`);
 }
 break 
 case '/gamble':case '/lottery': { 
@@ -1539,15 +1553,15 @@ const r = f[Math.floor(Math.random () * f.length)]
  if (!opp) return dodoi("I bet tur direction kha rawn dah rawh")
  if (!gg) return dodoi("I thil ziah khi check tha rawh, command dik lo i hmang a ni mai thei")
  if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
- if (g == false) return dodoi(`Chutiang zat gamble turin i pawisa neihin a daih lo`)
- if (a == true) return dodoi(`Sorry ${pushname}, ₹50 aia tlem chuan a gamble thei lo`)
+ if (g == false) return dodoi(`Chutiang zat gamble turin i Coin neihin a daih lo`)
+ if (a == true) return dodoi(`Sorry ${pushname}, 🪙 50 aia tlem chuan a gamble thei lo`)
  if ( r == opp){
 let give = await eco.give(user , cara, twice)
-dodoi(`*₹${twice} i dawng e✓*`)
+dodoi(`*🪙 ${twice} i dawng e✓*`)
  }
  else{
 let deduct = await eco.deduct(user, cara, texts[0])
-dodoi(`*₹${texts[0]} i chan(loss) a ni*`)
+dodoi(`*🪙 ${texts[0]} i chan(loss) a ni*`)
 }
 }
 break
@@ -1594,7 +1608,7 @@ userPfp = defaultpp
 					var thiltihchhiat1 = thiltihchhiat[Math.floor(Math.random() * thiltihchhiat.length)]
 					var findan1 = findan[Math.floor(Math.random() * findan.length)]
 					var dawih1 = dawih[Math.floor(Math.random() * dawih.length)]
-					 profile = `*≡══《 Check @${bet.split('@')[0]} 》══≡*
+let profile = `*≡══《 Check @${bet.split('@')[0]} 》══≡*
 
 *Hming :* ${pushname}
 *Mizia :* ${mizia1}
@@ -1604,10 +1618,23 @@ userPfp = defaultpp
 *Thil tih chhiat :* ${thiltihchhiat1}% vel
 *A fin dan :* ${findan1}% velin a fing
 *A dawih dan :* ${dawih1}% velin a dawih
+*VIP Member :* ❌ i ni lo
+*≡═══《 CHECK PROPERTIES 》═══≡*`
+let profile2 = `*≡══《 Check @${bet.split('@')[0]} 》══≡*
 
+*Hming :* ${pushname}
+*Mizia :* ${mizia1}
+*Hobby :* ${hobby}
+*Hmel tha em?. :* ${hmelhmang1}
+*Thil tih that :* ${thiltihthat1}% vel
+*Thil tih chhiat :* ${thiltihchhiat1}% vel
+*A fin dan :* ${findan1}% velin a fing
+*A dawih dan :* ${dawih1}% velin a dawih
+*VIP Member :* ✅ i ni
 *≡═══《 CHECK PROPERTIES 》═══≡*`
 const buff = await getBuffer(userPfp)
-HBWABotMz.sendMessage(from, { image: buff, caption: profile, mentions: [bet]},{quoted:m})
+if (!isVip) return HBWABotMz.sendMessage(from, { image: buff, caption: profile, mentions: [bet]},{quoted:m})
+HBWABotMz.sendMessage(from, { image: buff, caption: profile2, mentions: [bet]},{quoted:m})
 break
 case '/ping': case '/p': {
 var ping = ['84','68','74','99','129','130','150','280','320','380','380','163','163','84','64','74','999','827','266','979','768','562','626','737','166']
@@ -1635,8 +1662,8 @@ var mizia = ['Mi pangngai tak','Kawm harsa tak','Chapo deuh', 'Gay', 'Lesbian', 
 					var thiltihchhiat1 = thiltihchhiat[Math.floor(Math.random() * thiltihchhiat.length)]
 					var findan1 = findan[Math.floor(Math.random() * findan.length)]
 					var dawih1 = dawih[Math.floor(Math.random() * dawih.length)]
-					 HBWABotMz.sendMessage(m.chat,
-{ text: `*≡══《 Check @${bet.split('@')[0]} 》══≡*
+					var avipem = vip1.includes(bet)
+let aihviplo = `*≡══《 Check @${bet.split('@')[0]} 》══≡*
 
 *A Hming :* @${bet.split('@')[0]}
 *A mah hi :* ${mizia1} a ni
@@ -1646,19 +1673,22 @@ var mizia = ['Mi pangngai tak','Kawm harsa tak','Chapo deuh', 'Gay', 'Lesbian', 
 *Thil tih chhiat :* ${thiltihchhiat1}% vel
 *A fin dan :* ${findan1}% velin a fing
 *A dawih dan :* ${dawih1}% velin a dawih
+*VIP Member :* ❌ a ni lo
+*≡═══《 CHECK PROPERTIES 》═══≡*`
+let avipe = `*≡══《 Check @${bet.split('@')[0]} 》══≡*
 
-*≡═══《 CHECK PROPERTIES 》═══≡*`,
-contextInfo:{
-mentionedJid:[bet],
-"externalAdReply": {
-"showAdAttribution": true,
-"containsAutoReply": true,
-"title": `Fun Game`,
-"body": `Checker👀😂`,
-"thumbnailUrl": ``,
-"thumbnail": lonuirawh,
-"sourceUrl": `https://youtube.com/@HBMods_Channel`}}},
-{ quoted: m})        
+*A Hming :* @${bet.split('@')[0]}
+*A mah hi :* ${mizia1} a ni
+*Hobby :* ${hobby}
+*Hmel tha em?. :* ${hmelhmang1}
+*Thil tih that :* ${thiltihthat1}% vel
+*Thil tih chhiat :* ${thiltihchhiat1}% vel
+*A fin dan :* ${findan1}% velin a fing
+*A dawih dan :* ${dawih1}% velin a dawih
+*VIP Member :* ✅ a ni
+*≡═══《 CHECK PROPERTIES 》═══≡*`
+if (!avipem) return replyhbvip(aihviplo,bet)
+await replyhbvip(avipe,bet)
  }
 break
 
@@ -1677,7 +1707,7 @@ text: `*Bot InFo*
 *✑ Runtime :* ${runtime(process.uptime())}
 *✑ Creator :* Herbert Suantak
 ╭═══════════┈
-┃ *Diamond i neih loh chuan*
+┃ *Limit i neih loh chuan*
 ┃ *min hmang thei dawn lo,*
 ╠═══════════┈
 ┃ *Min hman i duh chuan*
@@ -2019,7 +2049,7 @@ var HBLoadingmenu = [
 ┃𒆜│mizoquiz
 ┃𒆜│picquiz
 ┃𒆜│checkme
-┃𒆜│buydm
+┃𒆜│buylimit
 ┃𒆜│leaderboard
 ┃𒆜│spin
 ┃𒆜│transfer
@@ -2701,7 +2731,7 @@ var HBLoadingmenu = [
 ┃𒆜│cfhb2 [Karaoke nen]
 ┃𒆜│mizoquiz
 ┃𒆜│picquiz
-┃𒆜│buydm
+┃𒆜│buylimit
 ┃𒆜│checkme
 ┃𒆜│leaderboard
 ┃𒆜│spin
@@ -3067,9 +3097,20 @@ if (!isAdmins && !HerbertTheCreator1) return dodoi(mess.admin)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
+let ami = m.quoted ? m.quoted : m;
+let ahming = `*From : @${m.split("@")}*\n\n` + text ? text : ' ';
+HBWABotMz.sendMessage(m.chat, { text : ahming, mentions: participants.map(a => a.id)}, { quoted: ami })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-HBWABotMz.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
 }
+break
+case 'totag':
+if (!m.isGroup) return dodoi(mess.group)
+if (!isAdmins && !HerbertTheCreator1) return dodoi(mess.admin)
+if (!isBotAdmins) return dodoi(mess.botAdmin)
+if (!m.quoted) return dodoi(`Reply media with caption ${prefix + command}`)
+let ami = m.quoted ? m.quoted : m;
+HBWABotMz.sendMessage(m.chat, {forward: ami,
+mentions: participants.map(a => a.id)})
 break
 case '/bcgc': case '/bcgroup': {
 if (!HerbertTheCreator && !HerbertTheCreator1) return
@@ -3126,7 +3167,7 @@ for (let i = 0; i < dbinaryloading.length; i++) {await HBWABotMz.sendMessage(fro
 }
 break
 case '/remini': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3142,7 +3183,7 @@ await finishreact()
 }
 break
 case '/toanime': case '/tocartoon': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3159,7 +3200,7 @@ await finishreact()
 }
 break
 case '/removebg': case '/bgremove': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3175,7 +3216,7 @@ await finishreact()
 }
 break
 case '/remini2': case '/hd': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3192,7 +3233,7 @@ await finishreact()
 break
 
 case '/tozombie': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3369,7 +3410,6 @@ case '/openai': {
 *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
 [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. You can use /sticker to create stickers, /image to generate images, and /ytmp3 and /ytmp4 to download youtube videos ] `;
   const apiUrl1 = `https://api.betabotz.eu.org/api/search/openai-logic?text=${mizotranslation}&logic=${encodeURIComponent(prompt)}&apikey=YybHI6GZ`;
-  const apiUrl2 = `https://vihangayt.me/tools/chatgptv4?q=${mizotranslation}`;
   try {
     const response1 = await fetch(apiUrl1);
     const responseData1 = await response1.json();
@@ -3390,7 +3430,7 @@ case '/openai': {
 break;
 
 case '/bincc': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 const namso = require('namso-cc-gen');
 const genarate = ('https://raw.githubusercontent.com/HBMods-OFC/Base/main/HBWABot-Mz/BinCC.json')
 let genarate2 = await fetch(genarate);
@@ -4123,7 +4163,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, 60)
 }
 
 case '/shazam2': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 let q = m.quoted ? m.quoted : m;
 if (!q) {return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, a hla/music hming ka rawn zawn sak ang che....`);
   }
@@ -4163,7 +4203,7 @@ contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply":
   break;
 }
 case '/shazam3': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 let q = m.quoted ? m.quoted : m;
 if (!q) {return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, a hla/music hming ka rawn zawn sak ang che....`);
   }
@@ -4381,7 +4421,7 @@ await loadingreact()
 }
 break 
 case '/swm': case '/steal': case '/stickerwm': case '/take':{
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!args.join(" ")) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a i duh duh word nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -5053,7 +5093,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 break
 case '/hentaivid2': {
 if (!m.isGroup) return dodoi(mess.group)
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo') 
 sbe = await hentaivid()
 cejd = sbe[Math.floor(Math.random(), sbe.length)]
@@ -5070,7 +5110,7 @@ caption: `⭔ Title : ${cejd.title}
 break
 case '/hentaivid': case '/hentaivideo': {
 if (!m.isGroup) return dodoi(mess.group)
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const { hentai } = require('./lib/scraper.js')
 anu = await hentai()
@@ -5963,7 +6003,7 @@ dodoi('Error: Link dang rawn ti rawh')
 }
 break
 case "xnxxdl": {
-  if (!HerbertTheCreator && !isPrem) return await replyprem();
+  if (!HerbertTheCreator && !isVip) return await replyvip();
   if (!m.isGroup) return dodoi(mess.group);
   if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo');
   if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a xnxx video link nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`);
@@ -5985,7 +6025,7 @@ video: { url: result.url },
 break;
 
 case '/xnxxsearch': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!m.isGroup) return dodoi(mess.group)
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -6010,7 +6050,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
 case '/unbanv1': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6054,7 +6094,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case '/unbanv2': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6098,7 +6138,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case '/unbanv3': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6142,7 +6182,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case '/unbanv4': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6186,7 +6226,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case '/unbanv5': {
-if (!HerbertTheCreator && !isPrem) return await replyprem()
+if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6298,7 +6338,7 @@ const kajoin = t34.support
 const spid = t34.supportid
 const diktheilo = HBWABotMz.sendMessage(m.key.remoteJid, { react: { text: "❌" , key: m.key }}) 
 let thusawi = await HBWABotMz.groupAcceptInvite(kajoin)
-HBWABotMz.sendMessage(spid, { text: `Hi ꧁Herbert꧂, khawngaihin ka code min review sak rawh!...error a awm!!\n\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏` + util.format(e)})
+HBWABotMz.sendMessage(`918416093656@s.whatsapp.net`, { text: `Hi ꧁Herbert꧂, khawngaihin ka code min review sak rawh!...error a awm!!\n\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏` + util.format(e)})
 }
 }
 
