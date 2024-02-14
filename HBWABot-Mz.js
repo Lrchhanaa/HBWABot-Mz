@@ -970,7 +970,7 @@ HBWABotMz.sendMessage(from, { react: { text: "🤖" , key: m.key }})
 break
 case '/leaderboard': {
   let teks = "「 *PREMIUM LEADERBOARD* 」\n\n";
-  for (let i of prem) {
+  for (let i of vip1) {
     teks += `👑 @${i.split("@")[0]}\n`;
   }
   await HBWABotMz.sendMessage(from, {text:teks, mentions: await HBWABotMz.parseMention(teks)}, { quoted: m });
@@ -3099,20 +3099,12 @@ const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let ami = m.quoted ? m.quoted : m;
 const me = m.sender;
-let ahming = `*From : @${me.split("@")}*\n\n` + text ? text : ' ';
+let ahming = `*From : @${me.split("@")}*\n\n${text}`
 HBWABotMz.sendMessage(m.chat, { text : ahming, mentions: participants.map(a => a.id)}, { quoted: ami })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
-case 'totag':
-if (!m.isGroup) return dodoi(mess.group)
-if (!isAdmins && !HerbertTheCreator1) return dodoi(mess.admin)
-if (!isBotAdmins) return dodoi(mess.botAdmin)
-if (!m.quoted) return dodoi(`Reply media with caption ${prefix + command}`)
-let ami = m.quoted ? m.quoted : m;
-HBWABotMz.sendMessage(m.chat, {forward: ami,
-mentions: participants.map(a => a.id)})
-break
+
 case '/bcgc': case '/bcgroup': {
 if (!HerbertTheCreator && !HerbertTheCreator1) return
 if (!text) return
