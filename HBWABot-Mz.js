@@ -310,7 +310,7 @@ const dodoi = (teks) => {
 const replyherbertstyle = (teks) => {
  HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `${global.botname}`,"body": `SUB HBMods OFC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/HBWABot.png`),"sourceUrl": `https://youtube.com/@HBMods_Channel`}}}, { quoted: m})
 }
-const replyhbvip = (teks,bet) => {
+const replyhbvip = (teks,bet,lonuirawh) => {
  HBWABotMz.sendMessage(m.chat,{ text: teks,contextInfo:{
 mentionedJid:[bet],
 "externalAdReply": {
@@ -1687,8 +1687,8 @@ let avipe = `*≡══《 Check @${bet.split('@')[0]} 》══≡*
 *A dawih dan :* ${dawih1}% velin a dawih
 *VIP Member :* ✅ a ni
 *≡═══《 CHECK PROPERTIES 》═══≡*`
-if (!avipem) return replyhbvip(aihviplo,bet)
-await replyhbvip(avipe,bet)
+if (!avipem) return replyhbvip(aihviplo,bet,lonuirawh)
+await replyhbvip(avipe,bet,lonuirawh)
  }
 break
 
