@@ -14,7 +14,7 @@ const athulo22 = `${two22}`
 const alinknen = gtranslate.translate(asourcep, atargetp, athulo22)
 
 //__________
-const three33 = [`I link rawn dah hi a dik lo`
+const three33 = [`I link rawn dah hi a dik lo`]
 const athulo33 = `${three33}`
 const tylink = gtranslate.translate(asourcep, atargetp, athulo33)
 
