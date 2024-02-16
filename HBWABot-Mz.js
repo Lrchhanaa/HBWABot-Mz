@@ -25,7 +25,7 @@ const eco = require('discord-mongoose-economy')
 const ty = eco.connect("mongodb+srv://HBWABot-Mz:hbwabotmz@hbwabot-mz.njzuajm.mongodb.net/?retryWrites=true&w=majority") 
 const mizo_tawnga_translate_na = require("@kreisler/js-google-translate-free")
 const gtranslate = require("@kreisler/js-google-translate-free")
-const asourcep = 'en'
+const asourcep = 'lus'
 const atargetp = `${bot_language}`
 const one11 = (`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* `)
 const aziaknen = gtranslate.translate(asourcep, atargetp, one11)
