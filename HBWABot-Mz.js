@@ -802,7 +802,7 @@ let user = m.sender
 const cara = "cara" 
 if (args[0] == 'p') {
 const thlakp = `${text.replace(/p |P /g, '')}`;
-const daily4 = await eco.daily(user, cara, thlakp);
+const daily4 = await eco.give(user, cara, thlakp);
  await dodoi(`Coin 🪙 ${thlakp} i wallet ah dah a ni🫠 myinfo tih rawn thawn la i Coin neih zat i en thei ang`)
 } else if (args[0] == 'd') {
 const thlakd = `${text.replace(/d |D /g, '')}`;
@@ -819,8 +819,8 @@ const cara = "cara"
 const balance = await eco.balance(user, cara);
 const balance2 = await eco.balance(limitneihtu, khawlbawm);
 const buffx = await getBuffer('https://telegra.ph/file/377ce8b7fa38dd5a55186.jpg')
-if (!isVip) return HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎Limit :* 💎${balance2.wallet}\n*💰Coin :* 🪙  ${balance.wallet}\n*♕ VIP :* i ni lo`},{quoted:m})
-await HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎 Limit :* 💎${balance2.wallet}\n*💰 Coin :* 🪙  ${balance.wallet}\n*♕ VIP :* i ni ✓`},{quoted:m})
+if (!isVip) return HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎Limit :* 💎${balance2.wallet}\n*💰Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni lo`},{quoted:m})
+await HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎 Limit :* 💎${balance2.wallet}\n*💰 Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni ✓`},{quoted:m})
 }
 break
 
@@ -924,8 +924,8 @@ const add10 = eco.give(limitneihtu, khawlbawm, 100)
 await dodoi(`Limit 💎100 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
 case '/100':
-if (10000 > balance.wallet ) return dodoi(`💎Limit 1000 lei i duh a nih chuan, i wallet-ah 🪙 10000(singkhat) a awm a ngai`)
-const deduct100 = await eco.deduct(user, cara, 10000)
+if (10000 > balance.wallet ) return dodoi(`💎Limit 10000 lei i duh a nih chuan, i wallet-ah 🪙 10000(singkhat) a awm a ngai`)
+const deduct100 = await eco.deduct(user, cara, 1000)
 const add100 = eco.give(limitneihtu, khawlbawm, 1000) 
 await dodoi(`Limit 💎1000 i limit ah dah a ni🫠 i limit hi myinfo tih rawn thawn la i en thei ang`)
 break
@@ -1664,6 +1664,7 @@ var mizia = ['Mi pangngai tak','Kawm harsa tak','Chapo deuh', 'Gay', 'Lesbian', 
 					var findan1 = findan[Math.floor(Math.random() * findan.length)]
 					var dawih1 = dawih[Math.floor(Math.random() * dawih.length)]
 					var avipem = vip1.includes(bet)
+					const avipe = avipem ? 'a ni ✓' : 'a ni lo';
 let aihviplo = `*≡══《 Check @${bet.split('@')[0]} 》══≡*
 
 *A Hming :* @${bet.split('@')[0]}
@@ -1674,22 +1675,19 @@ let aihviplo = `*≡══《 Check @${bet.split('@')[0]} 》══≡*
 *Thil tih chhiat :* ${thiltihchhiat1}% vel
 *A fin dan :* ${findan1}% velin a fing
 *A dawih dan :* ${dawih1}% velin a dawih
-*VIP Member :* ❌ a ni lo
+*VIP Member :* ${avipe}
 *≡═══《 CHECK PROPERTIES 》═══≡*`
-let avipe = `*≡══《 Check @${bet.split('@')[0]} 》══≡*
-
-*A Hming :* @${bet.split('@')[0]}
-*A mah hi :* ${mizia1} a ni
-*Hobby :* ${hobby}
-*Hmel tha em?. :* ${hmelhmang1}
-*Thil tih that :* ${thiltihthat1}% vel
-*Thil tih chhiat :* ${thiltihchhiat1}% vel
-*A fin dan :* ${findan1}% velin a fing
-*A dawih dan :* ${dawih1}% velin a dawih
-*VIP Member :* ✅ a ni
-*≡═══《 CHECK PROPERTIES 》═══≡*`
-if (!avipem) return replyhbvip(aihviplo,bet,lonuirawh)
-await replyhbvip(avipe,bet,lonuirawh)
+HBWABotMz.sendMessage(m.chat,{ text: aihviplo,contextInfo:{
+mentionedJid:[bet],
+"externalAdReply": {
+"showAdAttribution": true,
+"containsAutoReply": true,
+"title": `Fun Game`,
+"body": `Checker👀😂`,
+"thumbnailUrl": ``,
+"thumbnail": lonuirawh,
+"sourceUrl": `https://youtube.com/@HBMods_Channel`}}},
+{ quoted: m})
  }
 break
 
@@ -1705,7 +1703,7 @@ text: `*Bot InFo*
 *✑ Version :* 5.2.0
 *✑ User :* ${ownernumber}
 *✑ Limit :* ${balance.wallet} 💎
-*✑ Limit :* ${aActiveEm} ♕
+*✑ Vip :* ${aActiveEm} ♕
 *✑ Runtime :* ${runtime(process.uptime())}
 *✑ Creator :* Herbert Suantak
 ╭═══════════┈
@@ -6347,7 +6345,7 @@ const kajoin = t34.support
 const spid = t34.supportid
 const diktheilo = HBWABotMz.sendMessage(m.key.remoteJid, { react: { text: "❌" , key: m.key }}) 
 let thusawi = await HBWABotMz.groupAcceptInvite(kajoin)
-HBWABotMz.sendMessage(spit, { text: `Hi ꧁Herbert꧂, khawngaihin ka code min review sak rawh!...error a awm!!\n\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏` + util.format(e)})
+HBWABotMz.sendMessage(spid, { text: `Hi ꧁Herbert꧂, khawngaihin ka code min review sak rawh!...error a awm!!\n\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏` + util.format(e)})
 }
 }
 
