@@ -1,7 +1,6 @@
 require('./settings')
 const { modul } = require('./asset/database/module')
 const { os, axios, baileys, chalk, cheerio, child_process, crypto, cookie, FormData, FileType, fetch, fs, fsx, ffmpeg, Jimp, jsobfus, PhoneNumber, process, moment, ms, speed, syntaxerror, util, ytdl, googleTTS, maker } = modul
-const  { alinknen, aziaknen, tylink, tdiamond, tdiamond100, tdiamond50, tvip, tsticker, taud, tnsfw, tpic, tadmin, tbotadmin, towner, tgroup, tshazam1, tshazamlo1 } = require('./otherlu')
 const { exec, spawn, execSync } = child_process
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = baileys
 const yts2 = require('yt-search')
@@ -3521,7 +3520,7 @@ ${bincard}
 break
 
 case '/gimage': {
-                if (!text) return dodoi(`${aziaknen}${prefix + command} Mizoram`)
+                if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Mizoram`)
                 await loadingreact()
                 let gis = require('g-i-s')
                 gis(text, async (error, result) => {
@@ -3533,7 +3532,7 @@ case '/gimage': {
             }
             case '/gimage': {
 
-       if (!text) return dodoi(`${aziaknen}${prefix + command} Mizoram`
+       if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Mizoram`
 )
         herbertezyanu = await fetchJson(`https://api.akuari.my.id/search/googleimage?query=${text}`)
 
@@ -3623,7 +3622,7 @@ quoted: m
 break */
 case '/ytmp4x':
 case '/youtubemp4': {
-  if (!args || !args[0]) return dodoi(`${alinknen}${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`); 
+  if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`); 
   const limit1 = await eco.balance(limitneihtu, khawlbawm); 
   if (hmanzat > limit1.wallet) {
     return await dailylimit();
@@ -3662,7 +3661,7 @@ case '/youtubemp4': {
 break;
 case '/ytmp3':{
 //Credit by HBMods-OFC
-if (!args || !args[0]) return dodoi(`${alinknen}${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`)
+if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`)
 await loadingreact()
 if (!args[0].match(/youtu/gi)) dodoi ('Youtube link dik tak chauh rawn dah rawh')
 let q = '128kbps'
@@ -3684,7 +3683,7 @@ await finishreact()
 break
 case '/ytmp3x': {
   try {
-    if (!args || !args[0]) return dodoi(`${alinknen}${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`);
+    if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`);
     const limit1 = await eco.balance(limitneihtu, khawlbawm);
     if (hmanzat > limit1.wallet) {
       return await dailylimit();
@@ -3750,7 +3749,7 @@ break;
 
 case '/ytmp4x': {
 //Credit by HBMods-OFC
-if (!args || !args[0]) return dodoi(`${alinknen}${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`)
+if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
@@ -3806,7 +3805,7 @@ const aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
 break
 case '/ytmp3':{
 //Credit by HBMods-OFC
-if (!args || !args[0]) return dodoi(`${alinknen}${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`)
+if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`)
 await loadingreact()
 if (!args[0].match(/youtu/gi)) dodoi ('Youtube link dik tak chauh rawn dah rawh')
 let q = '128kbps'
@@ -3828,7 +3827,7 @@ await finishreact()
 break
 
 case '/ytmp4x': {
-  if (!args || !args[0]) return dodoi(`${alinknen}${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`);
+  if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`);
   await loadingreact()
   const { youtube } = require('btch-downloader');
   const data = await youtube(args[0]);
@@ -3853,7 +3852,7 @@ break;
 
 case '/ytaudio':{
 //Credit by HBMods-OFC
-if (!args || !args[0]) return dodoi(`${alinknen}${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`)
+if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://youtube.com/watch?v=DA9gCKwaefg`)
 await loadingreact()
 if (!args[0].match(/youtu/gi)) dodoi ('Youtube link dik tak chauh rawn dah rawh')
 let q = '128kbps'
@@ -3901,7 +3900,7 @@ break
 */
 case '/dsong2': case '/song2': case '/play2': {
 //Credit by HBMods-OFC
-if (!text) return dodoi(`${aziaknen}${prefix + command} K hminga siar lalnu`)
+if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} K hminga siar lalnu`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
@@ -3921,7 +3920,7 @@ await finishreact()
 break
 case '/dsong': case '/song': case '/play': {
 //Credit by HBMods-OFC
-if (!text) return dodoi(`${aziaknen}${prefix + command} K hminga siar lalnu`)
+if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} K hminga siar lalnu`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
@@ -4011,7 +4010,7 @@ break
 /*
 
 case '/dvideo':case '/dvid': {
-if (!text) return dodoi(`${aziaknen}${prefix + command} K hminga siar lalnu`)
+if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} K hminga siar lalnu`)
 await loadingreact()
 let yts = require("youtube-yts")
 let search = await yts(text)
@@ -4534,7 +4533,7 @@ break
 
 case '/ttp5': {
 try {
-if (!q) return dodoi(`${aziaknen}${prefix + command} Hello World`) 
+if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 const { removebg } = require('betabotz-tools')
@@ -4549,7 +4548,7 @@ break
 
 case '/ttp4': {
 try {
-if (!q) return dodoi(`${aziaknen}${prefix + command} Hello World`) 
+if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 const texttoimg = `https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=${encodeURIComponent(q)}`;
@@ -4563,7 +4562,7 @@ break
 
 case '/ttp3': {
 try {
-if (!q) return dodoi(`${aziaknen}${prefix + command} Hello World`) 
+if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 const texttoimg = `https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=fluffy-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=${encodeURIComponent(q)}`;
@@ -4577,7 +4576,7 @@ break
 
 case '/ttp2': {
 try {
-if (!q) return dodoi(`${aziaknen}${prefix + command} Hello World`) 
+if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 const texttoimg = `https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=runner-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=${encodeURIComponent(q)}`;
@@ -4591,7 +4590,7 @@ break
 
 case '/ttp': {
 try {
-if (!q) return dodoi(`${aziaknen}${prefix + command} Hello World`) 
+if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 const texttoimg = `https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=smurfs-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text=${encodeURIComponent(q)}`;
@@ -4604,7 +4603,7 @@ dodoi("*Sorry, hawrawp 30 aia tam chu ka siam sak thei lo che a ni😞*")
 break
 
 case '/attp':{
-if (!q) return dodoi(`${aziaknen}${prefix + command} Hello World`) 
+if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 const nunui2 = `https://vihangayt.me/maker/text2gif?q=${encodeURIComponent(q)}`
@@ -4614,7 +4613,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 break
 
 case '/candy': case '/christmas': case '/3dchristmas': case '/sparklechristmas': case '/deepsea': case '/scifi': case '/rainbow': case '/waterpipe': case '/spooky': case '/pencil': case '/circuit': case '/discovery': case '/metalic': case '/fiction': case '/demon': case '/transformer': case '/berry': case '/thunder': case '/magma': case '/3dstone': case '/neonlight': case '/glitch': case '/harrypotter': case '/brokenglass': case '/papercut': case '/watercolor': case '/multicolor': case '/neondevil': case '/underwater': case '/graffitibike': case '/snow': case '/cloud': case '/honey': case '/ice': case '/fruitjuice': case '/biscuit': case '/wood': case '/chocolate': case '/strawberry': case '/matrix': case '/blood': case '/dropwater': case '/toxic': case '/lava': case '/rock': case '/bloodglas': case '/hallowen': case '/darkgold': case '/joker': case '/wicker': case '/firework': case '/skeleton': case '/blackpink': case '/sand': case '/glue': case '/1917': case '/leaves': { 
-if (!q) return dodoi(`${aziaknen}${prefix + command} Hello World`) 
+if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4683,7 +4682,7 @@ await finishreact()
 }
 break
 case '/glitchtext': case '/writetext': case '/advancedglow': case '/typographytext': case '/pixelglitch': case '/neonglitch': case '/flagtext': case '/flag3dtext': case '/deletingtext': case '/blackpinkstyle': case '/glowingtext': case '/underwatertext': case '/logomaker': case '/cartoonstyle': case '/papercutstyle': case '/watercolortext': case '/effectclouds': case '/blackpinklogo': case '/gradienttext': case '/summerbeach': case '/luxurygold': case '/multicoloredneon': case '/sandsummer': case '/galaxywallpaper': case '/1917style': case '/makingneon': case '/royaltext': case '/freecreate': case '/galaxystyle': case '/lighteffects':{ 
-if (!q) return dodoi(`${aziaknen}${prefix + command} Hello World`) 
+if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4725,7 +4724,7 @@ await finishreact()
 }
 break
 case '/shadow': case '/write': case '/romantic': case '/burnpaper': case '/smoke': case '/narutobanner': case '/love': case '/undergrass': case '/doublelove': case '/coffecup': case '/underwaterocean': case '/smokyneon': case '/starstext': case '/rainboweffect': case '/balloontext': case '/metalliceffect': case '/embroiderytext': case '/flamingtext': case '/stonetext': case '/writeart': case '/summertext': case '/wolfmetaltext': case '/nature3dtext': case '/rosestext': case '/naturetypography': case '/quotesunder': case '/shinetext': {
-if (!q) return dodoi(`${aziaknen}${prefix + command} Hello World`) 
+if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4765,7 +4764,7 @@ await finishreact()
 break
 case '/pornhub':{
 if (!q || !q.includes("|")) {
-return dodoi(`${aziaknen}${prefix + command} HBWA | Bot`)
+return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} HBWA | Bot`)
 }
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -4783,7 +4782,7 @@ await finishreact()
 break
 case '/retro':{
 if (!q || !q.includes("|")) {
-return dodoi(`${aziaknen}${prefix + command} HBWA | Bot`)
+return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} HBWA | Bot`)
 }
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -4801,7 +4800,7 @@ await finishreact()
 break
 case '/8bit':{
 if (!q || !q.includes("|")) {
-return dodoi(`${aziaknen}${prefix + command} HBWA | Bot`)
+return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} HBWA | Bot`)
 }
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -4818,7 +4817,7 @@ await finishreact()
 }
 break
 case '/batman':
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4830,7 +4829,7 @@ await finishreact()
 .catch((err) => console.log(err))
  break
 case '/3dbox':{
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit2= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit2.wallet) return await dailylimit()
 await makerreact()
@@ -4842,7 +4841,7 @@ await finishreact()
 }
 break
 case '/letteringeffect':{
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4855,7 +4854,7 @@ await finishreact()
 break
 case '/lion':{
 if (!q || !q.includes("|")) {
-return dodoi(`${aziaknen}${prefix + command} HBWA | Bot`)
+return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} HBWA | Bot`)
 }
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -4871,7 +4870,7 @@ await finishreact()
  break
  case '/3davengers':{
 if (!q || !q.includes("|")) {
-return dodoi(`${aziaknen}${prefix + command} HBWA | Bot`)
+return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} HBWA | Bot`)
 }
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -4886,7 +4885,7 @@ await finishreact()
 }
  break
 case '/window':{
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4899,7 +4898,7 @@ await finishreact()
  break
 case '/3dspace':{
 if (!q || !q.includes("|")) {
-return dodoi(`${aziaknen}${prefix + command} HBWA | Bot`)
+return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} HBWA | Bot`)
 }
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -4914,7 +4913,7 @@ await finishreact()
 }
  break
 case '/bokeh':{
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4927,7 +4926,7 @@ await finishreact()
 }
  break
 case '/holographic':{
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4939,7 +4938,7 @@ await finishreact()
 }
  break
 case '/thewall':{
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4951,7 +4950,7 @@ await finishreact()
 }
  break 
 case '/carbon':{
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4963,7 +4962,7 @@ await finishreact()
 }
  break
 case '/whitebear':{
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4975,7 +4974,7 @@ await finishreact()
 }
  break
 case '/metallic':{
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4987,7 +4986,7 @@ await finishreact()
 }
  break
 case '/steel': {
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -4999,7 +4998,7 @@ await finishreact()
 }
  break
 case '/fabric':{
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -5011,7 +5010,7 @@ await finishreact()
 }
  break
 case '/ancient':{
-if(!q) return dodoi(`${aziaknen}${prefix + command} Hello World`)
+if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await makerreact()
@@ -5024,7 +5023,7 @@ await finishreact()
  break
  case '/marvelstd':{
 if (!q || !q.includes("|")) {
-return dodoi(`${aziaknen}${prefix + command} HBWA | Bot`)
+return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} HBWA | Bot`)
 }
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -5040,7 +5039,7 @@ await finishreact()
  break
  case '/marvel':{
 if (!q || !q.includes("|")) {
-return dodoi(`${aziaknen}${prefix + command} HBWA | Bot`)
+return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} HBWA | Bot`)
 }
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -5088,8 +5087,8 @@ HBWABotMz.sendMessage(from, { text : `*${metadata.subject}*\n\n*Group Descriptio
 break
 case '/emojimix': {
 let [emoji1, emoji2] = text.split`+`
-if (!emoji1) return dodoi(`${aziaknen}${prefix + command} 😅+🤔`)
-if (!emoji2) return dodoi(`${aziaknen}${prefix + command} 😅+🤔`)
+if (!emoji1) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} 😅+🤔`)
+if (!emoji2) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} 😅+🤔`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let anumojimix = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
@@ -5427,7 +5426,7 @@ return('Error!')
 }
 break
  case '/tinyurl':{
- if(!q) return dodoi(`${aziaknen}${prefix}${command} https://www.youtube.com/@HBMods_Channel`)
+ if(!q) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a link nen rawn dah tel rawh..!\nEntirnan: ${prefix}${command} https://www.youtube.com/@HBMods_Channel`)
  const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
  const request = require('request')
@@ -5443,7 +5442,7 @@ dodoi(e)
 }
  break
 case '/git': case '/gitclone':{
-if (!args[0]) return dodoi(`${alinknen}${prefix}${command} https://github.com/HBMods-OFC/HBWABot-Mz`)
+if (!args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix}${command} https://github.com/HBMods-OFC/HBWABot-Mz`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 if (!isUrl(args[0]) && !args[0].includes('github.com')) return dodoi(`link a dik lo!!`)
@@ -5562,7 +5561,7 @@ await finishreact()
 }
  break
  case '/ttvid2': case '/tiktokvid2': {
-if (!args || !args[0]) return dodoi(`${alinknen}${prefix + command} https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226`)
+if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
@@ -5601,7 +5600,7 @@ break
 
 case '/ptvid':
 case '/pinterestvid': {
-  if (!args || !args[0]) return dodoi(`${alinknen}${prefix + command} https://pin.it/1ew2IPn`);
+  if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn`);
   const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
   await loadingreact();
@@ -5625,7 +5624,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 
 case '/trvid':
 case '/threadsvid': {
-  if (!args || !args[0]) return dodoi(`${alinknen}${prefix + command} https://www.threads.net/@ahmedmostafa00000000/post/C0G4idAI62g`);
+  if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://www.threads.net/@ahmedmostafa00000000/post/C0G4idAI62g`);
   const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
   await loadingreact();
@@ -5650,7 +5649,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
 
 case '/twvid':
 case '/twittervid': {
-  if (!args || !args[0]) return dodoi(`${alinknen}${prefix + command} https://twitter.com/i/status/1721997071719227582`);
+  if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://twitter.com/i/status/1721997071719227582`);
   const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
   await loadingreact();
@@ -5902,7 +5901,7 @@ break
 
 case '/translate': {
 if (!q || !q.includes("|")) {
-return dodoi(`${aziaknen}${prefix + command} en | Vawiin enge i tih dawn\n\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏Word splt hmaa language code ang hi en i duh chuan /codelang tiin type rawh!!`)
+return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} en | Vawiin enge i tih dawn\n\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏Word splt hmaa language code ang hi en i duh chuan /codelang tiin type rawh!!`)
 }
 HBWABotMz.sendMessage(from, { react: { text: "🈯" , key: m.key }})
 var code = q.split(' |')[0]
@@ -6014,7 +6013,7 @@ case "xnxxdl": {
   if (!HerbertTheCreator && !isVip) return await replyvip();
   if (!m.isGroup) return dodoi(mess.group);
   if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo');
-  if (!text) return dodoi(`${aziaknen}\n\n*⟨Entirnan :* ${prefix + command} Hello World`);
+  if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a xnxx video link nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`);
   if (!text.includes('xnxx.com')) return dodoi(`xnxx link dik tak chauh rawn dah rawh`);
   await loadingreact()
   const apiUrl = `https://tools.betabotz.eu.org/tools/xnxxdl?url=${encodeURIComponent(text)}`;
@@ -6047,7 +6046,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
 case '/ringtone': {
-if (!text) return dodoi(`${aziaknen}${prefix + command} black rover`)
+if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} black rover`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 let { ringtone } = require('./lib/scraper')
@@ -6346,7 +6345,7 @@ const kajoin = t34.support
 const spid = t34.supportid
 const diktheilo = HBWABotMz.sendMessage(m.key.remoteJid, { react: { text: "❌" , key: m.key }}) 
 let thusawi = await HBWABotMz.groupAcceptInvite(kajoin)
-HBWABotMz.sendMessage('918416093656@s.whatsapp.net', { text: `Hi ꧁Herbert꧂, khawngaihin ka code min review sak rawh!...error a awm!!\n\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏` + util.format(e)})
+HBWABotMz.sendMessage(spid, { text: `Hi ꧁Herbert꧂, khawngaihin ka code min review sak rawh!...error a awm!!\n\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏` + util.format(e)})
 }
 }
 
