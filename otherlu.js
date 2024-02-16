@@ -98,4 +98,4 @@ emaw ka Api's lakna ah dik lo a awm a ni thei`)
 const athulo18 = `${eighteen18}`
 const tshazamlo1 = gtranslate.translate(asourcep, atargetp, athulo18)
 
-module.exports = { alinknen, aziaknen, tylink, tdiamond, tdiamond100, tdiamond50, tvip, tsticker, taud, tnsfw, tpic, tadmin, tbotadmin, towner, tgroup, tptivate, atargetp, tshazam1, tshazamlo1 }
+module.exports = { alinknen, aziaknen, tylink, tdiamond, tdiamond100, tdiamond50, tvip, tsticker, taud, tnsfw, tpic, tadmin, tbotadmin, towner, tgroup, tshazam1, tshazamlo1 }
