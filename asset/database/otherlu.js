@@ -1,4 +1,4 @@
-require('./settings')
+require('../settings')
 const fs = require('fs');
 const gtranslate = require("@kreisler/js-google-translate-free")
 const asourcep = 'en'
