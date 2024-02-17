@@ -4610,6 +4610,57 @@ await HBWABotMz.sendVideoAsSticker(m.chat, nunui2, m, { packname: global.packnam
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
+case '/attp2': case '/ttp6': {
+if (!args[0] && !m.quoted) {
+return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a i duh duh word nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
+}
+let userPfp
+if (m.quoted) {
+try {
+userPfp = await HBWABotMz.profilePictureUrl(m.quoted.sender, "image")
+} catch (e) {
+userPfp = defaultpp
+}
+} else {
+try {
+userPfp = await HBWABotMz.profilePictureUrl(m.sender, "image")
+} catch (e) {
+userPfp = defaultpp
+}
+}
+const waUserName = pushname
+const quoteText = m.quoted ? m.quoted.body : args.join(" ")
+const quoteJson = {
+type: "quote",
+format: "png",
+backgroundColor: "#FFFFFF",
+width: 700,
+height: 580,
+scale: 2,
+messages: [
+{
+entities: [],
+avatar: false,
+text: quoteText,
+replyMessage: {},
+},
+],
+}
+try {
+const quoteResponse = await axios.post("https://bot.lyo.su/quote/generate", quoteJson, {
+headers: { "Content-Type": "application/json" },
+})
+const buffer = Buffer.from(quoteResponse.data.result.image, "base64")
+HBWABotMz.sendImageAsSticker(m.chat, buffer, m, {
+packname: packname,
+author: author,
+})
+} catch (error) {
+console.error(error)
+dodoi('Error')
+}
+}
+break
 
 case '/candy': case '/christmas': case '/3dchristmas': case '/sparklechristmas': case '/deepsea': case '/scifi': case '/rainbow': case '/waterpipe': case '/spooky': case '/pencil': case '/circuit': case '/discovery': case '/metalic': case '/fiction': case '/demon': case '/transformer': case '/berry': case '/thunder': case '/magma': case '/3dstone': case '/neonlight': case '/glitch': case '/harrypotter': case '/brokenglass': case '/papercut': case '/watercolor': case '/multicolor': case '/neondevil': case '/underwater': case '/graffitibike': case '/snow': case '/cloud': case '/honey': case '/ice': case '/fruitjuice': case '/biscuit': case '/wood': case '/chocolate': case '/strawberry': case '/matrix': case '/blood': case '/dropwater': case '/toxic': case '/lava': case '/rock': case '/bloodglas': case '/hallowen': case '/darkgold': case '/joker': case '/wicker': case '/firework': case '/skeleton': case '/blackpink': case '/sand': case '/glue': case '/1917': case '/leaves': { 
 if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
