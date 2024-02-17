@@ -220,6 +220,51 @@ fs.writeFileSync('./asset/database/user.json', JSON.stringify(herbertverifieduse
 
 HBWABotMz.sendPresenceUpdate('available', from)
 
+// auto set bio
+if (db.settings[botNumber].autobio) {
+let setting = global.db.settings[botNumber]
+if (new Date() * 1 - setting.status > 1000) {
+let uptime = await runtime(process.uptime())
+await HBWABotMz.updateProfileStatus(`HBWABot | Runtime : ${runtime(uptime)}`)
+setting.status = new Date() * 1
+}
+}
+//message reply na
+const dodoi = (teks) => {
+ HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m})
+}
+
+const replyherbertstyle = (teks) => {
+ HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `${global.botname}`,"body": `SUB HBMods OFC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/HBWABot.png`),"sourceUrl": `https://youtube.com/@HBMods_Channel`}}}, { quoted: m})
+}
+const replyhbvip = (teks,bet,lonuirawh) => {
+ HBWABotMz.sendMessage(m.chat,{ text: teks,contextInfo:{
+mentionedJid:[bet],
+"externalAdReply": {
+"showAdAttribution": true,
+"containsAutoReply": true,
+"title": `Fun Game`,
+"body": `Checker👀😂`,
+"thumbnailUrl": ``,
+"thumbnail": lonuirawh,
+"sourceUrl": `https://youtube.com/@HBMods_Channel`}}},
+{ quoted: m})
+ }
+const replyherbertstyle12 = (teks) => {
+ HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true,}}}, { quoted: m})
+}
+
+const replymizobiblequotes = (teks) => {
+ HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `Mizo Bible Quotes`,"body": `HBWABot`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/MizoBibleQ.png`),"sourceUrl": `https://instagram.com/mizo_bible_quote`}}}, { quoted: m})
+}
+const reply = (teks) => {
+HBWABotMz.sendMessage(from, { text: teks ,
+contextInfo:{
+forwardingScore: 9999999, 
+isForwarded: false
+}
+}, { quoted : m })
+}
  //Suit RPS
 this.suit = this.suit ? this.suit : {}
 let roof = Object.values(this.suit).find(roof => roof.id && roof.status && [roof.p, roof.p2].includes(m.sender))
@@ -292,52 +337,6 @@ HBWABotMz.sendText(roof.asal, `_*RPS Results*_${tie ? '\nIn in hneh tawk chiah' 
 delete this.suit[roof.id]
 }
 } //end
-
-// auto set bio
-if (db.settings[botNumber].autobio) {
-let setting = global.db.settings[botNumber]
-if (new Date() * 1 - setting.status > 1000) {
-let uptime = await runtime(process.uptime())
-await HBWABotMz.updateProfileStatus(`HBWABot | Runtime : ${runtime(uptime)}`)
-setting.status = new Date() * 1
-}
-}
-//message reply na
-const dodoi = (teks) => {
- HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m})
-}
-
-const replyherbertstyle = (teks) => {
- HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `${global.botname}`,"body": `SUB HBMods OFC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/HBWABot.png`),"sourceUrl": `https://youtube.com/@HBMods_Channel`}}}, { quoted: m})
-}
-const replyhbvip = (teks,bet,lonuirawh) => {
- HBWABotMz.sendMessage(m.chat,{ text: teks,contextInfo:{
-mentionedJid:[bet],
-"externalAdReply": {
-"showAdAttribution": true,
-"containsAutoReply": true,
-"title": `Fun Game`,
-"body": `Checker👀😂`,
-"thumbnailUrl": ``,
-"thumbnail": lonuirawh,
-"sourceUrl": `https://youtube.com/@HBMods_Channel`}}},
-{ quoted: m})
- }
-const replyherbertstyle12 = (teks) => {
- HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true,}}}, { quoted: m})
-}
-
-const replymizobiblequotes = (teks) => {
- HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `Mizo Bible Quotes`,"body": `HBWABot`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/MizoBibleQ.png`),"sourceUrl": `https://instagram.com/mizo_bible_quote`}}}, { quoted: m})
-}
-const reply = (teks) => {
-HBWABotMz.sendMessage(from, { text: teks ,
-contextInfo:{
-forwardingScore: 9999999, 
-isForwarded: false
-}
-}, { quoted : m })
-}
 //TicTacToe\\
 	    this.game = this.game ? this.game : {}
 	    let room13 = Object.values(this.game).find(room13 => room13.id && room13.game && room13.state && room13.id.startsWith('tictactoe') && [room13.game.playerX, room13.game.playerO].includes(m.sender) && room13.state == 'PLAYING')
@@ -5516,37 +5515,34 @@ case '/igvid':
 case '/instavid': 
 case '/igstory':
 case '/igreels': {
-// Credit by Betabotz-tools
-if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://www.instagram.com/reel/Cv83HHYtC-Y/?igshid=NTc4MTIwNjQ2YQ==`);
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-await loadingreact();
-const { instagram } = require('betabotz-tools');
-const url = args[0];
-const results = await instagram(url);
-await uploadreact();
-for (let i of results.result) {
-await HBWABotMz.sendMessage(m.chat, {
-video: { url: i._url },
-caption: "Instagram download by "+ `${global.botname}`
-}, { quoted: m });
+    // Credit by Betabotz-tools
+    if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://www.instagram.com/reel/Cv83HHYtC-Y/?igshid=NTc4MTIwNjQ2YQ==`);
+    if (!text.includes("instagram.com")) return dodoi(`Instagram video link dik tak chauh rawn dah rawh!!`);
+    const limit1 = await eco.balance(limitneihtu, khawlbawm)
+    if (hmanzat > limit1.wallet) return await dailylimit()
+    await loadingreact();
+    const { instagram } = require('betabotz-tools');
+    const url = args[0];
+    const results = await instagram(url);
+    await uploadreact();
+    if (results.result) {
+        for (let i of results.result) {
+            await HBWABotMz.sendMessage(m.chat, {
+                video: { url: i._url },
+                caption: "Instagram download by " + `${global.botname}`
+            }, { quoted: m });
+        }
+        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+    await finishreact();
+    } else {
+        mumaker.instagram(`${args[0]}`)
+            .then((data) => HBWABotMz.sendMessage(m.chat, { video: { url: data }, caption: `Instagram Videos download by ${global.botname}` }, { quoted: m }))
+    }
+    let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+    await finishreact();
 }
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-await finishreact();
-}
-break 
-case '/instavid2' : case '/igvid2': {
-if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`)
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-await loadingreact()
- mumaker.instagram(`${args[0]}`)
-.then((data) => HBWABotMz.sendMessage(m.chat, { video: { url: data }, caption: `Instagram Videos download by ${global.botname}` }, { quoted: m }))
-.catch((err) => console.log(err))
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-await finishreact()
-}
- break
+break;
+
  
 case '/tiktokvid3' : case '/ttvid3': {
 if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226`)
@@ -5672,9 +5668,23 @@ if (hmanzat > limit1.wallet) return await dailylimit()
   break;
 }
  
-case '/fbvidxx' : case '/facebookvidxx':{
+case '/fbvid' : case '/facebookvid':{
 if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://fb.watch/mcx9K6cb6t/?mibextid=8103lRmnirLUhozF`)
+const limit1= await eco.balance(limitneihtu, khawlbawm)
+if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
+const { facebook } = require('betabotz-tools') 
+const url = args[0]
+const results = await facebook(url)
+await uploadreact()
+if (!results.result.sd_q) {
+await HBWABotMz.sendMessage(m.chat,{
+video: {url: results.result.sd_q},
+caption: "Facebook Video download by "+ `${global.botname}`
+}, {quoted:m})
+let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+await finishreact()
+} else {
 const { fbdown } = require('btch-downloader') 
 const link = args[0] 
 const data = await fbdown(link) 
@@ -5684,24 +5694,7 @@ await HBWABotMz.sendMessage(m.chat,{
 video: {url: data.Normal_video},
 caption: "Facebook Videos download by "+ `${global.botname}`
 }, {quoted:m})
-await finishreact()
-
 }
-break 
-case '/fbvid' : case '/facebookvid':{
-if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://fb.watch/mcx9K6cb6t/?mibextid=8103lRmnirLUhozF`)
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-await loadingreact()
-const { facebook } = require('betabotz-tools') 
-const url = args[0]
-const results = await facebook(url)
-console.log(results) // JSON
-await uploadreact()
-await HBWABotMz.sendMessage(m.chat,{
-video: {url: results.result.sd_q},
-caption: "Facebook Video download by "+ `${global.botname}`
-}, {quoted:m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
