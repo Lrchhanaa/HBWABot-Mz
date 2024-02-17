@@ -4632,7 +4632,9 @@ Canvas.registerFont('./asset/font/SF-Pro.ttf', { family: 'SF-Pro' })
 	ttp.context.strokeText(text, 290,300)
 	ttp.context.fillStyle = 'white'
 	ttp.context.fillText(text, 290,300)
-await HBWABotMz.sendImageAsSticker(m.chat, ttp.create.toBuffer, m, { packname: global.packname, author: `HBWABot` });
+	
+var bufferx = ttp.create.toBuffer()	
+await HBWABotMz.sendImageAsSticker(m.chat, bufferx, m, { packname: global.packname, author: `HBWABot` });
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 } catch (error) {
 dodoi("*Sorry, hawrawp 30 aia tam chu ka siam sak thei lo che a ni😞*")
