@@ -28,6 +28,8 @@ const asource1 = 'en'
 const atarget1 = 'lus'
 const athulo1 = `${nizatani}`
 const { createCanvas, loadImage } = require('canvas');
+const Canvas = require('canvas')
+const canvasGif = require('canvas-gif')
 const { ytDonlodMp3, ytDonlodMp4, ytPlayMp3, ytPlayMp4, ytSearch } = require('./lib/yt')
 const anon = require('./lib/menfess') 
 const mlstalk = require('./asset/zepzeuh/mlstalk')
@@ -4601,7 +4603,7 @@ dodoi("*Sorry, hawrawp 30 aia tam chu ka siam sak thei lo che a ni😞*")
 }
 break
 
-case '/attp':{
+case '/attp2':{
 if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -4610,57 +4612,71 @@ await HBWABotMz.sendVideoAsSticker(m.chat, nunui2, m, { packname: global.packnam
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
-case '/attp2': case '/ttp6': {
-if (!args[0] && !m.quoted) {
-return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a i duh duh word nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
-}
-let userPfp
-if (m.quoted) {
-try {
-userPfp = await HBWABotMz.profilePictureUrl(m.quoted.sender, "image")
-} catch (e) {
-userPfp = defaultpp
-}
-} else {
-try {
-userPfp = await HBWABotMz.profilePictureUrl(m.sender, "image")
-} catch (e) {
-userPfp = defaultpp
-}
-}
-const waUserName = pushname
-const quoteText = m.quoted ? m.quoted.body : args.join(" ")
-const quoteJson = {
-type: "quote",
-format: "png",
-backgroundColor: "#FFFFFF",
-width: 700,
-height: 580,
-scale: 2,
-messages: [
-{
-entities: [],
-avatar: false,
-text: quoteText,
-replyMessage: {},
-},
-],
-}
-try {
-const quoteResponse = await axios.post("https://bot.lyo.su/quote/generate", quoteJson, {
-headers: { "Content-Type": "application/json" },
-})
-const buffer = Buffer.from(quoteResponse.data.result.image, "base64")
-HBWABotMz.sendImageAsSticker(m.chat, buffer, m, {
-packname: packname,
-author: author,
-})
-} catch (error) {
-console.error(error)
-dodoi('Error')
-}
-}
-break
+case '/attp':
+    try {
+        if (!text) {
+            return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a i duh duh word nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
+        }
+        
+        const file = "./asset/image/attp.gif"
+        let length = text.length
+        let font = 90
+
+        if (length > 12) { font = 68 }
+        if (length > 15) { font = 58 }
+        if (length > 18) { font = 55 }
+        if (length > 19) { font = 50 }
+        if (length > 22) { font = 48 }
+        if (length > 24) { font = 38 }
+        if (length > 27) { font = 35 }
+        if (length > 30) { font = 30 }
+        if (length > 35) { font = 26 }
+        if (length > 39) { font = 25 }
+        if (length > 40) { font = 20 }
+        if (length > 49) { font = 10 }
+
+        Canvas.registerFont('./asset/image/SF-Pro.ttf', { family: 'SF-Pro' })
+        await canvasGif(
+            file,
+            (ctx) => {
+                const couler = ["#ff0000", "#ffe100", "#33ff00", "#00ffcc", "#0033ff", "#9500ff", "#ff00ff"]
+                const jadi = couler[Math.floor(Math.random() * couler.length)]
+
+                function drawStroked(text, x, y) {
+                    ctx.lineWidth = 5
+                    ctx.font = `${font}px SF-Pro`
+                    ctx.fillStyle = jadi
+                    ctx.strokeStyle = 'black'
+                    ctx.textAlign = 'center'
+                    ctx.strokeText(text, x, y)
+                    ctx.fillText(text, x, y)
+                }
+
+                drawStroked(text, 290, 300)
+            },
+            {
+                coalesce: false,
+                delay: 0,
+                repeat: 0,
+                algorithm: 'octree',
+                optimiser: false,
+                fps: 7,
+                quality: 100,
+            }
+        ).then((buffer) => {
+            res.set({ 'Content-Type': 'gif' })
+            res.send(buffer)
+            HBWABotMz.sendImageAsSticker(m.chat, buffer, m, {
+                packname: packname,
+                author: author,
+            })
+        })
+    } catch (error) {
+        console.error(error)
+        dodoi('Error')
+    }
+    break
+
 
 case '/candy': case '/christmas': case '/3dchristmas': case '/sparklechristmas': case '/deepsea': case '/scifi': case '/rainbow': case '/waterpipe': case '/spooky': case '/pencil': case '/circuit': case '/discovery': case '/metalic': case '/fiction': case '/demon': case '/transformer': case '/berry': case '/thunder': case '/magma': case '/3dstone': case '/neonlight': case '/glitch': case '/harrypotter': case '/brokenglass': case '/papercut': case '/watercolor': case '/multicolor': case '/neondevil': case '/underwater': case '/graffitibike': case '/snow': case '/cloud': case '/honey': case '/ice': case '/fruitjuice': case '/biscuit': case '/wood': case '/chocolate': case '/strawberry': case '/matrix': case '/blood': case '/dropwater': case '/toxic': case '/lava': case '/rock': case '/bloodglas': case '/hallowen': case '/darkgold': case '/joker': case '/wicker': case '/firework': case '/skeleton': case '/blackpink': case '/sand': case '/glue': case '/1917': case '/leaves': { 
 if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
