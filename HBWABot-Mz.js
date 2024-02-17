@@ -27,7 +27,6 @@ const mizo_tawnga_translate_na = require("@kreisler/js-google-translate-free")
 const asource1 = 'en'
 const atarget1 = 'lus'
 const athulo1 = `${nizatani}`
-const { createCanvas, loadImage } = require('canvas');
 const Canvas = require('canvas')
 const canvasGif = require('canvas-gif')
 const { ytDonlodMp3, ytDonlodMp4, ytPlayMp3, ytPlayMp4, ytSearch } = require('./lib/yt')
@@ -4605,6 +4604,8 @@ break
 case '/ttp': {
 try {
 if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
+const limit1= await eco.balance(limitneihtu, khawlbawm)
+if (hmanzat > limit1.wallet) return await dailylimit()
 Canvas.registerFont('./asset/font/SF-Pro.ttf', { family: 'SF-Pro' })
 	let length = text.length
 		
@@ -4655,6 +4656,8 @@ case '/attp':
         if (!text) {
             return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a i duh duh word nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
         }
+        const limit1= await eco.balance(limitneihtu, khawlbawm)
+if (hmanzat > limit1.wallet) return await dailylimit()
 
         const file = "./asset/image/attp.gif"
         let length = text.length
@@ -4707,7 +4710,8 @@ case '/attp':
                 packname: packname,
                 author: author,
             });
-        });
+        })
+        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
     } catch (error) {
         console.error(error);
         dodoi('Error');
