@@ -5994,8 +5994,10 @@ host: "https://translate.google.com",
 })
 let set = '-af atempo=4/4,asetrate=44500*2/3'
 await loadingreact()
+let media = await HBWABotMz.downloadAndSaveMediaMessage(url:herbertrl)
 let ran = getRandom('.mp3')
-exec(`ffmpeg -i ${herbertrl} ${set} ${ran}`, (err, stderr, stdout) => {
+exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
+fs.unlinkSync(media)
 if (err) return dodoi(err)
 let buff = fs.readFileSync(ran)
 HBWABotMz.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mp4', ptt: true,
