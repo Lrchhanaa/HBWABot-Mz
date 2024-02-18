@@ -5983,7 +5983,7 @@ quoted: m,
 })
 }
 break 
-
+/*
 case '/say2': case '/tts2': case '/gtts2':{
 if (!text) return dodoi(`Kha tiang ringawt loh khan, tiang hian word nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
 let texttts = text
@@ -6007,8 +6007,7 @@ fs.unlinkSync(ran)
 })
 }
 break 
-
-/*case '/say2': {
+case '/say2': {
 if (!text) return dodoi(`Kha tiang ringawt loh khan, tiang hian word nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const { VoiceMaker, VoiceMakerRequest } = require('voicemaker')
 const engine = new VoiceMaker();
