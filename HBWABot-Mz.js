@@ -231,8 +231,19 @@ setting.status = new Date() * 1
 }
 }
 //message reply na
+if (your_language) {
+const dodoi = (teks) => {
+var vawk1 = 'lus'
+var vawk2 = `en`
+var vawk3 = teks;
+var vawk4 = mizo_tawnga_translate_na.translate(vawk1, vawk2, vawk3)
+ HBWABotMz.sendMessage(m.chat, { text: vawk4}, { quoted: m})
+}
+}
+if (default_language) {
 const dodoi = (teks) => {
  HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m})
+}
 }
 
 const replyherbertstyle = (teks) => {
@@ -5971,6 +5982,28 @@ ptt: true,
 fileName: `${text}.mp3`,
 }, {
 quoted: m,
+})
+}
+break 
+
+case '/say2': case '/tts2': case '/gtts2':{
+if (!text) return dodoi(`Kha tiang ringawt loh khan, tiang hian word nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
+let texttts = text
+const herbertrl = googleTTS.getAudioUrl(texttts, {
+lang: "en",
+slow: false,
+host: "https://translate.google.com",
+})
+let set = '-af atempo=4/4,asetrate=44500*2/3'
+await loadingreact()
+let ran = getRandom('.mp3')
+exec(`ffmpeg -i ${herbertrl} ${set} ${ran}`, (err, stderr, stdout) => {
+if (err) return dodoi(err)
+let buff = fs.readFileSync(ran)
+HBWABotMz.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mp4', ptt: true,
+fileName: `${text}.mp3`, }, { quoted : m })
+fs.unlinkSync(ran)
+
 })
 }
 break 
