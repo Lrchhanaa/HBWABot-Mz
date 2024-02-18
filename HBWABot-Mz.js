@@ -230,6 +230,7 @@ await HBWABotMz.updateProfileStatus(`HBWABot | Runtime : ${runtime(uptime)}`)
 setting.status = new Date() * 1
 }
 }
+/*
 //message reply na
 if (your_language) {
 const dodoi = (teks) => {
@@ -239,13 +240,10 @@ var vawk3 = teks;
 var vawk4 = mizo_tawnga_translate_na.translate(vawk1, vawk2, vawk3)
  HBWABotMz.sendMessage(m.chat, { text: vawk4}, { quoted: m})
 }
-}
-if (default_language) {
+} */
 const dodoi = (teks) => {
  HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m})
 }
-}
-
 const replyherbertstyle = (teks) => {
  HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `${global.botname}`,"body": `SUB HBMods OFC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/HBWABot.png`),"sourceUrl": `https://youtube.com/@HBMods_Channel`}}}, { quoted: m})
 }
