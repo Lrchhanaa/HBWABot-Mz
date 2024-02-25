@@ -1276,7 +1276,8 @@ HBWABotMz.sendMessage(from, { react: { text: "🎶" , key: m.key }})
 }
 break;
 
-case 'mzly': case 'hlaly': {
+case 'mzly':
+case 'hlaly': {
     if (!text) return dodoi(`Eng lyrics nge i zawn dawn?\nTiang hian hman tur: ${prefix + command} Zorema Khiangte Saltang tawngtaina\n\n*Hriattur :* A hla thupui leh a satu hming rawn dah tel ang che, a hla thupui hming i hre lo a nih chuan a chang i hriatna lai rawn dah ang che, ziah dan dikin`)
     var fourbrother = await getBuffer(`https://i.imgur.com/tb7TQAh.jpg`)
     HBWABotMz.sendMessage(from, { react: { text: "🎶" , key: m.key }}) 
@@ -1299,14 +1300,15 @@ case 'mzly': case 'hlaly': {
             };
             jsonArray.push(jsonData);
         });
-        const firstItem = jsonArray[0]; // Access the first item in the array
+        const firstItem = jsonArray[0];
         const alink = firstItem.link;
         const ahlathu = firstItem.title;
         const alyrics = firstItem.content;
+        let textAfterSatu = '';
         const startIndex = alyrics.indexOf("Satu ");
         if (startIndex !== -1) {
-        const textAfterSatu = alyrics.substring(startIndex + "Satu ".length); 
-}
+            textAfterSatu = alyrics.substring(startIndex + "Satu ".length); 
+        }
         const siamthat = `${textAfterSatu.replace(/Satu /g,'')}`
         const match = siamthat.includes(text);
         const ainmilem = match ? `${match}` : 'lyrics'
@@ -1324,6 +1326,7 @@ case 'mzly': case 'hlaly': {
     }
 }
 break;
+
 
  
 case 'wallet': {
