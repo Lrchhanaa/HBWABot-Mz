@@ -5817,7 +5817,7 @@ caption: "Facebook Video download by "+ `${global.botname}`
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 } else {
-const mumufb = mumaker.facebook(url)
+const mumufb = mumaker.facebook(text)
 const mufbd = mumufb.urls 
 await HBWABotMz.sendMessage(m.chat,{
 video: {url: mufbd},
