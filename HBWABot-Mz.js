@@ -231,10 +231,32 @@ setting.status = new Date() * 1
 }
 
 //message reply na
-
+const dodoi = (teks) => {
+var siamthattur = `${teks
+       .replace(/He featurs hi hman i duh chuan 💎20 i neih a ngai!!./g,'babawkza1')
+       .replace(/Bot rawn hmang thar tur i nih chuan Limit tiin type rawh, ti chuan bot hman theihna tur 💎500 i dawng ang, emaw i thiante in thawn tir rawh/g, 'babawkza2')
+       .replace(/He features hi VIP 👑 member te leh bot owners tan chauha siam a ni, VIP 👑 member nih i duh ve chuan a hnuaia number ka dah hian va dil rawh/g,'babawkza3')
+       .replace(/Kha tiang ringawt loh khan/g,'babawkza4')}`
+var bawng1 = 'lus'
+var bawng2 = 'en'
+var bawng3 = siamthattur
+var vawk4 = mizo_tawnga_translate_na.translate(vawk1, vawk2, bawng3)
+var bawng5 = 'en'
+var bawng6 = 'hi'
+var bawng7 = `${vawk4
+       .replace(/babawkza1/g,'You need to have 💎20 limit for using this features')
+       .replace(/babawkza2/g, 'Please send me *limit* and you can claim 500 limit for daily')
+       .replace(/babawkza3/g,'This feature is made for only VIP member and the bot owner\nif you want to be a VIP Member please contact as i put number in this given below\n')
+       .replace(/babawkza4/g,'Not only like that')
+ 
+ }`
+ HBWABotMz.sendMessage(m.chat, { text: bawng7}, { quoted: m})
+}
+/*
 const dodoi = (teks) => {
  HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m})
 }
+*/
 const replyherbertstyle = (teks) => {
  HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `${global.botname}`,"body": `SUB HBMods OFC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/HBWABot.png`),"sourceUrl": `https://youtube.com/@HBMods_Channel`}}}, { quoted: m})
 }
