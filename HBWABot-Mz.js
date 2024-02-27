@@ -92,7 +92,6 @@ const args = body.trim().split(/ +/).slice(1)
 const pushname = m.pushName || "No Name"
 const botNumber = await HBWABotMz.decodeJid(HBWABotMz.user.id)
 const HerbertTheCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-const HerbertTheCreator1 = m.sender === '918416093656@s.whatsapp.net';
 const HerbertTheDeveloper = m.sender == botNumber ? true : false
 const text = q = args.join(" ")
 const quoted = m.quoted ? m.quoted : m
@@ -587,7 +586,7 @@ const vip1 = await VipAniEm();
 const isVip = vip1.includes(m.sender)
 const aActiveEm = isVip ? 'i ni ✓' : 'i ni lo ×';
 const duhsak1 = await DuhSak();
-const DuhSakBik = duhsak1.includes(m.sender);
+const HerbertTheCreator1 = duhsak1.includes(m.sender);
 const Dmdftc = ('https://raw.githubusercontent.com/HBMods-OFC/Director/master/Coin&Limit/limit&coin.json')
 let Dmdftc2 = await fetch(Dmdftc);
 let Dmdresult = await Dmdftc2.json();
@@ -1285,10 +1284,15 @@ case 'hlaly': {
         }
         const jsonArray = [];
         feed.items.forEach(item => {
+        const planetext = htmlToText(item.content)
+        const textArray = planetext.split("\n");
+        const satuIndex = textArray.findIndex(line => line.includes("Satu:"));
+        const satuLine = satuIndex !== -1 ? textArray[satuIndex].trim() : "Official";
             const jsonData = {
                 link: item.link,
                 title: item.title,
-                content: htmlToText(item.content)
+                content: htmlToText(item.content),
+                asatu: satuLine
             };
             jsonArray.push(jsonData);
         });
@@ -1296,14 +1300,10 @@ case 'hlaly': {
         const alink = firstItem.link;
         const ahlathu = firstItem.title;
         const alyrics = firstItem.content;
-        let textAfterSatu = '';
-        const startIndex = alyrics.indexOf("Satu ");
-        if (startIndex !== -1) {
-            textAfterSatu = alyrics.substring(startIndex + "Satu ".length); 
-        }
-        const siamthat = `${textAfterSatu.replace(/Satu /g,'')}`
-        const match = siamthat.includes(text);
-        const ainmilem = match ? `${match}` : 'lyrics'
+        const asatuhming = firstItem.asatu;
+        const otherText = asatuhming.replace(/'Satu:'/g, "").trim(); 
+        const match = otherText.includes(text);
+        const ainmilem = match ? `${text}` : 'lyrics'
         const sazu = `${ahlathu} ${ainmilem}`;
         const res = await yts2(sazu);
         const vid = res.videos[0];
