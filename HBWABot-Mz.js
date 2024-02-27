@@ -251,10 +251,9 @@ const dodoi = (teks) => {
         .replace(/babawkza2/g, 'Please send me *limit* and you can claim 500 limit for daily')
         .replace(/babawkza3/g, 'This feature is made for only VIP members and the bot owner.\nIf you want to be a VIP Member, please contact as I put the number in the given below.\n')
         .replace(/babawkza4/g, 'Not only like that')}`;
-
     var bawng8 = mizo_tawnga_translate_na.translate(bawng5, bawng6, bawng7);
-
-    HBWABotMz.sendMessage(m.chat, { text: bawng8 }, { quoted: m });
+    var bawng9 = `${bawng8}`
+  await  HBWABotMz.sendMessage(m.chat, { text: bawng9 }, { quoted: m });
 };
 
 /*
