@@ -1039,6 +1039,25 @@ autoread_status = false
 dodoi(`Status/Stories auto view chu off a ni✓`)
 }
 break 
+case 'mtl':
+  if (!HerbertTheCreator) return dodoi(mess.owner);
+  if (args.length < 1) return dodoi(`I option duh thlang rawh, i tih dan tur chu\n${prefix + command} en\n\n chuan a activate ang\n off chuan deactivate na`);
+  const thelung = ["am", "ar", "eu", "bn", "en-GB", "pt-BR", "bg", "ca", "chr", "hr", "cs", "da", "nl", "en", "et", "fil", "fi", "fr", "de", "el", "gu", "iw", "hi", "hu", "is", "id", "it", "ja", "kn", "ko", "lv", "lt", "ms", "ml", "mr", "lus", "no", "pl", "pt-PT", "ro", "ru", "sr", "zh-CN", "sk", "sl", "es", "sw", "sv", "ta", "te", "th", "zh-TW", "tr", "ur", "uk", "vi", "cy"];
+  if (q === 'default') {
+    global.default_language = true;
+    global.mtl_language = false;
+    global.bot_language = 'lus';
+    dodoi(`Defualt a dah a ni✓`);
+  } else if (!thelung.includes(text)) {
+    dodoi("i language code rawn provide hi a code a dik lo");
+  } else {
+    global.default_language = false;
+    global.mtl_language = true;
+    global.bot_language = `${text}`;
+    dodoi(`Bot language has been changed!..`);
+  }
+  break;
+
 
 case 'hbwabot': case '/bot': { 
 let audiobuffy = fs.readFileSync(`./asset/audio/Herbert.mp3`)
@@ -6087,7 +6106,7 @@ const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, targe
 }
 break
 case '/codelang': {
-dodoi(`
+const languages = `
 Amharic = am
 Arabic = ar
 Basque = eu
@@ -6145,7 +6164,7 @@ Urdu = ur
 Ukrainian = uk
 Vietnamese = vi
 Welsh = cy `
-)
+await HBWABotMz.sendMessage(from, { text: languages }, { quoted: m })
 } break
 case 'myip': {
 if (!HerbertTheCreator) return dodoi(mess.owner)
