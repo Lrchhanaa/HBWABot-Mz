@@ -12,7 +12,7 @@ global.autoread = false // true a i dah chuan message zawng zawng read vek zelin
 global.autoread_status = false // true a i dah chuan auto status view in a awm ang
 global.default_language = false // default language i hman dawn loh chuan false ah hia  dah tur
 global.mtl_language = true // multi language i hman dawn chuan true ah dah tur
-global.bot_language = 'en' // I language code dah tur code hman i hriat loh chuan https://herbert70.blogspot.com/p/language-code-for-hbwabot.html?m=1 he link ah hian en thei a ni ang
+global.bot_language = 'ja' // I language code dah tur code hman i hriat loh chuan https://herbert70.blogspot.com/p/language-code-for-hbwabot.html?m=1 he link ah hian en thei a ni ang
 
 //info
 global.owner = ['918416093656'] // I phone number in thlak rawh
