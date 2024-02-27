@@ -620,13 +620,13 @@ async function hmangsuh() {
   }
 }
 const block1 = await hmangsuh();
-const phallo = block1.includes(m.sender) : false
+const phallo = block1.includes(m.sender)
 const vip1 = await VipAniEm();
 const isVip = vip1.includes(m.sender)
 const aActiveEm = isVip ? '🟢 Active' : '🔴 Not Active';
 const duhsak1 = await DuhSak();
 const HerbertTheCreator1 = duhsak1.includes(m.sender);
-const Dmdftc = ('https://raw.githubusercontent.com/HBMods-OFC/Director1/master/Coin&Limit/limit&coin.json')
+const Dmdftc = ('https://raw.githubusercontent.com/HBMods-OFC/Director11/master/Coin&Limit/limit&coin.json')
 let Dmdftc2 = await fetch(Dmdftc);
 let Dmdresult = await Dmdftc2.json();
 const hmanzat = Dmdresult.hmanzat
