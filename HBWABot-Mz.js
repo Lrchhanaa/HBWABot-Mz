@@ -253,7 +253,7 @@ const dodoi = (teks) => {
         .replace(/babawkza4/g, 'Not only like that')}`;
     var bawng8 = mizo_tawnga_translate_na.translate(bawng5, bawng6, bawng7);
     var bawng9 = `${bawng8}`
-  await  HBWABotMz.sendMessage(m.chat, { text: bawng9 }, { quoted: m });
+  await  HBWABotMz.sendMessage(m.chat, { text: bawng9}, { quoted: m});
 };
 
 /*
