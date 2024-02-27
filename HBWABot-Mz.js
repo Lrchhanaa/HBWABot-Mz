@@ -243,10 +243,10 @@ const dodoi = (teks) => {
     var bawng3 = siamthattur;
 
     var vawk4 = mizo_tawnga_translate_na.translate(bawng1, bawng2, bawng3);
-
+    var vawk5 = `${vawk4}`
     var bawng5 = 'en';
     var bawng6 = 'hi';
-    var bawng7 = `${vawk4
+    var bawng7 = `${vawk5
         .replace(/babawkza1/g, 'You need to have 💎20 limit for using this feature')
         .replace(/babawkza2/g, 'Please send me *limit* and you can claim 500 limit for daily')
         .replace(/babawkza3/g, 'This feature is made for only VIP members and the bot owner.\nIf you want to be a VIP Member, please contact as I put the number in the given below.\n')
