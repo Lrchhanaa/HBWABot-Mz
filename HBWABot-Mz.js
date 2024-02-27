@@ -1301,10 +1301,11 @@ case 'hlaly': {
         const ahlathu = firstItem.title;
         const alyrics = firstItem.content;
         const asatuhming = firstItem.asatu;
-        const otherText = asatuhming.replace(/'Satu:'/g, "").trim(); 
+        const otherText = asatuhming.replace(/Satu:/g, "'")
+        const otherText = otherText.replace(/`,`/g, `','`)
         const match = otherText.includes(text);
         const ainmilem = match ? `${text}` : 'lyrics'
-        const sazu = `${ahlathu} ${ainmilem}`;
+        const sazu = `${ahlathu} ${mizoly}`;
         const res = await yts2(sazu);
         const vid = res.videos[0];
         const q = '128kbps';
