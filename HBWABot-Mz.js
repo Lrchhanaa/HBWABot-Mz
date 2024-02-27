@@ -231,10 +231,6 @@ setting.status = new Date() * 1
 }
 
 //message reply na
-
-const mtl_language = true;
-const default_language = false;
-
 const dodoi = async (teks) => {
     var siamthattur = `${teks
         .replace(/He featurs hi hman i duh chuan 💎20 i neih a ngai!!./g, 'babawkza1')
@@ -257,12 +253,12 @@ const dodoi = async (teks) => {
     var bawng8 = await mizo_tawnga_translate_na.translate(bawng5, bawng6, bawng7);
     var bawng9 = `${bawng8}`;
    
-    if (mtl_language) { 
-        await HBWABotMz.sendMessage(m.chat, { text: bawng9}, { quoted: m});
-    } else {
-        if (default_language) { 
+   if (global.default_language) {
             await HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m});
         }
+    } else {
+         if (global.mtl_language) {
+        await HBWABotMz.sendMessage(m.chat, { text: bawng9}, { quoted: m});
     }
 }
 
