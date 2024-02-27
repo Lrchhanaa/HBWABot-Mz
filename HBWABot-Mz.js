@@ -255,11 +255,11 @@ const dodoi = async (teks) => {
    
    if (global.default_language) {
             await HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m});
-        }
     } else {
          if (global.mtl_language) {
         await HBWABotMz.sendMessage(m.chat, { text: bawng9}, { quoted: m});
     }
+}
 }
 
 
