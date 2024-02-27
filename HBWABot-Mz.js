@@ -231,7 +231,7 @@ setting.status = new Date() * 1
 }
 
 //message reply na
-const dodoi = async (teks) => {
+const dodoi = (teks) => {
     var siamthattur = `${teks
         .replace(/He featurs hi hman i duh chuan 💎20 i neih a ngai!!./g, 'babawkza1')
         .replace(/Bot rawn hmang thar tur i nih chuan Limit tiin type rawh, ti chuan bot hman theihna tur 💎500 i dawng ang, emaw i thiante in thawn tir rawh/g, 'babawkza2')
@@ -252,11 +252,9 @@ const dodoi = async (teks) => {
         .replace(/babawkza3/g, 'This feature is made for only VIP members and the bot owner.\nIf you want to be a VIP Member, please contact as I put the number in the given below.\n')
         .replace(/babawkza4/g, 'Not only like that')}`;
     var bawng8 = mizo_tawnga_translate_na.translate(bawng5, bawng6, bawng7);
-    var bawng9 = `${bawng8}`;
-  
-    await HBWABotMz.sendMessage(m.chat, { text: bawng9}, { quoted: m});
+    var bawng9 = `${bawng8}`
+    HBWABotMz.sendMessage(m.chat, { text: bawng9}, { quoted: m});
 };
-
 
 /*
 const dodoi = (teks) => {
