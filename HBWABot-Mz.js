@@ -1302,7 +1302,6 @@ case 'hlaly': {
         const alyrics = firstItem.content;
         const asatuhming = firstItem.asatu;
         const otherText = asatuhming.replace(/Satu:/g, "'")
-        const otherText = otherText.replace(/`,`/g, `','`)
         const match = otherText.includes(text);
         const ainmilem = match ? `${text}` : 'lyrics'
         const sazu = `${ahlathu} ${mizoly}`;
