@@ -231,7 +231,10 @@ setting.status = new Date() * 1
 }
 
 //message reply na
-if (mtl_language) {
+
+const mtl_language = true;
+const default_language = false;
+
 const dodoi = async (teks) => {
     var siamthattur = `${teks
         .replace(/He featurs hi hman i duh chuan 💎20 i neih a ngai!!./g, 'babawkza1')
@@ -242,11 +245,10 @@ const dodoi = async (teks) => {
     var bawng1 = 'lus';
     var bawng2 = 'en';
     var bawng3 = siamthattur;
-
     var vawk4 = await mizo_tawnga_translate_na.translate(bawng1, bawng2, bawng3);
     var vawk5 = `${vawk4}`;
     var bawng5 = 'en';
-    var bawng6 = `${bot_language}`
+    var bawng6 = `${bot_language}`;
     var bawng7 = `${vawk5
         .replace(/babawkza1/g, 'You need to have 💎20 limit for using this feature')
         .replace(/babawkza2/g, 'Please send me *limit* and you can claim 500 limit for daily')
@@ -254,15 +256,17 @@ const dodoi = async (teks) => {
         .replace(/babawkza4/g, 'Not only like that')}`;
     var bawng8 = await mizo_tawnga_translate_na.translate(bawng5, bawng6, bawng7);
     var bawng9 = `${bawng8}`;
-    await HBWABotMz.sendMessage(m.chat, { text: bawng9}, { quoted: m});
-};
+   
+    if (mtl_language) { 
+        await HBWABotMz.sendMessage(m.chat, { text: bawng9}, { quoted: m});
+    } else {
+        if (default_language) { 
+            await HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m});
+        }
+    }
 }
 
-if (default_language) {
-const dodoi = (teks) => {
- HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m})
-}
-}
+
 const replyherbertstyle = (teks) => {
  HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `${global.botname}`,"body": `SUB HBMods OFC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/HBWABot.png`),"sourceUrl": `https://youtube.com/@HBMods_Channel`}}}, { quoted: m})
 }
