@@ -1041,7 +1041,7 @@ dodoi(`Status/Stories auto view chu off a ni✓`)
 break 
 case 'mtl':
   if (!HerbertTheCreator) return dodoi(mess.owner);
-  if (args.length < 1) return dodoi(`I option duh thlang rawh, i tih dan tur chu\n${prefix + command} en\n\n chuan a activate ang\n off chuan deactivate na`);
+  if (args.length < 1) return dodoi(`Launguage thlak i duh chuan code nen rawn dah rawh\n*⟨Etirnan:*${prefix + command}\n\nlanguage code hi i hre lo a nih chuan /codelang tiin rawn thawn rawh`);
   const thelung = ["am", "ar", "eu", "bn", "en-GB", "pt-BR", "bg", "ca", "chr", "hr", "cs", "da", "nl", "en", "et", "fil", "fi", "fr", "de", "el", "gu", "iw", "hi", "hu", "is", "id", "it", "ja", "kn", "ko", "lv", "lt", "ms", "ml", "mr", "lus", "no", "pl", "pt-PT", "ro", "ru", "sr", "zh-CN", "sk", "sl", "es", "sw", "sv", "ta", "te", "th", "zh-TW", "tr", "ur", "uk", "vi", "cy"];
   if (q === 'default') {
     global.default_language = true;
@@ -1049,7 +1049,7 @@ case 'mtl':
     global.bot_language = 'lus';
     dodoi(`Defualt a dah a ni✓`);
   } else if (!thelung.includes(text)) {
-    dodoi("i language code rawn provide hi a code a dik lo");
+    dodoi("I language code rawn provide hi a code a dik lo");
   } else {
     global.default_language = false;
     global.mtl_language = true;
