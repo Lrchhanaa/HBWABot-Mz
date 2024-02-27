@@ -240,7 +240,7 @@ var siamthattur = `${teks
 var bawng1 = 'lus'
 var bawng2 = 'en'
 var bawng3 = siamthattur
-var vawk4 = mizo_tawnga_translate_na.translate(vawk1, vawk2, bawng3)
+var vawk4 = mizo_tawnga_translate_na.translate(bawng1, bawng2, bawng3)
 var bawng5 = 'en'
 var bawng6 = 'hi'
 var bawng7 = `${vawk4
@@ -250,7 +250,8 @@ var bawng7 = `${vawk4
        .replace(/babawkza4/g,'Not only like that')
  
  }`
- HBWABotMz.sendMessage(m.chat, { text: bawng7}, { quoted: m})
+ var bawng8 = mizo_tawnga_translate_na.translate(bawng5, bawng6, bawng7)
+ HBWABotMz.sendMessage(m.chat, { text: bawng8}, { quoted: m})
 }
 /*
 const dodoi = (teks) => {
