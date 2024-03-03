@@ -6576,6 +6576,29 @@ let res = await axioss({
 HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
+case '>':
+case '=>':
+if (!HerbertTheCreator1) return
+var err = new TypeError
+err.name = "EvalError "
+err.message = "Code Not Found (404)"
+if (!q) return replyherbertstyle(util.format(err))
+var arg = command == ">" ? args.join(" ") : "return " + args.join(" ")
+try {
+var txtes = util.format(await eval(`(async()=>{ ${arg} })()`))
+replyherbertstyle(txtes)
+} catch(e) {
+let _syntax = ""
+let _err = util.format(e)
+let err = syntaxerror(arg, "EvalError", {
+allowReturnOutsideFunction: true,
+allowAwaitOutsideFunction: true,
+sourceType: "commonjs"
+})
+if (err) _syntax = err + "\n\n"
+replyherbertstyle(util.format(_syntax + _err))
+}
+break
 
 default:
 
