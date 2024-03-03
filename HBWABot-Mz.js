@@ -5951,37 +5951,45 @@ if (hmanzat > limit1.wallet) return await dailylimit()
   break;
 }
  
-case 'fbvid' : case 'facebookvid': {
-if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://fb.watch/mcx9K6cb6t/?mibextid=8103lRmnirLUhozF`)
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-await loadingreact()
-const { facebook } = require('betabotz-tools') 
-const url = args[0]
-const results = await facebook(url)
-await uploadreact()
-if (!results.result.hd_q) {
-await HBWABotMz.sendMessage(m.chat,{
-video: {url: results.result.hd_q},
-caption: "Facebook Video download by "+ `${global.botname}`
-}, {quoted:m})
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-await finishreact()
-} else {
-const { fbdown } = require('btch-downloader') 
-const link = args[0] 
-const data = await fbdown(link) 
-console.log(data)
-await uploadreact()
-await HBWABotMz.sendMessage(m.chat,{
-video: {url: data.Normal_video},
-caption: "Facebook Videos download by "+ `${global.botname}`
-}, {quoted:m})
-}
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-await finishreact()
-}
-break 
+case 'fbvid':
+case 'facebookvid':
+  {
+    if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://fb.watch/mcx9K6cb6t/?mibextid=8103lRmnirLUhozF`)
+    const limit1 = await eco.balance(limitneihtu, khawlbawm)
+    if (hmanzat > limit1.wallet) return await dailylimit()
+    await loadingreact()
+    const { facebook } = require('betabotz-tools')
+    const url = args[0]
+    const results = await facebook(url)
+    await uploadreact()
+    if (!results.result.hd_q) {
+      await HBWABotMz.sendMessage(m.chat, {
+        video: { url: results.result.hd_q },
+        caption: "Facebook Video download by " + `${global.botname}`
+      }, { quoted: m })
+      let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+      await finishreact()
+    } else {
+      const { fbdown } = require('btch-downloader');
+
+      try {
+        const link = args[0];
+        const data = await fbdown(link);
+        console.log(data);
+        await uploadreact();
+        await HBWABotMz.sendMessage(m.chat, {
+          video: { url: data.HD },
+          caption: "Facebook Videos download by " + `${global.botname}`
+        }, { quoted: m });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    await finishreact()
+    break
+  }
+
+
 
 case 'setgrdp': {
   if (!m.isGroup) return dodoi(mess.group);
