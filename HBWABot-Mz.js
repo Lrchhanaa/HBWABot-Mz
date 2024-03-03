@@ -5967,7 +5967,7 @@ await finishreact()
 
 }
 break 
-case 'fbvid' : case 'facebookvid':{
+case 'fbvid3' : case 'facebookvid3':{
 if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://fb.watch/mcx9K6cb6t/?mibextid=8103lRmnirLUhozF`)
 await loadingreact()
 const { facebook } = require('betabotz-tools') 
@@ -5977,6 +5977,21 @@ console.log(results) // JSON
 await uploadreact()
 await HBWABotMz.sendMessage(m.chat,{
 video: {url: results.result.sd_q},
+caption: "Facebook Video download by "+ `${global.botname}`
+}, {quoted:m})
+await finishreact()
+}
+break 
+case 'fbvid' : case 'facebookvid':{
+if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://fb.watch/mcx9K6cb6t/?mibextid=8103lRmnirLUhozF`)
+await loadingreact()
+const { fbdl } = require('api-dylux')
+const url = args[0]
+const results = await fbdl(url)
+console.log(results) // JSON
+await uploadreact()
+await HBWABotMz.sendMessage(m.chat,{
+video: results.videoUrl,
 caption: "Facebook Video download by "+ `${global.botname}`
 }, {quoted:m})
 await finishreact()
