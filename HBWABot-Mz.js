@@ -5991,7 +5991,7 @@ const results = await fbdl(url)
 console.log(results) // JSON
 await uploadreact()
 await HBWABotMz.sendMessage(m.chat,{
-video: results.videoUrl,
+video: {url: results.videoUrl},
 caption: "Facebook Video download by "+ `${global.botname}`
 }, {quoted:m})
 await finishreact()
