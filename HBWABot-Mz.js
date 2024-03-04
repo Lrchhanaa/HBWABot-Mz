@@ -166,7 +166,7 @@ if (text.endsWith('--sync')) {
 evaled = await eval(
 `(async () => { ${text.trim.replace('--sync', '')} })`
 )
-dodoi(evaled)
+m.reply(evaled)
 }
 evaled = await eval(text)
 if (typeof evaled !== 'string') evaled = inspect(evaled)
@@ -1907,6 +1907,7 @@ var HBLoadingmenu = [
 ┃𒆜│gpt [English Language]
 ┃𒆜│ai [Mizo Language]
 ┃𒆜│ai2 [English Language]
+┃𒆜│gemini [Mizo Language]
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛
 
@@ -2548,6 +2549,7 @@ var HBLoadingmenu = [
 ┃𒆜│gpt [English Language]
 ┃𒆜│ai [Mizo Language]
 ┃𒆜│ai2 [English Language]
+┃𒆜│gemini [Mizo Language]
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
@@ -3305,11 +3307,10 @@ if (!isAdmins && !HerbertTheCreator1) return dodoi(mess.admin)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
-let ami = m.quoted ? m.quoted : m;
 const me = m.sender;
 let ahming = `*From : @${me.split("@")}*\n*Message :*\n${text}`
 let siamthat = ahming.replace(',s.whatsapp.net','')
-HBWABotMz.sendMessage(m.chat, { text : siamthat, mentions: participants.map(a => a.id)}, { quoted: ami })
+HBWABotMz.sendMessage(m.chat, { text : siamthat, mentions: participants.map(a => a.id)}, { quoted: m })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
@@ -3458,7 +3459,7 @@ case 'ai': {
     await robotreact() 
     try {
     const { openai } = require('betabotz-tools') 
-    const source1 = 'auto'
+    const source1 = 'lus'
     const target1 = 'en'
     const thlakna = `${text
         .replace(/BetaBotz|BetaBotz-Ai|Betabotz ai|BetaBotz Ai|BetaBotz ai/g, '')
@@ -3544,6 +3545,35 @@ await HBWABotMz.sendMessage(from, { text: chutin }, { quoted: m });
         console.error("Error occurred:", error);
         await dodoi(`😔Chhanna ka pe thei lo che a ngaihdam ka dil e. Kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh.\nhttps://wa.me/+918416093656`);
     }
+}
+break
+case 'gemini': {
+ if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
+    const limit1= await eco.balance(limitneihtu, khawlbawm)
+    if (hmanzat > limit1.wallet) return await dailylimit();
+    await robotreact() 
+    const source1 = `lus`
+    const target1 = 'en'
+    const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, text)
+    const heihi_ani = `${mizotranslation1}`
+    const chutin = await fetchJson(`https://vihangayt.me/tools/bard?q=${encodeURIComponent(heihi_ani)}`)
+    const source = 'auto'
+    const target = chutin.includes('```') ? 'en' : 'lus';
+    const athu = `${chutin.data}`
+    const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu)
+    const siamthat = `${mizotranslation
+    .replace(/ka siamtu|ka neitu/g, 'min siamtu')
+    .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
+    .replace(/ERLANRAHMAT/g, 'HBMods')
+    .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
+    .replace(/ka rawn kal a ni/g, 'ka awm e')
+    .replace(/Chibai! /g, `Hello ${pushname}, `)
+    .replace(/Indonesian|indonesian/g, 'Mizo')
+    .replace(/Indonesia tawng/g, `Mizo tawng`)  
+    .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
+    .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
+    await dodoi(`${siamthat}`)
+    let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
 }
 break
 
@@ -4235,7 +4265,7 @@ dodoi(`Audio ah dah a ni e\nTiang hian type la i en thei ang ${prefix}listvn`)
 break
 case 'delvn':{
 if (!HerbertTheCreator && !HerbertTheCreator1) return dodoi(mess.owner)
-if (args.length < 1) return dodoi('Enter the vn name')
+if (args.length < 1) return dodoi('i delete duh vn hming rawn dah rawh')
 if (!VoiceNoteHerbert.includes(q)) return dodoi("Database ah chu tiang hming chu a awm lo")
 let wanu = VoiceNoteHerbert.indexOf(q)
 VoiceNoteHerbert.splice(wanu, 1)
