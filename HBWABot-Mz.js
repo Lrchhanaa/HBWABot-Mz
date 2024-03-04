@@ -1907,7 +1907,7 @@ var HBLoadingmenu = [
 ┃𒆜│gpt [English Language]
 ┃𒆜│ai [Mizo Language]
 ┃𒆜│ai2 [English Language]
-┃𒆜│gemini [Mizo Language]
+┃𒆜│gai [Mizo Language]
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛
 
@@ -2549,7 +2549,7 @@ var HBLoadingmenu = [
 ┃𒆜│gpt [English Language]
 ┃𒆜│ai [Mizo Language]
 ┃𒆜│ai2 [English Language]
-┃𒆜│gemini [Mizo Language]
+┃𒆜│gai [Mizo Language]
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛`]
 const { key } = await HBWABotMz.sendMessage(m.chat, {
@@ -3547,7 +3547,7 @@ await HBWABotMz.sendMessage(from, { text: chutin }, { quoted: m });
     }
 }
 break
-case 'gemini': {
+case 'gai': {
  if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
     const limit1= await eco.balance(limitneihtu, khawlbawm)
     if (hmanzat > limit1.wallet) return await dailylimit();
@@ -4308,7 +4308,7 @@ else {
 dodoi(`Option te khu hmang rawh\nOptions : Close & Open\nTiang hian : ${command} close`)
 }}
 break
-case 'tomp4x': case 'tovideo': {
+case 'tomp4': case 'tovideo': {
 if (!quoted) return dodoi('Reply to Sticker')
 if (!/webp/.test(mime)) return dodoi(`Sticker reply rawh tiang hian:*${prefix + command}*`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -4323,28 +4323,7 @@ await fs.unlinkSync(media)
 await finishreact()
 }
 break
-case 'tovid': case 'tomp4':{
-const { webp2mp4 } = require('./lib/webp2mp4.js')
-const { ffmpeg } = require('./lib/converter.js')
-    if (!m.quoted) return dodoi(`He command hmang hian sticker emaw audio reply rawh`)
-    let mime = m.quoted.mimetype || ''
-    if (!/webp|audio/.test(mime)) return dodoi(`He command hmang hian sticker emaw audio reply rawh`)
-    let media = await m.quoted.download()
-    let out = Buffer.alloc(0)
-    if (/webp/.test(mime)) {
-        out = await webp2mp4(media)
-    } else if (/audio/.test(mime)) {
-        out = await ffmpeg(media, [
-            '-filter_complex', 'color',
-            '-pix_fmt', 'yuv420p',
-            '-crf', '51',
-            '-c:a', 'copy',
-            '-shortest'
-        ], 'mp3', 'mp4')
-    }
-    await HBWABotMz.sendFile(m.chat, out, 'tovid.mp4', `*✅*`, m)
-}
-break
+
 case 'toaud': case 'toaudio': {
 if (!/video/.test(mime) && !/audio/.test(mime)) return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, audio type in ka rawn thawn ang che.... `)
 if (!quoted) return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, audio type in ka rawn thawn ang che.... `)
@@ -4532,7 +4511,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
 break
-case 'togif2': {
+case 'togif': {
 if (!quoted) return dodoi('Sticker che thei reply rawh')
 if (!/webp/.test(mime)) return dodoi(`Sticker reply rawh tiang hian: *${prefix + command}*`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -4542,21 +4521,6 @@ let { webp2mp4File } = require('./lib/uploader')
 let media = await HBWABotMz.downloadAndSaveMediaMessage(quoted)
 let webpToMp4 = await webp2mp4File(media)
 await HBWABotMz.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
-await fs.unlinkSync(media)
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-await finishreact()
-}
-break
-case 'togif': {
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-const { webp2mp4 } = require('./lib/webp2mp4.js')
-    if (!m.quoted) return dodoi(`He command hmang hian sticker emaw audio reply rawh`)
-    let mime = m.quoted.mimetype || ''
-    if (!/webp|audio/.test(mime)) return dodoi(`He command hmang hian sticker emaw audio reply rawh`)
-    let media = await m.quoted.download()
-    let out = await webp2mp4(media)
-await HBWABotMz.sendMessage(m.chat, { video: { url: out, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
 await fs.unlinkSync(media)
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
