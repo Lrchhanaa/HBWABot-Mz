@@ -3314,6 +3314,19 @@ HBWABotMz.sendMessage(m.chat, { text : siamthat, mentions: participants.map(a =>
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
+case 'totag':
+if (!m.isGroup) return dodoi(mess.group)
+if (!isAdmins && !HerbertTheCreator1) return dodoi(mess.admin)
+if (!isBotAdmins) return dodoi(mess.botAdmin)
+const limit1= await eco.balance(limitneihtu, khawlbawm)
+if (hmanzat > limit1.wallet) return await dailylimit()
+if (!m.quoted) return dodoi(`Media reply rawh *${prefix + command}* tiin`)
+HBWABotMz.sendMessage(m.chat, {
+    forward: m.quoted.fakeObj,
+    mentions: participants.map(a => a.id)
+})
+let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+break
 
 case 'bcgc': case 'bcgroup': {
 if (!HerbertTheCreator && !HerbertTheCreator1) return
