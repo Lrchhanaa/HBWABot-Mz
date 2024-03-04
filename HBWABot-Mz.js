@@ -3556,20 +3556,18 @@ case 'gemini': {
     const target1 = 'en'
     const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, text)
     const heihi_ani = `${mizotranslation1}`
-    const chutin = await fetchJson(`https://vihangayt.me/tools/bard?q=${encodeURIComponent(heihi_ani)}`)
-    const source = 'auto'
+    const chutin1 = await fetchJson(`https://vihangayt.me/tools/bard?q=${encodeURIComponent(heihi_ani)}`)
+    const chtuin = chutin1.data
+    const source = 'en'
     const target = chutin.includes('```') ? 'en' : 'lus';
-    const athu = `${chutin.data}`
+    const athu = `${chutin}`
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu)
     const siamthat = `${mizotranslation
     .replace(/ka siamtu|ka neitu/g, 'min siamtu')
     .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
-    .replace(/ERLANRAHMAT/g, 'HBMods')
     .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
     .replace(/ka rawn kal a ni/g, 'ka awm e')
     .replace(/Chibai! /g, `Hello ${pushname}, `)
-    .replace(/Indonesian|indonesian/g, 'Mizo')
-    .replace(/Indonesia tawng/g, `Mizo tawng`)  
     .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
     .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
     await dodoi(`${siamthat}`)
