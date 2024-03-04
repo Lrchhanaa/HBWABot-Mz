@@ -3557,7 +3557,7 @@ case 'gemini': {
     const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, text)
     const heihi_ani = `${mizotranslation1}`
     const chutin1 = await fetchJson(`https://vihangayt.me/tools/bard?q=${encodeURIComponent(heihi_ani)}`)
-    const chtuin = chutin1.data
+    const chutin = chutin1.data
     const source = 'en'
     const target = chutin.includes('```') ? 'en' : 'lus';
     const athu = `${chutin}`
@@ -4308,7 +4308,7 @@ else {
 dodoi(`Option te khu hmang rawh\nOptions : Close & Open\nTiang hian : ${command} close`)
 }}
 break
-case 'tomp4': case 'tovideo': {
+case 'tomp4x': case 'tovideo': {
 if (!quoted) return dodoi('Reply to Sticker')
 if (!/webp/.test(mime)) return dodoi(`Sticker reply rawh tiang hian:*${prefix + command}*`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -4321,6 +4321,28 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await HBWABotMz.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'sticker a tang video ah convert a ni' } }, { quoted: m })
 await fs.unlinkSync(media)
 await finishreact()
+}
+break
+case 'tovid': case 'tomp4':{
+const { webp2mp4 } = require('./lib/webp2mp4.js')
+const { ffmpeg } = require('./lib/converter.js')
+    if (!m.quoted) return dodoi(`He command hmang hian sticker emaw audio reply rawh`)
+    let mime = m.quoted.mimetype || ''
+    if (!/webp|audio/.test(mime)) return dodoi(`He command hmang hian sticker emaw audio reply rawh`)
+    let media = await m.quoted.download()
+    let out = Buffer.alloc(0)
+    if (/webp/.test(mime)) {
+        out = await webp2mp4(media)
+    } else if (/audio/.test(mime)) {
+        out = await ffmpeg(media, [
+            '-filter_complex', 'color',
+            '-pix_fmt', 'yuv420p',
+            '-crf', '51',
+            '-c:a', 'copy',
+            '-shortest'
+        ], 'mp3', 'mp4')
+    }
+    await HBWABotMz.sendFile(m.chat, out, 'tovid.mp4', `*✅*`, m)
 }
 break
 case 'toaud': case 'toaudio': {
@@ -4510,7 +4532,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
 break
-case 'togif': {
+case 'togif2': {
 if (!quoted) return dodoi('Sticker che thei reply rawh')
 if (!/webp/.test(mime)) return dodoi(`Sticker reply rawh tiang hian: *${prefix + command}*`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -4520,6 +4542,21 @@ let { webp2mp4File } = require('./lib/uploader')
 let media = await HBWABotMz.downloadAndSaveMediaMessage(quoted)
 let webpToMp4 = await webp2mp4File(media)
 await HBWABotMz.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
+await fs.unlinkSync(media)
+let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+await finishreact()
+}
+break
+case 'togif': {
+const limit1= await eco.balance(limitneihtu, khawlbawm)
+if (hmanzat > limit1.wallet) return await dailylimit()
+const { webp2mp4 } = require('./lib/webp2mp4.js')
+    if (!m.quoted) return dodoi(`He command hmang hian sticker emaw audio reply rawh`)
+    let mime = m.quoted.mimetype || ''
+    if (!/webp|audio/.test(mime)) return dodoi(`He command hmang hian sticker emaw audio reply rawh`)
+    let media = await m.quoted.download()
+    let out = await webp2mp4(media)
+await HBWABotMz.sendMessage(m.chat, { video: { url: out, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
 await fs.unlinkSync(media)
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
