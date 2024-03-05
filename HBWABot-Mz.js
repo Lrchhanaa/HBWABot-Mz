@@ -6,6 +6,7 @@ const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, g
 const yts2 = require('yt-search')
 const yts = require('yt-search')
 const fg = require('api-dylux')
+const { tobot, conns } = require('./index-2')
 const darkarr = moment.tz('Asia/Kolkata').format('HH:mm:ss');
 const nizat1 = moment.tz('Asia/Kolkata').format('DD');
 const thlazat1 = moment.tz('Asia/Kolkata').format('MM');
@@ -3398,6 +3399,30 @@ HBWABotMz.sendMessage(m.chat, { image: proses, caption: `\n*©${global.botname}*
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
+break
+case 'tobot': {
+    if (!isVip) return await replyvip();
+    if (m.isGroup) return dodoi(mess.private);
+    if (q === 'start') {
+        tobot(HBWABotMz, m, from);
+    } else if (q === 'list') {
+        try {
+            let users = [...new Set([...global.conns.filter(conn => conn.user).map(conn => conn.user)])];
+            let te = "*To Bot List*\n\n";
+            for (let user of users){
+                let username = await HBWABotMz.decodeJid(user.id);
+                te += `× User: @${username.split("@")[0]}\n`;
+                te += `× Name: ${user.name}\n\n`;
+            }
+            HBWABotMz.sendMessage(from, { text: te }, { quoted: m });
+        } catch (err) {
+            dodoi("An error occurred while fetching the list.");
+        }
+    }
+}
+break;
+
+
 break
 case 'toanime': case 'tocartoon': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
