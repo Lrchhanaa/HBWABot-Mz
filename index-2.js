@@ -14,7 +14,7 @@ const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream
 if (global.conns instanceof Array) console.log()
 else global.conns = []
 
-const tobot = async (HBWABotMz, m, from) => {
+const tobot = async (HBWABotMz, m, from, wanb) => {
 const { sendImage, sendMessage } = HBWABotMz;
 const { reply, sender } = m;
 
@@ -48,9 +48,13 @@ const HBWABotMz = makeWASocket({
 store.bind(HBWABotMz.ev);
 if (pairingCode && !HBWABotMz.authState.creds.registered) {
       setTimeout(async () => {
+            let phoneNumber = wanb.replace(/[^0-9]/g, '');
+if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
+    phoneNumber = wanb.replace(/[^0-9]/g, '');
+}
          const code = await HBWABotMz.requestPairingCode(phoneNumber)
-         code = code?.match(/.{1,4}/g)?.join("-") || code
-         await m.reply(`Hei hi i code : ${code} `)
+         const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
+         await HBWABotMz.sendText(from,`Hei hi i code : ${yourCode} `,m)
       }, 3000)
       }
       

@@ -3403,27 +3403,28 @@ break
 case 'tobot': {
     if (!isVip) return await replyvip();
     if (m.isGroup) return dodoi(mess.private);
-    if (q === 'start') {
-        tobot(HBWABotMz, m, from);
-    } else if (q === 'list') {
-        try {
-            let users = [...new Set([...global.conns.filter(conn => conn.user).map(conn => conn.user)])];
-            let te = "*To Bot List*\n\n";
-            for (let user of users){
-                let username = await HBWABotMz.decodeJid(user.id);
-                te += `× User: @${username.split("@")[0]}\n`;
-                te += `× Name: ${user.name}\n\n`;
-            }
-            HBWABotMz.sendMessage(from, { text: te }, { quoted: m });
-        } catch (err) {
-            dodoi("An error occurred while fetching the list.");
-        }
-    }
+    if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
+    let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
+    let wanbck = await HBWABotMz.onWhatsApp(wanb)
+    if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
+    tobot(HBWABotMz, m, from, wanb)
 }
-break;
-
-
 break
+case 'tobotlist': 
+try {
+let user = [... new Set([...global.conns.filter(HBWABotMz => HBWABotMz.user).map(HBWABotMz => HBWABotMz.user)])]
+te = "*List Jadi Bot*\n\n"
+for (let i of user){
+y = await HBWABotMz.decodeJid(i.id)
+te += " × User : @" + y.split("@")[0] + "\n"
+te += " × Name : " + i.name + "\n\n"
+}
+HBWABotMz.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
+} catch (err) {
+dodoi(`Bot an la awm lo`)
+}
+break
+
 case 'toanime': case 'tocartoon': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
