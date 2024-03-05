@@ -51,7 +51,7 @@ if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
 }
          const code = await HBWABotMz.requestPairingCode(phoneNumber)
          const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
-         await HBWABotMz.sendText(from,`Hei hi i code : ${yourCode} `,m)
+         await m.reply(`Hei hi i code : ${yourCode} `)
       }, 3000)
       }
       
