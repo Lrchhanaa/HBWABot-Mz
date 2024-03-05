@@ -5,7 +5,7 @@ const { default: makeWaSocket, useMultiFileAuthState, DisconnectReason, fetchLat
 const { color, bgcolor } = require('./lib/color')
 const log = (pino = require("pino"));
 const qrcode = require('qrcode');
-const rimraf = require("rimraf");
+const NodeCache = require("node-cache")
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
 const owner = JSON.parse(fs.readFileSync('./asset/database/owner.json').toString())

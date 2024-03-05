@@ -3403,7 +3403,7 @@ break
 case 'tobot': {
     if (!isVip) return await replyvip();
     if (m.isGroup) return dodoi(mess.private);
-    if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
+    if (!args[0]) return dodoi(`_🤖 Kha tiang ringawt loh khan tiang hian hman tur a ni_\n*Entirnan:* ${prefix + command} 918416093656`)
     let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
     let wanbck = await HBWABotMz.onWhatsApp(wanb)
     if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
