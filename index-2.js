@@ -23,38 +23,28 @@ async function startHBWABotMz() {
 const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, `./asset/tobot/${sender.split("@")[0]}`), log({ level: "silent" }));
 let { version, isLatest } = await fetchLatestBaileysVersion();
 const msgRetryCounterCache = new NodeCache()
-const HBWABotMz = makeWASocket({
-        printQRInTerminal: false,
-        mobile: false,
-        version,
-        browser: ["Ubuntu", "Chrome", "20.0.04"],
-        markOnlineOnConnect: true,
-        generateHighQualityLinkPreview: true,
-        msgRetryCounterCache,
-        defaultQueryTimeoutMs: undefined,
-        logger: pino({ level: 'fatal' }),
-        auth: {
-            creds: state.creds,
-            keys: makeCacheableSignalKeyStore(state.keys, pino().child({
-                level: 'silent',
-                stream: 'store'
-            })),
-        },
-   })
-
+let HBWABotMz = makeWASocket({
+     auth: {
+     creds: state.creds,
+     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
+                },
+     printQRInTerminal: false,
+     logger: pino({level: "fatal"}).child({level: "fatal"}),
+     browser: [ "Ubuntu", "Chrome", "20.0.04" ],
+});
 store.bind(HBWABotMz.ev);
+let phoneNumber = wanb.replace(/[^0-9]/g, '');
+      if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
+      phoneNumber = wanb.replace(/[^0-9]/g, '');
+}
+
 if (!HBWABotMz.authState.creds.registered) {
       setTimeout(async () => {
-            let phoneNumber = wanb.replace(/[^0-9]/g, '');
-if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-    phoneNumber = wanb.replace(/[^0-9]/g, '');
-}
-         const code = await HBWABotMz.requestPairingCode(phoneNumber)
-         const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
+      const code = await HBWABotMz.requestPairingCode(phoneNumber)
+      const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
          await m.reply(`Hei hi i code : ${yourCode} `)
       }, 3000)
-      }
-      
+}
 HBWABotMz.ev.on('messages.upsert', async chatUpdate => {
 try {
 kay = chatUpdate.messages[0]
@@ -71,33 +61,55 @@ console.log(err)}
 
 HBWABotMz.public = true
 
-HBWABotMz.ev.on("connection.update", async up => {
-const { lastDisconnect, connection } = up;
-if (connection == "open") {
-HBWABotMz.id = HBWABotMz.decodeJid(HBWABotMz.user.id)
-HBWABotMz.time = Date.now()
-global.conns.push(HBWABotMz)
-await m.reply(`*Connected To ${botname}*\n\n*User :*\n _*× id : ${HBWABotMz.decodeJid(HBWABotMz.user.id)}*_`)
-}
-if (connection === 'close') {
-let reason = new Boom(lastDisconnect?.error)?.output.statusCode
-if (reason === DisconnectReason.badSession) { 
-console.log(`Bad Session File, Please Delete Session and Scan Again`); HBWABotMz.logout(); }
-else if (reason === DisconnectReason.connectionClosed) { 
-console.log("Connection closed, reconnecting...."); startHBWABotMz(); }
-else if (reason === DisconnectReason.connectionLost) { 
-console.log("Connection Lost from Server, reconnecting..."); startHBWABotMz(); }
-else if (reason === DisconnectReason.connectionReplaced) { 
-console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First"); HBWABotMz.logout(); }
-else if (reason === DisconnectReason.loggedOut) { 
-console.log(`Device Logged Out, Please Scan Again And Run.`); HBWABotMz.logout(); }
-else if (reason === DisconnectReason.restartRequired) { 
-console.log("Restart Required, Restarting..."); startHBWABotMz(); }
-else if (reason === DisconnectReason.timedOut) { 
-console.log("Connection TimedOut, Reconnecting..."); startHBWABotMz(); }
-else HBWABotMz.end(`Unknown DisconnectReason: ${reason}|${connection}`)
-}
+HBWABotMz.ev.on('connection.update', async (update) => {
+	const {
+		connection,
+		lastDisconnect
+	} = update
+try{
+		if (connection === 'close') {
+			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
+			if (reason === DisconnectReason.badSession) {
+				console.log(`Bad Session File, Please Delete Session and Scan Again`);
+				startHBWABotMz()
+			} else if (reason === DisconnectReason.connectionClosed) {
+				console.log("Connection closed, reconnecting....");
+				startHBWABotMz();
+			} else if (reason === DisconnectReason.connectionLost) {
+				console.log("Connection Lost from Server, reconnecting...");
+				startHBWABotMz();
+			} else if (reason === DisconnectReason.connectionReplaced) {
+				console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
+				startHBWABotMz()
+			} else if (reason === DisconnectReason.loggedOut) {
+				console.log(`Device Logged Out, Please Delete Session and Scan Again.`);
+				startHBWABotMz();
+			} else if (reason === DisconnectReason.restartRequired) {
+				console.log("Restart Required, Restarting...");
+				startHBWABotMz();
+			} else if (reason === DisconnectReason.timedOut) {
+				console.log("Connection TimedOut, Reconnecting...");
+				startHBWABotMz();
+			} else HBWABotMz.end(`Unknown DisconnectReason: ${reason}|${connection}`)
+		}
+		if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
+			console.log(color(`\n🌿Connecting...`, 'yellow'))
+		}
+		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
+			console.log(color(` `,'magenta'))
+            console.log(color(`🌿Connected to => ` + JSON.stringify(HBWABotMz.user, null, 2), 'yellow'))
+			await delay(1999)
+            console.log(chalk.yellow(`\n\n               ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
+            await delay(1000 * 2) 
+		}
+	
+} catch (err) {
+	  console.log('Error in Connection.update '+err)
+	  startHBWABotMz();
+	}
 })
+HBWABotMz.ev.on('creds.update', saveCreds)
+HBWABotMz.ev.on("messages.upsert",  () => { })
 
 HBWABotMz.decodeJid = (jid) => {
 if (!jid) return jid
@@ -220,11 +232,11 @@ const tod = generateWAMessageFromContent(jid,
 "description": desc,
 "currencyCode": "INR",
 "priceAmount1000": "100000",
-"url": `https://youtube.com/channel/UC7NslQroUqQYzo2wDFBOUMg`,
+"url": `https://youtube.com/@HBMods_Channel`,
 "productImageCount": 1,
 "salePriceAmount1000": "0"
 },
-"businessOwnerJid": `916909137213@s.whatsapp.net`
+"businessOwnerJid": `918416093656@s.whatsapp.net`
 }
 }, options)
 return HBWABotMz.relayMessage(jid, tod.message, {messageId: tod.key.id})
