@@ -18,9 +18,6 @@ const tobot = async (HBWABotMz, m, from, wanb) => {
 const { sendImage, sendMessage } = HBWABotMz;
 const { reply, sender } = m;
 
-const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
-const useMobile = process.argv.includes("--mobile")
-
 try {
 async function startHBWABotMz() {
 const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, `./asset/tobot/${sender.split("@")[0]}`), log({ level: "silent" }));
@@ -28,7 +25,7 @@ let { version, isLatest } = await fetchLatestBaileysVersion();
 const msgRetryCounterCache = new NodeCache()
 const HBWABotMz = makeWASocket({
         logger: pino({ level: 'silent' }),
-        printQRInTerminal: !pairingCode, 
+        printQRInTerminal: false, 
       browser: Browsers.windows('Firefox'), 
      auth: {
          creds: state.creds,
