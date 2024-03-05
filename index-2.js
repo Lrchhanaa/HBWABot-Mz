@@ -43,7 +43,7 @@ const HBWABotMz = makeWASocket({
    })
 
 store.bind(HBWABotMz.ev);
-if (pairingCode && !HBWABotMz.authState.creds.registered) {
+if (!HBWABotMz.authState.creds.registered) {
       setTimeout(async () => {
             let phoneNumber = wanb.replace(/[^0-9]/g, '');
 if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
