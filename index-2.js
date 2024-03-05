@@ -24,22 +24,22 @@ const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, `.
 let { version, isLatest } = await fetchLatestBaileysVersion();
 const msgRetryCounterCache = new NodeCache()
 const HBWABotMz = makeWASocket({
-        logger: pino({ level: 'silent' }),
-        printQRInTerminal: false, 
-      browser: Browsers.windows('Firefox'), 
-     auth: {
-         creds: state.creds,
-         keys: makeCacheableSignalKeyStore(state.keys, pino({ level: "fatal" }).child({ level: "fatal" })),
-      },
-      markOnlineOnConnect: true,
-      generateHighQualityLinkPreview: true,
-      getMessage: async (key) => {
-         let jid = jidNormalizedUser(key.remoteJid)
-         let msg = await store.loadMessage(jid, key.id)
-         return msg?.message || ""
-      },
-      msgRetryCounterCache,
-      defaultQueryTimeoutMs: undefined, 
+        printQRInTerminal: false,
+        mobile: false,
+        version,
+        browser: ["Ubuntu", "Chrome", "20.0.04"],
+        markOnlineOnConnect: true,
+        generateHighQualityLinkPreview: true,
+        msgRetryCounterCache,
+        defaultQueryTimeoutMs: undefined,
+        logger: pino({ level: 'fatal' }),
+        auth: {
+            creds: state.creds,
+            keys: makeCacheableSignalKeyStore(state.keys, pino().child({
+                level: 'silent',
+                stream: 'store'
+            })),
+        },
    })
 
 store.bind(HBWABotMz.ev);
