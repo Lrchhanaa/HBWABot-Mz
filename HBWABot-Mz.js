@@ -3314,7 +3314,7 @@ HBWABotMz.sendMessage(m.chat, { text : siamthat, mentions: participants.map(a =>
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
-case 'totag':
+case 'totag': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isAdmins && !HerbertTheCreator1) return dodoi(mess.admin)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
@@ -3326,6 +3326,7 @@ HBWABotMz.sendMessage(m.chat, {
     mentions: participants.map(a => a.id)
 })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+}
 break
 
 case 'bcgc': case 'bcgroup': {
