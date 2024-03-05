@@ -1,7 +1,7 @@
 const { modul } = require('./asset/database/module');
 const { baileys, boom, chalk, fs, figlet, FileType, path, process, PhoneNumber } = modul;
 const { Boom } = boom
-const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, generateWAMessage, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = baileys
+const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, generateWAMessage, prepareWAMessageMedia, makeCacheableSignalKeyStore, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = baileys
 const { color, bgcolor } = require('./lib/color')
 const log = (pino = require("pino"));
 const qrcode = require('qrcode');
