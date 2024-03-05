@@ -26,7 +26,7 @@
 
 <b><details><summary>Heroku Bin CC</summary></b>
 
-* Cradit Card hi hman tur i nei loh chuan Herbert-a bulah hian dil tur a ni [⚙️Dilna⚙️](https://api.whatsapp.com/send?phone=918416093656&text=Hi+Herbert+Bin+cc+min+lo+pe+ve+teh..)
+* Cradit Card hi hman tur i nei loh chuan Herbert-a bulah hian dil tur a ni [⚙️Dilna⚙️](https://id.heroku.com/account/accept/14937284/140000f56e64610b27d83b5e7f39cac1)
 </details>
 
 </details>
