@@ -4774,10 +4774,14 @@ let media = await quoted.download()
 let encmedia = await HBWABotMz.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 30) return dodoi('Sorry, video chu second 30 aia tam sticker in ka siam thei lo')
-let media = await quoted.download()
-let encmedia = await HBWABotMz.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-
+if (((quoted.msg || quoted).seconds || 0) > 30) {
+    return dodoi('Sorry, video chu second 30 aia tam sticker in ka siam thei lo');
+}
+let media = await quoted.download();
+if (media.length > (1024 * 1024)) {
+    return dodoi('Sorry, video chu 1MB aia tam sticker in ka siam thei lo');
+}
+let encmedia = await HBWABotMz.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author });
 } 
 else {
 dodoi(`Thlalak emaw video rawn thawn la a caption-ah *${prefix+command}* tiin rawn dah rawh\nTi chuan sticker in ka rawn pe ang che`)
