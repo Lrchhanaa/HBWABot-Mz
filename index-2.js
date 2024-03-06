@@ -184,6 +184,32 @@ HBWABotMz.sendImage = async (jid, path, caption = '', quoted = '', options) => {
 let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
 return await HBWABotMz.sendMessage(jid, { image: buffer, caption: caption, ...options }, { quoted })
 }
+HBWABotMz.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+let buffer
+if (options && (options.packname || options.author)) {
+buffer = await writeExifImg(buff, options)
+} else {
+buffer = await imageToWebp(buff)
+}
+await HBWABotMz.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+.then( response => {
+fs.unlinkSync(buffer)
+return response
+})
+}
+
+HBWABotMz.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+let buffer
+if (options && (options.packname || options.author)) {
+buffer = await writeExifVid(buff, options)
+} else {
+buffer = await videoToWebp(buff)
+}
+await HBWABotMz.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
+return buffer
+}
 
 HBWABotMz.copyNForward = async (jid, message, forceForward = false, options = {}) => {
 let vtype
@@ -229,6 +255,21 @@ headerType: 2,
 }
 HBWABotMz.sendMessage(jid, buttonMessage, { quoted, ...options })
 }
+
+HBWABotMz.getFile = async (PATH, save) => {
+let res
+let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,`[1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
+let type = await FileType.fromBuffer(data) || {
+mime: 'application/octet-stream',
+ext: '.bin'}
+filename = path.join(__filename, './lib' + new Date * 1 + '.' + type.ext)
+if (data && save) fs.promises.writeFile(filename, data)
+return {
+res,
+filename,
+size: await getSizeMedia(data),
+...type,
+data}}
 
 HBWABotMz.sendKatalog = async (jid , title = '' , desc = '', gam , options = {}) =>{
 let message = await prepareWAMessageMedia({ image: gam }, { upload: HBWABotMz.waUploadToServer })
@@ -311,6 +352,62 @@ trueFileName = attachExtension ? (filename + '.' + type.ext) : filename
 await fs.writeFileSync(trueFileName, buffer)
 return trueFileName
 }
+HBWABotMz.sendFile = async (jid, path, filename = '', caption = '', quoted, ptt = false, options = {}) => {
+                let type = await HBWABotMz.getFile(path, true)
+                let { res, data: file, filename: pathFile } = type
+                if (res && res.status !== 200 || file.length <= 65536) {
+                    try { throw { json: JSON.parse(file.toString()) } }
+                    catch (e) { if (e.json) throw e.json }
+                }
+                const fileSize = fs.statSync(pathFile).size / 1024 / 1024
+                if (fileSize >= 1800) throw new Error(' A file size a lian lutuk\n\n')
+                let opt = {}
+                if (quoted) opt.quoted = quoted
+                if (!type) options.asDocument = true
+                let mtype = '', mimetype = options.mimetype || type.mime, convert
+                if (/webp/.test(type.mime) || (/image/.test(type.mime) && options.asSticker)) mtype = 'sticker'
+                else if (/image/.test(type.mime) || (/webp/.test(type.mime) && options.asImage)) mtype = 'image'
+                else if (/video/.test(type.mime)) mtype = 'video'
+                else if (/audio/.test(type.mime)) (
+                    convert = await toAudio(file, type.ext),
+                    file = convert.data,
+                    pathFile = convert.filename,
+                    mtype = 'audio',
+                    mimetype = options.mimetype || 'audio/ogg; codecs=opus'
+                )
+                else mtype = 'document'
+                if (options.asDocument) mtype = 'document'
+
+                delete options.asSticker
+                delete options.asLocation
+                delete options.asVideo
+                delete options.asDocument
+                delete options.asImage
+
+                let message = {
+                    ...options,
+                    caption,
+                    ptt,
+                    [mtype]: { url: pathFile },
+                    mimetype,
+                    fileName: filename || pathFile.split('/').pop()
+                }
+                /**
+                 * @type {import('@adiwajshing/baileys').proto.WebMessageInfo}
+                 */
+                let m
+                try {
+                    m = await HBWABotMz.sendMessage(jid, message, { ...opt, ...options })
+                } catch (e) {
+                    console.error(e)
+                    m = null
+                } finally {
+                    if (!m) m = await HBWABotMz.sendMessage(jid, { ...message, [mtype]: file }, { ...opt, ...options })
+                    file = null // releasing the memory
+                    return m
+                }
+            }
+            
 
 HBWABotMz.downloadMediaMessage = async (message) => {
 let mime = (message.msg || message).mimetype || ''

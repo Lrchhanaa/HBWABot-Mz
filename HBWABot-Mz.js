@@ -4774,7 +4774,7 @@ let media = await quoted.download()
 let encmedia = await HBWABotMz.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 
 } else if (/video/.test(mime)) {
-if ((quoted.msg || quoted).seconds > 11) return dodoi('Sorry, video chu second 10 aia tam sticker in ka siam thei lo')
+if ((quoted.msg || quoted).seconds > 30) return dodoi('Sorry, video chu second 30 aia tam sticker in ka siam thei lo')
 let media = await quoted.download()
 let encmedia = await HBWABotMz.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
 
