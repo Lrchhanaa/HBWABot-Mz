@@ -3408,7 +3408,23 @@ case 'tobebot': {
     let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
     let wanbck = await HBWABotMz.onWhatsApp(wanb)
     if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
-    tobebot(HBWABotMz, m, from, wanb)
+    HBWABotMz.sendMessage(from, { react: { text: "♻️", key: m.key }})
+    await tobebot(HBWABotMz, m, from, wanb)
+    HBWABotMz.sendMessage(from, { react: { text: "🤖", key: m.key }})
+    HBWABotMz.sendMessage(from, { react: { text: "✅", key: m.key }})
+}
+break
+
+case 'self': {
+if (!HerbertTheCreator) return dodoi(mess.owner);
+HBWABotMz.public = false
+dodoi('*Mahni chauha hman thei turin thlak a ni✓*')
+}
+break
+case 'public': {
+if (!HerbertTheCreator) return dodoi(mess.owner);
+HBWABotMz.public = true
+dodoi('*Mi zawng zawng hman thei turin thlak a ni✓*')
 }
 break
 
