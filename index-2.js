@@ -45,21 +45,6 @@ if (!HBWABotMz.authState.creds.registered) {
          await m.reply(`Hei hi i code : ${yourCode} `)
       }, 3000)
 }
-HBWABotMz.ev.on('messages.upsert', async chatUpdate => {
-try {
-kay = chatUpdate.messages[0]
-if (!kay.message) return
-kay.message = (Object.keys(kay.message)[0] === 'ephemeralMessage') ? kay.message.ephemeralMessage.message : kay.message
-if (kay.key && kay.key.remoteJid === 'status@broadcast') return
-if (!HBWABotMz.public && !kay.key.fromMe && chatUpdate.type === 'notify') return
-if (kay.key.id.startsWith('BAE5') && kay.key.id.length === 16) return
-m = smsg(HBWABotMz, kay, store)
-require('./HBWABot-Mz')(HBWABotMz, m, chatUpdate, store)
-} catch (err) {
-console.log(err)}
-})
-
-HBWABotMz.public = true
 
 HBWABotMz.ev.on('connection.update', async (update) => {
 	const {
@@ -100,6 +85,7 @@ try{
             console.log(color(`🌿Connected to => ` + JSON.stringify(HBWABotMz.user, null, 2), 'yellow'))
 			await delay(1999)
             console.log(chalk.yellow(`\n\n               ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
+            
             await delay(1000 * 2) 
 		}
 	
@@ -110,6 +96,23 @@ try{
 })
 HBWABotMz.ev.on('creds.update', saveCreds)
 HBWABotMz.ev.on("messages.upsert",  () => { })
+//------------------------------------------------------
+
+HBWABotMz.ev.on('messages.upsert', async chatUpdate => {
+try {
+kay = chatUpdate.messages[0]
+if (!kay.message) return
+kay.message = (Object.keys(kay.message)[0] === 'ephemeralMessage') ? kay.message.ephemeralMessage.message : kay.message
+if (kay.key && kay.key.remoteJid === 'status@broadcast') return
+if (!HBWABotMz.public && !kay.key.fromMe && chatUpdate.type === 'notify') return
+if (kay.key.id.startsWith('BAE5') && kay.key.id.length === 16) return
+m = smsg(HBWABotMz, kay, store)
+require('./HBWABot-Mz')(HBWABotMz, m, chatUpdate, store)
+} catch (err) {
+console.log(err)}
+})
+
+HBWABotMz.public = true
 
 HBWABotMz.decodeJid = (jid) => {
 if (!jid) return jid
