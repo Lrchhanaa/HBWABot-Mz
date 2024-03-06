@@ -6,7 +6,7 @@ const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, g
 const yts2 = require('yt-search')
 const yts = require('yt-search')
 const fg = require('api-dylux')
-const { tobot, conns } = require('./index-2')
+const { tobebot, conns } = require('./index-2')
 const darkarr = moment.tz('Asia/Kolkata').format('HH:mm:ss');
 const nizat1 = moment.tz('Asia/Kolkata').format('DD');
 const thlazat1 = moment.tz('Asia/Kolkata').format('MM');
@@ -3408,7 +3408,7 @@ case 'tobebot': {
     let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
     let wanbck = await HBWABotMz.onWhatsApp(wanb)
     if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
-    tobot(HBWABotMz, m, from, wanb)
+    tobebot(HBWABotMz, m, from, wanb)
 }
 break
 
@@ -4316,18 +4316,7 @@ await HBWABotMz.groupLeave(m.chat)
 }
 }
 break
-case 'self': {
-if (!HerbertTheCreator) return dodoi(mess.owner);
-HBWABotMz.public = false
-dodoi('*Mahni chauha hman thei turin thlak a ni✓*')
-            }
-break
-case 'public': {
-if (!HerbertTheCreator) return dodoi(mess.owner);
-HBWABotMz.public = true
-dodoi('*Mi zawng zawng hman thei turin thlak a ni✓*')
-            }
-break
+
 case '/group': case '#group': {
 if (!m.isGroup) return
 const limit1= await eco.balance(limitneihtu, khawlbawm)

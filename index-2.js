@@ -14,7 +14,7 @@ const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream
 if (global.conns instanceof Array) console.log()
 else global.conns = []
 
-const tobot = async (HBWABotMz, m, from, wanb) => {
+const tobebot = async (HBWABotMz, m, from, wanb) => {
 const { sendImage, sendMessage } = HBWABotMz;
 const { reply, sender } = m;
 
@@ -323,7 +323,7 @@ console.log(e)
 }
 }
 
-module.exports = { tobot, conns }
+module.exports = { tobebot, conns }
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
