@@ -4331,6 +4331,18 @@ await HBWABotMz.groupLeave(m.chat)
 }
 }
 break
+case 'self': {
+if (!HerbertTheCreator) return dodoi(mess.owner);
+HBWABotMz.public = false
+dodoi('*Mahni chauha hman thei turin thlak a ni✓*')
+            }
+break
+case 'public': {
+if (!HerbertTheCreator) return dodoi(mess.owner);
+HBWABotMz.public = true
+dodoi('*Mi zawng zawng hman thei turin thlak a ni✓*')
+            }
+break
 case '/group': case '#group': {
 if (!m.isGroup) return
 const limit1= await eco.balance(limitneihtu, khawlbawm)
