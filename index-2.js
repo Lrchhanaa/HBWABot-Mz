@@ -69,6 +69,28 @@ HBWABotMz.ev.on('connection.update', async (update) => {
 try{
 		if (connection === 'close') {
 			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
+			if (reason === DisconnectReason.badSession) {
+				console.log(`Bad Session File, Please Delete Session and Scan Again`);
+				startHBWABotMz()
+			} else if (reason === DisconnectReason.connectionClosed) {
+				console.log("Connection closed, reconnecting....");
+				startHBWABotMz();
+			} else if (reason === DisconnectReason.connectionLost) {
+				console.log("Connection Lost from Server, reconnecting...");
+				startHBWABotMz();
+			} else if (reason === DisconnectReason.connectionReplaced) {
+				console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
+				startHBWABotMz()
+			} else if (reason === DisconnectReason.loggedOut) {
+				console.log(`Device Logged Out, Please Delete Session and Scan Again.`);
+				startHBWABotMz();
+			} else if (reason === DisconnectReason.restartRequired) {
+				console.log("Restart Required, Restarting...");
+				startHBWABotMz();
+			} else if (reason === DisconnectReason.timedOut) {
+				console.log("Connection TimedOut, Reconnecting...");
+				startHBWABotMz();
+			} else HBWABotMz.end(`Unknown DisconnectReason: ${reason}|${connection}`)
 		}
 		if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
 			console.log(color(`\n🌿Connecting...`, 'yellow'))
@@ -77,7 +99,7 @@ try{
 			console.log(color(` `,'magenta'))
             console.log(color(`🌿Connected to => ` + JSON.stringify(HBWABotMz.user, null, 2), 'yellow'))
 			await delay(1999)
-            console.log(chalk.yellow(`Tobebot hman a ni`))
+            console.log(chalk.yellow(`\n\n               ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
             await delay(1000 * 2) 
 		}
 	
