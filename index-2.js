@@ -81,14 +81,15 @@ try{
 			console.log(color(`\n🌿Connecting...`, 'yellow'))
 		}
 		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
-			console.log(color(` `,'magenta'))
-            console.log(color(`🌿Connected to => ` + JSON.stringify(HBWABotMz.user, null, 2), 'yellow'))
-			await delay(1999)
-            console.log(chalk.yellow(`\n\n               ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
-            
-            await delay(1000 * 2) 
-		}
-	
+HBWABotMz.id = HBWABotMz.decodeJid(HBWABotMz.user.id)
+HBWABotMz.time = Date.now()
+global.conns.push(HBWABotMz)
+await m.reply(`*${botname}* i connect zo e✓\n\n*User :*\n _*× id : ${HBWABotMz.decodeJid(HBWABotMz.user.id)}*_`)
+user = `${HBWABotMz.decodeJid(HBWABotMz.user.id)}`
+txt = `*TobeBot hmang thar an awm e*\n\n _× User : @${user.split("@")[0]}_`
+sendMessage(`918416093656@s.whatsapp.net`,{text: txt, mentions : [user]})          
+await delay(1000 * 2) 
+            }	
 } catch (err) {
 	  console.log('Error in Connection.update '+err)
 	  startHBWABotMz();
