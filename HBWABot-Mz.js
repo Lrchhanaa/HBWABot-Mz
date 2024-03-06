@@ -3411,21 +3411,6 @@ case 'tobebot': {
     tobot(HBWABotMz, m, from, wanb)
 }
 break
-case 'tobebotlist': {
-try {
-let user = [... new Set([...global.conns.filter(HBWABotMz => HBWABotMz.user).map(HBWABotMz => HBWABotMz.user)])]
-te = `*List ${global.botname} Bot*\n\n`
-for (let i of user){
-y = await HBWABotMz.decodeJid(i.id)
-te += " × User : @" + y.split("@")[0] + "\n"
-te += " × Hming : " + i.name + "\n\n"
-}
-HBWABotMz.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
-} catch (err) {
-dodoi(`In register an la awm lo`)
-}
-}
-break
 
 case 'toanime': case 'tocartoon': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
