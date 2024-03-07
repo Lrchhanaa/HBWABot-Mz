@@ -4765,6 +4765,15 @@ dodoi('Error')
 }
 }
 break
+case 'myid'{
+dodoi(`,
+  {
+    "name": "${pushname}",
+    "phoneNumber": "${m.sender}",
+    "expireDate": "random"
+  }`)
+}
+break
 case 's': case 'sticker': case 'stiker': case 'stickers': { 
 if (!quoted) return dodoi(`Thlalak emaw video rawn thawn la a caption-ah *${prefix+command}* tiin rawn dah rawh\nTi chuan sticker in ka rawn pe ang che`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -4778,8 +4787,8 @@ if (((quoted.msg || quoted).seconds || 0) > 30) {
     return dodoi('Sorry, video chu second 30 aia tam sticker in ka siam thei lo');
 }
 let media = await quoted.download();
-if (media.length > (1024 * 1024)) {
-    return dodoi('Sorry, video chu 1MB aia tam sticker in ka siam thei lo');
+if (media.length > (1.9 * 1024 * 1024)) {
+    return dodoi('Sorry, video chu 1.9MB aia tam sticker in ka siam thei lo');
 }
 let encmedia = await HBWABotMz.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author });
 } 
