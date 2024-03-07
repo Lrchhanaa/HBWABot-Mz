@@ -1057,17 +1057,14 @@ HBWABotMz.sendMessage(from, { react: { text: "🤖" , key: m.key }})
 break
 case 'leaderboard': {
   const vip1 = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Director1/master/VIP/vip-pro.json');
-  let teks = "「 *👑VIP LEADERBOARD👑* 」\n\n";
+  let teks = "「 *👑VIP LEADERBOARD👑* 」\n";
   for (let i of vip1) {
-    const name = i.name;
-    const phone = i.phoneNumber
-    const expireDate = i.expireDate;
     teks += `
 ╭═══════════┈
-┃♕ Hming: ${name}
-┃♕ Phone: ${phone}
-┃♕ Exp: ${expireDate}
-╰════════════──┈\n\n`;
+┃♕ Hming: ${i.name[0]}
+┃♕ Phone: @${i.phoneNumber.split("@")[0]}
+┃♕ Exp: ${i.expireDate[0]}
+╰════════════──┈\n`;
   }
  await HBWABotMz.sendMessage(from, {text:teks, mentions: await HBWABotMz.parseMention(teks)}, { quoted: m });
   break;
