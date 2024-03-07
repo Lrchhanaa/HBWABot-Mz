@@ -4765,7 +4765,7 @@ dodoi('Error')
 }
 }
 break
-case 'myid'{
+case 'myid': {
 dodoi(`,
   {
     "name": "${pushname}",
