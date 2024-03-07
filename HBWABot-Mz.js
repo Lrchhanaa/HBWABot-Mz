@@ -1065,7 +1065,7 @@ case 'leaderboard': {
     teks += `
 ╭═══════════┈
 ┃♕ Hming: ${name}
-┃♕ Phone: @${phone.split("@")[0]}
+┃♕ Phone: ${phone}
 ┃♕ Exp: ${expireDate}
 ╰════════════──┈\n\n`;
   }
