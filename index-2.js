@@ -1,7 +1,8 @@
 const { modul } = require('./asset/database/module');
 const { baileys, boom, chalk, fs, figlet, FileType, path, process, PhoneNumber } = modul;
 const { Boom } = boom
-const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, PHONENUMBER_MCC, generateForwardMessageContent, generateWAMessage, prepareWAMessageMedia, makeCacheableSignalKeyStore, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = baileys
+const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, PHONENUMBER_MCC, generateForwardMessageContent, generateWAMessage, prepareWAMessageMedia,
+delay, makeCacheableSignalKeyStore, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = baileys
 const { color, bgcolor } = require('./lib/color')
 const log = (pino = require("pino"));
 const qrcode = require('qrcode');
@@ -39,11 +40,10 @@ let phoneNumber = wanb.replace(/[^0-9]/g, '');
 }
 
 if (!HBWABotMz.authState.creds.registered) {
-      setTimeout(async () => {
-      const code = await HBWABotMz.requestPairingCode(phoneNumber)
-      const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
-         await m.reply(`Hei hi i code : ${yourCode} `)
-      }, 3000)
+    await delay(1500);
+    const code = await HBWABotMz.requestPairingCode(phoneNumber)
+    const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
+    await m.reply(`Hei hi i code : ${yourCode} `)
 }
 
 HBWABotMz.ev.on('creds.update', saveCreds)
@@ -51,8 +51,8 @@ HBWABotMz.ev.on("connection.update", async (s) => {
 const {connection, lastDisconnect } = s;
 if (connection == "open") {
     await delay(10000);
-    const sessionXeon = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}`);
-    await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `Connected to ${botname} by\n\n©HBWABot Mizo` });
+    const sessionXeon = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
+    await HBWABotMz.sendMessage(m.sender, { text: `Connected to ${botname} by\n\n©HBWABot Mizo` });
 	const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: sessionXeon, mimetype: `application/json`, fileName: `creds.json` });
 				await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, {quoted: botses});
         await delay(100);
