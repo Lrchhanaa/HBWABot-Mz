@@ -47,9 +47,9 @@ if (!HBWABotMz.authState.creds.registered) {
 }
 
 HBWABotMz.ev.on('creds.update', saveCreds)
-HBWABotMz.ev.on("connection.update", async (update) => {
-const {connection, lastDisconnect } = update;
-if (update.connection == "open" || update.receivedPendingNotifications == "true") {
+HBWABotMz.ev.on("connection.update", async (s) => {
+const {connection, lastDisconnect } = s;
+if (connection == "open" || receivedPendingNotifications == "true") {
     await delay(10000);
     const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
     await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `Connected to ${botname}\n\n©HBWABot Mizo`});
