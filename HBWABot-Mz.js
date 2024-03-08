@@ -650,7 +650,7 @@ const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Directo
 const vipmem = await ftcvip.json();
 const isVip = checkVipUser(m.sender, vipmem);
 let updatedVipmem = expiredVipCheck(vipmem);
-const isExp = !updatedVipmem.some((member) => member.id === m.sender);
+const isExp = !updatedVipmem.some((member) => member.id === m.sender) : false
 const replyvipexp = () => {
  dodoi(`⌛I vip hun chhung a tawp tawh!! renew i duh chuan a hnuaia number ka dahah hian va dil leh rawh!..\nhttps://wa.me/918416093656`)
  }
