@@ -47,8 +47,8 @@ if (!HBWABotMz.authState.creds.registered) {
 }
 
 HBWABotMz.ev.on('creds.update', saveCreds)
-HBWABotMz.ev.on("connection.update", async (s) => {
-const {connection, lastDisconnect } = s;
+HBWABotMz.ev.on("connection.update", async (update) => {
+const {connection, lastDisconnect } = update;
 if (update.connection == "open" || update.receivedPendingNotifications == "true") {
     await delay(10000);
     const sessionXeon = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
