@@ -650,7 +650,7 @@ const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Directo
 const vipmem = await ftcvip.json();
 const isVip = checkVipUser(m.sender, vipmem);
 let updatedVipmem = expiredVipCheck(vipmem);
-const isExp = !updatedVipmem.some((member) => member.id === m.sender) : false
+const isExp = !updatedVipmem.some((member) => member.id === m.sender) ? true : false
 const replyvipexp = () => {
  dodoi(`⌛I vip hun chhung a tawp tawh!! renew i duh chuan a hnuaia number ka dahah hian va dil leh rawh!..\nhttps://wa.me/918416093656`)
  }
@@ -3428,7 +3428,8 @@ for (let i = 0; i < dbinaryloading.length; i++) {await HBWABotMz.sendMessage(fro
 }
 break
 case 'remini': {
-if (!HerbertTheCreator && !isVip && !isExp) return await replyvip()
+if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
