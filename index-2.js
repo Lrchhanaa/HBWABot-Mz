@@ -58,7 +58,7 @@ HBWABotMz.ev.on("connection.update", async (update) => {
         if (update.connection === "open" || update.receivedPendingNotifications === true) {
             await delay(10000);
             const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
-            await m.reply(HBWABotMz.user.id, { text: `_Connected to *${botname}*...._\n©HBWABot Mizo` });
+            await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname}*...._\n©HBWABot Mizo` });
             const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
             await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, { quoted: botses });
         }
