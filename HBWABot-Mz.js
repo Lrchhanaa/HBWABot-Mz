@@ -644,12 +644,17 @@ async function isVipAndNotExpired(sender1) {
 const sender1 = m.sender
 const isVip = await isVipAndNotExpired(sender1);
 */
-const { expiredPremiumCheck, checkPremiumUser,getAllPremiumUser } = require('./lib/vipem')
+const { expiredVipCheck, checkVipUser,getallVipUser } = require('./lib/vipem')
 
 const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Director1/master/VIP/vip-pro.json");
 const vipmem = await ftcvip.json();
-const isVip = checkPremiumUser(m.sender, vipmem)
- expiredPremiumCheck(HBWABotMz, m, vipmem)
+const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Director1/master/VIP/vip-pro.json");
+const vipmem = await ftcvip.json();
+const isVip = checkVipUser(m.sender, vipmem);
+const isExp = expiredVipCheck(m.sender, vipmem)
+const replyvipexp = () => {
+ dodoi(`⌛I vip hun chhung a tawp tawh!! renew i duh chuan a hnuaia number ka dahah hian va dil leh rawh!..\nhttps://wa.me/918416093656`)
+ }
 
 async function DuhSak() {
   try {
@@ -866,7 +871,7 @@ if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 let user = m.sender
 const cara = "cara" 
 HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
-if (!HerbertTheCreator && !isVip) {
+if (!HerbertTheCreator && !isVip && !isExp) {
 const daily2 = await eco.daily(user, cara, dawnzat2);
 const daily3 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
 if (daily2.cd && daily3.cd) return dodoi(`I claim tawh, ${daily2.cdL} a ral hunah i claim leh thei chauh ang`);
@@ -1145,6 +1150,7 @@ case 'nsfw': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp()
 if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
 if (args[0] === "on") {
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -1833,7 +1839,7 @@ var mizia = ['Mi pangngai tak','Kawm harsa tak','Chapo deuh', 'Gay', 'Lesbian', 
 					var thiltihchhiat1 = thiltihchhiat[Math.floor(Math.random() * thiltihchhiat.length)]
 					var findan1 = findan[Math.floor(Math.random() * findan.length)]
 					var dawih1 = dawih[Math.floor(Math.random() * dawih.length)]
-					var avipem = isVipAndNotExpired(bet)
+					var avipem = isVip(bet)//
 					const avipe = avipem ? 'a ni ✓' : 'a ni lo';
 let aihviplo = `*≡══《 Check @${bet.split('@')[0]} 》══≡*
 
@@ -3423,7 +3429,7 @@ for (let i = 0; i < dbinaryloading.length; i++) {await HBWABotMz.sendMessage(fro
 }
 break
 case 'remini': {
-if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!HerbertTheCreator && !isVip && !isExp) return await replyvip()
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3440,6 +3446,7 @@ await finishreact()
 break
 case 'tobebot': {
     if (!isVip) return await replyvip();
+    if (!isExp) return await replyvipexp();
     if (m.isGroup) return dodoi(mess.private);
     if (!args[0]) return dodoi(`_🤖 Kha tiang ringawt loh khan tiang hian hman tur a ni_\n*Entirnan:* ${prefix + command} 918416093656`)
     let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
@@ -3467,6 +3474,7 @@ break
 
 case 'toanime': case 'tocartoon': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3484,6 +3492,7 @@ await finishreact()
 break
 case 'removebg': case 'bgremove': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3500,6 +3509,7 @@ await finishreact()
 break
 case 'remini2': case 'hd': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3517,6 +3527,7 @@ break
 
 case 'tozombie': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3742,7 +3753,8 @@ case 'openai': {
 break;
 
 case 'bincc': {
-if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!HerbertTheCreator && !isVip) return await replyvip();
+if (!isExp) return await replyvipexp();
 const namso = require('namso-cc-gen');
 const genarate = ('https://raw.githubusercontent.com/HBMods-OFC/Director1/master/HBWABot-Mz/BinCC.json')
 let genarate2 = await fetch(genarate);
@@ -4463,6 +4475,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, 60)
 
 case 'shazam2': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 let q = m.quoted ? m.quoted : m;
 if (!q) {return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, a hla/music hming ka rawn zawn sak ang che....`);
   }
@@ -4503,6 +4516,7 @@ contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply":
 }
 case 'shazam3': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 let q = m.quoted ? m.quoted : m;
 if (!q) {return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, a hla/music hming ka rawn zawn sak ang che....`);
   }
@@ -4721,6 +4735,7 @@ await loadingreact()
 break 
 case 'swm': case 'steal': case 'stickerwm': case 'take':{
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!args.join(" ")) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a i duh duh word nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -5506,6 +5521,7 @@ break
 case 'hentaivid2': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo') 
 sbe = await hentaivid()
 cejd = sbe[Math.floor(Math.random(), sbe.length)]
@@ -5523,6 +5539,7 @@ break
 case 'hentaivid': case 'hentaivideo': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const { hentai } = require('./lib/scraper.js')
 anu = await hentai()
@@ -6448,6 +6465,7 @@ dodoi('Error: Link dang rawn ti rawh')
 break
 case "xnxxdl": {
   if (!HerbertTheCreator && !isVip) return await replyvip();
+  if (!isExp) return await replyvipexp();
   if (!m.isGroup) return dodoi(mess.group);
   if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo');
   if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a xnxx video link nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`);
@@ -6470,6 +6488,7 @@ break;
 
 case 'xnxxsearch': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!m.isGroup) return dodoi(mess.group)
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -6495,6 +6514,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 break
 case 'unbanv1': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6539,6 +6559,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv2': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6583,6 +6604,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv3': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6627,6 +6649,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv4': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6671,6 +6694,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv5': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (!isExp) return await replyvipexp();
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
