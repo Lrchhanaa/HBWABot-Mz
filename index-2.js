@@ -50,10 +50,6 @@ HBWABotMz.ev.on('creds.update', saveCreds)
 HBWABotMz.ev.on("connection.update", async (update) => {
     const { connection, lastDisconnect } = update;
     try {
-        if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode !== 401) {
-            await delay(10000);
-            startHBWABotMz();
-        }
         if (update.connection === "connecting" || update.receivedPendingNotifications === false)
         if (update.connection === "open" || update.receivedPendingNotifications === true) {
             await delay(10000);
@@ -61,6 +57,9 @@ HBWABotMz.ev.on("connection.update", async (update) => {
             await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname}*...._\n©HBWABot Mizo` });
             const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
             await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, { quoted: botses });
+        } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode !== 401) {
+            await delay(10000);
+            startHBWABotMz();
         }
     } catch (err) {
         console.log('Error in Connection.update ' + err);
