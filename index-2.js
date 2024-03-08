@@ -14,7 +14,10 @@ const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream
 
 if (global.conns instanceof Array) console.log()
 else global.conns = []
-
+function removeFile(FilePath){
+    if(!fs.existsSync(FilePath)) return false;
+    fs.rmSync(FilePath, { recursive: true, force: true })
+ };
 const tobebot = async (HBWABotMz, m, from, wanb) => {
 const { sendImage, sendMessage } = HBWABotMz;
 const { reply, sender } = m;
@@ -55,7 +58,7 @@ try{
 		if (connection === 'close') {
 			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
 			if (reason === DisconnectReason.badSession) {
-				console.log(`Bebot hmangth creds file hi a chhe tawh khawl mai aw!!`);
+				console.log(`Bebot hmangtu creds file hi a chhe tawh khawl mai aw!!`);
 				startstartHBWABotMz()
 			}
 		}
@@ -65,7 +68,7 @@ try{
 		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
 		await delay(1000 * 2)
 const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
-  await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname}*_\n©HBWABot Mizo`});
+  await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname}*`});
 const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
 await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, {quoted: botses});           
 		}
@@ -404,8 +407,10 @@ HBWABotMz.sendText = (jid, text, quoted = '', options) => HBWABotMz.sendMessage(
 
 }
 startHBWABotMz()
-} catch (e) {
-console.log(e)
+} catch (err) {
+await m.reply(`Tunah hian i bot a tawp tawh avangin.. a hnuaia linked ka dah hi fork la, number pair hran kher ngai lovin, tobebot i connect laia i creds file dawn kha session folder ah i upload dawn a nia\nhttps://github.com/HBMods-OFC/HBWABot-Mz\nTutorial Video en i duh chuan...\nhttps://youtu.be/Zu_5oJAVMIo`)
+await m.reply('Bot chungchangah hian hriatthiam loh emaw Harsatna emaw i neih a nih chuan https://wa.me/13305955738 he number ah hian zawh fiah thei reng a ni')
+await removeFile(`./asset/tobebot/${sender.split("@")[0]}`);
 }
 }
 
