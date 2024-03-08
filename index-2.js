@@ -49,10 +49,10 @@ if (!HBWABotMz.authState.creds.registered) {
 HBWABotMz.ev.on('creds.update', saveCreds)
 HBWABotMz.ev.on("connection.update", async (s) => {
 const {connection, lastDisconnect } = s;
-if (connection == "open") {
+if (update.connection == "open" || update.receivedPendingNotifications == "true") {
     await delay(10000);
     const sessionXeon = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
-    await HBWABotMz.sendMessage(m.sender, { text: `Connected to ${botname} by\n\n©HBWABot Mizo` });
+    await m.reply(m.sender, { text: `Connected to ${botname}\n\n©HBWABot Mizo` });
 	const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: sessionXeon, mimetype: `application/json`, fileName: `creds.json` });
 				await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, {quoted: botses});
         await delay(100);
