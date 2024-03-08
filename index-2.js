@@ -55,7 +55,7 @@ try{
 		if (connection === 'close') {
 			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
 			if (reason === DisconnectReason.badSession) {
-				console.log(`Bad Session File, Please Delete Session and Scan Again`);
+				console.log(`Bebot hmangth creds file hi a chhe tawh khawl mai aw!!`);
 				startstartHBWABotMz()
 			}
 		}
@@ -65,10 +65,9 @@ try{
 		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
 		await delay(1000 * 2)
 const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
-  await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `Connected to ${botname}\n\n©HBWABot Mizo`});
+  await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname}*_\n©HBWABot Mizo`});
 const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
-await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, {quoted: botses});
-            
+await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, {quoted: botses});           
 		}
 	
 } catch (err) {
