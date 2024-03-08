@@ -46,28 +46,38 @@ if (!HBWABotMz.authState.creds.registered) {
     await m.reply(`Hei hi i code : ${yourCode} `)
 }
 
+HBWABotMz.ev.on('connection.update', async (update) => {
+	const {
+		connection,
+		lastDisconnect
+	} = update
+try{
+		if (connection === 'close') {
+			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
+			if (reason === DisconnectReason.badSession) {
+				console.log(`Bad Session File, Please Delete Session and Scan Again`);
+				startstartHBWABotMz()
+			}
+		}
+		if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
+			console.log(color(`\nTobeBot Connecting...`, 'yellow'))
+		}
+		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
+		await delay(1000 * 2)
+const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
+  await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `Connected to ${botname}\n\n©HBWABot Mizo`});
+const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
+await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, {quoted: botses});
+            
+		}
+	
+} catch (err) {
+	  console.log('Error in Connection.update '+err)
+	  startstartHBWABotMz();
+	}
+})
 HBWABotMz.ev.on('creds.update', saveCreds)
-HBWABotMz.ev.on("connection.update", async (update) => {
-    const { connection, lastDisconnect } = update;
-    try {
-        if (update.connection === "connecting" || update.receivedPendingNotifications === false)
-        if (update.connection === "open" || update.receivedPendingNotifications === true) {
-            await delay(10000);
-            const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
-            await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname}*...._\n©HBWABot Mizo` });
-            const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
-            await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, { quoted: botses });
-        } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode !== 401) {
-            await delay(10000);
-            startHBWABotMz();
-        }
-    } catch (err) {
-        console.log('Error in Connection.update ' + err);
-        startHBWABotMz();
-    }
-});
-
-await delay(5555) 
+HBWABotMz.ev.on("messages.upsert",  () => { })
 //------------------------------------------------------
 
 HBWABotMz.ev.on('messages.upsert', async chatUpdate => {
