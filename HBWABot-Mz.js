@@ -649,7 +649,7 @@ const { expiredPremiumCheck, checkPremiumUser,getAllPremiumUser } = require('./l
 const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Director1/master/VIP/vip-pro.json");
 const vipmem = await ftcvip.json();
 const isVip = checkPremiumUser(m.sender, vipmem)
-  expiredPremiumCheck(HBWABotMz, m, vipmem)
+ expiredPremiumCheck(HBWABotMz, m, vipmem)
 
 async function DuhSak() {
   try {
@@ -4806,8 +4806,8 @@ case 'myid': {
 dodoi(`,
   {
     "name": "${pushname}",
-    "phoneNumber": "${m.sender}",
-    "expireDate": "random"
+    "id": "${m.sender}",
+    "expired": "random"
   }`)
 }
 break
