@@ -482,7 +482,7 @@ const banRep = () => {
 HBWABotMz.sendMessage(from, { react: { text: "🤪" , key: m.key }})
 }
 
-if (!isBanned) {
+if (isCmd && isBanned) {
 return banRep()
 }
 
