@@ -64,7 +64,6 @@ await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds fil
         await delay(100)
  if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10000);
-                    startHBWABotMz();
                 }
             });
 

@@ -901,7 +901,7 @@ if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 let user = m.sender
 const cara = "cara" 
 HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
-if (!HerbertTheCreator && isExp) {
+if (!HerbertTheCreator && isVip) {
 const daily2 = await eco.daily(user, cara, dawnzat2);
 const daily3 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
 if (daily2.cd && daily3.cd) return dodoi(`I claim tawh, ${daily2.cdL} a ral hunah i claim leh thei chauh ang`);
@@ -910,6 +910,17 @@ dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!
 *Coin* : 🪙  ${dawnzat2} ✓
 
 VIP member te chuan Limit 💎 1500 leh Coin 🪙  2000 an dawng thei a ni!!..\n\nI limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
+return }
+if (!isExp) {
+const daily4 = await eco.daily(user, cara, dawnzat2);
+const daily5 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
+if (daily4.cd && daily5.cd) return dodoi(`I claim tawh, ${daily4.cdL} a ral hunah i claim leh thei chauh ang`);
+dodoi(`> Expired Now Your VIP Subscription
+Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!!
+*Limit* :  💎 ${dawnzat} ✓
+*Coin* : 🪙  ${dawnzat2} ✓
+
+I limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
 return }
 HBWABotMz.sendMessage(from, { react: { text: "👑" , key: m.key }})
 const daily = await eco.daily(user, cara, 2000);
