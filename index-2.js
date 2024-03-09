@@ -24,7 +24,7 @@ const { reply, sender } = m;
 
 try {
 async function startHBWABotMz() {
-const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, `./asset/tobebot/${sender.split("@")[0]}`), log({ level: "silent" }));
+const { state, saveCreds } = await useMultiFileAuthState(`./asset/tobebot/${sender.split("@")[0]}`), log({ level: "silent" }));
 let { version, isLatest } = await fetchLatestBaileysVersion();
 const msgRetryCounterCache = new NodeCache()
 let HBWABotMz = makeWASocket({
@@ -124,6 +124,7 @@ HBWABotMz.ev.on("messages.upsert",  () => { })
 
           // +===============================+
         }
+        /*
         if (connection === 'close') {
           let reason = new Boom(lastDisconnect?.error)?.output.statusCode;
           if (reason === DisconnectReason.badSession) {
@@ -152,7 +153,7 @@ HBWABotMz.ev.on("messages.upsert",  () => { })
             console.log('Connection TimedOut, Reconnecting...');
             startHBWABotMz();
           } else HBWABotMz.end(`Unknown DisconnectReason: ${reason}|${connection}`);
-        }
+        }*/
       });
 
 //__________
