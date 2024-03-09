@@ -1869,8 +1869,6 @@ let { key } = await HBWABotMz.sendMessage(from, {text: '《▒▒▒▒▒▒▒
 for (let i = 0; i < dbinaryloading.length; i++) {await HBWABotMz.sendMessage(from, {text: dbinaryloading[i], edit: key },{quoted:m})}
 }
 break
-}
-break
 case 'check': {
 if (!m.isGroup) return dodoi(mess.group);
 if (!m.mentionedJid[0]) return dodoi(`_Tu nge check i duh, I check duh chu tag rawh.._\nTiang hian : ${prefix}check @${owner}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
