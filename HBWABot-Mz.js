@@ -900,7 +900,7 @@ if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 let user = m.sender
 const cara = "cara" 
 HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
-if (!HerbertTheCreator && !isVip) {
+if (!HerbertTheCreator && isExp) {
 const daily2 = await eco.daily(user, cara, dawnzat2);
 const daily3 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
 if (daily2.cd && daily3.cd) return dodoi(`I claim tawh, ${daily2.cdL} a ral hunah i claim leh thei chauh ang`);
@@ -1180,6 +1180,10 @@ case 'nsfw': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!isAdmins && !HerbertTheCreator) return dodoi(mess.admin)
 if (args[0] === "on") {
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -1846,6 +1850,25 @@ case 'ping': case 'p': {
 var ping = ['84','68','74','99','129','130','150','280','320','380','380','163','163','84','64','74','999','827','266','979','768','562','626','737','166']
 var pong = ping[Math.floor(Math.random() * ping.length)]
 HBWABotMz.sendMessage(from, {text: `_*Pong*_ ${pong} _*ms...*_`},{quoted:m})
+}
+break
+case 'spin1':{
+var ping = ['I hmel chhe lutuk','Vawk i ang','I van hmel tha em em🤭🥰','I lu lian','I hur','Kiri','','I rawn spin1 ve mi 🤣','🤣 Blehh...','Muah🥰','Fuck you 🖕','Hello Mother Fucker🤖','I Love You͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏Tube','Hello 🌚','Mawla','Mawli','U r gay 🖕','Min nei duh em?','Happy Birthday 🥳','🙄Eng mah awm lo','Hmeichhia a mi nih?','🤣','😆','🤦','Reels ve tawh suh']
+var pong = ping[Math.floor(Math.random() * ping.length)]
+var dbinaryloading = [
+`《▒▒▒▒▒▒▒▒▒▒▒▒》0%`,
+`《█▒▒▒▒▒▒▒▒▒▒▒》10%`,
+`《████▒▒▒▒▒▒▒▒》30%`,
+`《███████▒▒▒▒▒》50%`,
+`《██████████▒▒》80%`,
+`《████████████》100%`,
+`${pong}`]
+
+let { key } = await HBWABotMz.sendMessage(from, {text: '《▒▒▒▒▒▒▒▒▒▒▒▒》0%\n♻️ _Nghak lawk rawh.._'},{quoted:m})
+
+for (let i = 0; i < dbinaryloading.length; i++) {await HBWABotMz.sendMessage(from, {text: dbinaryloading[i], edit: key },{quoted:m})}
+}
+break
 }
 break
 case 'check': {
@@ -3504,6 +3527,10 @@ break
 
 case 'toanime': case 'tocartoon': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3521,6 +3548,10 @@ await finishreact()
 break
 case 'removebg': case 'bgremove': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3537,6 +3568,10 @@ await finishreact()
 break
 case 'remini2': case 'hd': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3554,6 +3589,10 @@ break
 
 case 'tozombie': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3776,6 +3815,10 @@ break;
 
 case 'bincc': {
 if (!HerbertTheCreator && !isVip) return await replyvip();
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 const namso = require('namso-cc-gen');
 const genarate = ('https://raw.githubusercontent.com/HBMods-OFC/Director1/master/HBWABot-Mz/BinCC.json')
 let genarate2 = await fetch(genarate);
@@ -4496,6 +4539,10 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, 60)
 
 case 'shazam2': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 let q = m.quoted ? m.quoted : m;
 if (!q) {return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, a hla/music hming ka rawn zawn sak ang che....`);
   }
@@ -4536,6 +4583,10 @@ contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply":
 }
 case 'shazam3': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 let q = m.quoted ? m.quoted : m;
 if (!q) {return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, a hla/music hming ka rawn zawn sak ang che....`);
   }
@@ -4754,6 +4805,10 @@ await loadingreact()
 break 
 case 'swm': case 'steal': case 'stickerwm': case 'take':{
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!args.join(" ")) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a i duh duh word nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -5539,6 +5594,10 @@ break
 case 'hentaivid2': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo') 
 sbe = await hentaivid()
 cejd = sbe[Math.floor(Math.random(), sbe.length)]
@@ -5556,6 +5615,10 @@ break
 case 'hentaivid': case 'hentaivideo': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const { hentai } = require('./lib/scraper.js')
 anu = await hentai()
@@ -6481,6 +6544,10 @@ dodoi('Error: Link dang rawn ti rawh')
 break
 case "xnxxdl": {
   if (!HerbertTheCreator && !isVip) return await replyvip();
+  if (isExp) {
+        replyvipexp();
+        return;
+    }
   if (!m.isGroup) return dodoi(mess.group);
   if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo');
   if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan, tiang hian a xnxx video link nen rawn dah rawh_\n\n*⟨Entirnan :* ${prefix + command} Hello World`);
@@ -6503,6 +6570,10 @@ break;
 
 case 'xnxxsearch': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!m.isGroup) return dodoi(mess.group)
 if (!AntiNsfw) return dodoi('Nsfw on a nih phawt loh chuan ka rawn thawn thei lo')
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -6528,6 +6599,10 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 break
 case 'unbanv1': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6572,6 +6647,10 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv2': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6616,6 +6695,10 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv3': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6660,6 +6743,10 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv4': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
@@ -6704,6 +6791,10 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv5': {
 if (!HerbertTheCreator && !isVip) return await replyvip()
+if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!args[0]) return dodoi(`Kha tiang ringawt loh khan tiang hian hman tur a ni\n*Entirnan: ${prefix + command} 918416093656`)
 let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
 let wanbck = await HBWABotMz.onWhatsApp(wanb)
