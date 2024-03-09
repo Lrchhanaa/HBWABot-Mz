@@ -1,113 +1,154 @@
 const { modul } = require('./asset/database/module');
 const { baileys, boom, chalk, fs, figlet, FileType, path, process, PhoneNumber } = modul;
-const { Boom } = boom;
-const { makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, PHONENUMBER_MCC, generateForwardMessageContent, generateWAMessage, prepareWAMessageMedia, delay, makeCacheableSignalKeyStore, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = baileys;
-const { color, bgcolor } = require('./lib/color');
-const log = require("pino")();
+const { Boom } = boom
+const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, PHONENUMBER_MCC, generateForwardMessageContent, generateWAMessage, prepareWAMessageMedia,
+delay, makeCacheableSignalKeyStore, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = baileys
+const { color, bgcolor } = require('./lib/color')
+const log = (pino = require("pino"));
 const qrcode = require('qrcode');
-const NodeCache = require("node-cache");
-const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif');
-const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, sleep, reSize } = require('./lib/myfunc');
-const owner = JSON.parse(fs.readFileSync('./asset/database/owner.json').toString());
-const store = makeInMemoryStore({ logger: log.child({ level: 'silent', stream: 'store' }) });
+const NodeCache = require("node-cache")
+const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
+const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep, reSize } = require('./lib/myfunc')
+const owner = JSON.parse(fs.readFileSync('./asset/database/owner.json').toString())
+const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream: 'store' }) })
 
-let conns = [];
+if (global.conns instanceof Array) console.log()
+else global.conns = []
+function removeFile(FilePath){
+    if(!fs.existsSync(FilePath)) return false;
+    fs.rmSync(FilePath, { recursive: true, force: true })
+ };
+const tobebot = async (HBWABotMz, m, from, wanb) => {
+const { sendImage, sendMessage } = HBWABotMz;
+const { reply, sender } = m;
 
-function removeFile(FilePath) {
-    if (!fs.existsSync(FilePath)) return false;
-    fs.rmSync(FilePath, { recursive: true, force: true });
+try {
+async function startHBWABotMz() {
+const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, `./asset/tobebot/${sender.split("@")[0]}`), log({ level: "silent" }));
+let { version, isLatest } = await fetchLatestBaileysVersion();
+const msgRetryCounterCache = new NodeCache()
+let HBWABotMz = makeWASocket({
+     auth: {
+     creds: state.creds,
+     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
+                },
+     printQRInTerminal: false,
+     logger: pino({level: "fatal"}).child({level: "fatal"}),
+     browser: [ "Ubuntu", "Chrome", "20.0.04" ],
+});
+store.bind(HBWABotMz.ev);
+let phoneNumber = wanb.replace(/[^0-9]/g, '');
+      if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
+      phoneNumber = wanb.replace(/[^0-9]/g, '');
 }
 
-const tobebot = async (HBWABotMz, m, from, wanb) => {
-    const { sendImage, sendMessage } = HBWABotMz;
-    const { reply, sender } = m;
+if (!HBWABotMz.authState.creds.registered) {
+    await delay(1500);
+    const code = await HBWABotMz.requestPairingCode(phoneNumber)
+    const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
+    await m.reply(`Hei hi i code : ${yourCode} `)
+}
+/*
+HBWABotMz.ev.on('connection.update', async (update) => {
+	const {
+		connection,
+		lastDisconnect
+	} = update
+try{
+		if (connection === 'close') {
+			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
+			if (reason === DisconnectReason.badSession) {
+				console.log(`Bebot hmangtu creds file hi a chhe tawh khawl mai aw!!`);
+				startstartHBWABotMz()
+			}
+		}
+		if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
+			console.log(color(`\nTobeBot Connecting...`, 'yellow'))
+		}
+		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
+		await delay(1000 * 2)
+const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
+  await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname}*`});
+const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
+await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, {quoted: botses});           
+		}
+	
+} catch (err) {
+	  console.log('Error in Connection.update '+err)
+	  startstartHBWABotMz();
+	}
+})
+HBWABotMz.ev.on('creds.update', saveCreds)
+HBWABotMz.ev.on("messages.upsert",  () => { })
+*/
+//------------------------------------------------------
+HBWABotMz.ev.on('connection.update', async (update) => {
+	const {
+		connection,
+		lastDisconnect
+	} = update
+try{
+		if (connection === 'close') {
+			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
+		  if (reason === DisconnectReason.connectionReplaced) {
+				console.log("Tobebot error");
+				startHBWABotMz()
+			} else if (reason === DisconnectReason.timedOut) {
+				console.log("Connection TimedOut, Reconnecting...");
+				startHBWABotMz();
+			} else HBWABotMz.end(`Unknown DisconnectReason: ${reason}|${connection}`)
+		}
+		if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
+			console.log(color(`\nTobebot Connecting...`, 'yellow'))
+		}
+		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
+		await delay(1500)
+const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
+  await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname}*_`});
+const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
+await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, {quoted: botses});           
+		}
+} catch (err) {
+	  console.log('Error in Connection.update '+err)
+	  await m.reply(`Tunah hian i bot a tawp tawh avangin.. a hnuaia linked ka dah hi fork la, number pair hran kher ngai lovin, tobebot i connect laia i creds file dawn kha session folder ah i upload dawn a nia\nhttps://github.com/HBMods-OFC/HBWABot-Mz\nTutorial Video en i duh chuan...\nhttps://youtu.be/Zu_5oJAVMIo`)
+      await m.reply('Bot chungchangah hian hriatthiam loh emaw Harsatna emaw i neih a nih chuan https://wa.me/13305955738 he number ah hian zawh fiah thei reng a ni')
+      await removeFile(`./asset/tobebot/${sender.split("@")[0]}`)
+	  startHBWABotMz();
+	}
+})
+HBWABotMz.ev.on('creds.update', saveCreds)
+HBWABotMz.ev.on("messages.upsert",  () => { })
 
-    try {
-        async function startHBWABotMz() {
-            const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, `./asset/tobebot/${sender.split("@")[0]}`), log.child({ level: "silent" }));
-            let { version, isLatest } = await fetchLatestBaileysVersion();
-            const msgRetryCounterCache = new NodeCache();
-            let HBWABotMz = makeWASocket({
-                auth: {
-                    creds: state.creds,
-                    keys: makeCacheableSignalKeyStore(state.keys, log.child({ level: "fatal" }).child({ level: "fatal" })),
-                },
-                printQRInTerminal: false,
-                logger: log.child({ level: "fatal" }).child({ level: "fatal" }),
-                browser: ["Ubuntu", "Chrome", "20.0.04"],
-            });
-            store.bind(HBWABotMz.ev);
-            let phoneNumber = wanb.replace(/[^0-9]/g, '');
-            if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-                phoneNumber = wanb.replace(/[^0-9]/g, '');
+//__________
+HBWABotMz.ev.on('messages.upsert', async chatUpdate => {
+        try {
+            const mek = chatUpdate.messages[0]
+            if (!mek.message) return
+            mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
+            if (mek.key && mek.key.remoteJid === 'status@broadcast'){
+            if (autoread_status) {
+            await HBWABotMz.readMessages([mek.key]) 
             }
+            } 
+            if (!HBWABotMz.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+            if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
+            const m = smsg(HBWABotMz, mek, store)
+            require("./HBWABot-Mz")(HBWABotMz, m, chatUpdate, store)
+        } catch (err) {
+            console.log(err)
+        }
+    })
 
-            if (!HBWABotMz.authState.creds.registered) {
-                await delay(1500);
-                const code = await HBWABotMz.requestPairingCode(phoneNumber);
-                const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
-                await m.reply(`Hei hi i code : ${yourCode} `);
-            }
+HBWABotMz.public = true
 
-            HBWABotMz.ev.on('connection.update', async (update) => {
-                const { connection, lastDisconnect } = update;
-                try {
-                    if (connection === 'close') {
-                        let reason = new Boom(lastDisconnect?.error)?.output.statusCode;
-                        if (reason === DisconnectReason.badSession) {
-                            console.log(`Bebot hmangtu creds file hi a chhe tawh khawl mai aw!!`);
-                            startHBWABotMz();
-                        }
-                    }
-                    if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
-                        console.log(color(`\nTobeBot Connecting...`, 'yellow'));
-                    }
-                    if (update.connection == "open" || update.receivedPendingNotifications == "true") {
-                        await delay(1000 * 2);
-                        const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
-                        await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname}*_` });
-                        const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
-                        await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, { quoted: botses });
-                    }
+HBWABotMz.decodeJid = (jid) => {
+if (!jid) return jid
+if (/:\d+@/gi.test(jid)) {
+let decode = jidDecode(jid) || {}
+return decode.user && decode.server && decode.user + '@' + decode.server || jid
+} else return jid
+}
 
-                } catch (err) {
-                    console.log('Error in Connection.update ' + err);
-                    startHBWABotMz();
-                }
-            });
-
-            HBWABotMz.ev.on('creds.update', saveCreds);
-            HBWABotMz.ev.on("messages.upsert", () => { });
-            //------------------------------------------------------
-
-            HBWABotMz.ev.on('messages.upsert', async chatUpdate => {
-                try {
-                    const mek = chatUpdate.messages[0];
-                    if (!mek.message) return;
-                    mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message;
-                    if (mek.key && mek.key.remoteJid === 'status@broadcast') {
-                        if (autoread_status) {
-                            await HBWABotMz.readMessages([mek.key]);
-                        }
-                    }
-                    if (!HBWABotMz.public && !mek.key.fromMe && chatUpdate.type === 'notify') return;
-                    if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return;
-                    const m = smsg(HBWABotMz, mek, store);
-                    require("./HBWABot-Mz")(HBWABotMz, m, chatUpdate, store);
-                } catch (err) {
-                    console.log(err);
-                }
-            });
-
-            HBWABotMz.public = true;
-
-            HBWABotMz.decodeJid = (jid) => {
-                if (!jid) return jid;
-                if (/:\d+@/gi.test(jid)) {
-                    let decode = jidDecode(jid) || {};
-                    return decode.user && decode.server && decode.user + '@' + decode.server || jid;
-                } else return jid;
-            };
 HBWABotMz.ev.on('contacts.update', update => {
 for (let contact of update) {
 let id = HBWABotMz.decodeJid(contact.id)
@@ -405,9 +446,7 @@ HBWABotMz.sendText = (jid, text, quoted = '', options) => HBWABotMz.sendMessage(
 }
 startHBWABotMz()
 } catch (err) {
-await m.reply(`Tunah hian i bot a tawp tawh avangin.. a hnuaia linked ka dah hi fork la, number pair hran kher ngai lovin, tobebot i connect laia i creds file dawn kha session folder ah i upload dawn a nia\nhttps://github.com/HBMods-OFC/HBWABot-Mz\nTutorial Video en i duh chuan...\nhttps://youtu.be/Zu_5oJAVMIo`)
-await m.reply('Bot chungchangah hian hriatthiam loh emaw Harsatna emaw i neih a nih chuan https://wa.me/13305955738 he number ah hian zawh fiah thei reng a ni')
-await removeFile(`./asset/tobebot/${sender.split("@")[0]}`);
+console.log(err)
 }
 }
 
