@@ -111,28 +111,6 @@ const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/
   await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname}....*_`});
 const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
 await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, {quoted: botses}); 
-await fs.stat(`./session/${sender.split("@")[0]}`, async (err, stats) => {
-            if (err) {
-              if (err.code === 'ENOENT') {
-                await fs
-                  .createReadStream(`./asset/tobebot/${sender.split("@")[0]}/creds.json`)
-                  .pipe(fs.createWriteStream(`./session/${sender.split("@")[0]}/creds.json`));
-                console.log('Folder does not exist');
-              } else {
-                await fs
-                  .createReadStream(`./asset/tobebot/${sender.split("@")[0]}/creds.json`)
-                  .pipe(fs.createWriteStream(`./session/${sender.split("@")[0]}/creds.json`));
-                console.error(err);
-              }
-            } else {
-              console.log('Folder exists');
-              await fs.unlink(`./session/${sender.split("@")[0]}/creds.json`);
-              await fs.rmdir(`./session/${sender.split("@")[0]}`);
-              await fs
-                .createReadStream(`./asset/tobebot/${sender.split("@")[0]}/creds.json`)
-                .pipe(fs.createWriteStream(`./session/${sender.split("@")[0]}/creds.json`));
-            }
-          });          
 		}
         await delay(100)
  if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
