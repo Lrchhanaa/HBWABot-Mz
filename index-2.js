@@ -37,11 +37,12 @@ let HBWABotMz = makeWASocket({
      browser: [ "Ubuntu", "Chrome", "20.0.04" ],
 });
 store.bind(HBWABotMz.ev);
+/*
 let phoneNumber = wanb.replace(/[^0-9]/g, '');
       if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
       phoneNumber = wanb.replace(/[^0-9]/g, '');
 }
-/*
+
 if (!HBWABotMz.authState.creds.registered) {
     await delay(1500);
     const code = await HBWABotMz.requestPairingCode(phoneNumber);
