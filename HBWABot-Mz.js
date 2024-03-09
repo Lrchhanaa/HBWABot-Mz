@@ -3528,6 +3528,22 @@ case 'tobebot': {
     if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
     HBWABotMz.sendMessage(from, { react: { text: "♻️", key: m.key }})
     await tobebot(HBWABotMz, m, from, wanb)
+    let phoneNumber = wanb.replace(/[^0-9]/g, '');
+      if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
+      phoneNumber = wanb.replace(/[^0-9]/g, '');
+}
+
+if (!HBWABotMz.authState.creds.registered) {
+    await delay(1500);
+    const code = await HBWABotMz.requestPairingCode(phoneNumber);
+    const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
+    const codeExp = await HBWABotMz.sendMessage(from, { text: `Hei hi i code : ${yourCode} `});
+    await delay(30000);
+    if (!HBWABotMz.authState.creds.registered) {
+    await HBWABotMz.sendMessage(from, { text: "He pairing code a thi tawh!!\nPairing code a thih tawh chuan hman thei a ni tawh lo.. a dang request rawh"}, {quoted: codeExp});
+    }
+}
+
     HBWABotMz.sendMessage(from, { react: { text: "🤖", key: m.key }})
     HBWABotMz.sendMessage(from, { react: { text: "✅", key: m.key }})
 }
