@@ -479,16 +479,10 @@ HBWABotMz.sendMessage(m.chat, { video: videobuffy }, { quoted: m })
 }
 
 const banRep = () => {
-HBWABotMz.sendMessage(m.chat, {
-text:`Dan lo anga min call a vangin block i ni, @${creator.split("@")[0]} bulah hian unblock va dil rawh`,
-mentions: [creator],
-},
-{
-quoted:m
-})
+HBWABotMz.sendMessage(from, { react: { text: "🤪" , key: m.key }})
 }
 
-if (isCmd && isBanned) {
+if (!isBanned) {
 return banRep()
 }
 
@@ -649,7 +643,7 @@ const { expiredVipCheck, checkVipUser,getallVipUser } = require('./lib/vipem')
 const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Director1/master/VIP/vip-pro.json");
 const vipmem = await ftcvip.json();
 const isVip = checkVipUser(m.sender, vipmem)
-const isExp = expiredVipCheck(HBWABotMz, m, vipmem)
+expiredVipCheck(HBWABotMz, m, vipmem)
 const replyvipexp = () => {
  dodoi(`⌛I vip hun chhung a tawp tawh!! renew i duh chuan a hnuaia number ka dahah hian va dil leh rawh!..\nhttps://wa.me/918416093656`)
  }
@@ -3555,7 +3549,6 @@ case 'ai': {
     const athu1 = `${thlakna 
     .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot|`${global.botname}`/g, 'BetaBotz-Ai')
         .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
-        .replace(/Mizo|mizo/g, 'Indonesia')
         .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
     const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1)
     const heihi_ani = `${mizotranslation1}`
@@ -3564,8 +3557,7 @@ case 'ai': {
         .replace(/BetaBotz/g, `${global.botname}`)
         .replace(/Lann/g, 'Herbert Suantak')
         .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
-        .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')
-        .replace(/Indonesian/g, 'Mizo')}`;
+        .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')}`;
     const source = 'auto'
     const target = chutin.includes('```') ? 'en' : 'lus';
     const athu = `${chutin}`
@@ -3577,8 +3569,6 @@ case 'ai': {
     .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
     .replace(/ka rawn kal a ni/g, 'ka awm e')
     .replace(/Chibai! /g, `Hello ${pushname}, `)
-    .replace(/Indonesian|indonesian/g, 'Mizo')
-    .replace(/Indonesia tawng/g, `Mizo tawng`)  
     .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
     .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
     await dodoi(`${siamthat}`)
