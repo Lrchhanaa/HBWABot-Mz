@@ -645,19 +645,19 @@ const vipmem = await ftcvip.json();
 const isVip = checkVipUser(m.sender, vipmem);
 let position = null;
 let status = false; 
-const isExp = Object.keys(vipmem).some((i) => {
+const expiredVip = Object.keys(vipmem).some((i) => {
     if (vipmem[i].id === m.sender) {
         status = true;
     }
     if (vipmem[i].expired !== "lifetime" && Date.now() >= new Date(vipmem[i].expired)) {
-        position = i;
+        position = vipmem[i].id
         return true;
     }
     return false;
 });
-
+const isExp = position !== null;
 const replyvipexp = () => {
- dodoi(`> *Message From Vip Subscribtion* \nI vip hun chhung a tawp tawh a, He message hi dawn nawn thawh loh emaw VIP hi renew i duh a nih chuan a hnuaia number ka dahah hian va hrilh hriat tur a ni!!!..\nhttps://wa.me/9184160936566`)
+ dodoi(`⌛I vip hun chhung a tawp tawh!! renew i duh chuan a hnuaia number ka dahah hian va dil leh rawh!..\nhttps://wa.me/918416093656`)
  }
 
 async function DuhSak() {
@@ -3448,7 +3448,6 @@ break
 case 'tobebot': {
     if (!isVip) return await replyvip();
     if (isExp) {
-        const expiredVip = vipmem[position];
         replyvipexp();
         return;
     }
