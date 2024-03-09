@@ -657,9 +657,14 @@ const expiredVip = Object.keys(vipmem).some((i) => {
 });
 const isExp = position !== null;
 */
+let tunhunvip = new Date();
+let vipyear = currentTime.getFullYear();
+let vipmonth = currentTime.getMonth() + 1;
+let vipday = currentTime.getDate();
+let vipformatdate = `${vipyear}-${vipmonth}-${vipday}`;
 const isExp = vipmem.some((member) => {
     if (member.id === m.sender) {
-        if (member.expired !== "lifetime" && Date.now() >= new Date(member.expired)) {
+        if (member.expired !== "lifetime" && vipformatdate >= member.expired) {
             return true;
         }
     }
