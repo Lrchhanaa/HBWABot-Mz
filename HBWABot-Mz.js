@@ -941,26 +941,37 @@ await dodoi(`Limit 💎${thlakd} i info ah dah a ni🫠 myinfo tih rawn thawn la
 break
 
 case 'myinfo': {
-if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
-const user = m.sender
-const cara = "cara"
-const balance = await eco.balance(user, cara);
-const balance2 = await eco.balance(limitneihtu, khawlbawm);
-const buffx = await getBuffer('https://telegra.ph/file/377ce8b7fa38dd5a55186.jpg')
-if (!isVip) return HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎Limit :* 💎${balance2.wallet}\n*💰Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni lo`},{quoted:m})
-let memberId = null;
-let expiredDate = null;
-vipmem.some((member) => {
-    if (member.id === m.sender) {
-        memberId = member.id;
-        expiredDate = member.expired;
-        return true;
+    if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender);
+    const user = m.sender;
+    const cara = "cara";
+    const balance = await eco.balance(user, cara);
+    const balance2 = await eco.balance(limitneihtu, khawlbawm);
+    const buffx = await getBuffer('https://telegra.ph/file/377ce8b7fa38dd5a55186.jpg');
+    if (!isVip) return HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎Limit :* 💎${balance2.wallet}\n*💰Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni lo`},{quoted:m});
+    let memberId = null;
+    let expiredDate = null;
+    vipmem.some((member) => {
+        if (member.id === user && member.expired !== "lifetime") {
+            const vipahmantur = moment.tz('Asia/Kolkata');
+            const expirationDate = moment(member.expired, 'YYYY-MM-DD');
+            
+            if (vipahmantur.isAfter(expirationDate)) {
+                memberId = member.id;
+                expiredDate = member.expired;
+                return true;
+            }
+        }
+    });
+    let vipinfo;
+    if (memberId && expiredDate) {
+        vipinfo = `*🕡 Exp D :* ${expiredDate}`;
+    } else {
+        vipinfo = "*🕡 Exp D :* Expired";
     }
-});
-
-await HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎 Limit :* 💎${balance2.wallet}\n*💰 Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni ✓\n*🕡 Exp-d :* ${expiredDate}`},{quoted:m})
+    await HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎 Limit :* 💎${balance2.wallet}\n*💰 Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni ✓\n${vipinfo}`},{quoted:m});
 }
-break
+break;
+
 
 case 'mlimit': case 'glimit': case 'limitg': {
     let commandParams = text.trim().split(" ");
