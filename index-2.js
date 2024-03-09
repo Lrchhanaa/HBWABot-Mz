@@ -24,7 +24,7 @@ const { reply, sender } = m;
 
 try {
 async function startHBWABotMz() {
-const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname(`./asset/tobebot/${sender.split("@")[0]}`), log({ level: "silent" }));
+const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, `./asset/tobebot/${sender.split("@")[0]}`), log({ level: "silent" }));
 let { version, isLatest } = await fetchLatestBaileysVersion();
 const msgRetryCounterCache = new NodeCache()
 let HBWABotMz = makeWASocket({
