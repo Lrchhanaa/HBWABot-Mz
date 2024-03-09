@@ -46,10 +46,10 @@ if (!HBWABotMz.authState.creds.registered) {
     await delay(1500);
     const code = await HBWABotMz.requestPairingCode(phoneNumber);
     const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
-    const codeExp = await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `Hei hi i code : ${yourCode} `});
+    const codeExp = await HBWABotMz.sendMessage(phoneNumber+"@s.whatsapp.net", { text: `Hei hi i code : ${yourCode} `});
     await delay(30000);
     if (!HBWABotMz.authState.creds.registered) {
-    await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: "He pairing code a thi tawh!!\nPairing code a thih tawh chuan hman thei a ni tawh lo.. a dang request rawh"}, {quoted: codeExp});
+    await HBWABotMz.sendMessage(phoneNumber+"@s.whatsapp.net", { text: "He pairing code a thi tawh!!\nPairing code a thih tawh chuan hman thei a ni tawh lo.. a dang request rawh"}, {quoted: codeExp});
     }
 }
 
