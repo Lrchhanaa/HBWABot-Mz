@@ -643,7 +643,7 @@ const { expiredVipCheck, checkVipUser,getallVipUser } = require('./lib/vipem')
 const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Director1/master/VIP/vip-pro.json");
 const vipmem = await ftcvip.json();
 const isVip = checkVipUser(m.sender, vipmem);
-let position = null;
+/*let position = null;
 let status = false; 
 const expiredVip = Object.keys(vipmem).some((i) => {
     if (vipmem[i].id === m.sender) {
@@ -656,6 +656,15 @@ const expiredVip = Object.keys(vipmem).some((i) => {
     return false;
 });
 const isExp = position !== null;
+*/
+const isExp = vipmem.some((member) => {
+    if (member.id === m.sender) {
+        if (member.expired !== "lifetime" && Date.now() >= new Date(member.expired)) {
+            return true;
+        }
+    }
+    return false;
+});
 const replyvipexp = () => {
  dodoi(`⌛I vip hun chhung a tawp tawh!! renew i duh chuan a hnuaia number ka dahah hian va dil leh rawh!..\nhttps://wa.me/918416093656`)
  }
