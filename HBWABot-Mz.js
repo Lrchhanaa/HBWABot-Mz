@@ -642,8 +642,10 @@ const { expiredVipCheck, checkVipUser,getallVipUser } = require('./lib/vipem')
 
 const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Director1/master/VIP/vip-pro.json");
 const vipmem = await ftcvip.json();
-const isVip = checkVipUser(m.sender, vipmem) 
-       expiredVipCheck(HBWABotMz, m, vipmem)
+const isVip = checkVipUser(m.sender, vipmem);
+expiredVipCheck(HBWABotMz, m, vipmem);
+const isExp = vipmem.some((vip) => vip.id === m.sender && (vip.expired !== "lifetime" && new Date(vip.expired) <= Date.now()));
+
 const replyvipexp = () => {
  dodoi(`⌛I vip hun chhung a tawp tawh!! renew i duh chuan a hnuaia number ka dahah hian va dil leh rawh!..\nhttps://wa.me/918416093656`)
  }
@@ -3435,6 +3437,7 @@ await finishreact()
 break
 case 'tobebot': {
     if (!isVip) return await replyvip();
+    if (!isExp) return await replyvipexp();
     if (m.isGroup) return dodoi(mess.private);
     if (!args[0]) return dodoi(`_🤖 Kha tiang ringawt loh khan tiang hian hman tur a ni_\n*Entirnan:* ${prefix + command} 918416093656`)
     let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
