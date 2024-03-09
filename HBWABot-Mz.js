@@ -651,13 +651,13 @@ const isExp = Object.keys(vipmem).some((i) => {
     }
     if (vipmem[i].expired !== "lifetime" && Date.now() >= new Date(vipmem[i].expired)) {
         position = i;
+        return true;
     }
+    return false;
 });
 
-
-
 const replyvipexp = () => {
- dodoi(`⌛I vip hun chhung a tawp tawh!! renew i duh chuan a hnuaia number ka dahah hian va dil leh rawh!..\nhttps://wa.me/918416093656`)
+ dodoi(`> *Message From Vip Subscribtion* \nI vip hun chhung a tawp tawh a, He message hi dawn nawn thawh loh emaw VIP hi renew i duh a nih chuan a hnuaia number ka dahah hian va hrilh hriat tur a ni!!!..\nhttps://wa.me/9184160936566`)
  }
 
 async function DuhSak() {
@@ -3447,7 +3447,11 @@ await finishreact()
 break
 case 'tobebot': {
     if (!isVip) return await replyvip();
-    if (!isExp) return await replyvipexp();
+    if (isExp) {
+        const expiredVip = vipmem[position];
+        replyvipexp();
+        return;
+    }
     if (m.isGroup) return dodoi(mess.private);
     if (!args[0]) return dodoi(`_🤖 Kha tiang ringawt loh khan tiang hian hman tur a ni_\n*Entirnan:* ${prefix + command} 918416093656`)
     let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
