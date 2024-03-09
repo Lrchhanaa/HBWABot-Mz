@@ -951,18 +951,12 @@ if (!isVip) return HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO B
 let memberId = null;
 let expiredDate = null;
 vipmem.some((member) => {
-    if (member.id === m.sender && member.expired !== "lifetime") {
-        const vipahmantur = moment.tz('Asia/Kolkata');
-        const expirationDate = moment(member.expired, 'YYYY-MM-DD');
-        
-        if (vipahmantur.isAfter(expirationDate)) {
-            memberId = member.id;
-            expiredDate = member.expired;
-            return true; 
-        }
+    if (member.id === mSender) {
+        memberId = member.id;
+        expiredDate = member.expired;
+        return true;
     }
 });
-        
 await HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎 Limit :* 💎${balance2.wallet}\n*💰 Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni ✓\n*🕡 Exp-d :* ${expiredDate}`},{quoted:m})
 }
 break
