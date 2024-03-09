@@ -642,8 +642,7 @@ const { expiredVipCheck, checkVipUser,getallVipUser } = require('./lib/vipem')
 
 const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Director1/master/VIP/vip-pro.json");
 const vipmem = await ftcvip.json();
-const isVip = checkVipUser(m.sender, vipmem)
-expiredVipCheck(HBWABotMz, m, vipmem)
+const isVip = checkVipUser(m.sender, vipmem) expiredVipCheck(HBWABotMz, m, vipmem)
 const replyvipexp = () => {
  dodoi(`⌛I vip hun chhung a tawp tawh!! renew i duh chuan a hnuaia number ka dahah hian va dil leh rawh!..\nhttps://wa.me/918416093656`)
  }
