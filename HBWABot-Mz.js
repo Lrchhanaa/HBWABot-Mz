@@ -644,7 +644,21 @@ const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Directo
 const vipmem = await ftcvip.json();
 const isVip = checkVipUser(m.sender, vipmem);
 expiredVipCheck(HBWABotMz, m, vipmem);
-const isExp = vipmem.some((vip) => vip.id === m.sender && (vip.expired !== "lifetime" && new Date(vip.expired) <= Date.now()));
+const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Director1/master/VIP/vip-pro.json");
+const vipmem = await ftcvip.json();
+const isVip = checkVipUser(m.sender, vipmem);
+let position = null;
+let status = false; 
+const isExp = Object.keys(vipmem).some((i) => {
+    if (vipmem[i].id === m.sender) {
+        status = true;
+    }
+    if (vipmem[i].expired !== "lifetime" && Date.now() >= new Date(vipmem[i].expired)) {
+        position = i;
+    }
+});
+
+
 
 const replyvipexp = () => {
  dodoi(`⌛I vip hun chhung a tawp tawh!! renew i duh chuan a hnuaia number ka dahah hian va dil leh rawh!..\nhttps://wa.me/918416093656`)
