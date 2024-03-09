@@ -175,7 +175,6 @@ HBWABotMz.ev.on("messages.upsert",  () => { })
             startHBWABotMz();
           } else HBWABotMz.end(`Unknown DisconnectReason: ${reason}|${connection}`);
         }*/
-      });
 
 //__________
 HBWABotMz.ev.on('messages.upsert', async chatUpdate => {
