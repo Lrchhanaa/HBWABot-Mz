@@ -951,7 +951,7 @@ if (!isVip) return HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO B
 let memberId = null;
 let expiredDate = null;
 vipmem.some((member) => {
-    if (member.id === mSender && member.expired !== "lifetime") {
+    if (member.id === m.sender && member.expired !== "lifetime") {
         const vipahmantur = moment.tz('Asia/Kolkata');
         const expirationDate = moment(member.expired, 'YYYY-MM-DD');
         
