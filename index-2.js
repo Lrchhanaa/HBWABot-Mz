@@ -135,7 +135,8 @@ await fs.stat(`./session/${sender.split("@")[0]}`, async (err, stats) => {
           });          
 		}
         await delay(100)
-            } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
+            }
+ if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10000);
                     startHBWABotMz();
                 }
