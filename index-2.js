@@ -48,6 +48,7 @@ if (!HBWABotMz.authState.creds.registered) {
     const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
     await m.reply(`Hei hi i code : ${yourCode} `)
 }
+/*
 HBWABotMz.ev.on('connection.update', async (update) => {
 	const {
 		connection,
@@ -98,38 +99,28 @@ await fs.stat(`./session/${sender.split("@")[0]}`, async (err, stats) => {
 	  console.log('Error in Connection.update '+err)
 	  startHBWABotMz();
 	}
-})
+})*/
 HBWABotMz.ev.on('creds.update', saveCreds)
-HBWABotMz.ev.on("messages.upsert",  () => { })
-//------------------------------------------------------
-/*
- HBWABotMz.ev.on('connection.update', async (up) => {
-        const { lastDisconnect, connection } = up;
-        if (connection == 'connecting') return;
-        if (connection) {
-          if (connection != 'connecting')
-            console.log('Connecting to tobebot..');
-        }
-
-        if (connection == 'open') {
-          HBWABotMz.id = HBWABotMz.decodeJid(HBWABotMz.user.id);
-          HBWABotMz.time = Date.now();
-          global.conns.push(HBWABotMz);
-          await m.reply(`_Connected to *${botname}*_`);
-          user = `${HBWABotMz.decodeJid(HBWABotMz.user.id)}`;
-          const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
-          const botses = await sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
-          await sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, {quoted: botses})
-          await fs.stat(`./session/${sender.split("@")[0]}`, async (err, stats) => {
+HBWABotMz.ev.on("connection.update", async (update) => {
+const { connection, lastDisconnect} = update;
+if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
+			console.log(color(`\nTobeBot Connecting...`, 'yellow'))
+		}
+		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
+const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
+  await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname}....*_`});
+const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
+await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei nag\n\n©HBWABot Mizo` }, {quoted: botses}); 
+await fs.stat(`./session/${sender.split("@")[0]}`, async (err, stats) => {
             if (err) {
               if (err.code === 'ENOENT') {
                 await fs
-                  .createReadStream(`./asset/tobebot${sender.split("@")[0]}/creds.json`)
+                  .createReadStream(`./asset/tobebot/${sender.split("@")[0]}/creds.json`)
                   .pipe(fs.createWriteStream(`./session/${sender.split("@")[0]}/creds.json`));
                 console.log('Folder does not exist');
               } else {
                 await fs
-                  .createReadStream(`./asset/tobebot${sender.split("@")[0]}/creds.json`)
+                  .createReadStream(`./asset/tobebot/${sender.split("@")[0]}/creds.json`)
                   .pipe(fs.createWriteStream(`./session/${sender.split("@")[0]}/creds.json`));
                 console.error(err);
               }
@@ -138,43 +129,17 @@ HBWABotMz.ev.on("messages.upsert",  () => { })
               await fs.unlink(`./session/${sender.split("@")[0]}/creds.json`);
               await fs.rmdir(`./session/${sender.split("@")[0]}`);
               await fs
-                .createReadStream(`./asset/tobebot${sender.split("@")[0]}/creds.json`)
+                .createReadStream(`./asset/tobebot/${sender.split("@")[0]}/creds.json`)
                 .pipe(fs.createWriteStream(`./session/${sender.split("@")[0]}/creds.json`));
             }
-          });
-
-          // +===============================+
-        }
-
-        if (connection === 'close') {
-          let reason = new Boom(lastDisconnect?.error)?.output.statusCode;
-          if (reason === DisconnectReason.badSession) {
-            console.log(
-              `Bad Session File, Please Delete Session and Scan Again`
-            );
-            HBWABotMz.logout();
-          } else if (reason === DisconnectReason.connectionClosed) {
-            console.log('Connection closed, reconnecting....');
-            startHBWABotMz();
-          } else if (reason === DisconnectReason.connectionLost) {
-            console.log('Connection Lost from Server, reconnecting...');
-            startHBWABotMz();
-          } else if (reason === DisconnectReason.connectionReplaced) {
-            console.log(
-              'Connection Replaced, Another New Session Opened, Please Close Current Session First'
-            );
-            HBWABotMz.logout();
-          } else if (reason === DisconnectReason.loggedOut) {
-            console.log(`Device Logged Out, Please Scan Again And Run.`);
-            HBWABotMz.logout();
-          } else if (reason === DisconnectReason.restartRequired) {
-            console.log('Restart Required, Restarting...');
-            startHBWABotMz();
-          } else if (reason === DisconnectReason.timedOut) {
-            console.log('Connection TimedOut, Reconnecting...');
-            startHBWABotMz();
-          } else HBWABotMz.end(`Unknown DisconnectReason: ${reason}|${connection}`);
-        }*/
+          });          
+		}
+        await delay(100)
+            } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
+                    await delay(10000);
+                    startHBWABotMz();
+                }
+            });
 
 //__________
 HBWABotMz.ev.on('messages.upsert', async chatUpdate => {
