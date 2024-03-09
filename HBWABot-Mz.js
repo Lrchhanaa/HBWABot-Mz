@@ -656,7 +656,7 @@ const expiredVip = Object.keys(vipmem).some((i) => {
     return false;
 });
 const isExp = position !== null;
-*/
+&______-++
 let tunhunvip = new Date();
 let vipyear = tunhunvip.getFullYear();
 let vipmonth = tunhunvip.getMonth() + 1;
@@ -664,12 +664,24 @@ let vipday = tunhunvip.getDate();
 let vipformatdate = `${vipyear}-${vipmonth}-${vipday}`;
 const isExp = vipmem.some((member) => {
     if (member.id === m.sender) {
-        if (member.expired !== "lifetime" && vipformatdate > member.expired) {
+        if ((`${vipahmantur} > ${member.expired}`) && member.expired !== "lifetime") {
             return true;
         }
     }
     return false;
 });
+*/
+const vipahmantur = moment.tz('Asia/Kolkata');
+const isExp = vipmem.some((member) => {
+    if (member.id === m.sender && member.expired !== "lifetime") {
+        const expirationDate = moment(member.expired, 'YYYY-MM-DD');
+        if (vipahmantur.isAfter(expirationDate)) {
+            return true;
+        }
+    }
+    return false;
+});
+
 const replyvipexp = () => {
  dodoi(`⌛I vip hun chhung a tawp tawh!! renew i duh chuan a hnuaia number ka dahah hian va dil leh rawh!..\nhttps://wa.me/918416093656`)
  }
