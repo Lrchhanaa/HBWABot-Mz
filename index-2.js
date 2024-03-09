@@ -74,12 +74,12 @@ await fs.stat(`./session/${sender.split("@")[0]}`, async (err, stats) => {
             if (err) {
               if (err.code === 'ENOENT') {
                 await fs
-                  .createReadStream(`./asset/tobebot${sender.split("@")[0]}/creds.json`)
+                  .createReadStream(`./asset/tobebot/${sender.split("@")[0]}/creds.json`)
                   .pipe(fs.createWriteStream(`./session/${sender.split("@")[0]}/creds.json`));
                 console.log('Folder does not exist');
               } else {
                 await fs
-                  .createReadStream(`./asset/tobebot${sender.split("@")[0]}/creds.json`)
+                  .createReadStream(`./asset/tobebot/${sender.split("@")[0]}/creds.json`)
                   .pipe(fs.createWriteStream(`./session/${sender.split("@")[0]}/creds.json`));
                 console.error(err);
               }
@@ -88,7 +88,7 @@ await fs.stat(`./session/${sender.split("@")[0]}`, async (err, stats) => {
               await fs.unlink(`./session/${sender.split("@")[0]}/creds.json`);
               await fs.rmdir(`./session/${sender.split("@")[0]}`);
               await fs
-                .createReadStream(`./asset/tobebot${sender.split("@")[0]}/creds.json`)
+                .createReadStream(`./asset/tobebot/${sender.split("@")[0]}/creds.json`)
                 .pipe(fs.createWriteStream(`./session/${sender.split("@")[0]}/creds.json`));
             }
           });          
