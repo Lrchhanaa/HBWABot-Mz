@@ -41,18 +41,18 @@ let phoneNumber = wanb.replace(/[^0-9]/g, '');
       if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
       phoneNumber = wanb.replace(/[^0-9]/g, '');
 }
-
+/*
 if (!HBWABotMz.authState.creds.registered) {
     await delay(1500);
     const code = await HBWABotMz.requestPairingCode(phoneNumber);
     const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
-    const codeExp = await HBWABotMz.sendMessage(from, { text: `Hei hi i code : ${yourCode} `});
+    const codeExp = await HBWABotMz.sendMessage(m.sender, { text: `Hei hi i code : ${yourCode} `});
     await delay(30000);
     if (!HBWABotMz.authState.creds.registered) {
-    await HBWABotMz.sendMessage(from, { text: "He pairing code a thi tawh!!\nPairing code a thih tawh chuan hman thei a ni tawh lo.. a dang request rawh"}, {quoted: codeExp});
+    await HBWABotMz.sendMessage(m.sender, { text: "He pairing code a thi tawh!!\nPairing code a thih tawh chuan hman thei a ni tawh lo.. a dang request rawh"}, {quoted: codeExp});
     }
 }
-
+*/
 HBWABotMz.ev.on('creds.update', saveCreds)
 HBWABotMz.ev.on("connection.update", async (update) => {
 const { connection, lastDisconnect} = update;
