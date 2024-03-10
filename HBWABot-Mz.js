@@ -971,7 +971,7 @@ vipmem.some((member) => {
         return true;
     }
 });
-await HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎 Limit :* 💎${balance2.wallet}\n*💰 Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni ✓\n*🕡 Exp-d :* ${expiredDate}`},{quoted:m})
+await HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎 Limit :* 💎${balance2.wallet}\n*💰 Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni ✓\n*🕡 Exp-d :* `+ (isExp ? `${expiredDate}` : "Expired")},{quoted:m})
 }
 break
 
@@ -3503,7 +3503,11 @@ for (let i = 0; i < dbinaryloading.length; i++) {await HBWABotMz.sendMessage(fro
 }
 break
 case 'remini': {
-if (!isVip) return await replyvip()
+if (!isVip) return await replyvip();
+    if (isExp) {
+        replyvipexp();
+        return;
+    }
 if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
