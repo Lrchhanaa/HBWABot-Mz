@@ -900,8 +900,8 @@ case 'limit': case 'dawntur': case 'claim': case 'daily': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 let user = m.sender
 const cara = "cara" 
-HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
 if (!isVip) {
+HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
 const daily2 = await eco.daily(user, cara, dawnzat2);
 const daily3 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
 if (daily2.cd && daily3.cd) return dodoi(`♻️ I claim tawh, ${daily2.cdL} a ral hunah i claim leh thei chauh ang`);
