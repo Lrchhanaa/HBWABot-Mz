@@ -1203,8 +1203,8 @@ break
 case 'nsfw': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -3550,8 +3550,8 @@ dodoi('*Mi zawng zawng hman thei turin thlak a ni✓*')
 break
 
 case 'toanime': case 'tocartoon': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -3571,8 +3571,8 @@ await finishreact()
 }
 break
 case 'removebg': case 'bgremove': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -3591,8 +3591,8 @@ await finishreact()
 }
 break
 case 'remini2': case 'hd': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -3612,8 +3612,8 @@ await finishreact()
 break
 
 case 'tozombie': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -4562,8 +4562,8 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, 60)
 }
 
 case 'shazam2': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -4606,8 +4606,8 @@ contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply":
   break;
 }
 case 'shazam3': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -4828,8 +4828,8 @@ await loadingreact()
 }
 break 
 case 'swm': case 'steal': case 'stickerwm': case 'take':{
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -5617,8 +5617,8 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 break
 case 'hentaivid2': {
 if (!m.isGroup) return dodoi(mess.group)
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -5638,8 +5638,8 @@ caption: `⭔ Title : ${cejd.title}
 break
 case 'hentaivid': case 'hentaivideo': {
 if (!m.isGroup) return dodoi(mess.group)
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -6593,8 +6593,8 @@ video: { url: result.url },
 break;
 
 case 'xnxxsearch': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -6622,8 +6622,8 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
 case 'unbanv1': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -6670,8 +6670,8 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'unbanv2': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -6718,8 +6718,8 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'unbanv3': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -6766,8 +6766,8 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'unbanv4': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
@@ -6814,8 +6814,8 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 }
 break
 case 'unbanv5': {
-if (!isVip) return await replyvip()
-if (isExp) {
+    if (!isVip) return await replyvip();
+    if (isExp) {
         replyvipexp();
         return;
     }
