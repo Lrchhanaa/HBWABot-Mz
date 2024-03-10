@@ -253,6 +253,7 @@ checkAndUpdateDaily();
 const dodoi = async (teks) => {
     var siamthattur = `${teks
         .replace(/He featurs hi hman i duh chuan 💎50 i neih a ngai!!./g, 'babawkza1')
+        .replace(/https:\/\/wa.me\/918416093656/g, 'wansaplang')
         .replace(/Bot rawn hmang thar tur i nih chuan Limit tiin type rawh, ti chuan bot hman theihna tur 💎500 i dawng ang, emaw i thiante in thawn tir rawh/g, 'babawkza2')
         .replace(/He features hi VIP 👑 member te leh bot owners tan chauha siam a ni, VIP 👑 member nih i duh ve chuan a hnuaia number ka dah hian va dil rawh/g, 'babawkza3')
         .replace(/Kha tiang ringawt loh khan/g, 'babawkza4')}`;
@@ -266,6 +267,7 @@ const dodoi = async (teks) => {
     var bawng6 = `${bot_language}`;
     var bawng7 = `${vawk5
         .replace(/babawkza1/g, 'You need to have 💎50 limit for using this feature')
+        .replace(/wansaplang/g, 'https://wa.me/918416093656')
         .replace(/babawkza2/g, 'Please send me *limit* and you can claim 500 limit for daily')
         .replace(/babawkza3/g, 'This feature is made for only VIP members and the bot owner.\nIf you want to be a VIP Member, please contact as I put the number in the given below.\n')
         .replace(/babawkza4/g, 'Not only like that')}`;
@@ -1187,7 +1189,7 @@ break
 case 'mtl':
   if (!HerbertTheCreator) return dodoi(mess.owner);
   if (args.length < 1) return dodoi(`Launguage thlak i duh chuan code nen rawn dah rawh\n*⟨Etirnan:* ${prefix + command} en\n\nlanguage code hi i hre lo a nih chuan /codelang tiin rawn thawn rawh`);
-  const thelung = ["am", "ar", "eu", "bn", "en-GB", "pt-BR", "bg", "ca", "chr", "hr", "cs", "da", "nl", "en", "et", "fil", "fi", "fr", "de", "el", "gu", "iw", "hi", "hu", "is", "id", "it", "ja", "kn", "ko", "lv", "lt", "ms", "ml", "mr", "lus", "no", "pl", "pt-PT", "ro", "ru", "sr", "zh-CN", "sk", "sl", "es", "sw", "sv", "ta", "te", "th", "zh-TW", "tr", "ur", "uk", "vi", "cy"];
+  const thelung = ["am", "ar", "eu", "bn", "en-GB", "pt-BR", "bg", "ca", "chr", "hr", "cs", "da", "nl", "en", "et", "fil", "fi", "fr", "de", "el", "gu", "iw", "hi", "hu", "is", "id", "it", "ja", "kn", "ko", "lv", "lt", "ms", "ml", "mr", "no", "pl", "pt-PT", "ro", "ru", "sr", "zh-CN", "sk", "sl", "es", "sw", "sv", "ta", "te", "th", "zh-TW", "tr", "ur", "uk", "vi", "cy"];
   if (q === 'default') {
     global.default_language = true;
     global.mtl_language = false;
@@ -1199,7 +1201,7 @@ case 'mtl':
     global.default_language = false;
     global.mtl_language = true;
     global.bot_language = `${text}`;
-    dodoi(`Bot language has been changed!..`);
+    dodoi(`Tawng hman chu thlak a ni!..`);
   }
   break;
 
