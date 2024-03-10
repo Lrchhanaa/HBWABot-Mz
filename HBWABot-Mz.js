@@ -961,7 +961,11 @@ const cara = "cara"
 const balance = await eco.balance(user, cara);
 const balance2 = await eco.balance(limitneihtu, khawlbawm);
 const buffx = await getBuffer('https://telegra.ph/file/377ce8b7fa38dd5a55186.jpg')
-if (!isVip) return HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎Limit :* 💎${balance2.wallet}\n*💰Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni lo`},{quoted:m})
+if (!isVip) return HBWABotMz.sendMessage(from, { image: buffx, caption: `
+> *INFO BY ${pushname}*
+> *💎 Limit Status :* ${balance2.wallet}
+> *🪙 Coin Status :* ${balance.wallet}
+> *👑 VIP Status :* 🔴 Not Active `},{quoted:m})
 let memberId = null;
 let expiredDate = null;
 vipmem.some((member) => {
@@ -971,7 +975,12 @@ vipmem.some((member) => {
         return true;
     }
 });
-await HBWABotMz.sendMessage(from, { image: buffx, caption: `*INFO By ${pushname}*\n\n*💎 Limit :* 💎${balance2.wallet}\n*💰 Coin :* 🪙  ${balance.wallet}\n*👑 VIP :* i ni ✓\n*🕡 Exp-d :* `+ (isExp ? `${expiredDate}` : "Expired")},{quoted:m})
+await HBWABotMz.sendMessage(from, { image: buffx, caption: `
+> *INFO BY ${pushname}*
+> *💎 Limit Status :* ${balance2.wallet}
+> *🪙 Coin Status :* ${balance.wallet}
+> *👑 VIP Status :* 🟢 Active
+> *🕡 VIP Expiry :* ` + (isExp ? "Expired" : `${expiredDate}`)},{quoted:m})
 }
 break
 
