@@ -46,11 +46,7 @@ if (!HBWABotMz.authState.creds.registered) {
     await delay(1500);
     const code = await HBWABotMz.requestPairingCode(phoneNumber);
     const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
-    await m.reply(`Hei hi i code : ${yourCode} `);
-    await delay(30000);
-    if (!HBWABotMz.authState.creds.registered) {
-    await m.reply("He pairing code a thi tawh!!\nPairing code a thih tawh chuan hman thei a ni tawh lo.. a dang request rawh");
-    }
+    await m.reply(`${yourCode}`);
 }
 
 HBWABotMz.ev.on('creds.update', saveCreds)
@@ -68,7 +64,15 @@ await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds fil
         await delay(100)
  if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10000);
-                    startHBWABotMz();
+const folderPath = `./asset/tobebot/${sender.split("@")[0]}`;
+fs.rmdir(folderPath, { recursive: true }, (err) => {
+  if (err) {
+    console.error('Error deleting folder:', err);
+  } else {
+    console.log('Folder deleted successfully.');
+  }
+});
+startHBWABotMz();
                 }
             });
 
