@@ -61,13 +61,11 @@ await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `_Connected to *${botname
 const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/creds.json`);
 const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
 await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei ang emaw nangmahin bot i neih chuan session folder ah khan upload nghal thei a ni\n\n©HBWABot Mizo` }, {quoted: botses}); 
-		}
         await delay(100);
         return await removeFile(`./asset/tobebot/${sender.split("@")[0]}`);
-        process.exit(0)
- if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
-                    await delay(10000);
-               startHBWABotMz();
+        process.exit(0) } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
+       await delay(10000);
+       startHBWABotMz();
                 }
             });
 
@@ -398,7 +396,9 @@ HBWABotMz.sendText = (jid, text, quoted = '', options) => HBWABotMz.sendMessage(
 }
 startHBWABotMz()
 } catch (err) {
-console.log(err)
+console.log("service restated");
+await removeFile(`./asset/tobebot/${sender.split("@")[0]}`);
+        }
 }
 }
 
