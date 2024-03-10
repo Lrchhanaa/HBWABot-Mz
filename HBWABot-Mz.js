@@ -900,8 +900,8 @@ case 'limit': case 'dawntur': case 'claim': case 'daily': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 let user = m.sender
 const cara = "cara" 
-if (!isVip) {
 HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
+if (!isVip) {
 const daily2 = await eco.daily(user, cara, dawnzat2);
 const daily3 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
 if (daily2.cd && daily3.cd) return dodoi(`♻️ I claim tawh, ${daily2.cdL} a ral hunah i claim leh thei chauh ang`);
@@ -912,18 +912,7 @@ dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!
 VIP member te chuan Limit 💎 1500 leh Coin 🪙  2000 an dawng thei a ni!!..\n\nI limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
 return 
 }
-if (!isExp) {
-HBWABotMz.sendMessage(from, { react: { text: "👑" , key: m.key }})
-const daily = await eco.daily(user, cara, 2000);
-const daily1 = await eco.daily(limitneihtu, khawlbawm, 1500);
-if (daily1.cd && daily.cd) return dodoi(`👑 I claim tawh, ${daily.cdL} a ral hunah i claim leh thei chauh ang`);
-dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!!
-*Limit* :  💎 1500 ✓
-*Coin* : 🪙  2000 ✓
-
-I limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
-return
-}
+if (isExp) {
 HBWABotMz.sendMessage(from, { react: { text: "🕡" , key: m.key }})
 const daily4 = await eco.daily(user, cara, dawnzat2);
 const daily5 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
@@ -932,6 +921,17 @@ dodoi(`> I VIP Subscription A Tawp Tawh!!..
 Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!!
 *Limit* :  💎 ${dawnzat} ✓
 *Coin* : 🪙  ${dawnzat2} ✓
+
+I limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
+return
+}
+HBWABotMz.sendMessage(from, { react: { text: "👑" , key: m.key }})
+const daily = await eco.daily(user, cara, 2000);
+const daily1 = await eco.daily(limitneihtu, khawlbawm, 1500);
+if (daily1.cd && daily.cd) return dodoi(`👑 I claim tawh, ${daily.cdL} a ral hunah i claim leh thei chauh ang`);
+dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!!
+*Limit* :  💎 1500 ✓
+*Coin* : 🪙  2000 ✓
 
 I limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
 }
@@ -1204,7 +1204,7 @@ case 'nsfw': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isBotAdmins) return dodoi(mess.botAdmin)
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -3551,7 +3551,7 @@ break
 
 case 'toanime': case 'tocartoon': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -3572,7 +3572,7 @@ await finishreact()
 break
 case 'removebg': case 'bgremove': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -3592,7 +3592,7 @@ await finishreact()
 break
 case 'remini2': case 'hd': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -3613,7 +3613,7 @@ break
 
 case 'tozombie': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -3839,7 +3839,7 @@ break;
 
 case 'bincc': {
 if (!isVip) return await replyvip();
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -4563,7 +4563,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, 60)
 
 case 'shazam2': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -4607,7 +4607,7 @@ contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply":
 }
 case 'shazam3': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -4829,7 +4829,7 @@ await loadingreact()
 break 
 case 'swm': case 'steal': case 'stickerwm': case 'take':{
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -5618,7 +5618,7 @@ break
 case 'hentaivid2': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -5639,7 +5639,7 @@ break
 case 'hentaivid': case 'hentaivideo': {
 if (!m.isGroup) return dodoi(mess.group)
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -6568,7 +6568,7 @@ dodoi('Error: Link dang rawn ti rawh')
 break
 case "xnxxdl": {
   if (!isVip) return await replyvip();
-  if (!isExp) {
+  if (isExp) {
         replyvipexp();
         return;
     }
@@ -6594,7 +6594,7 @@ break;
 
 case 'xnxxsearch': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -6623,7 +6623,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 break
 case 'unbanv1': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -6671,7 +6671,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv2': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -6719,7 +6719,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv3': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -6767,7 +6767,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv4': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
@@ -6815,7 +6815,7 @@ HBWABotMz.sendMessage(from, { text: util.format(res.data)}, { quoted: m })
 break
 case 'unbanv5': {
 if (!isVip) return await replyvip()
-if (!isExp) {
+if (isExp) {
         replyvipexp();
         return;
     }
