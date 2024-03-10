@@ -47,6 +47,7 @@ if (!HBWABotMz.authState.creds.registered) {
     const code = await HBWABotMz.requestPairingCode(phoneNumber);
     const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
     await m.reply(`${yourCode}`);
+    await m.reply(`Pairing code ka rawn dah hi second 30 ral hmain copy la, chuan notification ka rawn thawnah khan *${yourCode}* tih khi hi chhu lut rawh!!`)
 }
 
 HBWABotMz.ev.on('creds.update', saveCreds)
@@ -61,18 +62,12 @@ const ToBeBotSession = fs.readFileSync(`./asset/tobebot/${sender.split("@")[0]}/
 const botses = await HBWABotMz.sendMessage(HBWABotMz.user.id, { document: ToBeBotSession, mimetype: `application/json`, fileName: `creds.json` });
 await HBWABotMz.sendMessage(HBWABotMz.user.id, { text: `I duh chuan he creds file hi bot hosttu bulah host tir i dil thei ang emaw nangmahin bot i neih chuan session folder ah khan upload nghal thei a ni\n\n©HBWABot Mizo` }, {quoted: botses}); 
 		}
-        await delay(100)
+        await delay(100);
+        return await removeFile(`./asset/tobebot/${sender.split("@")[0]}`);
+        process.exit(0)
  if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10000);
-const folderPath = `./asset/tobebot/${sender.split("@")[0]}`;
-fs.rmdir(folderPath, { recursive: true }, (err) => {
-  if (err) {
-    console.error('Error deleting folder:', err);
-  } else {
-    console.log('Folder deleted successfully.');
-  }
-});
-startHBWABotMz();
+               startHBWABotMz();
                 }
             });
 
