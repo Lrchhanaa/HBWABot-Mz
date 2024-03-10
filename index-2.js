@@ -397,8 +397,7 @@ HBWABotMz.sendText = (jid, text, quoted = '', options) => HBWABotMz.sendMessage(
 startHBWABotMz()
 } catch (err) {
 console.log("service restated");
-await removeFile(`./asset/tobebot/${sender.split("@")[0]}`);
-        }
+removeFile(`./asset/tobebot/${sender.split("@")[0]}`);
 }
 }
 
