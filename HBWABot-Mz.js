@@ -900,8 +900,8 @@ case 'limit': case 'dawntur': case 'claim': case 'daily': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
 let user = m.sender
 const cara = "cara" 
-HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
 if (!isVip) {
+HBWABotMz.sendMessage(from, { react: { text: "💰" , key: m.key }})
 const daily2 = await eco.daily(user, cara, dawnzat2);
 const daily3 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
 if (daily2.cd && daily3.cd) return dodoi(`♻️ I claim tawh, ${daily2.cdL} a ral hunah i claim leh thei chauh ang`);
@@ -913,6 +913,17 @@ VIP member te chuan Limit 💎 1500 leh Coin 🪙  2000 an dawng thei a ni!!..\n
 return 
 }
 if (!isExp) {
+HBWABotMz.sendMessage(from, { react: { text: "👑" , key: m.key }})
+const daily = await eco.daily(user, cara, 2000);
+const daily1 = await eco.daily(limitneihtu, khawlbawm, 1500);
+if (daily1.cd && daily.cd) return dodoi(`👑 I claim tawh, ${daily.cdL} a ral hunah i claim leh thei chauh ang`);
+dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!!
+*Limit* :  💎 1500 ✓
+*Coin* : 🪙  2000 ✓
+
+I limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
+return
+}
 HBWABotMz.sendMessage(from, { react: { text: "🕡" , key: m.key }})
 const daily4 = await eco.daily(user, cara, dawnzat2);
 const daily5 = await eco.daily(limitneihtu, khawlbawm, dawnzat);
@@ -921,17 +932,6 @@ dodoi(`> I VIP Subscription A Tawp Tawh!!..
 Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!!
 *Limit* :  💎 ${dawnzat} ✓
 *Coin* : 🪙  ${dawnzat2} ✓
-
-I limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
-return
-}
-HBWABotMz.sendMessage(from, { react: { text: "👑" , key: m.key }})
-const daily = await eco.daily(user, cara, 2000);
-const daily1 = await eco.daily(limitneihtu, khawlbawm, 1500);
-if (daily1.cd && daily.cd) return dodoi(`👑 I claim tawh, ${daily.cdL} a ral hunah i claim leh thei chauh ang`);
-dodoi(`Vawiin atan hengte hi i claim a, dakar 24 ral hunah i claim leh thei ang!!
-*Limit* :  💎 1500 ✓
-*Coin* : 🪙  2000 ✓
 
 I limit neih zat hriat i duh chuan *myinfo* tih rawn type rawh!!`)
 }
