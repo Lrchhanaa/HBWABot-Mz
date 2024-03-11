@@ -609,74 +609,12 @@ result: Result,
 });
 });
 }
-/*
-async function VipAniEm() {
-  try {
-    const response = await axios.get('https://raw.githubusercontent.com/HBMods-OFC/Director1/master/VIP/vip-pro.json');
-    return response.data.map(entry => ({
-      name: entry.name,
-      phoneNumber: entry.phoneNumber,
-      expireDate: entry.expireDate === "lifetime" ? null : entry.expireDate,
-    })).filter(entry => entry.expireDate !== null);
-  } catch (error) {
-    console.error('An error occurred while fetching premium numbers:', error.message);
-    return [];
-  }
-}
 
-async function isVipAndNotExpired(sender1) {
-  const vipData = await VipAniEm();
-  const currentDate = new Date();
-  
-  for (const vipEntry of vipData) {
-    const { phoneNumber, expireDate } = vipEntry;
-    const isExp = new Date(expireDate) < currentDate;
-    if (phoneNumber === sender1) {
-      return { vipStatus: true, isExp };
-    }
-  }
-  
-  return { vipStatus: false, isExp: true }; // User is either not VIP or phone number not found
-}
-
-// Example usage:
-const sender1 = m.sender
-const isVip = await isVipAndNotExpired(sender1);
-*/
-const { expiredVipCheck, checkVipUser,getallVipUser } = require('./lib/vipem')
+const { checkVipUser } = require('./lib/vipem')
 
 const ftcvip = await fetch("https://raw.githubusercontent.com/HBMods-OFC/Director1/master/VIP/vip-pro.json");
 const vipmem = await ftcvip.json();
 const isVip = checkVipUser(m.sender, vipmem);
-/*let position = null;
-let status = false; 
-const expiredVip = Object.keys(vipmem).some((i) => {
-    if (vipmem[i].id === m.sender) {
-        status = true;
-    }
-    if (vipmem[i].expired !== "lifetime" && Date.now() >= new Date(vipmem[i].expired)) {
-        position = vipmem[i].id
-        return true;
-    }
-    return false;
-});
-const isExp = position !== null;
-&______-++
-let tunhunvip = new Date();
-let vipyear = tunhunvip.getFullYear();
-let vipmonth = tunhunvip.getMonth() + 1;
-let vipday = tunhunvip.getDate();
-let vipformatdate = `${vipyear}-${vipmonth}-${vipday}`;
-const isExp = vipmem.some((member) => {
-    if (member.id === m.sender) {
-        if ((`${vipahmantur} > ${member.expired}`) && member.expired !== "lifetime") {
-            return true;
-        }
-    }
-    return false;
-});
-*/
-
 const vipahmantur = moment.tz('Asia/Kolkata');
 const isExp = vipmem.some((member) => {
     if (member.id === m.sender && member.expired !== "lifetime") {
@@ -740,6 +678,7 @@ const loadingimg = ('https://raw.githubusercontent.com/HBMods-OFC/Director1/mast
 const loadingimg1 = await fetch(loadingimg);
 const loadingimg2 = await loadingimg1.json();
 const loadingimg3 = loadingimg2.url;
+const howtobebot4 = loadingimg2.vid
 const timestamp = speed()
 const latensi = speed() - timestamp
 const mark = "0@s.whatsapp.net"
@@ -3545,7 +3484,7 @@ case 'tobebot': {
     const amah = m.sender
     const folderPath = `./asset/tobebot/${amah}`;
     if (m.isGroup) return dodoi(mess.private);
-    if (!args[0]) return dodoi(`_🤖 Kha tiang ringawt loh khan tiang hian hman tur a ni_\n*Entirnan:* ${prefix + command} 918416093656`)
+    if (!args[0]) return dodoi(`_🤖 Kha tiang ringawt loh khan tiang hian i number nen type kawp tur a ni_\n*Entirnan:* ${prefix + command} 918416093656`)
     let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
     let wanbck = await HBWABotMz.onWhatsApp(wanb)
     if (wanbck.length == 0) {
@@ -3555,7 +3494,7 @@ case 'tobebot': {
     }
     if (fs.existsSync(folderPath)) {
     HBWABotMz.sendMessage(from, { react: { text: "🤖", key: m.key }})
-    await dodoi('I number hmang hian number pakhat chu i rawn connect tawha, i work loh chuan disbot tih rawn thawn rawh!!');
+    await dodoi('I number hmang hian number pakhat chu i rawn pair tawh a chu vangin bot restart a nih hma chuan he features hi i hmang chhunzawm thei dawn lo a ni.');
     } else {
         await tobebot(HBWABotMz, m, from, wanb, dodoi)
     HBWABotMz.sendMessage(from, { react: { text: "✅", key: m.key }})
@@ -3576,22 +3515,11 @@ HBWABotMz.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
 dodoi(`Connect an awm lo lai tak a ni!...`)
 }
 break
-case 'disbot': {
-    if (!isVip) return await replyvip();
-    if (isExp) {
-        replyvipexp();
-        return;
-    }
-    const amah = m.sender
-    const folderPath = `./asset/tobebot/${amah}`;
-    if (!fs.existsSync(folderPath)) {
-        await dodoi('Tobebot hmang hian number i la connect lo');
-        return;
-    }
-    await removeFile(folderPath);
-    await dodoi(`${botname} chu i connect na a tangin disconnect a ni`);
+case 'howtobebot':{
+ var howtobebotvid = await getBuffer(`${howtobebot4}`);
+    HBWABotMz.sendMessage(m.chat, { video: howtobebotvid, "Vip members tan bot nih theih dan awlsam!!" }, { quoted: m });
 }
-break;
+break
 
 case 'self': {
 if (!HerbertTheCreator) return dodoi(mess.owner);
