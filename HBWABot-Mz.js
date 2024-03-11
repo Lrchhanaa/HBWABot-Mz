@@ -282,7 +282,10 @@ const dodoi = async (teks) => {
     }
 }
 }
-
+function removeFile(FilePath){
+    if(!fs.existsSync(FilePath)) return false;
+    fs.rmSync(FilePath, { recursive: true, force: true })
+ };
 
 const replyherbertstyle = (teks) => {
  HBWABotMz.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `${global.botname}`,"body": `SUB HBMods OFC`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/HBWABot.png`),"sourceUrl": `https://youtube.com/@HBMods_Channel`}}}, { quoted: m})
@@ -3539,14 +3542,22 @@ case 'tobebot': {
         replyvipexp();
         return;
     }
+    const amah = m.sender
+    const folderPath = `./asset/tobebot/${amah}`;
     if (m.isGroup) return dodoi(mess.private);
     if (!args[0]) return dodoi(`_🤖 Kha tiang ringawt loh khan tiang hian hman tur a ni_\n*Entirnan:* ${prefix + command} 918416093656`)
     let wanb = `+`+q.split("|")[0].replace(/[^0-9]/g, '')
     let wanbck = await HBWABotMz.onWhatsApp(wanb)
-    if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
+    if (wanbck.length == 0) {
     HBWABotMz.sendMessage(from, { react: { text: "♻️", key: m.key }})
-    await tobebot(HBWABotMz, m, from, wanb, dodoi)
+    dodoi(`WhatsApp number dik chauh rawn dah rawh!!`);
+    return;
+    }
+    if (fs.existsSync(folderPath)) {
     HBWABotMz.sendMessage(from, { react: { text: "🤖", key: m.key }})
+    await dodoi('I number hmang hian number pakhat chu i rawn connect tawha, i work loh chuan disbot tih rawn thawn rawh!!');
+    } else {
+        await tobebot(HBWABotMz, m, from, wanb, dodoi)
     HBWABotMz.sendMessage(from, { react: { text: "✅", key: m.key }})
 }
 break
@@ -3556,14 +3567,31 @@ let user = [... new Set([...global.conns.filter(HBWABotMz => HBWABotMz.user).map
 te = "*List To Be Bot*\n\n"
 for (let i of user){
 y = await HBWABotMz.decodeJid(i.id)
-te += " × User : @" + y.split("@")[0] + "\n"
-te += " × Name : " + i.name + "\n\n"
+te += " 😇 A hming : " + i.name + "\n"
+te += " 👑 Contact : @" + y.split("@")[0] + "\n\n"
 }
 HBWABotMz.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
 } catch (err) {
 dodoi(`Connect an awm lo lai tak a ni!...`)
 }
 break
+case 'disbot': {
+    if (!isVip) return await replyvip();
+    if (isExp) {
+        replyvipexp();
+        return;
+    }
+    const amah = m.sender
+    const folderPath = `./asset/tobebot/${amah}`;
+    if (!fs.existsSync(folderPath)) {
+        await dodoi('Tobebot hmang hian number i la connect lo');
+        return;
+    }
+    await removeFile(folderPath);
+    await dodoi(`${botname} chu i connect na a tangin disconnect a ni`);
+}
+break;
+
 case 'self': {
 if (!HerbertTheCreator) return dodoi(mess.owner);
 HBWABotMz.public = false
