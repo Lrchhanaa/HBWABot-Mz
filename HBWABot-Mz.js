@@ -2257,6 +2257,8 @@ var HBLoadingmenu = [
 ┃𒆜│picquiz
 ┃𒆜│spin1
 ┃𒆜│checkme
+┃𒆜│list tobebot
+┃𒆜│how tobebot
 ┃𒆜│buylimit
 ┃𒆜│spin
 ┃𒆜│transfer
@@ -2950,6 +2952,8 @@ var HBLoadingmenu = [
 ┃𒆜│cfhb2 [Hla nen]
 ┃𒆜│mizoquiz
 ┃𒆜│picquiz
+┃𒆜│list tobebot
+┃𒆜│how tobebot
 ┃𒆜│buylimit
 ┃𒆜│spin1
 ┃𒆜│checkme
@@ -3501,7 +3505,8 @@ case 'tobebot': {
 }
 }
 break
-case 'listtobebot': 
+case 'list':
+if (text == 'tobebot') {
 try {
 let user = [... new Set([...global.conns.filter(HBWABotMz => HBWABotMz.user).map(HBWABotMz => HBWABotMz.user)])]
 te = "*List To Be Bot*\n\n"
@@ -3514,7 +3519,26 @@ HBWABotMz.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
 } catch (err) {
 dodoi(`Connect an awm lo lai tak a ni!...`)
 }
+return
+}
 break
+case 'list':
+  if (text === 'tobebot') {
+    try {
+      let user = [...new Set(global.conns.filter(HBWABotMz => HBWABotMz.user).map(HBWABotMz => HBWABotMz.user))];
+      let te = "*List To Be Bot*\n\n";
+      for (let i of user) {
+        let y = await HBWABotMz.decodeJid(i.id);
+        te += " 😇 A hming : " + i.name + "\n";
+        te += " 👑 Contact : @" + y.split("@")[0] + "\n\n";
+      }
+      HBWABotMz.sendMessage(from, { text: te }, { quoted: m });
+    } catch (err) {
+      dodoi(`Connect an awm lo lai tak a ni!...`);
+    }
+  }
+  break;
+  
 case 'how':{
  var howtobebotvid = await getBuffer(`${howtobebot4}`);
 if (text == 'tobebot') return await HBWABotMz.sendMessage(from, { video: howtobebotvid, caption: `Vip members tan bot nih thei dan awlsam deuh`, gifPlayback: true }, {quoted:m});
