@@ -3560,6 +3560,7 @@ case 'tobebot': {
         await tobebot(HBWABotMz, m, from, wanb, dodoi)
     HBWABotMz.sendMessage(from, { react: { text: "✅", key: m.key }})
 }
+}
 break
 case 'listtobebot': 
 try {
