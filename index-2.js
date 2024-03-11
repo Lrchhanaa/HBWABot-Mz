@@ -43,17 +43,20 @@ let phoneNumber = wanb.replace(/[^0-9]/g, '');
 }
 
 if (!HBWABotMz.authState.creds.registered) {
-    await delay(1500);
-    if (timeElapsed < 30) {
-        const code = await HBWABotMz.requestPairingCode(phoneNumber);
-        const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
-        await dodoi(`${yourCode}`);
-        await dodoi(`Pairing code ka rawn dah hi second 30 ral hmain copy la, chuan notification ka rawn thawnah khan *${yourCode}* tih khi hi chhu lut rawh!!`);
-    } else {
-        await dodoi("Second 30 a ral tawh!!.. i pairing code request hi tunah chuan hman thei a ni tawh lo");
+    try {
+        const codePromise = HBWABotMz.requestPairingCode(phoneNumber);
+        const code = await Promise.race([codePromise, delay(30000)]);
+        if (code) {
+            const yourCode = code?.match(/.{1,4}/g)?.join("-") || code;
+            await m.reply(`${yourCode}`);
+            await m.reply(`Pairing code ka rawn dah hi second 30 ral hmain copy la, chuan notification ka rawn thawnah khan *${yourCode}* tih khi hi chhu lut rawh!!`);
+        } else {
+            await dodoi("Second 30 a ral tawh!!.. i pairing code request hi tunah chuan hman thei a ni tawh lo");
+        }
+    } catch (error) {
+        console.error(error);
     }
 }
-
 
 
 HBWABotMz.ev.on('creds.update', saveCreds)
