@@ -3494,7 +3494,7 @@ case 'tobebot': {
     }
     if (fs.existsSync(folderPath)) {
     HBWABotMz.sendMessage(from, { react: { text: "🤖", key: m.key }})
-    await dodoi('I number hmang hian number pakhat chu i rawn pair tawh a chu vangin bot restart a nih hma chuan he features hi i hmang chhunzawm thei dawn lo a ni.');
+    await dodoi('He i number hmang hian number pakhat pairing code chu i la tawh a chu vangin bot restart a nih hma chuan he features hi i hmang chhunzawm thei dawn lo a ni.');
     } else {
         await tobebot(HBWABotMz, m, from, wanb, dodoi)
     HBWABotMz.sendMessage(from, { react: { text: "✅", key: m.key }})
@@ -3515,9 +3515,9 @@ HBWABotMz.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
 dodoi(`Connect an awm lo lai tak a ni!...`)
 }
 break
-case 'howtobebot':{
+case 'how':{
  var howtobebotvid = await getBuffer(`${howtobebot4}`);
- HBWABotMz.sendMessage(from, { video: howtobebotvid, caption: `Vip members tan bot nih thei dan awlsam deuh`, gifPlayback: true }, {quoted:m});
+if (text == 'tobebot') return await HBWABotMz.sendMessage(from, { video: howtobebotvid, caption: `Vip members tan bot nih thei dan awlsam deuh`, gifPlayback: true }, {quoted:m});
 }
 break
 
