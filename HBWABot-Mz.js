@@ -3517,7 +3517,7 @@ dodoi(`Connect an awm lo lai tak a ni!...`)
 break
 case 'howtobebot':{
  var howtobebotvid = await getBuffer(`${howtobebot4}`);
-    HBWABotMz.sendMessage(m.chat, { video: howtobebotvid, "Vip members tan bot nih theih dan awlsam!!" }, { quoted: m });
+ HBWABotMz.sendMessage(from, { video: howtobebotvid, caption: `Vip members tan bot nih thei dan awlsam deuh`, gifPlayback: true }, {quoted:m});
 }
 break
 
