@@ -3541,7 +3541,7 @@ case 'list':
   
 case 'how':{
  var howtobebotvid = await getBuffer(`${howtobebot4}`);
-if (text == 'tobebot') return await HBWABotMz.sendMessage(from, { video: howtobebotvid, caption: `Vip members tan bot nih thei dan awlsam deuh`, gifPlayback: true }, {quoted:m});
+if (text == 'tobebot') return await HBWABotMz.sendMessage(from, { video: howtobebotvid, caption: `Vip members tan bot nih thei dan awlsam deuh` }, {quoted:m});
 }
 break
 
