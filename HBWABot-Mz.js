@@ -3550,7 +3550,20 @@ case 'tobebot': {
     HBWABotMz.sendMessage(from, { react: { text: "✅", key: m.key }})
 }
 break
-
+case 'listtobebot': 
+try {
+let user = [... new Set([...global.conns.filter(HBWABotMz => HBWABotMz.user).map(HBWABotMz => HBWABotMz.user)])]
+te = "*List To Be Bot*\n\n"
+for (let i of user){
+y = await HBWABotMz.decodeJid(i.id)
+te += " × User : @" + y.split("@")[0] + "\n"
+te += " × Name : " + i.name + "\n\n"
+}
+HBWABotMz.sendMessage(from,{text:te,mentions: [y], },{quoted:m})
+} catch (err) {
+dodoi(`Connect an awm lo lai tak a ni!...`)
+}
+break
 case 'self': {
 if (!HerbertTheCreator) return dodoi(mess.owner);
 HBWABotMz.public = false
