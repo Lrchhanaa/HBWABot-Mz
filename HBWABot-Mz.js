@@ -3545,7 +3545,7 @@ case 'tobebot': {
     let wanbck = await HBWABotMz.onWhatsApp(wanb)
     if (wanbck.length == 0) return dodoi(`WhatsApp number dik chauh rawn dah rawh!!`)
     HBWABotMz.sendMessage(from, { react: { text: "♻️", key: m.key }})
-    await tobebot(HBWABotMz, m, from, wanb)
+    await tobebot(HBWABotMz, m, from, wanb, dodoi)
     HBWABotMz.sendMessage(from, { react: { text: "🤖", key: m.key }})
     HBWABotMz.sendMessage(from, { react: { text: "✅", key: m.key }})
 }
