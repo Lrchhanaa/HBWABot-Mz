@@ -7,6 +7,10 @@
   "scripts": {
     "start": "node index.js"
   },
+  "engines":{
+      "node":"20.x",
+      "npm":"10.x"
+   },
   "keywords": [
     "whatsapp",
     "2024"
@@ -14,7 +18,7 @@
   "author": "HBMods",
   "license": "MIT",
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.5.0",
+    "@whiskeysockets/baileys": "^6.6.0",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@bochilteam/scraper": "^4.2.4",
     "sqlite3": "^5.1.7",
