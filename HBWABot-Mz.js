@@ -249,11 +249,42 @@ async function checkAndUpdateDaily() {
 checkAndUpdateDaily()
 
 
+let lastKnownData = {};
+
+async function sendUpdateMessage(data) {
+    try {
+        await HBWABotMz.sendMessage(HerbertTheCreator, { text: JSON.stringify(data) });
+        console.log('Update message sent.');
+    } catch (error) {
+        console.error('Error sending update message:', error);
+    }
+}
+
+async function fetchJSONData() {
+    try {
+        const response = await axios.get(githubRawFileURL);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching JSON data from GitHub:', error);
+        return null;
+    }
+}
+
+async function watchForChanges() {
+    const currentData = await fetchJSONData();
+    if (currentData && JSON.stringify(currentData) !== JSON.stringify(lastKnownData)) {
+        lastKnownData = currentData;
+        sendUpdateMessage(lastKnownData);
+    }
+}
+
+setInterval(watchForChanges, 60000);
+
 //message reply na
 const dodoi = async (teks) => {
     var siamthattur = `${teks
-        .replace(/He featurs hi hman i duh chuan 💎50 i neih a ngai!!./g, 'babawkza1')
-        .replace(/https:\/\/wa.me\/918416093656/g, 'wansaplang')
+        .replace(/He featurs hi hman i duh chuan 💎20 i neih a ngai!!./g, 'babawkza1')
+        .replace(/Ai nen a in biakna Tiang hian i hmang ang/g, 'babawkza5')
         .replace(/Bot rawn hmang thar tur i nih chuan Limit tiin type rawh, ti chuan bot hman theihna tur 💎500 i dawng ang, emaw i thiante in thawn tir rawh/g, 'babawkza2')
         .replace(/He features hi VIP 👑 member te leh bot owners tan chauha siam a ni, VIP 👑 member nih i duh ve chuan a hnuaia number ka dah hian va dil rawh/g, 'babawkza3')
         .replace(/Kha tiang ringawt loh khan/g, 'babawkza4')}`;
@@ -261,24 +292,24 @@ const dodoi = async (teks) => {
     var bawng1 = 'lus';
     var bawng2 = 'en';
     var bawng3 = siamthattur;
-    var vawk4 = await mizo_tawnga_translate_na.translate(bawng1, bawng2, bawng3)
+    var vawk4 = await mizo_tawnga_translate_na.translate(bawng1, bawng2, bawng3);
     var vawk5 = `${vawk4}`;
     var bawng5 = 'en';
     var bawng6 = `${bot_language}`;
     var bawng7 = `${vawk5
-        .replace(/babawkza1/g, 'You need to have 💎50 limit for using this feature')
-        .replace(/wansaplang/g, 'https://wa.me/918416093656')
+        .replace(/babawkza1/g, 'You need to have 💎20 limit for using this feature')
+        .replace(/babawkza5/g, 'Chat with Ai, this should be used')
         .replace(/babawkza2/g, 'Please send me *limit* and you can claim 500 limit for daily')
         .replace(/babawkza3/g, 'This feature is made for only VIP members and the bot owner.\nIf you want to be a VIP Member, please contact as I put the number in the given below.\n')
         .replace(/babawkza4/g, 'Not only like that')}`;
-    var bawng8 = await mizo_tawnga_translate_na.translate(bawng5, bawng6, bawng7)
+    var bawng8 = await mizo_tawnga_translate_na.translate(bawng5, bawng6, bawng7);
     var bawng9 = `${bawng8}`;
    
    if (global.default_language) {
-            await HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m})
+            await HBWABotMz.sendMessage(m.chat, { text: teks}, { quoted: m});
     } else {
          if (global.mtl_language) {
-        await HBWABotMz.sendMessage(m.chat, { text: bawng9}, { quoted: m})
+        await HBWABotMz.sendMessage(m.chat, { text: bawng9}, { quoted: m});
     }
 }
 }
@@ -1136,20 +1167,21 @@ case 'mtl':
   if (!HerbertTheCreator) return dodoi(mess.owner)
   if (args.length < 1) return dodoi(`Launguage thlak i duh chuan code nen rawn dah rawh\n*⟨Etirnan:* ${prefix + command} en\n\nlanguage code hi i hre lo a nih chuan /codelang tiin rawn thawn rawh`)
   const thelung = ["am", "ar", "eu", "bn", "en-GB", "pt-BR", "bg", "ca", "chr", "hr", "cs", "da", "nl", "en", "et", "fil", "fi", "fr", "de", "el", "gu", "iw", "hi", "hu", "is", "id", "it", "ja", "kn", "ko", "lv", "lt", "ms", "ml", "mr", "no", "pl", "pt-PT", "ro", "ru", "sr", "zh-CN", "sk", "sl", "es", "sw", "sv", "ta", "te", "th", "zh-TW", "tr", "ur", "uk", "vi", "cy"];
-  if ((q === 'lus') && (q === 'default')) {
+  if (args[0] === 'lus' || args[0] === 'default') {
     global.default_language = true;
     global.mtl_language = false;
-    global.bot_language = 'lus';
+    global.bot_language = args[0];
     dodoi(`Defualt a dah a ni✓`)
-  } else if (!thelung.includes(text)) {
+  } else if (!thelung.includes(args[0])) {
     dodoi("I language code rawn provide hi a code a dik lo")
   } else {
     global.default_language = false;
     global.mtl_language = true;
-    global.bot_language = `${text}`;
+    global.bot_language = args[0];
     dodoi(`Tawng hman chu thlak a ni!..`)
   }
   break;
+
 
 
 case 'hbwabot': case '/bot': { 
