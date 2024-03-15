@@ -231,30 +231,16 @@ setting.status = new Date() * 1
 }
 }
 
-async function sendUpdatedDataIfAvailable() {
-    const updatefc = 'https://raw.githubusercontent.com/HBMods-OFC/WABVersion/main/version5_2_1.json';
-    let updatefc2 = await fetch(updatefc)
-    let updatemsg = await updatefc2.json()
-    HBWABotMz.sendText(HerbertTheCreator, updatemsg.message, m)
-}
-async function checkAndUpdateDaily() {
-    const updatefc = 'https://raw.githubusercontent.com/HBMods-OFC/WABVersion/main/version5_2_1.json';
-    let updatefc2 = await fetch(updatefc)
-    let lastModified = new Date(updatefc2.headers.get('Last-Modified'))
-    let currentTime = new Date()
-    if (currentTime - lastModified <= 24 * 60 * 60 * 1000) {
-        await sendUpdatedDataIfAvailable()
-    }
-}
-checkAndUpdateDaily()
-
 
 let lastKnownData = {};
+let intervalId; 
 
 async function sendUpdateMessage(data) {
     try {
-        await HBWABotMz.sendMessage(HerbertTheCreator, { text: JSON.stringify(data) });
+        const message = data.replace(/\n>/g, '\n\n>');
+        await HBWABotMz.sendMessage(botNumber, { text: message });
         console.log('Update message sent.');
+        console.log('Output:', message);
     } catch (error) {
         console.error('Error sending update message:', error);
     }
@@ -262,7 +248,7 @@ async function sendUpdateMessage(data) {
 
 async function fetchJSONData() {
     try {
-        const response = await axios.get(githubRawFileURL);
+        const response = await axios.get('https://raw.githubusercontent.com/HBMods-OFC/WABVersion/main/version5_2_1.json');
         return response.data;
     } catch (error) {
         console.error('Error fetching JSON data from GitHub:', error);
@@ -275,10 +261,13 @@ async function watchForChanges() {
     if (currentData && JSON.stringify(currentData) !== JSON.stringify(lastKnownData)) {
         lastKnownData = currentData;
         sendUpdateMessage(lastKnownData);
+        clearInterval(intervalId);
     }
 }
 
-setInterval(watchForChanges, 60000);
+intervalId = setInterval(watchForChanges, 60000); 
+watchForChanges();
+
 
 //message reply na
 const dodoi = async (teks) => {
@@ -521,7 +510,6 @@ HBWABotMz.sendMessage(from, { react: { text: "🤪" , key: m.key }})
 if (isCmd && isBanned) {
 return banRep()
 }
-
 
 
 if (global.autoTyping) {
