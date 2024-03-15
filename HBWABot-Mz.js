@@ -237,7 +237,11 @@ let intervalId;
 
 async function sendUpdateMessage(data) {
     try {
-        const message = data.replace(/\n>/g, '\n\n>');
+        const blahh = (`{"`)
+        const blahh2 = (`")`)
+        const message = `${data
+        .replace(/\n>/g, '\n\n>')
+        .replace(/`${blahh}`|`${blahh}`/g, '')}`
         await HBWABotMz.sendMessage(`${ownerNumber}`, { text: message });
         console.log('Update message sent.');
         console.log('Output:', message);
