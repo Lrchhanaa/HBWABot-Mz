@@ -230,7 +230,7 @@ await HBWABotMz.updateProfileStatus(`HBWABot | Runtime : ${runtime(uptime)}`)
 setting.status = new Date() * 1
 }
 }
-
+/*
 
 let lastKnownData = {};
 let intervalId; 
@@ -271,7 +271,7 @@ async function watchForChanges() {
 
 intervalId = setInterval(watchForChanges, 60000); 
 watchForChanges();
-
+*/
 
 //message reply na
 const dodoi = async (teks) => {
