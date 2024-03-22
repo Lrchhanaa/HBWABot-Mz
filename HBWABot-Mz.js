@@ -5178,7 +5178,7 @@ if (/1917/.test(command)) link = 'https://textpro.me/1917-style-text-effect-onli
 if (/leaves/.test(command)) link = 'https://textpro.me/natural-leaves-text-effect-931.html'
 let anu = await mumaker.textpro(link, q)
 const result = await getBuffer(anu.image)
-HBWABotMz.sendMessage(m.chat, { image: `${result}`, caption: `\n*©${global.botname}*` }, { quoted: m })
+HBWABotMz.sendMessage(m.chat, { image: {url:anu.image} , caption: `\n*©${global.botname}*` }, { quoted: m })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -5278,7 +5278,7 @@ var logo9 = inilogo9.split('|')[1]
 let anuphub = await mumaker.textpro("https://textpro.me/pornhub-style-logo-online-generator-free-977.html", [`${logo4}`,`${logo9}`])
 console.log(anuphub)
 const result = await getBuffer(anuphub.image)
-HBWABotMz.sendMessage(from,{image: {url: result}, caption:`\n*©${global.botname}*`},{quoted:m})
+HBWABotMz.sendMessage(from,{image: {url: anuphub.image}, caption:`\n*©${global.botname}*`},{quoted:m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
