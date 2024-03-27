@@ -797,21 +797,21 @@ case 'biblequiz':
 case 'mbq': {
     var today = new Date();
     var user = m.sender.split('@')[0];
-    if (_hmanzat.hasOwnProperty(user) && _hmanzat[user].count >= 15) {
+    if (_biblequiz.hasOwnProperty(user) && _biblequiz[user].count >= 15) {
         return dodoi(`He quiz hi mipakhatin nikhatah vawi 15 chauh khel thei a ni`);
     }
-    if (!_hmanzat.hasOwnProperty(user)) {
-        _hmanzat[user] = {
+    if (!_biblequiz.hasOwnProperty(user)) {
+        _biblequiz[user] = {
             count: 0,
             lastAttempted: null,
             achhanna: null
         };
     }
-    if (_hmanzat[user].lastAttempted && isSameDay(new Date(_hmanzat[user].lastAttempted), today)) {
-        _hmanzat[user].count++;
+    if (_biblequiz[user].lastAttempted && isSameDay(new Date(_biblequiz[user].lastAttempted), today)) {
+        _biblequiz[user].count++;
     } else {
-        _hmanzat[user].count = 1;
-        _hmanzat[user].lastAttempted = today;
+        _biblequiz[user].count = 1;
+        _biblequiz[user].lastAttempted = today;
     }
 
     let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json');
