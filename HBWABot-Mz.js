@@ -790,7 +790,7 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 
 switch (command) {
     case 'biblequiz':
-    case 'bq': {
+    case 'mbq': {
         if (_biblequiz.hasOwnProperty(m.sender.split('@')[0])) {
             return dodoi(`Zawhna ila chhang zo lo 🤌`);
         }
@@ -1971,11 +1971,9 @@ const enm = `╭═══════════┈
 ┃ *my features please*
 ┃ *type limit*
 ╰════════════──┈`
-const transen = `${lusm
-        .replace(/`${lusm}`/g,`${enm}`)}`
     var bawng5 = 'en';
     var bawng6 = `${bot_language}`;
-    var bawng7 = `${transen}`
+    var bawng7 = `${enm}`
     var bawng8 = await mizo_tawnga_translate_na.translate(bawng5, bawng6, bawng7);
      if (global.default_language) {
             HBWABotMz.sendMessage(from, { 
@@ -5582,7 +5580,7 @@ await finishreact()
  break
  */
  
-case 'bible': case 'bible-quotes': 
+case 'bible': case 'bible-quotes': case 'bq':
 const bible = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Media/main/QuotesMizo/BibleQuote.json')
 const mizo_bible = bible[Math.floor(Math.random() * bible.length)]
 const thuziak = `${mizo_bible}`
