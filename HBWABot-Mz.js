@@ -786,23 +786,32 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
         delete _biblequiz[m.sender.split('@')[0]];
     }
 }
-
+function isSameDay(date1, date2) {
+    return date1.getFullYear() === date2.getFullYear() &&
+        date1.getMonth() === date2.getMonth() &&
+        date1.getDate() === date2.getDate();
+}
 
 switch (command) {
-   case 'biblequiz':
+case 'biblequiz':
 case 'mbq': {
     var today = new Date();
     var user = m.sender.split('@')[0];
     if (_hmanzat.hasOwnProperty(user) && _hmanzat[user].count >= 15) {
-        return dodoi(`Vawi 15 i hman tling tawh avngin naktuk a tangin i hmang chhun zawm leh thei chauh ang.`);
+        return dodoi(`He quiz hi mipakhatin nikhatah vawi 15 chauh khel thei a ni`);
     }
-    if (_hmanzat.hasOwnProperty(user) && isSameDay(_hmanzat[user].lastAttempted, today)) {
+    if (!_hmanzat.hasOwnProperty(user)) {
+        _hmanzat[user] = {
+            count: 0,
+            lastAttempted: null,
+            achhanna: null
+        };
+    }
+    if (_hmanzat[user].lastAttempted && isSameDay(new Date(_hmanzat[user].lastAttempted), today)) {
         _hmanzat[user].count++;
     } else {
-        _hmanzat[user] = {
-            count: 1,
-            lastAttempted: today
-        };
+        _hmanzat[user].count = 1;
+        _hmanzat[user].lastAttempted = today;
     }
 
     let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json');
@@ -812,7 +821,6 @@ case 'mbq': {
     _biblequiz[user].achhanna = result.achhanna.toLowerCase();
     }
     break;
-
 
 case 'mizoquiz': {
     const userKey = m.sender.split('@')[0];
