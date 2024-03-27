@@ -797,11 +797,7 @@ switch (command) {
         let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json');
         let result = bbquiz[Math.floor(Math.random() * bbquiz.length)];
         let englolo = await HBWABotMz.sendMessage(m.chat, { text: `${result.zawhna}\nAns: ___________` }, { quoted: m });
-        _biblequiz[m.sender.split('@')[0]] = {
-            id: [m.sender.split('@')[0]],
-            ...result,
-            bodaih: Array.from(result.achhanna, () => false)
-        };
+       _biblequiz[m.sender.split('@')[0]] = result.achhanna.toLowerCase()
         }
         break;
 
