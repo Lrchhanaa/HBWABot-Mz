@@ -777,11 +777,11 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
     kuis = true;
     achhanna = _biblequiz[m.sender.split('@')[0]];
     if (budy.toLowerCase() == achhanna) {
-        await HBWABotMz.sendMessage(m.chat, { text: `I chhan dik avangin limit 50💎 i dawng a ni!` }, { quoted: m });
+        await HBWABotMz.sendMessage(m.chat, { text: `*I chhan dik avangin limit 50💎 i dawng a ni!*🥳` }, { quoted: m });
         await eco.give(limitneihtu, khawlbawm, 50);
         delete _biblequiz[m.sender.split('@')[0]];
     } else {
-        await dodoi('*I chhan dik loh avangin i limit 40💎 cut a ni*');
+        await dodoi('*I chhan dik loh avangin i limit 40💎 cut a ni*\nBible Chhiar tam rawh🫠');
         await eco.deduct(limitneihtu, khawlbawm, 40);
         delete _biblequiz[m.sender.split('@')[0]];
     }
@@ -796,7 +796,8 @@ switch (command) {
         }
         let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json');
         let result = bbquiz[Math.floor(Math.random() * bbquiz.length)];
-        let englolo = await HBWABotMz.sendMessage(m.chat, { text: `${result.zawhna}\nAns: ___________` }, { quoted: m });
+        let mult = "`Multiple Choice Questions`";
+        let englolo = await HBWABotMz.sendMessage(m.chat, { text: `> ${mult}\n${result.zawhna}\nAns: ___________`, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `Mizo Bible Quiz`,"body": `Limit hlawh theihna`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/MizoBibleQ.png`),"sourceUrl": ``}}}, { quoted: m });
        _biblequiz[m.sender.split('@')[0]] = result.achhanna.toLowerCase()
         }
         break;
