@@ -776,17 +776,22 @@ if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
     kuis = true;
     let room = _biblequiz[m.sender.split('@')[0]];
-    let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '')
-    let isSurender = /^((me)?give up|surr?ender)$/i.test(m.text)
+    let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '');
+    let isSurender = /^((me)?give up|surr?ender)$/i.test(m.text);
     if (!isSurender) {
-        let index = room.chhanna.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks)
+        let index = room.achhanna.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks);
+        if (index === -1) {
+        await eco.deduct(limitneihtu, khawlbawm, 40)
+        delete _biblequiz[m.sender.split('@')[0]];
+        return;
+        }
         if (room.bodaih[index]) return !0;
         room.bodaih[index] = m.sender;
     }
     let isWin = room.bodaih.length === room.bodaih.filter(v => v).length;
     let caption = `*Q.* ${room.zawhna}
 *Ans:*\n${Array.from(room.achhanna, (achhanna, index) => {
-return isSurender || room.bodaih[index] ? `(${index + 1}) ${achhanna} ${room.bodaih[index] ? '✓' : ''}`.trim() : false;
+return isSurender || room.bodaih[index] ? ` ${achhanna} ${room.bodaih[index] ? '✓' : ''}`.trim() : false;
     }).filter(v => v).join('\n')}
     ${isSurender ? '' : ``}`.trim()
 
@@ -802,6 +807,7 @@ return isSurender || room.bodaih[index] ? `(${index + 1}) ${achhanna} ${room.bod
         delete _biblequiz[m.sender.split('@')[0]];
     }
 }
+
 
 
 switch (command) {
@@ -879,18 +885,7 @@ case 'bq': {
                 if (_biblequiz[userKey]) HBWABotMz.sendText(m.chat, `Minute 2 a zo, Chhan theih hun chhung a tawp`, m)
                 delete _biblequiz[userKey];
             }, 120000),
-        };
-        const correctAnswer = random.achhanna.toLowerCase()
-        HBWABotMz.onMessage(m.chat, async (msg) => {
-            if (msg.text && msg.sender && msg.sender.split('@')[0] === userKey) {
-                const answer = msg.text.trim().toLowerCase();
-                if (answer !== correctAnswer) {
-                    delete _biblequiz[userKey];
-                    await dodoi('Tlangval zawhna hriat chhuah na a ni! Zawhna chhang zo lo.');
-                }
-            }
-        });
-
+        };     
     } catch (error) {
         console.error('Error fetching or processing quiz:', error)
         dodoi('Result tur ka lak laiin error awm!')
