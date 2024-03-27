@@ -779,36 +779,32 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
     let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '');
     let isSurender = /^((me)?give up|surr?ender)$/i.test(m.text);
     if (!isSurender) {
-        let index = room.achhanna.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks);
-        if (index === -1) {
-        await eco.deduct(limitneihtu, khawlbawm, 40)
-        delete _biblequiz[m.sender.split('@')[0]];
-        return;
+        if (teks === room.achhanna.toLowerCase().replace(/[^\w\s\-]+/, '')) {
+            // Correct answer provided
+            if (room.bodaih) return !0;
+            room.bodaih = m.sender;
+        } else {
+            // Incorrect answer provided
+            await eco.deduct(limitneihtu, khawlbawm, 40);
+            delete _biblequiz[m.sender.split('@')[0]];
+            return;
         }
-        if (room.bodaih[index]) return !0;
-        room.bodaih[index] = m.sender;
     }
-    let isWin = room.bodaih.length === room.bodaih.filter(v => v).length;
-    let caption = `*Q.* ${room.zawhna}
-*Ans:*\n${Array.from(room.achhanna, (achhanna, index) => {
-return isSurender || room.bodaih[index] ? ` ${achhanna} ${room.bodaih[index] ? '✓' : ''}`.trim() : false;
-    }).filter(v => v).join('\n')}
-    ${isSurender ? '' : ``}`.trim()
+    let isWin = room.bodaih;
+    let caption = `*Q.* ${room.zawhna}\n*Ans:*\n${room.achhanna} ${room.bodaih ? '✓' : ''}`.trim();
 
     if (isWin) {
-        const give = await eco.give(limitneihtu, khawlbawm, 50)
+        const give = await eco.give(limitneihtu, khawlbawm, 50);
     }
-    const mes = await HBWABotMz.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }})
+    const mes = await HBWABotMz.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }});
 
     if (isSurender) {
-        await eco.deduct(limitneihtu, khawlbawm, 40)
+        await eco.deduct(limitneihtu, khawlbawm, 40);
     }
     if (isWin || isSurender) {
         delete _biblequiz[m.sender.split('@')[0]];
     }
 }
-
-
 
 switch (command) {
 case 'mizoquiz': {
@@ -873,7 +869,7 @@ case 'bq': {
         const kaurl = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json')
         const random = kaurl[Math.floor(Math.random() * kaurl.length)];
         
-        const zawhnaq = `*Multiple Choice Questions :*\n*Q.* ${random.zawhna}\nAns:`.trim();
+const zawhnaq = `*Multiple Choice Questions*\n\n*Q.* ${random.zawhna}\nAns:`.trim();
         
         _biblequiz[userKey] = {
             id: [userKey],
