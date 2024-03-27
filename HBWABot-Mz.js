@@ -775,11 +775,10 @@ if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 
 if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
     kuis = true;
-    var room = _biblequiz[m.sender.split('@')[0]];
-    if (budy.toLowerCase() == room.achhanna) {
-        await HBWABotMz.sendMessage(m.chat, { text: `*Q.* ${room.zawhna}\n*Ans:* ${room.achhanna}` }, { quoted: m });
+    achhanna = _biblequiz[m.sender.split('@')[0]];
+    if (budy.toLowerCase() == achhanna) {
+        await HBWABotMz.sendMessage(m.chat, { text: `I chhan dik avangin limit 50💎 i dawng a ni!` }, { quoted: m });
         await eco.give(limitneihtu, khawlbawm, 50);
-        await dodoi('I chhan dik avangin limit 50💎 i dawng a ni!');
         delete _biblequiz[m.sender.split('@')[0]];
     } else {
         await dodoi('*I chhan dik loh avangin i limit 40💎 cut a ni*');
@@ -787,6 +786,7 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
         delete _biblequiz[m.sender.split('@')[0]];
     }
 }
+
 
 switch (command) {
     case 'biblequiz':
