@@ -5094,18 +5094,13 @@ if (hmanzat > limit1.wallet) return await dailylimit()
         let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
     }
     break;
-  case 'mkjson': {
+  case 'j': {
   if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`);
   const thlakzuk = `${text.replace(/\n/g, '\\n')}`;
   const lines = thlakzuk.split('\n');
-  const numberedLines = lines.slice(1).map((line, index) => `${String.fromCharCode(96 + index + 1)}) ${line}`).join('\n');
+  const numberedLines = lines.slice(1).map((line, index) => `${String.fromCharCode(96 + index + 1)}). ${line}`).join('\n');
   const output = `${lines[0]}\\n${numberedLines}`;
-  const thlaklehzuk =`${output
-                     .replace(/'a)'/g,'a).')
-                     .replace(/'b)'/g,'b).')
-                     .replace(/'c)'/g,'c).')
-                     .replace(/'d)'/g,'d).')}`
-  await dodoi(`"zawhna":"${thlaklehzuk}"`);
+  await dodoi(`"zawhna":"${output}"`);
 }
 break;
 
