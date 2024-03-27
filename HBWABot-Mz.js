@@ -777,34 +777,34 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
     kuis = true;
     var room = _biblequiz[m.sender.split('@')[0]];
     if (budy.toLowerCase() == room.achhanna) {
-        await HBWABotMz.sendMessage(m.chat, { text: `*Q.* ${room.zawhna}\n*Ans:* ${Array.from(room.achhanna}`}, { quoted: m })
+        await HBWABotMz.sendMessage(m.chat, { text: `*Q.* ${room.zawhna}\n*Ans:* ${room.achhanna}` }, { quoted: m });
         await eco.give(limitneihtu, khawlbawm, 50);
-        await dodoi('I chhan dik avangin limit 50💎 i dawng a ni!')
+        await dodoi('I chhan dik avangin limit 50💎 i dawng a ni!');
         delete _biblequiz[m.sender.split('@')[0]];
     } else {
-        dodoi('*I chhan dik loh avangin i limit 40💎 cut a ni*')
+        await dodoi('*I chhan dik loh avangin i limit 40💎 cut a ni*');
         await eco.deduct(limitneihtu, khawlbawm, 40);
         delete _biblequiz[m.sender.split('@')[0]];
     }
 }
 
-
 switch (command) {
-case 'biblequiz':
-case 'bq':  {
-    if (_biblequiz.hasOwnProperty(m.sender.split('@')[0])) {
-        return dodoi(`Zawhna ila chhang zo lo 🤌`)
-    }
-    let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json')
-    let result = bbquiz[Math.floor(Math.random() * bbquiz.length)];
-    let englolo = await HBWABotMz.sendMessage(m.chat, {text: `${result.zawhna}\nAns: ___________` }, { quoted: m })
-    _biblequiz[userKey] = {
-            id: [userKey],
+    case 'biblequiz':
+    case 'bq':
+        if (_biblequiz.hasOwnProperty(m.sender.split('@')[0])) {
+            return dodoi(`Zawhna ila chhang zo lo 🤌`);
+        }
+        let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json');
+        let result = bbquiz[Math.floor(Math.random() * bbquiz.length)];
+        let englolo = await HBWABotMz.sendMessage(m.chat, { text: `${result.zawhna}\nAns: ___________` }, { quoted: m });
+        _biblequiz[m.sender.split('@')[0]] = {
+            id: [m.sender.split('@')[0]],
             ...result,
             bodaih: Array.from(result.achhanna, () => false)
-        };     
+        };
+        break;
 }
-break;
+
 case 'mizoquiz': {
     const userKey = m.sender.split('@')[0];
 
