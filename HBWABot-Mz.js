@@ -1927,7 +1927,30 @@ case 'alive': case 'menu': case 'help':{
 const balance = await eco.balance(limitneihtu, khawlbawm)
 const vawiinni2 = await mizo_tawnga_translate_na.translate(asource1, atarget1, athulo1)
 var menuthla = await getBuffer(`${loadingimg3}`)
-HBWABotMz.sendMessage(from, { 
+const lusm = `╭═══════════┈
+┃ *Limit i neih loh chuan*
+┃ *min hmang thei dawn lo,*
+╠═══════════┈
+┃ *Min hman i duh chuan*
+┃ *limit tih rawn type rawh*
+╰════════════──┈`
+const enm = `╭═══════════┈
+┃ *If you don't have any*
+┃ *limit, you cannot*
+┃ *use my features*
+╠═══════════┈
+┃ *if you want to use*
+┃ *my features please*
+┃ *type limit*
+╰════════════──┈`
+const transen = `${lusm
+        .replace(/`${lusm}`/g,`${enm}`)}`
+    var bawng5 = 'en';
+    var bawng6 = `${bot_language}`;
+    var bawng7 = `${transen}`
+    var bawng8 = await mizo_tawnga_translate_na.translate(bawng5, bawng6, bawng7);
+     if (global.default_language) {
+            HBWABotMz.sendMessage(from, { 
 text: `*Bot InFo*
 *✑ Vawiin :* ${vawiinni2}
 *✑ Date :* ${kumtin}
@@ -1937,13 +1960,7 @@ text: `*Bot InFo*
 *✑ Vip :* ${aActiveEm}
 *✑ Runtime :* ${runtime(process.uptime())}
 *✑ Creator :* Herbert Suantak
-╭═══════════┈
-┃ *Limit i neih loh chuan*
-┃ *min hmang thei dawn lo,*
-╠═══════════┈
-┃ *Min hman i duh chuan*
-┃ *limit tih rawn type rawh*
-╰════════════──┈
+${lusm}
 ͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
 ╭═══════════┈
 ┃𒆜┌───┈
@@ -1955,7 +1972,6 @@ text: `*Bot InFo*
 ┃𒆜│groupmenu
 ┃𒆜│ownermenu
 ┃𒆜│photooxymenu
-┃𒆜│textpromenu
 ┃𒆜│ephoto360menu
 ┃𒆜│stickermenu
 ┃𒆜│stalkermenu
@@ -1976,6 +1992,52 @@ sourceUrl: ``
 }
 }
 },{quoted:m})
+    } else {
+         if (global.mtl_language) {
+        HBWABotMz.sendMessage(from, { 
+text: `*Bot InFo*
+*✑ Vawiin :* ${vawiinni2}
+*✑ Date :* ${kumtin}
+*✑ Version :* 5.5.0
+*✑ User :* ${ownernumber}
+*✑ Limit :* ${balance.wallet} 💎
+*✑ Vip :* ${aActiveEm}
+*✑ Runtime :* ${runtime(process.uptime())}
+*✑ Creator :* Herbert Suantak
+${bawng8}
+͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
+╭═══════════┈
+┃𒆜┌───┈
+┃𒆜│vipmenu
+┃𒆜│allmenu
+┃𒆜│aimenu
+┃𒆜│mizomenu
+┃𒆜│downloadmenu
+┃𒆜│groupmenu
+┃𒆜│ownermenu
+┃𒆜│photooxymenu
+┃𒆜│ephoto360menu
+┃𒆜│stickermenu
+┃𒆜│stalkermenu
+┃𒆜│unbanmenu
+┃𒆜│othermenu
+┃𒆜└───────────┈ 
+╰════════════──┈ `,
+contextInfo:{
+externalAdReply:{ 
+showAdAttribution: true,
+containsAutoReply: true,
+renderLargerThumbnail: true,
+title: `${global.botname}`,
+thumbnail : menuthla,
+mediaType: 1,
+mediaUrl: ``,
+sourceUrl: ``
+}
+}
+},{quoted:m})
+    }
+}
 }
 break
 case 'allmenu': {
@@ -2052,87 +2114,6 @@ var HBLoadingmenu = [
 ┃𒆜│unbanv3
 ┃𒆜│unbanv4
 ┃𒆜│unbanv5
-┃𒆜└───────────┈ 
-╰══════════════𖡛
-
-*╭═══❏ Textpro Maker ❏*
-┃𒆜┌───┈
-┃𒆜│candy
-┃𒆜│christmas
-┃𒆜│3dchristmas
-┃𒆜│sparklechristmas 
-┃𒆜│deepsea
-┃𒆜│scifi
-┃𒆜│rainbow
-┃𒆜│waterpipe
-┃𒆜│spooky
-┃𒆜│pencil
-┃𒆜│circuit
-┃𒆜│discovery
-┃𒆜│metalic
-┃𒆜│fiction
-┃𒆜│demon
-┃𒆜│transformer
-┃𒆜│berry
-┃𒆜│thunder
-┃𒆜│magma
-┃𒆜│3dstone
-┃𒆜│neonlight
-┃𒆜│glitch
-┃𒆜│harrypotter
-┃𒆜│brokenglass
-┃𒆜│papercut
-┃𒆜│watercolor
-┃𒆜│multicolor
-┃𒆜│neondevil
-┃𒆜│underwater
-┃𒆜│graffitibike 
-┃𒆜│snow
-┃𒆜│cloud
-┃𒆜│honey
-┃𒆜│ice
-┃𒆜│fruitjuice
-┃𒆜│biscuit
-┃𒆜│wood
-┃𒆜│chocolate
-┃𒆜│strawberry
-┃𒆜│matrix
-┃𒆜│blood
-┃𒆜│dropwater
-┃𒆜│toxic
-┃𒆜│lava
-┃𒆜│rock
-┃𒆜│bloodglas
-┃𒆜│hallowen
-┃𒆜│darkgold
-┃𒆜│joker
-┃𒆜│wicker 
-┃𒆜│firework
-┃𒆜│skeleton
-┃𒆜│blackpink
-┃𒆜│sand
-┃𒆜│glue
-┃𒆜│1917
-┃𒆜│leaves 
-┃𒆜│retro 
-┃𒆜│pornhub 
-┃𒆜│8bit 
-┃𒆜│batman 
-┃𒆜│3dbox 
-┃𒆜│lion 
-┃𒆜│3davengers 
-┃𒆜│window 
-┃𒆜│3dspace 
-┃𒆜│bokeh 
-┃𒆜│holographic 
-┃𒆜│thewall 
-┃𒆜│carbon 
-┃𒆜│whitebear 
-┃𒆜│metallic 
-┃𒆜│steel 
-┃𒆜│fabric 
-┃𒆜│ancient 
-┃𒆜│marvel 
 ┃𒆜└───────────┈ 
 ╰══════════════𖡛
 
@@ -2670,6 +2651,7 @@ await HBWABotMz.relayMessage(m.chat, {
  }
 }
 break
+/*
 case 'textpromenu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
 var HBLoadingmenu = [
@@ -2783,6 +2765,7 @@ await HBWABotMz.relayMessage(m.chat, {
  }
 }
 break
+*/
 case 'ephoto360menu': { 
 const balance = await eco.balance(limitneihtu, khawlbawm)
 var HBLoadingmenu = [
@@ -5111,8 +5094,23 @@ if (hmanzat > limit1.wallet) return await dailylimit()
         let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
     }
     break;
+  case 'mkjson': {
+  if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`);
+  const thlakzuk = `${text.replace(/\n/g, '\\n')}`;
+  const lines = thlakzuk.split('\n');
+  const numberedLines = lines.slice(1).map((line, index) => `${String.fromCharCode(96 + index + 1)}) ${line}`).join('\n');
+  const output = `${lines[0]}\\n${numberedLines}`;
+  const thlaklehzuk =`${output
+                     .replace(/'a)'/g,'a).')
+                     .replace(/'b)'/g,'b).')
+                     .replace(/'c)'/g,'c).')
+                     .replace(/'d)'/g,'d).')}`
+  await dodoi(`"zawhna":"${thlaklehzuk}"`);
+}
+break;
 
 
+/*
 case 'candy': case 'christmas': case '3dchristmas': case 'sparklechristmas': case 'deepsea': case 'scifi': case 'rainbow': case 'waterpipe': case 'spooky': case 'pencil': case 'circuit': case 'discovery': case 'metalic': case 'fiction': case 'demon': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dstone': case 'neonlight': case 'glitch': case 'harrypotter': case 'brokenglass': case 'papercut': case 'watercolor': case 'multicolor': case 'neondevil': case 'underwater': case 'graffitibike': case 'snow': case 'cloud': case 'honey': case 'ice': case 'fruitjuice': case 'biscuit': case 'wood': case 'chocolate': case 'strawberry': case 'matrix': case 'blood': case 'dropwater': case 'toxic': case 'lava': case 'rock': case 'bloodglas': case 'hallowen': case 'darkgold': case 'joker': case 'wicker': case 'firework': case 'skeleton': case 'blackpink': case 'sand': case 'glue': case '1917': case 'leaves': { 
 if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -5183,6 +5181,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
 break
+*/
 case 'glitchtext': case 'writetext': case 'advancedglow': case 'typographytext': case 'pixelglitch': case 'neonglitch': case 'flagtext': case 'flag3dtext': case 'deletingtext': case 'blackpinkstyle': case 'glowingtext': case 'underwatertext': case 'logomaker': case 'cartoonstyle': case 'papercutstyle': case 'watercolortext': case 'effectclouds': case 'blackpinklogo': case 'gradienttext': case 'summerbeach': case 'luxurygold': case 'multicoloredneon': case 'sandsummer': case 'galaxywallpaper': case '1917style': case 'makingneon': case 'royaltext': case 'freecreate': case 'galaxystyle': case 'lighteffects':{ 
 if (!q) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`) 
 const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -5264,6 +5263,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
 break
+/*
 case 'pornhub':{
 if (!q || !q.includes("|")) {
 return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} HBWA | Bot`)
@@ -5556,6 +5556,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
  break
+ */
  
 case 'bible': case 'bq': case 'bible-quotes': 
 const bible = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Media/main/QuotesMizo/BibleQuote.json')
