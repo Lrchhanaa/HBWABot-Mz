@@ -775,18 +775,34 @@ if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 
 if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
     kuis = true;
-    room = _biblequiz[m.sender.split('@')[0]];
-    if (budy.toLowerCase() == room.achhanna) {
-        await HBWABotMz.sendMessage(m.chat, { text: `*Q.* ${room.zawhna}\nAns : ${room.achhanna}✓` }, { quoted: m })
-        await eco.give(limitneihtu, khawlbawm, 50)
+    let room = _biblequiz[m.sender.split('@')[0]];
+    let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '')
+    let isSurender = /^((me)?give up|surr?ender)$/i.test(m.text)
+    if (!isSurender) {
+        let index = room.chhanna.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks)
+        if (room.bodaih[index]) return !0;
+        room.bodaih[index] = m.sender;
+    }
+    let isWin = room.bodaih.length === room.bodaih.filter(v => v).length;
+    let caption = `*Q.* ${room.zawhna}
+*Ans:*\n${Array.from(room.achhanna, (achhanna, index) => {
+return isSurender || room.bodaih[index] ? `(${index + 1}) ${achhanna} ${room.bodaih[index] ? '✓' : ''}`.trim() : false;
+    }).filter(v => v).join('\n')}
+    ${isSurender ? '' : ``}`.trim()
+
+    if (isWin) {
+        const give = await eco.give(limitneihtu, khawlbawm, 50)
+    }
+    const mes = await HBWABotMz.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }})
+
+    if (isSurender) {
+        await eco.deduct(limitneihtu, khawlbawm, 40)
+    }
+    if (isWin || isSurender) {
         delete _biblequiz[m.sender.split('@')[0]];
-    } else {
-        dodoi('*A dik lo!*')
-        await eco.deduct(limitneihtu, khawlbawm, 30)
-        delete _biblequiz[m.sender.split('@')[0]];
-        
     }
 }
+
 
 switch (command) {
 case 'mizoquiz': {
@@ -841,17 +857,47 @@ case 'picquiz': {
 }
 break;
 
-case 'biblequiz': case 'bq': {
-    if (_biblequiz.hasOwnProperty(m.sender.split('@')[0])) {
-        return dodoi(`Zawhna ila chhang zo lo`)
+case 'biblequiz':
+case 'bq': {
+    const userKey = m.sender.split('@')[0];
+    if (_biblequiz.hasOwnProperty(userKey) && isCmd) {
+        return dodoi('I in surrender dawn loh chuan zawhna chhang zo hmasa phawt rawh!')
     }
-    let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json')
-    let result = bbquiz[Math.floor(Math.random() * bbquiz.length)];
-    let englolo = await HBWABotMz.sendMessage(m.chat,{text: `${result.zawhna}\n
-\n*Ans:* ` }, { quoted: m })
-    _biblequiz[m.sender.split('@')[0]] = result.achhanna.toLowerCase()
+    try {
+        const kaurl = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json')
+        const random = kaurl[Math.floor(Math.random() * kaurl.length)];
+        
+        const zawhnaq = `*Multiple Choice Questions :*\n*Q.* ${random.zawhna}\nAns:`.trim();
+        
+        _biblequiz[userKey] = {
+            id: [userKey],
+            hbwabotid: await HBWABotMz.sendText(m.chat, zawhnaq, m),
+            ...random,
+            bodaih: Array.from(random.achhanna, () => false),
+            hadiah: 1,
+            tawphun: setTimeout(() => {
+                if (_biblequiz[userKey]) HBWABotMz.sendText(m.chat, `Minute 2 a zo, Chhan theih hun chhung a tawp`, m)
+                delete _biblequiz[userKey];
+            }, 120000),
+        };
+        const correctAnswer = random.achhanna.toLowerCase()
+        HBWABotMz.onMessage(m.chat, async (msg) => {
+            if (msg.text && msg.sender && msg.sender.split('@')[0] === userKey) {
+                const answer = msg.text.trim().toLowerCase();
+                if (answer !== correctAnswer) {
+                    delete _biblequiz[userKey];
+                    await dodoi('Tlangval zawhna hriat chhuah na a ni! Zawhna chhang zo lo.');
+                }
+            }
+        });
+
+    } catch (error) {
+        console.error('Error fetching or processing quiz:', error)
+        dodoi('Result tur ka lak laiin error awm!')
+    }
 }
 break;
+
 
 case 'c1': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
