@@ -67,7 +67,7 @@ settings: {},
 ...(global.db || {})
 }
 //read database\\
-let tebaklagu = db.game.tebaklagu = []
+let _hmanzat = db.game.hmanzat = []
 let _mizoquiz = db.game.mizoquiz = []
 let _gkmizo = db.game.gkmizo = []
 let thlalakquiz = db.game.thlalakquiz = []
@@ -789,18 +789,30 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 
 
 switch (command) {
-    case 'biblequiz':
-    case 'mbq': {
-        if (_biblequiz.hasOwnProperty(m.sender.split('@')[0])) {
-            return dodoi(`Zawhna ila chhang zo lo 🤌`);
-        }
-        let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json');
-        let result = bbquiz[Math.floor(Math.random() * bbquiz.length)];
-        let mult = "`Multiple Choice Questions`";
-        let englolo = await HBWABotMz.sendMessage(m.chat, { text: `> ${mult}\n${result.zawhna}\nAns: ___________`, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `Mizo Bible Quiz`,"body": `Limit hlawh theihna`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/MizoBibleQ.png`),"sourceUrl": ``}}}, { quoted: m });
-       _biblequiz[m.sender.split('@')[0]] = result.achhanna.toLowerCase()
-        }
-        break;
+   case 'biblequiz':
+case 'mbq': {
+    var today = new Date();
+    var user = m.sender.split('@')[0];
+    if (_hmanzat.hasOwnProperty(user) && _hmanzat[user].count >= 15) {
+        return dodoi(`Vawi 15 i hman tling tawh avngin naktuk a tangin i hmang chhun zawm leh thei chauh ang.`);
+    }
+    if (_hmanzat.hasOwnProperty(user) && isSameDay(_hmanzat[user].lastAttempted, today)) {
+        _hmanzat[user].count++;
+    } else {
+        _hmanzat[user] = {
+            count: 1,
+            lastAttempted: today
+        };
+    }
+
+    let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json');
+    let result = bbquiz[Math.floor(Math.random() * bbquiz.length)];
+    let mult = "`Multiple Choice Questions`";
+    let englolo = await HBWABotMz.sendMessage(m.chat, { text: `> ${mult}\n${result.zawhna}\nAns: ___________`, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `Mizo Bible Quiz`,"body": `Limit hlawh theihna`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/MizoBibleQ.png`),"sourceUrl": ``}}}, { quoted: m });
+    _biblequiz[user].achhanna = result.achhanna.toLowerCase();
+    }
+    break;
+
 
 case 'mizoquiz': {
     const userKey = m.sender.split('@')[0];
@@ -2059,8 +2071,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *${global.botname} Allmenu*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -2346,8 +2357,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *Download Menu*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -2400,8 +2410,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *Group Menu*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -2469,8 +2478,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *Stalk Menu*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -2508,8 +2516,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *Unbanned Menu*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -2550,8 +2557,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *Mizo Tawng*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -2626,8 +2632,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *Ai Menu*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -2675,8 +2680,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *Textpro Menu*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -2789,8 +2793,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *Ephoto360 Menu*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -2856,8 +2859,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *Sticker Menu*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -2900,8 +2902,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *PhotoOxy Maker*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -2964,8 +2965,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *Other Menu*
 ┃ *✑ limit :* ${balance.wallet} 💎
 ┃ *♕  VIP :* ${aActiveEm}
@@ -3047,8 +3047,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *Owner Menu*
 ┃ *✑ limit :* ${balance.wallet}
 ┃ *♕ VIP :* ${aActiveEm}
@@ -3092,8 +3091,7 @@ var HBLoadingmenu = [
 `《████████▒▒▒▒▒▒▒》50%`,
 `《███████████▒▒▒▒》80%`,
 `《███████████████》100%`,
-`
-╭══════════════
+`╭══════════════
 ┃ *VIP Menu*
 ┃ *✑ limit :* ${balance.wallet}
 ┃ *♕ VIP :* ${aActiveEm}
@@ -4157,8 +4155,7 @@ const limit1 = await eco.balance(limitneihtu, khawlbawm)
   }  
   await loadingreact()  
 const vid=await herbertvideo.mp4(text)
-const ytc=`
-╭═══════════┈
+const ytc=`╭═══════════┈
 ┃𒆜┌───┈
 ┃𒆜│ *Tittle:* ${vid.title}
 ┃𒆜│ *Date:* ${vid.date}
@@ -4358,8 +4355,7 @@ let yts = require("youtube-yts")
         let search = await yts(text)
         let kazawn = search.videos[0]
 const vid=await herbertvideo.mp4(kazawn.url)
-const ytc=`
-╭═══════════┈
+const ytc=`╭═══════════┈
 ┃𒆜┌───┈
 ┃𒆜│ *Tittle:* ${vid.title}
 ┃𒆜│ *Date:* ${vid.date}
@@ -4620,8 +4616,7 @@ let ytu = await yts2(sazu)
 let kazawn = ytu.videos[0]
 const pl= await herbertplaymp3.mp3(kazawn.url)
 await HBWABotMz.sendMessage(m.chat,{document: fs.readFileSync(pl.path),
-    caption: `
-╭═══════════┈
+    caption: `╭═══════════┈
 ┃𒆜┌───┈
 ┃𒆜│📌 *TITLE:* ${title || 'Ka hmu thei lo'}
 ┃𒆜│👨‍🎤 *ARTIST:* ${artists !== undefined ? artists.map(v => v.name).join(', ') : 'Ka hmu thei lo'}
