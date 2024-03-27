@@ -5098,8 +5098,8 @@ if (hmanzat > limit1.wallet) return await dailylimit()
   if (!text) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} Hello World`);
   const thlakzuk = `${text.replace(/\n/g, '\\n')}`;
   const lines = thlakzuk.split('\n');
-  const numberedLines = lines.slice(1).map((line, index) => `${String.fromCharCode(96 + index + 1)}). ${line}`).join('\\n');
-  const output = `*${lines[0]}*\\n${numberedLines}`;
+  const numberedLines = lines.slice(1).map((line, index) => `${String.fromCharCode(96 + index + 1)}). ${line}`).join('\n');
+  const output = `${lines[0]}\\n${numberedLines}`;
   await dodoi(`${output}`);
 }
 break;
