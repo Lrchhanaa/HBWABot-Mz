@@ -775,40 +775,36 @@ if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 
 if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
     kuis = true;
-    let room = _biblequiz[m.sender.split('@')[0]];
-    let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '');
-    let isSurender = /^((me)?give up|surr?ender)$/i.test(m.text);
-    if (!isSurender) {
-        let index = room.achhanna.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks);
-        if (room.bodaih[index]) return !0;
-        room.bodaih[index] = m.sender;
-    }
-    let isWin = room.bodaih.length === room.bodaih.filter(v => v).length;
-    let isLose = room.bodaih.filter(v => !v).length === 0 && !isWin;
-
-    let caption = `*Q.* ${room.zawhna}\n*Ans:* ${Array.from(room.achhanna, (achhanna, index) => {
-        return isSurender || room.bodaih[index] ? ` ${achhanna} ${room.bodaih[index] ? '✓' : ''}`.trim() : false;
-    }).filter(v => v).join('\n')}
-    ${isSurender ? '' : ``}`.trim();
-    if (isLose) {
-    await eco.deduct(limitneihtu, khawlbawm, 40);
-    delete _biblequiz[m.sender.split('@')[0]];
-    }
-    if (isWin) {
-        const give = await eco.give(limitneihtu, khawlbawm, 50);
+    var room = _biblequiz[m.sender.split('@')[0]];
+    if (budy.toLowerCase() == room.achhanna) {
+        await HBWABotMz.sendMessage(m.chat, { text: `*Q.* ${room.zawhna}\n*Ans:* ${Array.from(room.achhanna}`}, { quoted: m })
+        await eco.give(limitneihtu, khawlbawm, 50);
+        await dodoi('I chhan dik avangin limit 50💎 i dawng a ni!')
         delete _biblequiz[m.sender.split('@')[0]];
-    }
-    const mes = await HBWABotMz.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }});
-
-    if (isSurender) {
+    } else {
+        dodoi('*I chhan dik loh avangin i limit 40💎 cut a ni*')
         await eco.deduct(limitneihtu, khawlbawm, 40);
         delete _biblequiz[m.sender.split('@')[0]];
     }
-} else {
-    delete _biblequiz[m.sender.split('@')[0]];;
 }
 
+
 switch (command) {
+case 'biblequiz':
+case 'bq':  {
+    if (_biblequiz.hasOwnProperty(m.sender.split('@')[0])) {
+        return dodoi(`Zawhna ila chhang zo lo 🤌`)
+    }
+    let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json')
+    let result = bbquiz[Math.floor(Math.random() * bbquiz.length)];
+    let englolo = await HBWABotMz.sendMessage(m.chat, {text: `${result.zawhna}\nAns: ___________` }, { quoted: m })
+    _biblequiz[userKey] = {
+            id: [userKey],
+            ...result,
+            bodaih: Array.from(result.achhanna, () => false)
+        };     
+}
+break;
 case 'mizoquiz': {
     const userKey = m.sender.split('@')[0];
 
@@ -857,36 +853,6 @@ case 'picquiz': {
         HBWABotMz.sendMessage(m.chat, { text: `🕑Hun a tawp...\nA chhanna dik chu:  
 *${thlalakquiz[m.sender.split('@')[0]]}* a ni` }, { quoted: englolo })
         delete thlalakquiz[m.sender.split('@')[0]];
-    }
-}
-break;
-
-case 'biblequiz':
-case 'bq': {
-    const userKey = m.sender.split('@')[0];
-    if (_biblequiz.hasOwnProperty(userKey) && isCmd) {
-        return dodoi('I in surrender dawn loh chuan zawhna chhang zo hmasa phawt rawh!')
-    }
-    try {
-        const kaurl = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json')
-        const random = kaurl[Math.floor(Math.random() * kaurl.length)];
-        
-const zawhnaq = `*Multiple Choice Questions*\n\n*Q.* ${random.zawhna}\nAns:`.trim();
-        
-        _biblequiz[userKey] = {
-            id: [userKey],
-            hbwabotid: await HBWABotMz.sendText(m.chat, zawhnaq, m),
-            ...random,
-            bodaih: Array.from(random.achhanna, () => false),
-            hadiah: 1,
-            tawphun: setTimeout(() => {
-                if (_biblequiz[userKey]) HBWABotMz.sendText(m.chat, `Minute 2 a zo, Chhan theih hun chhung a tawp`, m)
-                delete _biblequiz[userKey];
-            }, 120000),
-        };     
-    } catch (error) {
-        console.error('Error fetching or processing quiz:', error)
-        dodoi('Result tur ka lak laiin error awm!')
     }
 }
 break;
