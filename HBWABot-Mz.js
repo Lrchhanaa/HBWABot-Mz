@@ -790,7 +790,7 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
 
 switch (command) {
     case 'biblequiz':
-    case 'bq':
+    case 'bq': {
         if (_biblequiz.hasOwnProperty(m.sender.split('@')[0])) {
             return dodoi(`Zawhna ila chhang zo lo 🤌`);
         }
@@ -802,8 +802,8 @@ switch (command) {
             ...result,
             bodaih: Array.from(result.achhanna, () => false)
         };
+        }
         break;
-}
 
 case 'mizoquiz': {
     const userKey = m.sender.split('@')[0];
