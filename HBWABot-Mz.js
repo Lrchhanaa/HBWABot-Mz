@@ -71,7 +71,7 @@ let tebaklagu = db.game.tebaklagu = []
 let _mizoquiz = db.game.mizoquiz = []
 let _gkmizo = db.game.gkmizo = []
 let thlalakquiz = db.game.thlalakquiz = []
-let tebakkata = db.game.tebakkata = []
+let _biblequiz = db.game.biblequiz = []
 let caklontong = db.game.lontong = []
 let caklontong_desk = db.game.lontong_desk = []
 let tebakkalimat = db.game.kalimat = []
@@ -773,6 +773,21 @@ if (thlalakquiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
     }
 }
 
+if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
+    kuis = true;
+    room = _biblequiz[m.sender.split('@')[0]];
+    if (budy.toLowerCase() == room.achhanna) {
+        await HBWABotMz.sendMessage(m.chat, { text: `*Q.* ${room.zawhna}\nAns : ${room.achhanna}✓` }, { quoted: m })
+        await eco.give(limitneihtu, khawlbawm, 50)
+        delete _biblequiz[m.sender.split('@')[0]];
+    } else {
+        dodoi('*A dik lo!*')
+        await eco.deduct(limitneihtu, khawlbawm, 30)
+        delete _biblequiz[m.sender.split('@')[0]];
+        
+    }
+}
+
 switch (command) {
 case 'mizoquiz': {
     const userKey = m.sender.split('@')[0];
@@ -826,6 +841,17 @@ case 'picquiz': {
 }
 break;
 
+case 'biblequiz': case 'bq': {
+    if (_biblequiz.hasOwnProperty(m.sender.split('@')[0])) {
+        return dodoi(`Zawhna ila chhang zo lo`)
+    }
+    let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json')
+    let result = bbquiz[Math.floor(Math.random() * bbquiz.length)];
+    let englolo = await HBWABotMz.sendMessage(m.chat,{text: `${result.zawhna}\n
+\n*Ans:* ` }, { quoted: m })
+    _biblequiz[m.sender.split('@')[0]] = result.achhanna.toLowerCase()
+}
+break;
 
 case 'c1': {
 if (m.quoted?.sender) m.mentionedJid.push(m.quoted.sender)
@@ -5554,7 +5580,7 @@ await finishreact()
  break
  */
  
-case 'bible': case 'bq': case 'bible-quotes': 
+case 'bible': case 'bible-quotes': 
 const bible = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Media/main/QuotesMizo/BibleQuote.json')
 const mizo_bible = bible[Math.floor(Math.random() * bible.length)]
 const thuziak = `${mizo_bible}`
