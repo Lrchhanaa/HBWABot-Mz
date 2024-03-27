@@ -784,19 +784,24 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
         room.bodaih[index] = m.sender;
     }
     let isWin = room.bodaih.length === room.bodaih.filter(v => v).length;
+    let isLose = room.bodaih.filter(v => !v).length === 0 && !isWin;
+
     let caption = `*Q.* ${room.zawhna}\n*Ans:* ${Array.from(room.achhanna, (achhanna, index) => {
-        return isSurender || room.bodaih[index] ? `(${index + 1}) ${achhanna} ${room.bodaih[index] ? '✓' : ''}`.trim() : false;
+        return isSurender || room.bodaih[index] ? ` ${achhanna} ${room.bodaih[index] ? '✓' : ''}`.trim() : false;
     }).filter(v => v).join('\n')}
     ${isSurender ? '' : ``}`.trim();
+    if (isLose) {
+    await eco.deduct(limitneihtu, khawlbawm, 40);
+    delete _biblequiz[m.sender.split('@')[0]];
+    }
     if (isWin) {
         const give = await eco.give(limitneihtu, khawlbawm, 50);
+        delete _biblequiz[m.sender.split('@')[0]];
     }
     const mes = await HBWABotMz.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }});
 
     if (isSurender) {
         await eco.deduct(limitneihtu, khawlbawm, 40);
-    }
-    if (isWin || isSurender) {
         delete _biblequiz[m.sender.split('@')[0]];
     }
 } else {
