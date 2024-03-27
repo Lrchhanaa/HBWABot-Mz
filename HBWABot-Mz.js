@@ -777,15 +777,17 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
     kuis = true;
     let room = _biblequiz[m.sender.split('@')[0]];
     let teks = budy.toLowerCase().replace(/[^\w\s\-]+/, '');
-    let isSurender = /^((me)?give up|surr?ender)$/i.test(m.text)
+    let isSurender = /^((me)?give up|surr?ender)$/i.test(m.text);
     if (!isSurender) {
-        let index = room.achhanna.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks)
+        let index = room.achhanna.findIndex(v => v.toLowerCase().replace(/[^\w\s\-]+/, '') === teks);
         if (room.bodaih[index]) return !0;
         room.bodaih[index] = m.sender;
     }
     let isWin = room.bodaih.length === room.bodaih.filter(v => v).length;
-    let caption = `*Q.* ${room.zawhna}\n*Ans:*${room.achhanna} ${room.bodaih ? '✓' : ''}`.trim();
-
+    let caption = `*Q.* ${room.zawhna}\n*Ans:* ${Array.from(room.achhanna, (achhanna, index) => {
+        return isSurender || room.bodaih[index] ? `(${index + 1}) ${achhanna} ${room.bodaih[index] ? '✓' : ''}`.trim() : false;
+    }).filter(v => v).join('\n')}
+    ${isSurender ? '' : ``}`.trim();
     if (isWin) {
         const give = await eco.give(limitneihtu, khawlbawm, 50);
     }
@@ -797,6 +799,8 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
     if (isWin || isSurender) {
         delete _biblequiz[m.sender.split('@')[0]];
     }
+} else {
+    delete _biblequiz[m.sender.split('@')[0]];;
 }
 
 switch (command) {
