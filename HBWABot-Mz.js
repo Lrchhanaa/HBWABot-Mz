@@ -786,41 +786,26 @@ if (_biblequiz.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
         delete _biblequiz[m.sender.split('@')[0]];
     }
 }
-function isSameDay(date1, date2) {
-    return date1.getFullYear() === date2.getFullYear() &&
-        date1.getMonth() === date2.getMonth() &&
-        date1.getDate() === date2.getDate();
-}
+let bibleUsageCount = 0;
 
 switch (command) {
 case 'biblequiz':
-case 'mbq': {
-    var today = new Date();
-    var user = m.sender.split('@')[0];
-    if (_biblequiz.hasOwnProperty(user) && _biblequiz[user].count >= 15) {
-        return dodoi(`He quiz hi mipakhatin nikhatah vawi 15 chauh khel thei a ni`);
-    }
-    if (!_biblequiz.hasOwnProperty(user)) {
-        _biblequiz[user] = {
-            count: 0,
-            lastAttempted: null,
-            achhanna: null
-        };
-    }
-    if (_biblequiz[user].lastAttempted && isSameDay(new Date(_biblequiz[user].lastAttempted), today)) {
-        _biblequiz[user].count++;
-    } else {
-        _biblequiz[user].count = 1;
-        _biblequiz[user].lastAttempted = today;
-    }
-
-    let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json');
-    let result = bbquiz[Math.floor(Math.random() * bbquiz.length)];
-    let mult = "`Multiple Choice Questions`";
-    let englolo = await HBWABotMz.sendMessage(m.chat, { text: `> ${mult}\n${result.zawhna}\nAns: ___________`, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `Mizo Bible Quiz`,"body": `Limit hlawh theihna`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/MizoBibleQ.png`),"sourceUrl": ``}}}, { quoted: m });
-    _biblequiz[user].achhanna = result.achhanna.toLowerCase();
-    }
-    break;
+    case 'mbq': {
+    if (bibleUsageCount < 15) {
+        if (_biblequiz.hasOwnProperty(m.sender.split('@')[0])) {
+            return dodoi(`Zawhna ila chhang zo lo 🤌`);
+        }
+        let bbquiz = await fetchJson('https://raw.githubusercontent.com/HBMods-OFC/Base/master/quiz/biblequiz.json');
+        let result = bbquiz[Math.floor(Math.random() * bbquiz.length)];
+        let mult = "`Multiple Choice Questions`";
+        let englolo = await HBWABotMz.sendMessage(m.chat, { text: `> ${mult}\n${result.zawhna}\nAns: ___________`, contextInfo:{"externalAdReply": {"showAdAttribution": true, "containsAutoReply": true, "title": `Mizo Bible Quiz`,"body": `Limit hlawh theihna`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./asset/image/MizoBibleQ.png`),"sourceUrl": ``}}}, { quoted: m });
+       _biblequiz[m.sender.split('@')[0]] = result.achhanna.toLowerCase()
+       bibleUsageCount++;
+        } else {
+    return dodoi('Bot restart a nih hunah he features hi i hmang chhunzawm leh thei chauh ang')
+  }
+  }
+        break;
 
 case 'mizoquiz': {
     const userKey = m.sender.split('@')[0];
