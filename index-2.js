@@ -31,13 +31,13 @@ const { state, saveCreds } = await useMultiFileAuthState(`./asset/tobebot/${amah
 let { version, isLatest } = await fetchLatestBaileysVersion();
 const msgRetryCounterCache = new NodeCache()
 let HBWABotMz = makeWASocket({
-     auth: {
-     creds: state.creds,
-     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
-                },
-     printQRInTerminal: false,
-     logger: pino({level: "fatal"}).child({level: "fatal"}),
-     browser: [ "Ubuntu", "Chrome", "20.0.04" ],
+    auth: {
+        creds: state.creds,
+        keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
+    },
+    printQRInTerminal: false,
+    logger: pino({level: "fatal"}).child({level: "fatal"}),
+    browser: [ "MacOS", "Safari", "14.0" ], 
 });
 store.bind(HBWABotMz.ev);
 let phoneNumber = wanb.replace(/[^0-9]/g, '');
