@@ -6153,7 +6153,7 @@ case 'pinterestvid': {
         let pin = JSON.stringify(res);
         let json = JSON.parse(pin);
         if (!json.status) return dodoi("_Sorry, ka download thei a lo a ni😔_");
-        const mp4Url = jsonData.data.find(item => item.url.endsWith('.mp4')).url;
+        const mp4Url = json.data.find(item => item.url.endsWith('.mp4')).url;
         await uploadreact();
   
         HBWABotMz.sendMessage(m.chat,
