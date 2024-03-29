@@ -6145,19 +6145,15 @@ case 'ptvid':
 case 'pinterestvid': {
     if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn`);
     if (!args[0].match(/https:\/\/.*pinterest.com\/pin|pin.it/gi)) return dodoi(`Pinterest video link dik chauh rawn dah rawh\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn`);
-  
     const limit1 = await eco.balance(limitneihtu, khawlbawm);
     if (hmanzat > limit1.wallet) return await dailylimit();
-  
     await loadingreact();
     const { spin } = require("./lib/scraper");
-  
     await spin(args[0]).then(async res => {
         let pin = JSON.stringify(res);
         let json = JSON.parse(pin);
         if (!json.status) return dodoi("_Sorry, ka download thei a lo a ni😔_");
-        
-        let mp4Url = json.data.url;
+        const mp4Url = jsonData.data.find(item => item.url.endsWith('.mp4')).url;
         await uploadreact();
   
         HBWABotMz.sendMessage(m.chat,
