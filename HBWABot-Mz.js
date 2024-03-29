@@ -6141,28 +6141,36 @@ if (hmanzat > limit1.wallet) return await dailylimit()
   }
   break;
 }
-case 'ptvid': case 'pinterestvid': {
-if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn`)
-if (!args[0].match(/https:\/\/.*pinterest.com\/pin|pin.it/gi)) return dodoi('Pinterest video link dik chauh rawn dah rawh\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn')
-  const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-  await loadingreact()
-  const { spin } = require ("./lib/scraper")
-  await spin(args[0]).then(async res => {
-        let pin = JSON.stringify(res)
-        let json = JSON.parse(pin)
-        if (!json.status) return dodoi("_Sorry, ka download thei a lo a ni😔_")
-        let mp4Url = json.data.url
-        await uploadreact()
-    HBWABotMz.sendMessage(m.chat,
-      { video: { url: mp4Url }, mimetype: 'video/mp4', caption: `*Pinterest video download by ${global.botname}` },
-      { quoted: m }
-    )
-    let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-    await finishreact()
-    }
+case 'ptvid': 
+case 'pinterestvid': {
+    if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn`);
+    if (!args[0].match(/https:\/\/.*pinterest.com\/pin|pin.it/gi)) return dodoi(`Pinterest video link dik chauh rawn dah rawh\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn`);
+  
+    const limit1 = await eco.balance(limitneihtu, khawlbawm);
+    if (hmanzat > limit1.wallet) return await dailylimit();
+  
+    await loadingreact();
+    const { spin } = require("./lib/scraper");
+  
+    await spin(args[0]).then(async res => {
+        let pin = JSON.stringify(res);
+        let json = JSON.parse(pin);
+        if (!json.status) return dodoi("_Sorry, ka download thei a lo a ni😔_");
+        
+        let mp4Url = json.data.url;
+        await uploadreact();
+  
+        HBWABotMz.sendMessage(m.chat,
+            { video: { url: mp4Url }, mimetype: 'video/mp4', caption: `*Pinterest video download by ${global.botname}` },
+            { quoted: m }
+        );
+        
+        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
+        await finishreact();
+    });
+    break;
 }
-break
+
 case 'trvid':
 case 'threadsvid': {
   if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://www.threads.net/@ahmedmostafa00000000/post/C0G4idAI62g`)
