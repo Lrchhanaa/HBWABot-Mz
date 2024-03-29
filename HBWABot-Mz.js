@@ -4461,15 +4461,28 @@ dodoi(`Option te khu hmang rawh\nOptions : Close & Open\nTiang hian : ${command}
 break
 case 'tomp4': case 'tovideo': {
 if (!quoted) return dodoi('Reply to Sticker')
-if (!/webp/.test(mime)) return dodoi(`Sticker reply rawh tiang hian:*${prefix + command}*`)
-const limit1= await eco.balance(limitneihtu, khawlbawm)
+if (!/webp/.test(mime)) return 
+let mime = m.quoted.mimetype || ''
+    if (!/webp|audio/.test(mime)) dodoi(`Sticker reply rawh tiang hian: *${prefix + command}*`)
+    const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
+let { webp2mp4 } = require('./lib/webp2mp4')
 await loadingreact()
-let { webp2mp4File } = require('./lib/uploader')
-let media = await HBWABotMz.downloadAndSaveMediaMessage(quoted)
-let webpToMp4 = await webp2mp4File(media)
+    let media = await HBWABotMz.downloadAndSaveMediaMessage(quoted)
+    let out = Buffer.alloc(0)
+    if (/webp/.test(mime)) {
+        out = await webp2mp4(media)
+    } else if (/audio/.test(mime)) {
+        out = await ffmpeg(media, [
+            '-filter_complex', 'color',
+            '-pix_fmt', 'yuv420p',
+            '-crf', '51',
+            '-c:a', 'copy',
+            '-shortest'
+        ], 'mp3', 'mp4')
+    }
+await HBWABotMz.sendFile(m.chat, out, 'out.mp4', '*Done..*', m, 0, { thumbnail: out })
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-await HBWABotMz.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'sticker a tang video ah convert a ni' } }, { quoted: m })
 await fs.unlinkSync(media)
 await finishreact()
 }
@@ -6105,8 +6118,8 @@ await finishreact()
 break
 
 
-case 'ptvid':
-case 'pinterestvid': {
+case 'ptvidx':
+case 'pinterestvidx': {
   if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn`)
   const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -6128,7 +6141,28 @@ if (hmanzat > limit1.wallet) return await dailylimit()
   }
   break;
 }
-
+case 'ptvid': case 'pinterestvid': {
+if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn`)
+if (!args[0].match(/https:\/\/.*pinterest.com\/pin|pin.it/gi)) return dodoi('Pinterest video link dik chauh rawn dah rawh\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn')
+  const limit1= await eco.balance(limitneihtu, khawlbawm)
+if (hmanzat > limit1.wallet) return await dailylimit()
+  await loadingreact()
+  const { spin } = require ("./lib/scraper")
+  await spin(args[0]).then(async res => {
+        let pin = JSON.stringify(res)
+        let json = JSON.parse(pin)
+        if (!json.status) return dodoi("_Sorry, ka download thei a lo a ni😔_")
+        let mp4Url = json.data.url
+        await uploadreact()
+    HBWABotMz.sendMessage(m.chat,
+      { video: { url: mp4Url }, mimetype: 'video/mp4', caption: `*Pinterest video download by ${global.botname}` },
+      { quoted: m }
+    )
+    let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+    await finishreact()
+    }
+}
+break
 case 'trvid':
 case 'threadsvid': {
   if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://www.threads.net/@ahmedmostafa00000000/post/C0G4idAI62g`)
