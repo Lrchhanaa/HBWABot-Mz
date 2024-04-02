@@ -6058,12 +6058,14 @@ case 'igreels': {
         let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
     await finishreact()
     } else {
-        mumaker.instagram(`${args[0]}`)
-            .then((data) => HBWABotMz.sendMessage(m.chat, { video: { url: data }, caption: `Instagram Videos download by ${global.botname}` }, { quoted: m }))
+        const nunui3 = await fetchJson(`https://aemt.me/download/igdl?url=${encodeURIComponent(kanfa)}`);
+        const videoUrls = nunui3.result.url;
+            await uploadreact();
+            HBWABotMz.sendMessage(m.chat, { video: { url: videoUrls }, mimetype: 'video/mp4', caption: `*Instagram video download by ${global.botname}*` }, { quoted: m });
+            let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
+            await finishreact();
+        }
     }
-    let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-    await finishreact()
-}
 break;
 
  
@@ -6117,8 +6119,8 @@ await finishreact()
 break
 
 
-case 'ptvidx':
-case 'pinterestvidx': {
+case 'ptvid':
+case 'pinterestvid': {
   if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn`)
   const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
@@ -6130,7 +6132,7 @@ if (hmanzat > limit1.wallet) return await dailylimit()
   if (mp4Url) {
     await uploadreact()
     HBWABotMz.sendMessage(m.chat,
-      { video: { url: mp4Url }, mimetype: 'video/mp4', caption: `*Pinterest video download by ${global.botname}` },
+      { video: { url: mp4Url }, mimetype: 'video/mp4', caption: `*Pinterest video download by ${global.botname}*` },
       { quoted: m }
     )
     let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
@@ -6140,10 +6142,9 @@ if (hmanzat > limit1.wallet) return await dailylimit()
   }
   break;
 }
-case 'ptvid': 
-case 'pinterestvid': {
-    if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn`);
-    if (!args[0].match(/https:\/\/.*pinterest.com\/pin|pin.it/gi)) return dodoi(`Pinterest video link dik chauh rawn dah rawh\n*⟨Entirnan :* ${prefix + command} https://pin.it/1ew2IPn`);
+case 'ptvid2': 
+case 'pinterestvid2': {
+    if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://in.pinterest.com/pin/993747474000018772`);
     const limit1 = await eco.balance(limitneihtu, khawlbawm);
     if (hmanzat > limit1.wallet) return await dailylimit();
     await loadingreact();
@@ -6156,7 +6157,7 @@ case 'pinterestvid': {
         await uploadreact();
   
         HBWABotMz.sendMessage(m.chat,
-            { video: { url: mp4Url }, mimetype: 'video/mp4', caption: `*Pinterest video download by ${global.botname}` },
+            { video: { url: mp4Url }, mimetype: 'video/mp4', caption: `*Pinterest video download by ${global.botname}*` },
             { quoted: m }
         );
         
