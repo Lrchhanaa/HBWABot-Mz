@@ -3755,7 +3755,7 @@ case 'gpti': {
     *1. Blog:* https://herbert70.blogspot.com and 
     *2. Github:* https://github.com/HBMods-OFC
     *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
-    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. You can use /sticker to create stickers, /image to generate images, and /ytmp3 and /ytmp4 to download youtube videos ] `;
+    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. You can use /sticker to create image, toimg to generate images, and ytmp3 and ytmp4 to download youtube videos ] `;
     const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
     try {
         const response1 = await fetch(apiUrl1);
@@ -3816,7 +3816,6 @@ case 'gpti': {
             .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
         await dodoi(`${siamthat}`);
         let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
-    }
     } else {
         console.error(error2);
         dodoi("😔 Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656")
