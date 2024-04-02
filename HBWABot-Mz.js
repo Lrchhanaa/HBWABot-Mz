@@ -673,7 +673,6 @@ async function hmangsuh() {
 }
 const block1 = await hmangsuh()
 const phallo = block1.includes(m.sender)
-
 const aActiveEm = isVip ? '🟢 Active' : '🔴 Not Active';
 const duhsak1 = await DuhSak()
 const HerbertTheCreator1 = duhsak1.includes(m.sender)
@@ -686,8 +685,8 @@ const dawnzat2 = Dmdresult.dawnzat2
 const dawnzat3 = Dmdresult.lulian
 const limitneihtu = m.sender
 const khawlbawm = "diamond";
-if (isCmd && phallo) {
-return
+if (isCmd && (block1.includes(m.sender) || block1.includes(m.from))) {
+    return 
 }
 const dailylimit = () => {
  dodoi(`He featurs hi hman i duh chuan 💎50 i neih a ngai!!.\n͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏
@@ -3656,97 +3655,158 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
 break 
-case 'ai': {
-    if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`)
-    const limit1= await eco.balance(limitneihtu, khawlbawm)
-    if (hmanzat > limit1.wallet) return await dailylimit()
-    await robotreact() 
+case 'ai': 'openai': {
+    if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
+    const limit1 = await eco.balance(limitneihtu, khawlbawm);
+    if (hmanzat > limit1.wallet) return await dailylimit();
+    await robotreact();
     try {
-    const { openai } = require('betabotz-tools') 
-    const source1 = 'lus'
-    const target1 = 'en'
-    const thlakna = `${text
-        .replace(/BetaBotz|BetaBotz-Ai|Betabotz ai|BetaBotz Ai|BetaBotz ai/g, '')
-        .replace(/Lann/g, '')
-        .replace(/Erlan Rahmat|Erlanrahmat|Erlan rahmat|Erlan|erlan/g, '')
-        .replace(/ERLAN|RAHMAT/g, '')
-        .replace(/Lalngaihawma|lalngaihawma/g, 'Erlan Rahmat')
-        .replace(/HBMods/g, 'ERLANRAHMAT')
-        .replace(/HBMods OFC/g, 'ERLANRAHMAT')
-        .replace(/tunge siam che|tuin nge siam che|tu siam nge i nih/g, `who created you `)
-        .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`
-    const athu1 = `${thlakna 
-    .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot|`${global.botname}`/g, 'BetaBotz-Ai')
-        .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
-        .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
-    const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1)
-    const heihi_ani = `${mizotranslation1}`
-    const heihian = await openai(`${heihi_ani}`)
-    const chutin = `${heihian.result
-        .replace(/BetaBotz/g, `${global.botname}`)
-        .replace(/Lann/g, 'Herbert Suantak')
-        .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
-        .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')}`;
-    const source = 'auto'
-    const target = chutin.includes('```') ? 'en' : 'lus';
-    const athu = `${chutin}`
-    const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu)
-    const siamthat = `${mizotranslation
-    .replace(/ka siamtu|ka neitu/g, 'min siamtu')
-    .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
-    .replace(/ERLANRAHMAT/g, 'HBMods')
-    .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
-    .replace(/ka rawn kal a ni/g, 'ka awm e')
-    .replace(/Chibai! /g, `Hello ${pushname}, `)
-    .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
-    .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
-    await dodoi(`${siamthat}`)
-        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+        const { openai } = require('betabotz-tools');
+        const source1 = 'lus';
+        const target1 = 'en';
+        const thlakna = `${text
+            .replace(/BetaBotz|BetaBotz-Ai|Betabotz ai|BetaBotz Ai|BetaBotz ai/g, '')
+            .replace(/Lann/g, '')
+            .replace(/Erlan Rahmat|Erlanrahmat|Erlan rahmat|Erlan|erlan/g, '')
+            .replace(/ERLAN|RAHMAT/g, '')
+            .replace(/Lalngaihawma|lalngaihawma/g, 'Erlan Rahmat')
+            .replace(/HBMods/g, 'ERLANRAHMAT')
+            .replace(/HBMods OFC/g, 'ERLANRAHMAT')
+            .replace(/tunge siam che|tuin nge siam che|tu siam nge i nih/g, `who created you `)
+            .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`;
+        const athu1 = `${thlakna
+            .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot|`${global.botname}`/g, 'BetaBotz-Ai')
+            .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
+            .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
+        const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1);
+        const heihi_ani = `${mizotranslation1}`;
+        const heihian = await openai(`${heihi_ani}`);
+        const chutin = `${heihian.result
+            .replace(/BetaBotz/g, `${global.botname}`)
+            .replace(/Lann/g, 'Herbert Suantak')
+            .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
+            .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')}`;
+        const source = 'auto';
+        const target = chutin.includes('```') ? 'en' : 'lus';
+        const athu = `${chutin}`;
+        const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
+        const siamthat = `${mizotranslation
+            .replace(/ka siamtu|ka neitu/g, 'min siamtu')
+            .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
+            .replace(/ERLANRAHMAT/g, 'HBMods')
+            .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
+            .replace(/ka rawn kal a ni/g, 'ka awm e')
+            .replace(/Chibai! /g, `Hello ${pushname}, `)
+            .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
+            .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
+        await dodoi(`${siamthat}`);
+        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
     } catch (error) {
-        console.error("Error occurred:", error)
-        await dodoi(`😔Chhanna ka pe thei lo che a ngaihdam ka dil e. Kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh.\nhttps://wa.me/+918416093656`)
+        const source = 'auto';
+        const target = 'en';
+        const athu = `${text
+            .replace(/AILI|AILI|aili|Aili/g, '')
+            .replace(/Lann/g, '')}`;
+        const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
+        const prompt = `use emoticon \n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
+*1. Blog:* https://herbert70.blogspot.com and 
+*2. Github:* https://github.com/HBMods-OFC
+*3. Instagram:* https://instagram.com/herbert_suantak2 ] 
+[ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. You can use /sticker to create stickers, /image to generate images, and /ytmp3 and /ytmp4 to download youtube videos ] `;
+        const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
+        try {
+            const response1 = await fetch(apiUrl1);
+            const responseData1 = await response1.json();
+            if (response1.status === 200 && responseData1 && responseData1.status === true && responseData1.result) {
+                const chutin = responseData1.result;
+                const source = 'auto';
+                const target = chutin.includes('```') ? 'en' : 'lus';
+                const athu = `${chutin}`;
+                const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
+                const siamthat = `${mizotranslation
+                    .replace(/ka siamtu|ka neitu/g, 'min siamtu')
+                    .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
+                    .replace(/AILI|Aili/g, `${global.botname}-Ai`)
+                    .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
+                    .replace(/ka rawn kal a ni/g, 'ka awm e')
+                    .replace(/Chibai! /g, `Hello ${pushname}, `)
+                    .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
+                    .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
+                await dodoi(`${siamthat}`);
+            }
+        } catch (error) {
+            console.error(error);
+            dodoi("😔Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656")
+        }
     }
 }
-break
-//betabotz ChatBot
-case 'ai2': case 'gpt': {
-    if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`)
-    const limit1= await eco.balance(limitneihtu, khawlbawm)
-    if (hmanzat > limit1.wallet) return await dailylimit()
-    await robotreact() 
+break;
+
+case 'ai2':
+case 'gpt': {
+    if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
+    const limit1 = await eco.balance(limitneihtu, khawlbawm);
+    if (hmanzat > limit1.wallet) return await dailylimit();
+    await robotreact();
     try {
-    const { openai } = require('betabotz-tools') 
-    const source1 = `auto`
-    const target1 = 'en'
-    const thlakna = `${text
-        .replace(/BetaBotz|BetaBotz-Ai|Betabotz ai|BetaBotz Ai|BetaBotz ai/g, '')
-        .replace(/Lann/g, '')
-        .replace(/Erlan Rahmat|Erlanrahmat|Erlan rahmat|Erlan|erlan/g, '')
-        .replace(/ERLAN|RAHMAT/g, '')
-        .replace(/Lalngaihawma|lalngaihawma/g, 'Erlan Rahmat')
-        .replace(/HBMods/g, 'ERLANRAHMAT')
-        .replace(/HBMods OFC/g, 'ERLANRAHMAT')
-        .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`
-    const athu1 = `${thlakna 
-    .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot|`${global.botname}`/g, 'BetaBotz-Ai')
-        .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
-        .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
-    const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1)
-    const heihi_ani = `${mizotranslation1}`
-    const heihian = await openai(`${heihi_ani}`)
-    const chutin = `${heihian.result
-        .replace(/BetaBotz/g, `${global.botname}`)
-        .replace(/Lann/g, 'Herbert Suantak')
-        .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
-        .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')}`;
-await HBWABotMz.sendMessage(from, { text: chutin }, { quoted: m })
-        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+        const { openai } = require('betabotz-tools');
+        const source1 = `auto`;
+        const target1 = 'en';
+        const thlakna = `${text
+            .replace(/BetaBotz|BetaBotz-Ai|Betabotz ai|BetaBotz Ai|BetaBotz ai/g, '')
+            .replace(/Lann/g, '')
+            .replace(/Erlan Rahmat|Erlanrahmat|Erlan rahmat|Erlan|erlan/g, '')
+            .replace(/ERLAN|RAHMAT/g, '')
+            .replace(/Lalngaihawma|lalngaihawma/g, 'Erlan Rahmat')
+            .replace(/HBMods/g, 'ERLANRAHMAT')
+            .replace(/HBMods OFC/g, 'ERLANRAHMAT')
+            .replace(/HBMods-OFC/g, 'ERLANRAHMAT')}`;
+        const athu1 = `${thlakna
+            .replace(/HBWABot|HBWABot-Ai|HBWABot-ai|Hbwabot|hbwabot|`${global.botname}`/g, 'BetaBotz-Ai')
+            .replace(/Herbert Suantak|Herbert-a|Herberta/g, 'Lann')
+            .replace(/https:\/\/github.com\/HBMods-OFC/g, 'https://github.com/ERLANRAHMAT')}`;
+        const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1);
+        const heihi_ani = `${mizotranslation1}`;
+        const heihian = await openai(`${heihi_ani}`);
+        const chutin = `${heihian.result
+            .replace(/BetaBotz/g, `${global.botname}`)
+            .replace(/Lann/g, 'Herbert Suantak')
+            .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
+            .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')}`;
+        await HBWABotMz.sendMessage(from, { text: chutin }, { quoted: m });
+        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
     } catch (error) {
-        console.error("Error occurred:", error)
-        await dodoi(`😔Chhanna ka pe thei lo che a ngaihdam ka dil e. Kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh.\nhttps://wa.me/+918416093656`)
+        const source = 'auto';
+        const target = 'en';
+        const athu = `${text
+            .replace(/AILI|AILI|aili|Aili/g, '')
+            .replace(/Lann/g, '')}`;
+        const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
+        const prompt = `use emoticon \n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
+*1. Blog:* https://herbert70.blogspot.com and 
+*2. Github:* https://github.com/HBMods-OFC
+*3. Instagram:* https://instagram.com/herbert_suantak2 ] 
+[ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. You can use /sticker to create stickers, /image to generate images, and /ytmp3 and /ytmp4 to download youtube videos ] `;
+        const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
+        try {
+            const response1 = await fetch(apiUrl1);
+            const responseData1 = await response1.json();
+            if (response1.status === 200 && responseData1 && responseData1.status === true && responseData1.result) {
+                const message1 = responseData1.result;
+                const source1 = 'auto';
+                const target1 = 'en';
+                const athu1 = `${message1}`;
+                const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, athu1);
+                const me = m.sender;
+                await HBWABotMz.sendMessage(m.chat, { text: mizotranslation1, mentions: [me] }, { quoted: m });
+            }
+        } catch (error) {
+            dodoi("😔Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656")
+        }
     }
+    break;
 }
-break
+
 case 'gai': {
  if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`)
     const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3756,8 +3816,8 @@ case 'gai': {
     const target1 = 'en'
     const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, text)
     const heihi_ani = `${mizotranslation1}`
-    const chutin1 = await fetchJson(`https://api.vihangayt.asia/ai/gemini?q=${encodeURIComponent(heihi_ani)}`)
-    const chutin = chutin1.data
+    const chutin1 = await fetchJson(`https://aemt.me/gemini?text=${encodeURIComponent(heihi_ani)}`)
+    const chutin = chutin1.result
     const source = 'en'
     const target = chutin.includes('```') ? 'en' : 'lus';
     const athu = `${chutin}`
@@ -3774,7 +3834,7 @@ case 'gai': {
     let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break
-
+/*
 case 'openai': {
   if (!q) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`)
   const limit1= await eco.balance(limitneihtu, khawlbawm)
@@ -3784,12 +3844,12 @@ case 'openai': {
   const target = 'en';
   const athu = `${q}`;
   const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu)
-  const prompt = `[ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
+  const prompt = `use emoticon \n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
 *1. Blog:* https://herbert70.blogspot.com and 
 *2. Github:* https://github.com/HBMods-OFC
 *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
 [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. You can use /sticker to create stickers, /image to generate images, and /ytmp3 and /ytmp4 to download youtube videos ] `;
-  const apiUrl1 = `https://api.betabotz.eu.org/api/search/openai-logic?text=${mizotranslation}&logic=${encodeURIComponent(prompt)}&apikey=YybHI6GZ`;
+  const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
   try {
     const response1 = await fetch(apiUrl1)
     const responseData1 = await response1.json()
@@ -3808,7 +3868,7 @@ case 'openai': {
   }
 }
 break;
-
+*/
 case 'bincc': {
 if (!isVip) return await replyvip()
 if (isExp) {
@@ -6169,28 +6229,46 @@ case 'pinterestvid': {
 
 case 'trvid':
 case 'threadsvid': {
-  if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://www.threads.net/@ahmedmostafa00000000/post/C0G4idAI62g`)
-  const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-  await loadingreact()
-  const kanfa = args[0];
-  const nunui2 = await fetchJson(`https://tools.betabotz.eu.org/tools/threadsdl?url=${encodeURIComponent(kanfa)}`)
-  const herbert2 = nunui2.result;
-  const videoUrls = herbert2.video_urls;
-  const downloadUrl = videoUrls && videoUrls.length > 0 ? videoUrls[0].download_url : null;
-  if (downloadUrl) {
-    await uploadreact()
-    HBWABotMz.sendMessage(m.chat,
-      { video: { url: downloadUrl }, mimetype: 'video/mp4', caption: `*Threads video download by ${global.botname}` },
-      { quoted: m }
-    )
-    let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-    await finishreact()
-  } else {
-    dodoi("_Sorry, ka download thei lo a ni😔_")
-  }
-  break;
+    if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://www.threads.net/@ahmedmostafa00000000/post/C0G4idAI62g`);
+    const limit1 = await eco.balance(limitneihtu, khawlbawm);
+    if (hmanzat > limit1.wallet) return await dailylimit();
+    await loadingreact();
+    const kanfa = args[0];
+    try {
+        const nunui2 = await fetchJson(`https://tools.betabotz.eu.org/tools/threadsdl?url=${encodeURIComponent(kanfa)}`);
+        const herbert2 = nunui2.result;
+        const videoUrls = herbert2.video_urls;
+        const downloadUrl = videoUrls && videoUrls.length > 0 ? videoUrls[0].download_url : null;
+        if (downloadUrl) {
+            await uploadreact();
+            HBWABotMz.sendMessage(m.chat, { video: { url: downloadUrl }, mimetype: 'video/mp4', caption: `*Threads video download by ${global.botname}` }, { quoted: m });
+            let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
+            await finishreact();
+        } else {
+            dodoi("_Sorry, ka download thei lo a ni😔_");
+        }
+    } catch (error) {
+        console.error(error);
+        try {
+            const nunui3 = await fetchJson(`https://aemt.me/download/threads?url=${encodeURIComponent(kanfa)}`);
+            const videoUrls = nunui3.result.video_urls;
+            const downloadUrl = videoUrls && videoUrls.length > 0 ? videoUrls[0].download_url : null;
+            if (downloadUrl) {
+                await uploadreact();
+                HBWABotMz.sendMessage(m.chat, { video: { url: downloadUrl }, mimetype: 'video/mp4', caption: `*Threads video download by ${global.botname}` }, { quoted: m });
+                let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
+                await finishreact();
+            } else {
+                dodoi("_Sorry, ka download thei lo a ni😔_");
+            }
+        } catch (error2) {
+            console.error(error2);
+            dodoi("_Sorry, ka download thei lo a ni😔_");
+        }
+    }
+    break;
 }
+
 
 case 'twvid':
 case 'twittervid': {
@@ -6359,36 +6437,56 @@ dodoi(`Success`)
 }
 break
 case 'igstalk': {
-if (!args[0]) return dodoi(`Instagram Username rawn dah rawh\n\nTiang hian: ${prefix + command} herbert_suantak2`)
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-const igstalkk = (`https://tools.betabotz.eu.org/tools/stalk-ig?q=${encodeURIComponent(text)}`)
-let igstfetch = await fetch(igstalkk)
-let resig = await igstfetch.json()
-let resig2 = await resig.result
-let res = await resig2.user_info
-await loadingreact()
-try {
-let te = `
-┌──「 *STALKING* 
-▢ *🔖Name:* ${res.full_name} 
-▢ *🔖Username:* ${res.username}
-▢ *👥Follower:* ${res.followers}
-▢ *🫂Following:* ${res.following}
-▢ *📌Bio:* ${res.biography}
-▢ *🏝️Posts:* ${res.posts}
-▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
-╰════════════`
- await HBWABotMz.sendMessage(m.chat, {image: { url: res.profile_pic_url }, caption: te }, {quoted: m})
- let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
- await finishreact()
-}
-
-catch {
-dodoi(`A username a dik lo!. a username dik tak rawn dah rawh`)
-}
+    if (!args[0]) return dodoi(`Instagram Username rawn dah rawh\n\nTiang hian: ${prefix + command} herbert_suantak2`)
+    const limit1= await eco.balance(limitneihtu, khawlbawm)
+    if (hmanzat > limit1.wallet) return await dailylimit()
+    const igstalkk = (`https://tools.betabotz.eu.org/tools/stalk-ig?q=${encodeURIComponent(text)}`)
+    const igstalkk2 = (`https://aemt.me/download/igstalk?username=${encodeURIComponent(text)}`)
+    let igstfetch = await fetch(igstalkk)
+    let resig = await igstfetch.json()
+    let resig2 = await resig.result
+    let res = await resig2.user_info
+    await loadingreact()
+    try {
+        let te = `
+        ┌──「 *STALKING* 
+        ▢ *🔖Name:* ${res.full_name} 
+        ▢ *🔖Username:* ${res.username}
+        ▢ *👥Follower:* ${res.followers}
+        ▢ *🫂Following:* ${res.following}
+        ▢ *📌Bio:* ${res.biography}
+        ▢ *🏝️Posts:* ${res.posts}
+        ▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
+        ╰════════════`
+        await HBWABotMz.sendMessage(m.chat, { image: { url: res.profile_pic_url }, caption: te }, { quoted: m })
+        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+        await finishreact()
+    } catch {
+        let igstfetch2 = await fetch(igstalkk2)
+        let resig2 = await igstfetch2.json()
+        let res = await resig2.user_info
+        await loadingreact()
+        try {
+            let te = `
+            ┌──「 *STALKING* 
+            ▢ *🔖Name:* ${res.full_name} 
+            ▢ *🔖Username:* ${res.username}
+            ▢ *👥Follower:* ${res.followers}
+            ▢ *🫂Following:* ${res.following}
+            ▢ *📌Bio:* ${res.biography}
+            ▢ *🏝️Posts:* ${res.posts}
+            ▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
+            ╰════════════`
+            await HBWABotMz.sendMessage(m.chat, { image: { url: res.profile_pic_url }, caption: te }, { quoted: m })
+            let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+            await finishreact()
+        } catch {
+            dodoi(`A username a dik lo!. a username dik tak rawn dah rawh`)
+        }
+    }
 }
 break
+
 case 'igstalk2': {
 if (!args[0]) return dodoi(`Instagram Username rawn dah rawh\n\nTiang hian: ${prefix + command} herbert_suantak2`)
 const limit1= await eco.balance(limitneihtu, khawlbawm)
