@@ -6062,7 +6062,12 @@ case 'igreels': {
         const nunui3 = await fetchJson(`https://aemt.me/download/igdl?url=${encodeURIComponent(url)}`);
         const videoUrls = nunui3.result.url;
             await uploadreact();
-            HBWABotMz.sendMessage(m.chat, { video: { url: videoUrls }, mimetype: 'video/mp4', caption: `*Instagram video download by ${global.botname}*` }, { quoted: m });
+            for (let i of videoUrls) {
+            await HBWABotMz.sendMessage(m.chat, {
+                video: { url: i },
+                caption: "Instagram download by " + `${global.botname}`
+            }, { quoted: m })
+        }
             let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
             await finishreact();
         }
