@@ -685,7 +685,7 @@ const dawnzat2 = Dmdresult.dawnzat2
 const dawnzat3 = Dmdresult.lulian
 const limitneihtu = m.sender
 const khawlbawm = "diamond";
-if (isCmd && phallo) {
+if (isCmd && (block1.includes(m.sender) || block1.includes(m.from))) {
     return 
 }
 const dailylimit = () => {
@@ -3655,7 +3655,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
 break 
-case 'ai': 'openai': {
+case 'ai': case 'openai': {
     if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
     const limit1 = await eco.balance(limitneihtu, khawlbawm);
     if (hmanzat > limit1.wallet) return await dailylimit();
