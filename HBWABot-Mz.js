@@ -3671,7 +3671,8 @@ case 'openai': {
     *1. Blog:* https://herbert70.blogspot.com and 
     *2. Github:* https://github.com/HBMods-OFC
     *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
-    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. then i can generate images to sticker, and ytmp3 and ytmp4 to download youtube videos ] `;
+    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. ${prefix}ytmp3 and ${prefix}ytmp4 to download youtube videos ] 
+    [ if you want to know more what can i do, please type allmenu] `;
     const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
     const response1 = await fetch(apiUrl1);
     const responseData1 = await response1.json();
@@ -3710,7 +3711,7 @@ case 'gpt':{
         .replace(/AILI|aili|Aili/g, '')
         .replace(/Lann/g, '')}`;
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
-    const prompt = `use emoticon it all you reply\n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
+   const prompt = `use emoticon it all you reply\n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
     *1. Blog:* https://herbert70.blogspot.com and 
     *2. Github:* https://github.com/HBMods-OFC
     *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
