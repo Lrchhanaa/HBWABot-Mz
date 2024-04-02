@@ -685,7 +685,7 @@ const dawnzat2 = Dmdresult.dawnzat2
 const dawnzat3 = Dmdresult.lulian
 const limitneihtu = m.sender
 const khawlbawm = "diamond";
-if (isCmd && (block1.includes(m.sender) || block1.includes(m.from))) {
+if (isCmd && phallo) {
     return 
 }
 const dailylimit = () => {
