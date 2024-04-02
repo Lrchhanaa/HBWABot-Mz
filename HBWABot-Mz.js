@@ -6039,40 +6039,43 @@ case 'instavid':
 case 'igstory':
 case 'igreels': {
     // Credit by Betabotz-tools
-    if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://www.instagram.com/reel/Cv83HHYtC-Y/?igshid=NTc4MTIwNjQ2YQ==`)
-    if (!text.includes("instagram.com")) return dodoi(`Instagram video link dik tak chauh rawn dah rawh!!`)
-    const limit1 = await eco.balance(limitneihtu, khawlbawm)
-    if (hmanzat > limit1.wallet) return await dailylimit()
-    await loadingreact()
-    const { instagram } = require('betabotz-tools')
+    if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://www.instagram.com/reel/Cv83HHYtC-Y/?igshid=NTc4MTIwNjQ2YQ==`);
+    if (!text.includes("instagram.com")) return dodoi(`Instagram video link dik tak chauh rawn dah rawh!!`);
+    const limit1 = await eco.balance(limitneihtu, khawlbawm);
+    if (hmanzat > limit1.wallet) return await dailylimit();
+    await loadingreact();
+    const { instagram } = require('betabotz-tools');
     const url = args[0];
-    const results = await instagram(url)
-    await uploadreact()
+    const results = await instagram(url);
+    await uploadreact();
     if (results.result) {
         for (let i of results.result) {
             await HBWABotMz.sendMessage(m.chat, {
                 video: { url: i._url },
                 caption: "Instagram download by " + `${global.botname}`
-            }, { quoted: m })
+            }, { quoted: m });
         }
-        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-    await finishreact()
+        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
+        await finishreact();
     } else {
-    const url = args[0];
-        const nunui3 = await fetchJson(`https://aemt.me/download/igdl?url=${encodeURIComponent(url)}`);
-        const videoUrls = nunui3.result.url;
+        const url2 = args[0];
+        const nunui3 = await fetchJson(`https://aemt.me/download/igdl?url=${encodeURIComponent(url2)}`);
+        if (Array.isArray(nunui3.result)) {
             await uploadreact();
-            for (let i of videoUrls) {
-            await HBWABotMz.sendMessage(m.chat, {
-                video: { url: i },
-                caption: "Instagram download by " + `${global.botname}`
-            }, { quoted: m })
-        }
+            for (let i of nunui3.result) {
+                await HBWABotMz.sendMessage(m.chat, {
+                    video: { url: i.url },
+                    caption: "Instagram download by " + `${global.botname}`
+                }, { quoted: m });
+            }
             let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
             await finishreact();
+        } else {
+            await dodoi("No video URLs found");
         }
     }
-break;
+    break;
+}
 
  
 case 'tiktokvid3' : case 'ttvid3': {
