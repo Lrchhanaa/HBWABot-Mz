@@ -3732,7 +3732,6 @@ case 'openai': {
             .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
         await dodoi(`${siamthat}`);
         let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
-    }
     } else {
         console.error(error2);
         dodoi("😔 Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656")
