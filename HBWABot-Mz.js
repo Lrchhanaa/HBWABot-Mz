@@ -3687,7 +3687,7 @@ case 'openai': {
             .replace(/AILI|Aili/g, `${global.botname}-Ai`)
             .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
             .replace(/ka rawn kal a ni/g, 'ka awm e')
-            .replace(/Chibai! /g, `Hello ${pushname}, `)
+            .replace(/Chibai! |Chibai u/g, `Hello ${pushname}, `)
             .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
             .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
         await dodoi(`${siamthat}`);
@@ -3714,7 +3714,8 @@ case 'gpt':{
     *1. Blog:* https://herbert70.blogspot.com and 
     *2. Github:* https://github.com/HBMods-OFC
     *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
-    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. then i can generate images to sticker, and ytmp3 and ytmp4 to download youtube videos ] `;
+    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. ${prefix}ytmp3 and ${prefix}ytmp4 to download youtube videos ] 
+    [ if you want to know more what can i do, please type allmenu] `;
     const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
     const response1 = await fetch(apiUrl1);
     const responseData1 = await response1.json();
@@ -3730,7 +3731,7 @@ case 'gpt':{
             .replace(/AILI|Aili/g, `${global.botname}-Ai`)
             .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
             .replace(/ka rawn kal a ni/g, 'ka awm e')
-            .replace(/Chibai! /g, `Hello ${pushname}, `)
+            .replace(/Chibai! |Chibai u/g, `Hello ${pushname}, `)
             .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
             .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
         await dodoi(`${siamthat}`);
@@ -3744,32 +3745,33 @@ case 'gpt':{
 
 
 case 'gai': {
- if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`)
-    const limit1= await eco.balance(limitneihtu, khawlbawm)
-    if (hmanzat > limit1.wallet) return await dailylimit()
-    await robotreact() 
-    const source1 = `lus`
-    const target1 = 'en'
-    const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, text)
-    const heihi_ani = `${mizotranslation1}`
-    const chutin1 = await fetchJson(`https://aemt.me/gemini?text=${encodeURIComponent(heihi_ani)}`)
-    const chutin = chutin1.result
-    const source = 'en'
+    if (!text) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
+    const limit1 = await eco.balance(limitneihtu, khawlbawm);
+    if (hmanzat > limit1.wallet) return await dailylimit();
+    await robotreact();
+    const source1 = `lus`;
+    const target1 = 'en';
+    const mizotranslation1 = await mizo_tawnga_translate_na.translate(source1, target1, text);
+    const heihi_ani = `${mizotranslation1}`;
+    const chutin1 = await fetchJson(`https://aemt.me/gemini?text=${encodeURIComponent(heihi_ani)}`);
+    const chutin = chutin1.result;
+    const source = 'en';
     const target = chutin.includes('```') ? 'en' : 'lus';
-    const athu = `${chutin}`
-    const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu)
+    const athu = `${chutin}`;
+    const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
     const siamthat = `${mizotranslation
-    .replace(/ka siamtu|ka neitu/g, 'min siamtu')
-    .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
-    .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
-    .replace(/ka rawn kal a ni/g, 'ka awm e')
-    .replace(/Chibai! /g, `Hello ${pushname}, `)
-    .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
-    .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
-    await dodoi(`${siamthat}`)
-    let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+        .replace(/ka siamtu|ka neitu/g, 'min siamtu')
+        .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
+        .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
+        .replace(/ka rawn kal a ni/g, 'ka awm e')
+        .replace(/Chibai! /g, `Hello ${pushname}, `)
+        .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
+        .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
+    await dodoi(`${siamthat}`);
+    let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
+    break;
 }
-break
+
 /*
 case 'openai': {
   if (!q) return dodoi(`_🤖Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`)
@@ -6372,21 +6374,21 @@ case 'igstalk': {
         return;
     }
     try {
-        let te = `
-        ┌──「 *STALKING* 
-        ▢ *🔖Name:* ${res.full_name} 
-        ▢ *🔖Username:* ${res.username}
-        ▢ *👥Follower:* ${res.followers}
-        ▢ *🫂Following:* ${res.following}
-        ▢ *📌Bio:* ${res.biography}
-        ▢ *🏝️Posts:* ${res.posts}
-        ▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
-        ╰════════════`
-        await HBWABotMz.sendMessage(m.chat, { image: { url: res.profile_pic_url }, caption: te }, { quoted: m })
-        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-        await finishreact()
+let te = `
+┌──「 *STALKING* 
+▢ *🔖Name:* ${res.full_name} 
+▢ *🔖Username:* ${res.username}
+▢ *👥Follower:* ${res.followers}
+▢ *🫂Following:* ${res.following}
+▢ *📌Bio:* ${res.biography}
+▢ *🏝️Posts:* ${res.posts}
+▢ *🔗 Link* : https://instagram.com/${res.username.replace(/^@/, '')}
+╰════════════`
+await HBWABotMz.sendMessage(m.chat, { image: { url: res.profile_pic_url }, caption: te }, { quoted: m })
+let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+await finishreact()
     } catch {
-        dodoi(`Error: Failed to fetch user info`);
+        dodoi(`A username a dik lo!. a username dik tak rawn dah rawh`);
     }
     break;
 }
