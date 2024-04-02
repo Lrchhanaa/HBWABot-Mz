@@ -3671,7 +3671,7 @@ case 'openai': {
     *1. Blog:* https://herbert70.blogspot.com and 
     *2. Github:* https://github.com/HBMods-OFC
     *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
-    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. ${prefix}ytmp3 and ${prefix}ytmp4 to download youtube videos ] 
+    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. .ytmp3 and .ytmp4 to download youtube videos ] 
     [ if you want to know more what can i do, please type allmenu] `;
     const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
     const response1 = await fetch(apiUrl1);
@@ -3715,7 +3715,7 @@ case 'gpt':{
     *1. Blog:* https://herbert70.blogspot.com and 
     *2. Github:* https://github.com/HBMods-OFC
     *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
-    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. ${prefix}ytmp3 and ${prefix}ytmp4 to download youtube videos ] 
+    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. .ytmp3 and .ytmp4 to download youtube videos ] 
     [ if you want to know more what can i do, please type allmenu] `;
     const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
     const response1 = await fetch(apiUrl1);
@@ -6124,7 +6124,7 @@ case 'pinterestvidx': {
 if (hmanzat > limit1.wallet) return await dailylimit()
   await loadingreact()
   const kanfa = args[0];
-  const nunui2 = await fetchJson(`https://tools.betabotz.eu.org/tools/pinterestdl?url=${encodeURIComponent(kanfa)}`)
+  const nunui2 = await fetchJson(`https://aemt.me/download/aio?url=${encodeURIComponent(kanfa)}`)
   const herbert2 = nunui2.result;
   const mp4Url = herbert2.medias.find(media => media.extension === 'mp4')?.url;
   if (mp4Url) {
