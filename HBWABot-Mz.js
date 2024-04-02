@@ -6058,7 +6058,8 @@ case 'igreels': {
         let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
     await finishreact()
     } else {
-        const nunui3 = await fetchJson(`https://aemt.me/download/igdl?url=${encodeURIComponent(kanfa)}`);
+    const url = args[0];
+        const nunui3 = await fetchJson(`https://aemt.me/download/igdl?url=${encodeURIComponent(url)}`);
         const videoUrls = nunui3.result.url;
             await uploadreact();
             HBWABotMz.sendMessage(m.chat, { video: { url: videoUrls }, mimetype: 'video/mp4', caption: `*Instagram video download by ${global.botname}*` }, { quoted: m });
