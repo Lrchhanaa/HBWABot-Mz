@@ -3664,7 +3664,7 @@ case 'openai': {
     const source = 'lus';
     const target = 'en';
     const athu = `${text
-        .replace(/AILI|AILI|aili|Aili/g, '')
+        .replace(/AILI|aili|Aili/g, '')
         .replace(/Lann/g, '')}`;
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
     const prompt = `use emoticon it all you reply\n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
@@ -3673,9 +3673,9 @@ case 'openai': {
     *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
     [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. then i can generate images to sticker, and ytmp3 and ytmp4 to download youtube videos ] `;
     const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
-    try {
-        const response1 = await fetch(apiUrl1);
-        const responseData1 = await response1.json();
+    const response1 = await fetch(apiUrl1);
+    const responseData1 = await response1.json();
+    if (responseData1.status === true) {
         const chutin = responseData1.result;
         const source = 'auto';
         const target = chutin.includes('```') ? 'en' : 'lus';
@@ -3732,37 +3732,39 @@ case 'openai': {
             .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
         await dodoi(`${siamthat}`);
         let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
-    } else {
-        console.error(error2);
-        dodoi("😔 Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656")
     }
+} else {
+    console.error(error2);
+    dodoi("😔 Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656")
+}
 break;
 }
 
+
 case 'ai2':
-case 'gpti': {
+case 'gpt': {
     if (!text) return dodoi(`_🤖 Ai nen a in biakna Tiang hian i hmang ang_\n*⟨Entirnan:* ${prefix + command} ChatGpt hi eng nge a nih min hrilh fiah thei em?.`);
     const limit1 = await eco.balance(limitneihtu, khawlbawm);
     if (hmanzat > limit1.wallet) return await dailylimit();
     await robotreact();
-    const source = 'auto';
+    const source = 'lus';
     const target = 'en';
     const athu = `${text
-        .replace(/AILI|AILI|aili|Aili/g, '')
+        .replace(/AILI|aili|Aili/g, '')
         .replace(/Lann/g, '')}`;
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
-    const prompt = `use emoticon \n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
+    const prompt = `use emoticon it all you reply\n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
     *1. Blog:* https://herbert70.blogspot.com and 
     *2. Github:* https://github.com/HBMods-OFC
     *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
-    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. You can use /sticker to create image, toimg to generate images, and ytmp3 and ytmp4 to download youtube videos ] `;
+    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. then i can generate images to sticker, and ytmp3 and ytmp4 to download youtube videos ] `;
     const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
-    try {
-        const response1 = await fetch(apiUrl1);
-        const responseData1 = await response1.json();
+    const response1 = await fetch(apiUrl1);
+    const responseData1 = await response1.json();
+    if (responseData1.status === true) {
         const chutin = responseData1.result;
         const source = 'auto';
-        const target = "en"
+        const target = chutin.includes('```') ? 'en' : 'en';
         const athu = `${chutin}`;
         const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
         const siamthat = `${mizotranslation
@@ -3802,7 +3804,7 @@ case 'gpti': {
             .replace(/Erlan Rahmat|Erlanrahmat|Erlan|erlan/g, 'Lalngaihawma')
             .replace(/https:\/\/github.com\/ERLANRAHMAT/g, 'https://github.com/HBMods-OFC')}`;
         const source = 'auto';
-        const target = "en"
+        const target = chutin.includes('```') ? 'en' : 'en';
         const athu = `${chutin}`;
         const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
         const siamthat = `${mizotranslation
@@ -3816,10 +3818,11 @@ case 'gpti': {
             .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
         await dodoi(`${siamthat}`);
         let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat);
-    } else {
-        console.error(error2);
-        dodoi("😔 Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656")
     }
+} else {
+    console.error(error2);
+    dodoi("😔 Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656")
+}
 break;
 }
 
