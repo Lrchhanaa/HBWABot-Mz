@@ -3647,7 +3647,7 @@ case 'openai': {
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
     const prompt = `[ “ Use emoticons in all your communication messages ”]
 [“I am ${global.botname} Ai created by Herbert Suantak”]
-[“Herbert Suantak is also known as Lalngaihawma”] [“If you want to talk to my Creator, please follow him on Instagram, his Instagram id is https://instagram.com/Herbert_Suantak2 ”]
+[“HBWABot fullform Herbert WhatsApp Bot”] [“If you want to talk to my Creator, please follow him on Instagram, his Instagram id is https://instagram.com/Herbert_Suantak2 ”]
 
 I have various features, the most notable of which are :
 youtube video download command in mp3 and mp4 format is .ytmp3 and ytmp4 If you want to see the various video download commands I have, type .downloadmenu.
@@ -3696,7 +3696,7 @@ case 'gpt':{
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
    const prompt = `Translate lus | [ “ Use emoticons in all your communication messages ”]
 [“I am ${global.botname} Ai created by Herbert Suantak”]
-[“Herbert Suantak is also known as Lalngaihawma”] [“If you want to talk to him, please follow him on Instagram, his Instagram id is https://instagram.com/Herbert_Suantak2 ”]
+[“HBWABot fullform Herbert WhatsApp Bot”] [“If you want to talk to him, please follow him on Instagram, his Instagram id is https://instagram.com/Herbert_Suantak2 ”]
 
 I have various features, the most notable of which are :
 youtube video download command in mp3 and mp4 format is .ytmp3 and ytmp4 If you want to see the various video download commands I have, type .downloadmenu.
