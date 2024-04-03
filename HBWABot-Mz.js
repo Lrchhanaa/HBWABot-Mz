@@ -6187,22 +6187,8 @@ case 'twvid':
 case 'twittervid': {
   if (!args || !args[0]) return dodoi(`_🤖Kha tiang ringawt loh khan tiang hian tih tur_\n*⟨Entirnan :* ${prefix + command} https://twitter.com/i/status/1721997071719227582`)
   const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
+  if (hmanzat > limit1.wallet) return await dailylimit()
   await loadingreact()
-  const kanfa = args[0];
-  const nunui2 = await fetchJson(`https://tools.betabotz.eu.org/tools/twitterdl?url=${encodeURIComponent(kanfa)}`)
-  const herbert2 = nunui2.result;
-  const videoUrls = herbert2.mediaURLs;  
-  if (videoUrls && videoUrls.length > 0) {
-    const videoUrl = videoUrls[0];
-    await uploadreact()
-    HBWABotMz.sendMessage(m.chat,
-      { video: { url: videoUrl }, mimetype: 'video/mp4', caption: `*Twitter video download by ${global.botname}` },
-      { quoted: m }
-    )
-    let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-    await finishreact()
-  } else {
   const kanfa = args[0];
   const nunui2 = await fetchJson(`https://aemt.me/download/twtdl?url=${encodeURIComponent(kanfa)}`)
   const herbert2 = nunui2.result;
@@ -6213,7 +6199,6 @@ if (hmanzat > limit1.wallet) return await dailylimit()
     )
   }
   break;
-}
  
 case 'fbvid2' : case 'facebookvid2':{
 if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://fb.watch/mcx9K6cb6t/?mibextid=8103lRmnirLUhozF`)
