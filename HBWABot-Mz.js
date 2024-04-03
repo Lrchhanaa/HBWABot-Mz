@@ -2291,8 +2291,7 @@ var HBLoadingmenu = [
 ┃𒆜│withdraw
 ┃𒆜│deposite
 ┃𒆜│tts 
-┃𒆜│say 
-┃𒆜│togif 
+┃𒆜│say  
 ┃𒆜│toqr 
 ┃𒆜│bass 
 ┃𒆜│blown 
@@ -2310,7 +2309,6 @@ var HBLoadingmenu = [
 ┃𒆜│tovn 
 ┃𒆜│toaudio 
 ┃𒆜│tomp3 
-┃𒆜│tomp4
 ┃𒆜│toimg 
 ┃𒆜│sticker 
 ┃𒆜│ebinary 
@@ -2981,8 +2979,7 @@ var HBLoadingmenu = [
 ┃𒆜│withdraw
 ┃𒆜│deposite
 ┃𒆜│tts 
-┃𒆜│say 
-┃𒆜│togif 
+┃𒆜│say  
 ┃𒆜│toqr 
 ┃𒆜│bass 
 ┃𒆜│blown 
@@ -3000,7 +2997,6 @@ var HBLoadingmenu = [
 ┃𒆜│tovn 
 ┃𒆜│toaudio 
 ┃𒆜│tomp3 
-┃𒆜│tomp4
 ┃𒆜│toimg 
 ┃𒆜│sticker 
 ┃𒆜│ebinary 
@@ -3474,7 +3470,7 @@ let { key } = await HBWABotMz.sendMessage(from, {text: '《▒▒▒▒▒▒▒
 for (let i = 0; i < dbinaryloading.length; i++) {await HBWABotMz.sendMessage(from, {text: dbinaryloading[i], edit: key },{quoted:m})}
 }
 break
-case 'remini': {
+case 'remini': case 'remini2': case 'hd': {
 if (!isVip) return await replyvip()
     if (isExp) {
         replyvipexp()
@@ -3604,31 +3600,12 @@ if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${pref
 const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
-const { removebg } = require('betabotz-tools')
-let downloadrawh = await quoted.download()
-let results = await removebg(downloadrawh)
-console.log(results) //json
-HBWABotMz.sendMessage(m.chat, { image: {url: results.image_data}, caption: `\n*©${global.botname}*`}, { quoted: m})
-let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
-await finishreact()
-}
-break
-case 'remini2': case 'hd': {
-    if (!isVip) return await replyvip()
-    if (isExp) {
-        replyvipexp()
-        return;
-    }
-if (!quoted) return dodoi(`Thlalak rawn dah rawh`)
-if (!/image/.test(mime)) return dodoi(`Thlalak Send/Reply in a caption ah ${prefix + command} tih hi rawn dah rawh`)
-const limit1= await eco.balance(limitneihtu, khawlbawm)
-if (hmanzat > limit1.wallet) return await dailylimit()
-await loadingreact()
-const { remini } = require('betabotz-tools')
-let downloadrawh = await quoted.download()
-let results = await remini(downloadrawh)
-console.log(results) //json
-HBWABotMz.sendMessage(m.chat, { image: {url: results.image_data}, caption: `\n*©${global.botname}*`}, { quoted: m})
+let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+let media = await HBWABotMz.downloadAndSaveMediaMessage(quoted)
+let anu = await TelegraPh(media)
+let removebg = await fetchJson(`https://aemt.me/removebg?url=${encodeURIComponent(anu)}`)
+let heingei = removebg.url
+HBWABotMz.sendMessage(m.chat, { image: {url: heingei.result}, caption: `\n*©${global.botname}*`}, { quoted: m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -3646,11 +3623,12 @@ const limit1= await eco.balance(limitneihtu, khawlbawm)
 if (hmanzat > limit1.wallet) return await dailylimit()
 
 await loadingreact()
-const { tozombie } = require('betabotz-tools')
-let downloadrawh = await quoted.download()
-let results = await tozombie(downloadrawh)
-console.log(results) //json
-HBWABotMz.sendMessage(m.chat, { image: {url: results.image_data}, caption: `\n*©${global.botname}*`}, { quoted: m})
+let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+let media = await HBWABotMz.downloadAndSaveMediaMessage(quoted)
+let anu = await TelegraPh(media)
+let tozombie = await fetchJson(`https://aemt.me/converter/zombie?url=${encodeURIComponent(anu)}`)
+let heingei = tozombie.url
+HBWABotMz.sendMessage(m.chat, { image: {url: heingei}, caption: `\n*©${global.botname}*`}, { quoted: m})
 let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
@@ -4458,6 +4436,7 @@ else {
 dodoi(`Option te khu hmang rawh\nOptions : Close & Open\nTiang hian : ${command} close`)
 }}
 break
+/*
 case 'tomp4': case 'tovideo': {
 if (!quoted) return dodoi('Reply to Sticker')
 if (!/webp/.test(mime)) return 
@@ -4486,7 +4465,7 @@ await fs.unlinkSync(media)
 await finishreact()
 }
 break
-
+*/
 case 'toaud': case 'toaudio': {
 if (!/video/.test(mime) && !/audio/.test(mime)) return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, audio type in ka rawn thawn ang che.... `)
 if (!quoted) return dodoi(`Video emaw Audio rawn thawn la a caption-ah *${prefix + command}* rawn dah la ti chuan, audio type in ka rawn thawn ang che.... `)
@@ -4681,6 +4660,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
 break
+/*
 case 'togif': {
 if (!quoted) return dodoi('Sticker che thei reply rawh')
 if (!/webp/.test(mime)) return dodoi(`Sticker reply rawh tiang hian: *${prefix + command}*`)
@@ -4696,7 +4676,7 @@ let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
 break
-
+*/
 case 'tourl': case 'tolink': {
 if (!quoted) return dodoi(`Thlalak a caption-ah *${prefix + command}* tih rawn dah rawh`)
 if (!/image/.test(mime)) return dodoi(`Thlalak rawn thawn la emaw reply la, a caption-ah ${prefix + command} tih hi rawn dah rawh`)
@@ -6223,7 +6203,14 @@ if (hmanzat > limit1.wallet) return await dailylimit()
     let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
     await finishreact()
   } else {
-    dodoi("_Sorry, ka download thei lo a ni 😔_")
+  const kanfa = args[0];
+  const nunui2 = await fetchJson(`https://aemt.me/download/twtdl?url=${encodeURIComponent(kanfa)}`)
+  const herbert2 = nunui2.result;
+  const videoUrls = herbert2.url;  
+  HBWABotMz.sendMessage(m.chat,
+      { video: { url: videoUrls.hd }, mimetype: 'video/mp4', caption: `*Twitter video download by ${global.botname}` },
+      { quoted: m }
+    )
   }
   break;
 }
