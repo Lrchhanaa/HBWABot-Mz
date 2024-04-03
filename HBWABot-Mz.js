@@ -1970,7 +1970,7 @@ const enm = `_*Note*_\n*If you don't have any limit, you cannot use my features 
 text: `*Bot InFo*
 *✑ Vawiin :* ${vawiinni2}
 *✑ Date :* ${kumtin}
-*✑ Version :* 5.5.0
+*✑ Version :* 5.6.0
 *✑ User :* ${ownernumber}
 *✑ Limit :* ${balance.wallet} 💎
 *✑ Vip :* ${aActiveEm}
@@ -2013,7 +2013,7 @@ sourceUrl: ``
 text: `*Bot InFo*
 *✑ Vawiin :* ${vawiinni2}
 *✑ Date :* ${kumtin}
-*✑ Version :* 5.5.0
+*✑ Version :* 5.6.0
 *✑ User :* ${ownernumber}
 *✑ Limit :* ${balance.wallet} 💎
 *✑ Vip :* ${aActiveEm}
@@ -3104,7 +3104,7 @@ var HBLoadingmenu = [
 ┃𒆜│unbanv4
 ┃𒆜│unbanv5
 ┃𒆜│removebg
-┃𒆜│tozombies
+┃𒆜│tozombie
 ┃𒆜│bincc
 ┃𒆜│swm
 ┃𒆜│hentaivid
@@ -3645,12 +3645,16 @@ case 'openai': {
         .replace(/AILI|aili|Aili/g, '')
         .replace(/Lann/g, '')}`;
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
-    const prompt = `use emoticon it all message\n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot. If you want to know more about my creator, visit
-    *1. Blog:* https://herbert70.blogspot.com and 
-    *2. Github:* https://github.com/HBMods-OFC
-    *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
-    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. .ytmp3 and .ytmp4 to download youtube videos ] 
-    [ if you want to know more what can i do, please type allmenu] `;
+    const prompt = `[ “ Use emoticons in all your communication messages ”]
+[“I am ${global.botname} Ai created by Herbert Suantak”]
+[“Herbert Suantak is also known as Lalngaihawma”] [“If you want to talk to my Creator, please follow him on Instagram, his Instagram id is https://instagram.com/Herbert_Suantak2 ”]
+
+I have various features, the most notable of which are :
+youtube video download command in mp3 and mp4 format is .ytmp3 and ytmp4 If you want to see the various video download commands I have, type .downloadmenu.
+
+I can easily convert a photo into a sticker, send me a photo with .s or .sticker in the caption and I can make it into a sticker for you.
+
+You can see all my features by typing .allmenu`;
     const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
     const response1 = await fetch(apiUrl1);
     const responseData1 = await response1.json();
@@ -3663,7 +3667,7 @@ case 'openai': {
         const siamthat = `${mizotranslation
             .replace(/ka siamtu|ka neitu/g, 'min siamtu')
             .replace(/Ka neitu|Ka siamtu/g, 'Min siamtu')
-            .replace(/AILI|Aili/g, `${global.botname}-Ai`)
+            .replace(/AILI|Aili/g, `${global.botname}`)
             .replace(/I tanpui turin ka|tanpui turin ka/g, 'tanpui tur chein ka')
             .replace(/ka rawn kal a ni/g, 'ka awm e')
             .replace(/Chibai! |Chibai u/g, `Hello ${pushname}, `)
@@ -3690,12 +3694,16 @@ case 'gpt':{
         .replace(/AILI|aili|Aili/g, '')
         .replace(/Lann/g, '')}`;
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
-   const prompt = `use emoticon it all you reply\n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
-    *1. Blog:* https://herbert70.blogspot.com and 
-    *2. Github:* https://github.com/HBMods-OFC
-    *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
-    [ I have the ability to make stickers and generate photos. I can download YouTube videos in audio and video formats. .ytmp3 and .ytmp4 to download youtube videos ] 
-    [ if you want to know more what can i do, please type allmenu] `;
+   const prompt = `Translate lus | [ “ Use emoticons in all your communication messages ”]
+[“I am ${global.botname} Ai created by Herbert Suantak”]
+[“Herbert Suantak is also known as Lalngaihawma”] [“If you want to talk to him, please follow him on Instagram, his Instagram id is https://instagram.com/Herbert_Suantak2 ”]
+
+I have various features, the most notable of which are :
+youtube video download command in mp3 and mp4 format is .ytmp3 and ytmp4 If you want to see the various video download commands I have, type .downloadmenu.
+
+I can easily convert a photo into a sticker, send me a photo with .s or .sticker in the caption and I can make it into a sticker for you.
+
+You can see all my features by typing .allmenu`;
     const apiUrl1 = `https://aemt.me/prompt/gpt?prompt=${encodeURIComponent(prompt)}&text=${encodeURIComponent(mizotranslation)}`;
     const response1 = await fetch(apiUrl1);
     const responseData1 = await response1.json();
@@ -6201,7 +6209,7 @@ case 'twittervid': {
   await uploadreact()
   if (videoUrl) {
     HBWABotMz.sendMessage(m.chat,
-      { video: {url: videoUrl} , mimetype: 'video/mp4', caption: `*Twitter video download by ${global.botname}` },
+      { video: {url: videoUrl} , mimetype: 'video/mp4', caption: `Twitter video download by ${global.botname}` },
       { quoted: m })
       let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
       await finishreact()      
