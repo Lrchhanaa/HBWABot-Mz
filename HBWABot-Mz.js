@@ -3645,7 +3645,7 @@ case 'openai': {
         .replace(/AILI|aili|Aili/g, '')
         .replace(/Lann/g, '')}`;
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
-    const prompt = `use emoticon it all you reply\n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot, crafted by Herbert Suantak with unmatched perfection. If you want to know more about my creator, visit
+    const prompt = `use emoticon it all message\n [ Hello, I'm HBWABot Assistant, a Whatsapp bot developed by Herbert Suantak also known as Lalngaihawma. My name is HBWABot. If you want to know more about my creator, visit
     *1. Blog:* https://herbert70.blogspot.com and 
     *2. Github:* https://github.com/HBMods-OFC
     *3. Instagram:* https://instagram.com/herbert_suantak2 ] 
@@ -3670,6 +3670,7 @@ case 'openai': {
             .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
             .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
         await dodoi(`${siamthat}`);
+        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
     } else {
         console.error(error2);
         dodoi("😔 Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656")
@@ -3714,6 +3715,7 @@ case 'gpt':{
             .replace(/ka chhuah ang che/g, 'chhuahin ka pui ang che')
             .replace(/Ka ngaidam che u|Ka ngaidam che|Ngaidam rawh|Ngaidam rawh u/g, 'Ka tihpalh')}`;
         await dodoi(`${siamthat}`);
+        let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
     } else {
         console.error(error2);
         dodoi("😔 Chhanna ka pe thei lo che a ngaihdam ka dil e. kei mahah hian thil fello a awm a ni, khawngaihin link ka rawn dah hi hmet la, min siamtu hnenah ka chian loh thu hi min va hrilh sak rawh\nhttps://wa.me/+918416093656")
@@ -6195,11 +6197,14 @@ case 'twittervid': {
   const videoUrls = herbert2.url;  
   const hdUrl = videoUrls.find(url => url.hd); // Finding HD URL
   const sdUrl = videoUrls.find(url => url.sd); // Finding SD URL
-  const videoUrl = hdUrl ? hdUrl.hd : sdUrl ? sdUrl.sd : ''; // Prioritizing HD URL, fallback to SD URL
+  const videoUrl = hdUrl ? hdUrl.hd : sdUrl ? sdUrl.sd : '';
+  await uploadreact()
   if (videoUrl) {
     HBWABotMz.sendMessage(m.chat,
-      { video: videoUrl, mimetype: 'video/mp4', caption: `*Twitter video download by ${global.botname}` },
+      { video: {url: hdUrl} , mimetype: 'video/mp4', caption: `*Twitter video download by ${global.botname}` },
       { quoted: m }
+      let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
+      await finishreact()      
     )
   } else {
     return dodoi('Failed to fetch video URL.');
@@ -6210,6 +6215,8 @@ break;
  
 case 'fbvid2' : case 'facebookvid2':{
 if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://fb.watch/mcx9K6cb6t/?mibextid=8103lRmnirLUhozF`)
+const limit1= await eco.balance(limitneihtu, khawlbawm)
+    if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
 const { fbdown } = require('btch-downloader') 
 const link = args[0] 
@@ -6221,12 +6228,15 @@ video: {url: data.Normal_video},
 caption: "Facebook Videos download by " + `${global.botname}`
 }, {quoted:m})
 await finishreact()
+let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 
 }
 break 
 case 'fbvid3' : case 'facebookvid3':{
 if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://fb.watch/mcx9K6cb6t/?mibextid=8103lRmnirLUhozF`)
 await loadingreact()
+const limit1= await eco.balance(limitneihtu, khawlbawm)
+    if (hmanzat > limit1.wallet) return await dailylimit()
 const { facebook } = require('betabotz-tools') 
 const url = args[0]
 const results = await facebook(url)
@@ -6236,11 +6246,14 @@ await HBWABotMz.sendMessage(m.chat,{
 video: {url: results.result.sd_q},
 caption: "Facebook Video download by "+ `${global.botname}`
 }, {quoted:m})
+let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
 break 
 case 'fbvid' : case 'facebookvid':{
 if (!text) return dodoi(`Kha tiang ringawt loh khan tiang hian a link nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} https://fb.watch/mcx9K6cb6t/?mibextid=8103lRmnirLUhozF`)
+const limit1= await eco.balance(limitneihtu, khawlbawm)
+    if (hmanzat > limit1.wallet) return await dailylimit()
 await loadingreact()
 const { fbdl } = require('api-dylux')
 const url = args[0]
@@ -6251,6 +6264,7 @@ await HBWABotMz.sendMessage(m.chat,{
 video: {url: results.videoUrl},
 caption: "Facebook Video download by "+ `${global.botname}`
 }, {quoted:m})
+let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
 }
 break 
@@ -6415,6 +6429,8 @@ dodoi(`A username a dik lo!. a username dik tak rawn dah rawh`)
 break
 case 'say': case 'tts': case 'gtts':{
 if (!text) return dodoi(`Kha tiang ringawt loh khan, tiang hian word nen rawn dah rawh\n\n*⟨Entirnan :* ${prefix + command} Hello World`)
+const limit1= await eco.balance(limitneihtu, khawlbawm)
+    if (hmanzat > limit1.wallet) return await dailylimit()
 let texttts = text
 const herbertrl = googleTTS.getAudioUrl(texttts, {
 lang: "en",
@@ -6431,6 +6447,7 @@ fileName: `${text}.mp3`,
 }, {
 quoted: m,
 })
+let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 }
 break 
 /*
@@ -6568,6 +6585,8 @@ break
 case 'gdrive': {
 if (!args[0]) return dodoi(`Google Drive link rawn dah tel rawh`)
 await loadingreact()
+const limit1= await eco.balance(limitneihtu, khawlbawm)
+    if (hmanzat > limit1.wallet) return await dailylimit()
 const fg = require('api-dylux')
 try {
 let res = await fg.GDriveDl(args[0])
@@ -6577,6 +6596,7 @@ let res = await fg.GDriveDl(args[0])
 ▢ *Size:* ${res.fileSize}
 ▢ *Type:* ${res.mimetype}`)
 HBWABotMz.sendMessage(m.chat, { document: { url: res.downloadUrl }, fileName: res.fileName, mimetype: res.mimetype }, { quoted: m })
+let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
 await finishreact()
  } 
 
