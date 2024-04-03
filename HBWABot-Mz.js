@@ -6202,10 +6202,9 @@ case 'twittervid': {
   if (videoUrl) {
     HBWABotMz.sendMessage(m.chat,
       { video: {url: hdUrl} , mimetype: 'video/mp4', caption: `*Twitter video download by ${global.botname}` },
-      { quoted: m }
+      { quoted: m })
       let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
       await finishreact()      
-    )
   } else {
     return dodoi('Failed to fetch video URL.');
   }
