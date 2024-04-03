@@ -6201,7 +6201,7 @@ case 'twittervid': {
   await uploadreact()
   if (videoUrl) {
     HBWABotMz.sendMessage(m.chat,
-      { video: {url: hdUrl} , mimetype: 'video/mp4', caption: `*Twitter video download by ${global.botname}` },
+      { video: {url: videoUrl} , mimetype: 'video/mp4', caption: `*Twitter video download by ${global.botname}` },
       { quoted: m })
       let aman = await eco.deduct(limitneihtu, khawlbawm, hmanzat)
       await finishreact()      
