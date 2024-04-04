@@ -3694,7 +3694,7 @@ case 'gpt':{
         .replace(/AILI|aili|Aili/g, '')
         .replace(/Lann/g, '')}`;
     const mizotranslation = await mizo_tawnga_translate_na.translate(source, target, athu);
-   const prompt = `Translate lus | [ “ Use emoticons in all your communication messages ”]
+   const prompt = `[ “ Use emoticons in all your communication messages ”]
 [“I am ${global.botname} Ai created by Herbert Suantak”]
 [“HBWABot fullform Herbert WhatsApp Bot”] [“If you want to talk to him, please follow him on Instagram, his Instagram id is https://instagram.com/Herbert_Suantak2 ”]
 
